@@ -1,0 +1,178 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 599a1fcf8be5cccf-vs.txt
+// 3DMigoto: 599a1fcf8be5cccf | Matched 24 variants of 4 shaders: Dreamfall/Diffuse Emissive, Legacy Shaders/Bumped Specular, Legacy Shaders/Specular, Legacy Shaders/Transparent/Cutout/Bumped Specular
+//
+// 03f000:    Unity headers extracted from AlphaTest-BumpSpec.shader
+// 00003f:    Unity headers extracted from Diffuse_Emissive.shader
+// fc0000:    Unity headers extracted from Normal-BumpSpec.shader
+// 000fc0:    Unity headers extracted from Normal-Glossy.shader
+// 00003f:    Shader "Dreamfall/Diffuse Emissive" {
+// fc0000:    Shader "Legacy Shaders/Bumped Specular" {
+// 000fc0:    Shader "Legacy Shaders/Specular" {
+// 03f000:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Specular" {
+//              Properties {
+//               _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 00003f:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+// 03f000:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
+// fc0fc0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 00003f:       _Emissive ("Emissive", Float) = 1.000000
+// 03ffc0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// fc0000:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// fc0fc0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 03f000:       _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" { }
+// 00003f:       _Output ("Output", Float) = 1.000000
+// fff000:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// 03f000:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//              }
+// fc0000:      Fallback "Legacy Shaders/Specular"
+// 03f000:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
+// 000fc0:      Fallback "Legacy Shaders/VertexLit"
+// 00003f:      Fallback "Reflective/Bumped Diffuse"
+// 03ffff:      SubShader 1/1 {
+// fc0000:      SubShader 1/2 {
+// 000fc0:        LOD 300
+// fff03f:        LOD 400
+// 03f000:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// fc0fff:        Tags { "RenderType"="Opaque" }
+//                Pass 4/5 {
+//                  Name "PREPASS"
+// 03f000:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// fc0fff:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//                  ZWrite Off
+// 000fc0:          GpuProgramID 205893
+// fc0000:          GpuProgramID 230906
+// 03f000:          GpuProgramID 233133
+// 00003f:          GpuProgramID 253799
+//                  Program "vp" {
+//                    SubProgram "d3d11 " {
+// 041001:              GpuProgramIndex 251
+// 082002:              GpuProgramIndex 259
+// 104004:              GpuProgramIndex 267
+// 208008:              GpuProgramIndex 275
+// 410010:              GpuProgramIndex 283
+// 820020:              GpuProgramIndex 291
+// 000040:              GpuProgramIndex 339
+// 000080:              GpuProgramIndex 349
+// 000100:              GpuProgramIndex 359
+// 000200:              GpuProgramIndex 369
+// 000400:              GpuProgramIndex 379
+// 000800:              GpuProgramIndex 389
+//                    }
+//                  }
+//                }
+//              }
+//            }
+//
+// 03f000: Unity 5.3 headers extracted from AlphaTest-BumpSpec.shader.decompressed:
+// 00003f: Unity 5.3 headers extracted from Diffuse_Emissive.shader.decompressed:
+// fc0000: Unity 5.3 headers extracted from Normal-BumpSpec.shader.decompressed:
+// 000fc0: Unity 5.3 headers extracted from Normal-Glossy.shader.decompressed:
+//           API d3d11
+//           Shader model vs_4_0
+//           undeciphered1: 201510240 14 0 0
+// 208208:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 104104:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 820820:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
+// 410410:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 082082:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 041041:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//           undeciphered2: 1 0 4 0 0 0
+//           undeciphered3: 25 3 0 0 3 4 4 5
+// fc0fff:   ConstBuffer "$Globals" 208
+// 03f000:   ConstBuffer "$Globals" 224
+//           Vector 160 [_MainTex_ST]
+//           ConstBuffer "UnityPerCamera" 144
+//           Vector 80 [_ProjectionParams]
+//           ConstBuffer "UnityPerDraw" 352
+//           Matrix 0 [glstate_matrix_mvp]
+//           Matrix 192 [unity_ObjectToWorld]
+//           ConstBuffer "UnityLightmaps" 32
+//           Vector 0 [unity_LightmapST]
+//           BindCB "$Globals" 0
+//           BindCB "UnityPerCamera" 1
+//           BindCB "UnityPerDraw" 2
+//           BindCB "UnityLightmaps" 3
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:25:20 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// TANGENT                  0   xyzw        1     NONE   float       
+// NORMAL                   0   xyz         2     NONE   float       
+// TEXCOORD                 0   xyzw        3     NONE   float   xy  
+// TEXCOORD                 1   xyzw        4     NONE   float   xy  
+// TEXCOORD                 2   xyzw        5     NONE   float       
+// TEXCOORD                 3   xyzw        6     NONE   float       
+// COLOR                    0   xyzw        7     NONE   float       
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xy          1     NONE   float   xy  
+// TEXCOORD                 5     z         1     NONE   float     z 
+// TEXCOORD                 1   xyz         2     NONE   float   xyz 
+// TEXCOORD                 2   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+//
+vs_4_0
+dcl_constantbuffer cb0[11], immediateIndexed
+dcl_constantbuffer cb1[6], immediateIndexed
+dcl_constantbuffer cb2[16], immediateIndexed
+dcl_constantbuffer cb3[1], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v3.xy
+dcl_input v4.xy
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xy
+dcl_output o1.z
+dcl_output o2.xyz
+dcl_output o3.xyzw
+dcl_output o4.xyzw
+dcl_temps 3
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r2.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb2[1].xyzw
+mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
+add r0.xyzw, r0.xyzw, cb2[3].xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 599a1fcf8be5cccf-vs.txt
+ne r2.w, r0.w, l(1.0)
+if_nz r2.w
+  add r2.w, r0.w, -r2.y
+  mad r0.x, r2.w, r2.x, r0.x
+endif
+
+mov o1.z, r0.z
+mov o3.zw, r0.zzzw
+mad o1.xy, v3.xyxx, cb0[10].xyxx, cb0[10].zwzz
+mul r1.xyz, v0.yyyy, cb2[13].xyzx
+mad r1.xyz, cb2[12].xyzx, v0.xxxx, r1.xyzx
+mad r1.xyz, cb2[14].xyzx, v0.zzzz, r1.xyzx
+mad o2.xyz, cb2[15].xyzx, v0.wwww, r1.xyzx
+mul r0.y, r0.y, cb1[5].x
+mul r0.xz, r0.xxwx, l(0.500000, 0.000000, 0.500000, 0.000000)
+mul r0.w, r0.y, l(0.500000)
+add o3.xy, r0.zzzz, r0.xwxx
+mad o4.xy, v4.xyxx, cb3[0].xyxx, cb3[0].zwzz
+mov o4.zw, l(0,0,0,0)
+ret 
+// Approximately 0 instruction slots used

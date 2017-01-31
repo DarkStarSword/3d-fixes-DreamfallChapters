@@ -1,0 +1,190 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 14887dfbbc672b4d-vs.txt
+// 3DMigoto: 14887dfbbc672b4d | Matched 8 variants of 4 shaders: Dreamfall/FX/Fresnel Additive Distort Parallax, Dreamfall/FX/Plasma Flow, Dreamfall/FX/Rorschach, Dreamfall/FX/Rorschach Additive
+//
+// 03:    Unity headers extracted from Additive-FresnelDistort.shader
+// 30:    Unity headers extracted from PlasmaFlow.shader
+// 0c:    Unity headers extracted from Rorschach.shader
+// c0:    Unity headers extracted from Rorschach_additive.shader
+// 03:    Shader "Dreamfall/FX/Fresnel Additive Distort Parallax" {
+// 30:    Shader "Dreamfall/FX/Plasma Flow" {
+// c0:    Shader "Dreamfall/FX/Rorschach Additive" {
+// 0c:    Shader "Dreamfall/FX/Rorschach" {
+//          Properties {
+// cc:       _Color ("Color", Color) = (1.000000,0.500000,0.200000,0.000000)
+// 03:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 30:       _MainTex ("Texture (RGB)", 2D) = "white" { }
+// 03:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// cc:       _MainTex ("Effect Mask (RGB)", 2D) = "white" { }
+// fc:       _NoiseTex1 ("Effect Map 1", 2D) = "white" { }
+// 03:       _Parallax ("Height", Range(0.005000,0.200000)) = 0.020000
+// 03:       _FresnelExp ("Fresnel Exp", Float) = 3.500000
+// fc:       _NoiseTex2 ("Effect Map 2", 2D) = "white" { }
+// cc:       _DisintegrateAmount ("Cutoff", Float) = 0.000000
+// 30:       _DisintegrateAmount ("Effect Amount", Range(0.000000,1.010000)) = 0.000000
+// 03:       _FresnelCol ("Fresnel Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 30:       _DissolveColor ("Edge Color", Color) = (1.000000,0.500000,0.200000,0.000000)
+// 03:       _FresnelAmt ("Fresnel Amount", Float) = 1.000000
+// cc:       _TileFactor ("Tile Factor", Float) = 1.000000
+// 30:       _EmissionFloat ("Emission Multiplier", Float) = 1.000000
+// 03:       _ParallaxMap ("Heightmap (A)", 2D) = "grey" { }
+// 03:       _DistortMap ("DistortMap", 2D) = "black" { }
+// 30:       _TileFactor ("Tile Factor", Range(0.000000,4.000000)) = 1.000000
+// 03:       _DistortAmt ("Distort Amount", Float) = 0.000000
+// fc:       _Effect1UvX ("Effect 1 UV X speed", Float) = 1.000000
+// 03:       _DistortSpeed ("Distort Speed", Float) = 0.000000
+// fc:       _Effect1UvY ("Effect 1 UV Y speed", Float) = 1.000000
+// fc:       _Effect2UvX ("Effect 2 UV X speed", Float) = 1.000000
+// fc:       _Effect2UvY ("Effect 2 UV Y speed", Float) = 1.000000
+// cc:       _MasterSpeed ("Master Speed", Float) = 1.000000
+//          }
+// fc:      Fallback "Diffuse"
+// 03:      Fallback "Specular"
+//          SubShader 1/1 {
+// c0:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+// 03:        Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+// 3c:        Tags { "RenderType"="Opaque" }
+//            Pass 1/5 {
+//              Name "FORWARD"
+// c0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
+// 03:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
+// 3c:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// c0:          Blend SrcColor One
+// 30:          GpuProgramID 57452
+// 0c:          GpuProgramID 9134
+// 03:          ZWrite Off
+// 03:          Blend One One
+// c0:          GpuProgramID 2338
+// 03:          GpuProgramID 23364
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 55:              GpuProgramIndex 11
+// aa:              GpuProgramIndex 15
+//                }
+//              }
+//            }
+//          }
+//        }
+//
+// 03: Unity 5.3 headers extracted from Additive-FresnelDistort.shader.decompressed:
+// 30: Unity 5.3 headers extracted from PlasmaFlow.shader.decompressed:
+// 0c: Unity 5.3 headers extracted from Rorschach.shader.decompressed:
+// c0: Unity 5.3 headers extracted from Rorschach_additive.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 27 0 0
+// aa:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+// 55:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//       ConstBuffer "$Globals" 208
+//       Vector 192 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:06:10 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// TANGENT                  0   xyzw        1     NONE   float       
+// NORMAL                   0   xyz         2     NONE   float   xyz 
+// TEXCOORD                 0   xyzw        3     NONE   float   xy  
+// TEXCOORD                 1   xyzw        4     NONE   float   xy  
+// TEXCOORD                 2   xyzw        5     NONE   float       
+// TEXCOORD                 3   xyzw        6     NONE   float       
+// COLOR                    0   xyzw        7     NONE   float       
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xy          1     NONE   float   xy  
+// TEXCOORD                 1   xyz         2     NONE   float   xyz 
+// TEXCOORD                 2   xyz         3     NONE   float   xyz 
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+// TEXCOORD                 4   xyzw        5     NONE   float   xyzw
+//
+vs_4_0
+dcl_constantbuffer cb0[13], immediateIndexed
+dcl_constantbuffer cb1[6], immediateIndexed
+dcl_constantbuffer cb2[19], immediateIndexed
+dcl_constantbuffer cb3[1], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v2.xyz
+dcl_input v3.xy
+dcl_input v4.xy
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xy
+dcl_output o2.xyz
+dcl_output o3.xyz
+dcl_output o4.xyzw
+dcl_output o5.xyzw
+dcl_temps 4
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r3.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb2[1].xyzw
+mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
+add r0.xyzw, r0.xyzw, cb2[3].xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 14887dfbbc672b4d-vs.txt
+ne r3.w, r0.w, l(1.0)
+if_nz r3.w
+  add r3.w, r0.w, -r3.y
+  mad r0.x, r3.w, r3.x, r0.x
+endif
+
+mad o1.xy, v3.xyxx, cb0[12].xyxx, cb0[12].zwzz
+mul r1.x, v2.x, cb2[16].x
+mul r1.y, v2.x, cb2[17].x
+mul r1.z, v2.x, cb2[18].x
+mul r2.x, v2.y, cb2[16].y
+mul r2.y, v2.y, cb2[17].y
+mul r2.z, v2.y, cb2[18].y
+add r1.xyz, r1.xyzx, r2.xyzx
+mul r2.x, v2.z, cb2[16].z
+mul r2.y, v2.z, cb2[17].z
+mul r2.z, v2.z, cb2[18].z
+add r1.xyz, r1.xyzx, r2.xyzx
+dp3 r1.w, r1.xyzx, r1.xyzx
+rsq r1.w, r1.w
+mul o2.xyz, r1.wwww, r1.xyzx
+mul r1.xyz, v0.yyyy, cb2[13].xyzx
+mad r1.xyz, cb2[12].xyzx, v0.xxxx, r1.xyzx
+mad r1.xyz, cb2[14].xyzx, v0.zzzz, r1.xyzx
+mad o3.xyz, cb2[15].xyzx, v0.wwww, r1.xyzx
+mad o4.xy, v4.xyxx, cb3[0].xyxx, cb3[0].zwzz
+mov o4.zw, l(0,0,0,0)
+mul r0.y, r0.y, cb1[5].x
+mul r1.xzw, r0.xxwy, l(0.500000, 0.000000, 0.500000, 0.500000)
+mov o5.zw, r0.zzzw
+add o5.xy, r1.zzzz, r1.xwxx
+ret 
+// Approximately 0 instruction slots used

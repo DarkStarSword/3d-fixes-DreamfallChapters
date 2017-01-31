@@ -1,0 +1,185 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed ac46e6db269da0ba-vs.txt
+// 3DMigoto: ac46e6db269da0ba | Matched 48 variants of 4 shaders: Dreamfall/FX/AdditiveGlowScroll, Dreamfall/FX/AdditiveGlowScroll_NoZwrite, Dreamfall/FX/GlowScroll, Dreamfall/FX/GlowSignScroll
+//
+// 000000000fff:    Unity headers extracted from AdditiveGlowScroll.shader
+// fff000000000:    Unity headers extracted from AdditiveGlowScroll_NoZwrite.shader
+// 000000fff000:    Unity headers extracted from GlowScroll.shader
+// 000fff000000:    Unity headers extracted from glowsign_scroll.shader
+// 000000000fff:    Shader "Dreamfall/FX/AdditiveGlowScroll" {
+// fff000000000:    Shader "Dreamfall/FX/AdditiveGlowScroll_NoZwrite" {
+// 000000fff000:    Shader "Dreamfall/FX/GlowScroll" {
+// 000fff000000:    Shader "Dreamfall/FX/GlowSignScroll" {
+//                    Properties {
+// 000fff000000:       _Color ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// fff000ffffff:       _Color1 ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+//                     _Color2 ("Color 2 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// fff000ffffff:       _MainTex ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 000fff000000:       _MainTex ("Diffuse(RGB)", 2D) = "black" { }
+// fff000ffffff:       _MainTex2 ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 000fff000000:       _MainTex2 ("Diffuse2(RGB)", 2D) = "black" { }
+// 000fff000000:       _Scroll1 ("ScrollSpeed 1", Float) = 1.000000
+// fff000ffffff:       _Scroll1x ("ScrollSpeed 1 x", Float) = 0.000000
+// fff000ffffff:       _Scroll1y ("ScrollSpeed 1 y", Float) = 0.000000
+// 000fff000000:       _Scroll2 ("ScrollSpeed 2", Float) = 1.000000
+// fff000ffffff:       _Scroll2x ("ScrollSpeed 2 x", Float) = 0.000000
+// 000fff000000:       _Scroll3 ("ScrollSpeed y 1", Float) = 0.000000
+// fff000ffffff:       _Scroll2y ("ScrollSpeed 2 y", Float) = 0.000000
+// 000fff000000:       _Scroll4 ("ScrollSpeed y 2", Float) = 0.000000
+// 000fff000000:       _Boost ("Boost Color", Float) = 1.000000
+// fff000ffffff:       _Boost1 ("Boost Diffuse 1", Float) = 1.000000
+// fff000ffffff:       _Boost2 ("Boost Diffuse 2", Float) = 1.000000
+//                    }
+//                    SubShader 1/1 {
+// 000000fff000:        Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+// ffffff000fff:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//                      Pass 2/5 {
+//                        Name "FORWARD"
+// 000000fff000:          Tags { "LIGHTMODE"="ForwardAdd" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+// ffffff000fff:          Tags { "LIGHTMODE"="ForwardAdd" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//                        ZWrite Off
+// fff000ffffff:          Cull Off
+//                        Blend One One
+// 000000000fff:          GpuProgramID 73558
+// fff000fff000:          GpuProgramID 77985
+// 000fff000000:          GpuProgramID 93556
+//                        Program "vp" {
+//                          SubProgram "d3d11 " {
+// 001001001001:              GpuProgramIndex 155
+// 002002002002:              GpuProgramIndex 159
+// 004004004004:              GpuProgramIndex 161
+// 008008008008:              GpuProgramIndex 163
+// 010010010010:              GpuProgramIndex 165
+// 020020020020:              GpuProgramIndex 169
+// 040040040040:              GpuProgramIndex 171
+// 080080080080:              GpuProgramIndex 173
+// 100100100100:              GpuProgramIndex 175
+// 200200200200:              GpuProgramIndex 179
+// 400400400400:              GpuProgramIndex 181
+// 800800800800:              GpuProgramIndex 183
+//                          }
+//                        }
+//                      }
+//                    }
+//                  }
+//
+// 000000000fff: Unity 5.3 headers extracted from AdditiveGlowScroll.shader.decompressed:
+// fff000000000: Unity 5.3 headers extracted from AdditiveGlowScroll_NoZwrite.shader.decompressed:
+// 000000fff000: Unity 5.3 headers extracted from GlowScroll.shader.decompressed:
+// 000fff000000: Unity 5.3 headers extracted from glowsign_scroll.shader.decompressed:
+//                 API d3d11
+//                 Shader model vs_4_0
+//                 undeciphered1: 201510240 24 0 0
+// 080080080080:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP" }
+// 800800800800:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" }
+// 008008008008:   Keywords { "DIRECTIONAL_COOKIE" "FOG_LINEAR" }
+// 010010010010:   Keywords { "POINT" "FOG_EXP" }
+// 100100100100:   Keywords { "POINT" "FOG_EXP2" }
+// 001001001001:   Keywords { "POINT" "FOG_LINEAR" }
+// 040040040040:   Keywords { "POINT_COOKIE" "FOG_EXP" }
+// 400400400400:   Keywords { "POINT_COOKIE" "FOG_EXP2" }
+// 004004004004:   Keywords { "POINT_COOKIE" "FOG_LINEAR" }
+// 020020020020:   Keywords { "SPOT" "FOG_EXP" }
+// 200200200200:   Keywords { "SPOT" "FOG_EXP2" }
+// 002002002002:   Keywords { "SPOT" "FOG_LINEAR" }
+//                 undeciphered2: 1 0 2 0 0 0
+//                 undeciphered3: 11 3 0 0 1 2 3 4
+//                 ConstBuffer "$Globals" 288
+// 000fff000000:   Vector 256 [_MainTex2_ST]
+// fff000ffffff:   Vector 256 [_MainTex_ST]
+// fff000ffffff:   Vector 272 [_MainTex2_ST]
+// 000fff000000:   Vector 272 [_MainTex_ST]
+//                 ConstBuffer "UnityPerDraw" 352
+//                 Matrix 0 [glstate_matrix_mvp]
+//                 Matrix 192 [unity_ObjectToWorld]
+//                 Matrix 256 [unity_WorldToObject]
+//                 BindCB "$Globals" 0
+//                 BindCB "UnityPerDraw" 1
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:47:03 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// TANGENT                  0   xyzw        1     NONE   float       
+// NORMAL                   0   xyz         2     NONE   float   xyz 
+// TEXCOORD                 0   xyzw        3     NONE   float   xy  
+// TEXCOORD                 1   xyzw        4     NONE   float       
+// TEXCOORD                 2   xyzw        5     NONE   float       
+// TEXCOORD                 3   xyzw        6     NONE   float       
+// COLOR                    0   xyzw        7     NONE   float       
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xyzw        1     NONE   float   xyzw
+// TEXCOORD                 1   xyz         2     NONE   float   xyz 
+// TEXCOORD                 4      w        2     NONE   float      w
+// TEXCOORD                 2   xyz         3     NONE   float   xyz 
+//
+vs_4_0
+dcl_constantbuffer cb0[18], immediateIndexed
+dcl_constantbuffer cb1[19], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v2.xyz
+dcl_input v3.xy
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xyzw
+dcl_output o2.xyz
+dcl_output o2.w
+dcl_output o3.xyz
+dcl_temps 3
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r2.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb1[1].xyzw
+mad r0.xyzw, cb1[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb1[2].xyzw, v0.zzzz, r0.xyzw
+add r0.xyzw, r0.xyzw, cb1[3].xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed ac46e6db269da0ba-vs.txt
+ne r2.w, r0.w, l(1.0)
+if_nz r2.w
+  add r2.w, r0.w, -r2.y
+  mad r0.x, r2.w, r2.x, r0.x
+endif
+
+mov o2.w, r0.z
+mad o1.xy, v3.xyxx, cb0[16].xyxx, cb0[16].zwzz
+mad o1.zw, v3.xxxy, cb0[17].xxxy, cb0[17].zzzw
+mul r0.x, v2.x, cb1[16].x
+mul r0.y, v2.x, cb1[17].x
+mul r0.z, v2.x, cb1[18].x
+mul r1.x, v2.y, cb1[16].y
+mul r1.y, v2.y, cb1[17].y
+mul r1.z, v2.y, cb1[18].y
+add r0.xyz, r0.xyzx, r1.xyzx
+mul r1.x, v2.z, cb1[16].z
+mul r1.y, v2.z, cb1[17].z
+mul r1.z, v2.z, cb1[18].z
+add r0.xyz, r0.xyzx, r1.xyzx
+dp3 r0.w, r0.xyzx, r0.xyzx
+rsq r0.w, r0.w
+mul o2.xyz, r0.wwww, r0.xyzx
+mul r0.xyz, v0.yyyy, cb1[13].xyzx
+mad r0.xyz, cb1[12].xyzx, v0.xxxx, r0.xyzx
+mad r0.xyz, cb1[14].xyzx, v0.zzzz, r0.xyzx
+mad o3.xyz, cb1[15].xyzx, v0.wwww, r0.xyzx
+ret 
+// Approximately 0 instruction slots used

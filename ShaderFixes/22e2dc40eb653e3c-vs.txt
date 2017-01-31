@@ -1,0 +1,262 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 22e2dc40eb653e3c-vs.txt
+// 3DMigoto: 22e2dc40eb653e3c | Matched 35 variants of 9 shaders: Chickenlord/Reflective/Fresnel/Bumped Specular, Dreamfall/FX/Water (Supports Shadows), Dreamfall/Reflective/Fresnel/Bumped Specular, Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump, Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided, Dreamfall/Reflective/Fresnel/Bumped Specular DetailCubeBump, Dreamfall/Reflective/Fresnel/Bumped Specular Overlay, Dreamfall/Reflective/Fresnel/Bumped Specular RefColor, Self-Illumin/Dreamfall/Reflective/Fresnel/Bumped Specular Illum
+//
+// 700000000:    Unity headers extracted from MirrorWater.shader
+// 0000f0000:    Unity headers extracted from Reflect-BumpDetail.shader
+// 000f00000:    Unity headers extracted from Reflect-BumpDetailCutout2sided.shader
+// 00f000000:    Unity headers extracted from Reflect-BumpSpec_Fresnel.shader
+// 0f0000000:    Unity headers extracted from Reflect-BumpSpec_Fresnel_Illum.shader
+// 00000000f:    Unity headers extracted from Reflect-Bump_SpecFresnel.shader
+// 000000f00:    Unity headers extracted from Reflect-Bump_SpecFresnelDetailBump.shader
+// 00000f000:    Unity headers extracted from Reflect-Bump_SpecFresnelRefCol.shader
+// 0000000f0:    Unity headers extracted from Reflect-Bump_SpecFresnel_Overlay.shader
+// 00f000000:    Shader "Chickenlord/Reflective/Fresnel/Bumped Specular" {
+// 700000000:    Shader "Dreamfall/FX/Water (Supports Shadows)" {
+// 000f00000:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided" {
+// 0000f0000:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump" {
+// 000000f00:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailCubeBump" {
+// 0000000f0:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular Overlay" {
+// 00000f000:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular RefColor" {
+// 00000000f:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular" {
+// 0f0000000:    Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Bumped Specular Illum" {
+//                 Properties {
+//                  _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 700000000:       _MainTex ("Maintex (RGB)", 2D) = "white" { }
+// 0ff00f0ff:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 000ff0f00:       _SpecColor ("Specular Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 00000f0ff:       _ReflectColor ("Reflect Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 000ff0f00:       _ReflectColor ("Reflect Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0ffffffff:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// 000ff0f00:       _Fresnel ("Fresnel", Float) = 1.000000
+// 00000f0ff:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
+// 0ff000000:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+// 000ff0f00:       _DetailMulti ("Detail Strength", Float) = 1.000000
+// 00f000000:       _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
+// 0f0000000:       _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
+// 00000f000:       _RefColMult ("Reflect Map", Float) = 1.000000
+// 0ffffffff:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+// 00000f000:       _RefColMap ("Reflect Color (RGB", 2D) = "white" { }
+// 0000000f0:       _TintTex ("Tint (RGB)", 2D) = "grey" { }
+// 0000000f0:       _TintMul ("Tint Amount", Range(0.000000,1.000000)) = 1.000000
+// 700ffffff:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// 0ff000000:       _Cube ("Reflection Cubemap", CUBE) = "" { }
+// 0ff000000:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// 000ff0f00:       _DetailBumpMap ("DetailMap", 2D) = "bump" { }
+// 700000000:       _Fresnel ("Reflection Fresnel Exponent", Float) = 2.000000
+// 000ffffff:       _Cube ("Reflection Cubemap", CUBE) = "" { }
+// 0f0000000:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
+// 700000000:       _ReflAmount ("Reflection amount", Float) = 2.000000
+// 000f00000:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// 0f0000000:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
+// 00000000f:       _RefMul ("Reflection Boost", Float) = 1.000000
+// 700000000:       _ReflPow ("Reflection pow", Float) = 1.000000
+// 00000000f:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
+// 700000000:       _ReflDistort ("Reflection distort", Float) = 0.100000
+// 700000000:       _ReflectionTex ("Reflection", 2D) = "white" { }
+// 700000000:       _WaterSpeed ("Water Speed", Float) = 1.000000
+//                 }
+// 700000000:      Fallback "Diffuse"
+// 0ffffffff:      Fallback "Reflective/Bumped Diffuse"
+//                 SubShader 1/1 {
+// 0ffffffff:        LOD 400
+// 000f00000:        Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+// 7ff0fffff:        Tags { "RenderType"="Opaque" }
+// 700000000:        Pass 1/5 {
+// 0ff0fffff:        Pass 4/5 {
+// 000f00000:        Pass 4/6 {
+// 700000000:          Name "FORWARD"
+// 0ffffffff:          Name "PREPASS"
+// 700000000:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 000f00000:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+// 0ff0fffff:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+// 700000000:          GpuProgramID 23704
+// 0ffffffff:          ZWrite Off
+// 000f00000:          Cull Off
+// 0f0000000:          GpuProgramID 208727
+// 000000f00:          GpuProgramID 209877
+// 0000000f0:          GpuProgramID 235080
+// 00000000f:          GpuProgramID 238898
+// 00f000000:          GpuProgramID 242816
+// 00000f000:          GpuProgramID 254255
+// 0000f0000:          GpuProgramID 259808
+// 000f00000:          GpuProgramID 243024
+//                     Program "vp" {
+//                       SubProgram "d3d11 " {
+// 011111111:              GpuProgramIndex 233
+// 022222222:              GpuProgramIndex 235
+// 044444444:              GpuProgramIndex 241
+// 088888888:              GpuProgramIndex 243
+// 100000000:              GpuProgramIndex 3
+// 200000000:              GpuProgramIndex 5
+// 400000000:              GpuProgramIndex 7
+//                       }
+//                     }
+//                   }
+//                 }
+//               }
+//
+// 700000000: Unity 5.3 headers extracted from MirrorWater.shader.decompressed:
+// 0000f0000: Unity 5.3 headers extracted from Reflect-BumpDetail.shader.decompressed:
+// 000f00000: Unity 5.3 headers extracted from Reflect-BumpDetailCutout2sided.shader.decompressed:
+// 00f000000: Unity 5.3 headers extracted from Reflect-BumpSpec_Fresnel.shader.decompressed:
+// 0f0000000: Unity 5.3 headers extracted from Reflect-BumpSpec_Fresnel_Illum.shader.decompressed:
+// 00000000f: Unity 5.3 headers extracted from Reflect-Bump_SpecFresnel.shader.decompressed:
+// 000000f00: Unity 5.3 headers extracted from Reflect-Bump_SpecFresnelDetailBump.shader.decompressed:
+// 00000f000: Unity 5.3 headers extracted from Reflect-Bump_SpecFresnelRefCol.shader.decompressed:
+// 0000000f0: Unity 5.3 headers extracted from Reflect-Bump_SpecFresnel_Overlay.shader.decompressed:
+//              API d3d11
+//              Shader model vs_4_0
+//              undeciphered1: 201510240 38 0 0
+// 200000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" }
+// 400000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+// 100000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" }
+// 044444444:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
+// 011111111:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" }
+// 088888888:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
+// 022222222:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+//              undeciphered2: 1 0 4 0 0 0
+//              undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+// 700000000:   ConstBuffer "$Globals" 208
+// 0ff0fffff:   ConstBuffer "$Globals" 240
+// 000f00000:   ConstBuffer "$Globals" 256
+//              Vector 176 [_MainTex_ST]
+// 7ff00f00f:   Vector 192 [_BumpMap_ST]
+// 000ff0f00:   Vector 192 [_DetailBumpMap_ST]
+// 0000000f0:   Vector 192 [_TintTex_ST]
+//              ConstBuffer "UnityPerCamera" 144
+//              Vector 80 [_ProjectionParams]
+//              ConstBuffer "UnityPerDraw" 352
+//              Vector 336 [unity_WorldTransformParams]
+//              Matrix 0 [glstate_matrix_mvp]
+//              Matrix 192 [unity_ObjectToWorld]
+//              Matrix 256 [unity_WorldToObject]
+//              ConstBuffer "UnityLightmaps" 32
+//              Vector 0 [unity_LightmapST]
+//              BindCB "$Globals" 0
+//              BindCB "UnityPerCamera" 1
+//              BindCB "UnityPerDraw" 2
+//              BindCB "UnityLightmaps" 3
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:10:02 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// TANGENT                  0   xyzw        1     NONE   float   xyzw
+// NORMAL                   0   xyz         2     NONE   float   xyz 
+// TEXCOORD                 0   xyzw        3     NONE   float   xy  
+// TEXCOORD                 1   xyzw        4     NONE   float   xy  
+// TEXCOORD                 2   xyzw        5     NONE   float       
+// TEXCOORD                 3   xyzw        6     NONE   float       
+// COLOR                    0   xyzw        7     NONE   float       
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xyzw        1     NONE   float   xyzw
+// TEXCOORD                 1   xyzw        2     NONE   float   xyzw
+// TEXCOORD                 2   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+// TEXCOORD                 4   xyzw        5     NONE   float   xyzw
+// TEXCOORD                 5   xyzw        6     NONE   float   xyzw
+//
+vs_4_0
+dcl_constantbuffer cb0[13], immediateIndexed
+dcl_constantbuffer cb1[6], immediateIndexed
+dcl_constantbuffer cb2[22], immediateIndexed
+dcl_constantbuffer cb3[1], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v1.xyzw
+dcl_input v2.xyz
+dcl_input v3.xy
+dcl_input v4.xy
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xyzw
+dcl_output o2.xyzw
+dcl_output o3.xyzw
+dcl_output o4.xyzw
+dcl_output o5.xyzw
+dcl_output o6.xyzw
+dcl_temps 6
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r5.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb2[1].xyzw
+mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
+add r0.xyzw, r0.xyzw, cb2[3].xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 22e2dc40eb653e3c-vs.txt
+ne r5.w, r0.w, l(1.0)
+if_nz r5.w
+  add r5.w, r0.w, -r5.y
+  mad r0.x, r5.w, r5.x, r0.x
+endif
+
+mad o1.xy, v3.xyxx, cb0[11].xyxx, cb0[11].zwzz
+mad o1.zw, v3.xxxy, cb0[12].xxxy, cb0[12].zzzw
+mul r1.y, v2.x, cb2[16].x
+mul r1.z, v2.x, cb2[17].x
+mul r1.x, v2.x, cb2[18].x
+mul r2.y, v2.y, cb2[16].y
+mul r2.z, v2.y, cb2[17].y
+mul r2.x, v2.y, cb2[18].y
+add r1.xyz, r1.xyzx, r2.xyzx
+mul r2.y, v2.z, cb2[16].z
+mul r2.z, v2.z, cb2[17].z
+mul r2.x, v2.z, cb2[18].z
+add r1.xyz, r1.xyzx, r2.xyzx
+dp3 r1.w, r1.xyzx, r1.xyzx
+rsq r1.w, r1.w
+mul r1.xyz, r1.wwww, r1.xyzx
+mov o2.z, r1.y
+mul r2.xyz, v1.yyyy, cb2[13].yzxy
+mad r2.xyz, cb2[12].yzxy, v1.xxxx, r2.xyzx
+mad r2.xyz, cb2[14].yzxy, v1.zzzz, r2.xyzx
+dp3 r1.w, r2.xyzx, r2.xyzx
+rsq r1.w, r1.w
+mul r2.xyz, r1.wwww, r2.xyzx
+mul r3.xyz, r1.xyzx, r2.xyzx
+mad r3.xyz, r1.zxyz, r2.yzxy, -r3.xyzx
+mul r1.y, v1.w, cb2[21].w
+mul r3.xyz, r1.yyyy, r3.xyzx
+mov o2.y, r3.x
+mul r4.xyz, v0.yyyy, cb2[13].xyzx
+mad r4.xyz, cb2[12].xyzx, v0.xxxx, r4.xyzx
+mad r4.xyz, cb2[14].xyzx, v0.zzzz, r4.xyzx
+mad r4.xyz, cb2[15].xyzx, v0.wwww, r4.xyzx
+mov o2.w, r4.x
+mov o2.x, r2.z
+mov o3.z, r1.z
+mov o4.z, r1.x
+mov o3.x, r2.x
+mov o4.x, r2.y
+mov o3.w, r4.y
+mov o4.w, r4.z
+mov o3.y, r3.y
+mov o4.y, r3.z
+mul r0.y, r0.y, cb1[5].x
+mul r1.xzw, r0.xxwy, l(0.500000, 0.000000, 0.500000, 0.500000)
+mov o5.zw, r0.zzzw
+add o5.xy, r1.zzzz, r1.xwxx
+mad o6.xy, v4.xyxx, cb3[0].xyxx, cb3[0].zwzz
+mov o6.zw, l(0,0,0,0)
+ret 
+// Approximately 0 instruction slots used

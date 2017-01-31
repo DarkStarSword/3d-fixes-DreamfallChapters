@@ -1,0 +1,283 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 386663f39ac6b5bd-vs.txt
+// 3DMigoto: 386663f39ac6b5bd | Matched 128 variants of 2 shaders: Hidden/FogVolume, Hidden/FogVolume_Rotation
+//
+// 0000000000000000ffffffffffffffff:    Unity headers extracted from FogVolume.shader
+// ffffffffffffffff0000000000000000:    Unity headers extracted from FogVolume_Rotation.shader
+// 0000000000000000ffffffffffffffff:    Shader "Hidden/FogVolume" {
+// ffffffffffffffff0000000000000000:    Shader "Hidden/FogVolume_Rotation" {
+//                                        SubShader 1/1 {
+//                                          Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//                                          Pass 1/1 {
+//                                            Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//                                            ZTest Always
+//                                            ZWrite Off
+//                                            Cull Front
+//                                            Blend SrcAlpha OneMinusSrcAlpha
+// 0000000000000000ffffffffffffffff:          GpuProgramID 27624
+// ffffffffffffffff0000000000000000:          GpuProgramID 59518
+//                                            Program "vp" {
+//                                              SubProgram "d3d11 " {
+// 00000000000000010000000000000001:              GpuProgramIndex 1
+// 00040000000000000004000000000000:              GpuProgramIndex 101
+// 00080000000000000008000000000000:              GpuProgramIndex 103
+// 00100000000000000010000000000000:              GpuProgramIndex 105
+// 00200000000000000020000000000000:              GpuProgramIndex 107
+// 00400000000000000040000000000000:              GpuProgramIndex 109
+// 00000000000000200000000000000020:              GpuProgramIndex 11
+// 00800000000000000080000000000000:              GpuProgramIndex 111
+// 01000000000000000100000000000000:              GpuProgramIndex 113
+// 02000000000000000200000000000000:              GpuProgramIndex 115
+// 04000000000000000400000000000000:              GpuProgramIndex 117
+// 08000000000000000800000000000000:              GpuProgramIndex 119
+// 10000000000000001000000000000000:              GpuProgramIndex 121
+// 20000000000000002000000000000000:              GpuProgramIndex 123
+// 40000000000000004000000000000000:              GpuProgramIndex 125
+// 80000000000000008000000000000000:              GpuProgramIndex 127
+// 00000000000000400000000000000040:              GpuProgramIndex 13
+// 00000000000000800000000000000080:              GpuProgramIndex 15
+// 00000000000001000000000000000100:              GpuProgramIndex 17
+// 00000000000002000000000000000200:              GpuProgramIndex 19
+// 00000000000004000000000000000400:              GpuProgramIndex 21
+// 00000000000008000000000000000800:              GpuProgramIndex 23
+// 00000000000010000000000000001000:              GpuProgramIndex 25
+// 00000000000020000000000000002000:              GpuProgramIndex 27
+// 00000000000040000000000000004000:              GpuProgramIndex 29
+// 00000000000000020000000000000002:              GpuProgramIndex 3
+// 00000000000080000000000000008000:              GpuProgramIndex 31
+// 00000000000100000000000000010000:              GpuProgramIndex 33
+// 00000000000200000000000000020000:              GpuProgramIndex 35
+// 00000000000400000000000000040000:              GpuProgramIndex 37
+// 00000000000800000000000000080000:              GpuProgramIndex 39
+// 00000000001000000000000000100000:              GpuProgramIndex 41
+// 00000000002000000000000000200000:              GpuProgramIndex 43
+// 00000000004000000000000000400000:              GpuProgramIndex 45
+// 00000000008000000000000000800000:              GpuProgramIndex 47
+// 00000000010000000000000001000000:              GpuProgramIndex 49
+// 00000000000000040000000000000004:              GpuProgramIndex 5
+// 00000000020000000000000002000000:              GpuProgramIndex 51
+// 00000000040000000000000004000000:              GpuProgramIndex 53
+// 00000000080000000000000008000000:              GpuProgramIndex 55
+// 00000000100000000000000010000000:              GpuProgramIndex 57
+// 00000000200000000000000020000000:              GpuProgramIndex 59
+// 00000000400000000000000040000000:              GpuProgramIndex 61
+// 00000000800000000000000080000000:              GpuProgramIndex 63
+// 00000001000000000000000100000000:              GpuProgramIndex 65
+// 00000002000000000000000200000000:              GpuProgramIndex 67
+// 00000004000000000000000400000000:              GpuProgramIndex 69
+// 00000000000000080000000000000008:              GpuProgramIndex 7
+// 00000008000000000000000800000000:              GpuProgramIndex 71
+// 00000010000000000000001000000000:              GpuProgramIndex 73
+// 00000020000000000000002000000000:              GpuProgramIndex 75
+// 00000040000000000000004000000000:              GpuProgramIndex 77
+// 00000080000000000000008000000000:              GpuProgramIndex 79
+// 00000100000000000000010000000000:              GpuProgramIndex 81
+// 00000200000000000000020000000000:              GpuProgramIndex 83
+// 00000400000000000000040000000000:              GpuProgramIndex 85
+// 00000800000000000000080000000000:              GpuProgramIndex 87
+// 00001000000000000000100000000000:              GpuProgramIndex 89
+// 00000000000000100000000000000010:              GpuProgramIndex 9
+// 00002000000000000000200000000000:              GpuProgramIndex 91
+// 00004000000000000000400000000000:              GpuProgramIndex 93
+// 00008000000000000000800000000000:              GpuProgramIndex 95
+// 00010000000000000001000000000000:              GpuProgramIndex 97
+// 00020000000000000002000000000000:              GpuProgramIndex 99
+//                                              }
+//                                            }
+//                                          }
+//                                        }
+//                                      }
+//
+// 0000000000000000ffffffffffffffff: Unity 5.3 headers extracted from FogVolume.shader.decompressed:
+// ffffffffffffffff0000000000000000: Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
+//                                     API d3d11
+//                                     Shader model vs_4_0
+//                                     undeciphered1: 201510240 23 0 0
+// 00001000000000000000100000000000:   Keywords { "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 10000000000000001000000000000000:   Keywords { "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000100000000000000010000000:   Keywords { "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000010000000000000001000:   Keywords { "_COLLISION" "_FOG_GRADIENT" }
+// 00000010000000000000001000000000:   Keywords { "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 00100000000000000010000000000000:   Keywords { "_COLLISION" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000001000000000000000100000:   Keywords { "_COLLISION" "_FOG_VOLUME_NOISE" }
+// 00000000000000100000000000000010:   Keywords { "_COLLISION" }
+// 00002000000000000000200000000000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 20000000000000002000000000000000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000200000000000000020000000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000020000000000000002000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" }
+// 00000020000000000000002000000000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 00200000000000000020000000000000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000002000000000000000200000:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_VOLUME_NOISE" }
+// 00000000000000200000000000000020:   Keywords { "_DOUBLE_LAYER" "_COLLISION" }
+// 00000200000000000000020000000000:   Keywords { "_DOUBLE_LAYER" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 02000000000000000200000000000000:   Keywords { "_DOUBLE_LAYER" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000020000000000000002000000:   Keywords { "_DOUBLE_LAYER" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000002000000000000000200:   Keywords { "_DOUBLE_LAYER" "_FOG_GRADIENT" }
+// 00000002000000000000000200000000:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_INSCATTERING" }
+// 00020000000000000002000000000000:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000000200000000000000020000:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_NOISE" }
+// 00008000000000000000800000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 80000000000000008000000000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000800000000000000080000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000080000000000000008000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" }
+// 00000080000000000000008000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 00800000000000000080000000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000008000000000000000800000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_VOLUME_NOISE" }
+// 00000000000000800000000000000080:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" }
+// 00000800000000000000080000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 08000000000000000800000000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000080000000000000008000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000008000000000000000800:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_GRADIENT" }
+// 00000008000000000000000800000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_INSCATTERING" }
+// 00080000000000000008000000000000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000000800000000000000080000:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_NOISE" }
+// 00000000000000080000000000000008:   Keywords { "_DOUBLE_LAYER" "_SHADE" }
+// 00000000000000020000000000000002:   Keywords { "_DOUBLE_LAYER" }
+// 00000100000000000000010000000000:   Keywords { "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 01000000000000000100000000000000:   Keywords { "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000010000000000000001000000:   Keywords { "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000001000000000000000100:   Keywords { "_FOG_GRADIENT" }
+// 00000001000000000000000100000000:   Keywords { "_FOG_VOLUME_INSCATTERING" }
+// 00010000000000000001000000000000:   Keywords { "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000000100000000000000010000:   Keywords { "_FOG_VOLUME_NOISE" }
+// 00004000000000000000400000000000:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 40000000000000004000000000000000:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000400000000000000040000000:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000040000000000000004000:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" }
+// 00000040000000000000004000000000:   Keywords { "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 00400000000000000040000000000000:   Keywords { "_SHADE" "_COLLISION" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000004000000000000000400000:   Keywords { "_SHADE" "_COLLISION" "_FOG_VOLUME_NOISE" }
+// 00000000000000400000000000000040:   Keywords { "_SHADE" "_COLLISION" }
+// 00000400000000000000040000000000:   Keywords { "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 04000000000000000400000000000000:   Keywords { "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000040000000000000004000000:   Keywords { "_SHADE" "_FOG_GRADIENT" "_FOG_VOLUME_NOISE" }
+// 00000000000004000000000000000400:   Keywords { "_SHADE" "_FOG_GRADIENT" }
+// 00000004000000000000000400000000:   Keywords { "_SHADE" "_FOG_VOLUME_INSCATTERING" }
+// 00040000000000000004000000000000:   Keywords { "_SHADE" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 00000000000400000000000000040000:   Keywords { "_SHADE" "_FOG_VOLUME_NOISE" }
+// 00000000000000040000000000000004:   Keywords { "_SHADE" }
+//                                     undeciphered2: 1 0 3 0 0 0
+//                                     undeciphered3: 1 1 0 0
+// 3333ffff3333ffffffffffffffffffff:   ConstBuffer "$Globals" 320
+// cccc0000cccc00000000000000000000:   ConstBuffer "$Globals" 336
+//                                     Vector 240 [L] 3
+//                                     ConstBuffer "UnityPerCamera" 144
+//                                     Vector 64 [_WorldSpaceCameraPos] 3
+//                                     Vector 80 [_ProjectionParams]
+//                                     ConstBuffer "UnityPerDraw" 352
+//                                     Matrix 0 [glstate_matrix_mvp]
+//                                     Matrix 64 [glstate_matrix_modelview0]
+//                                     Matrix 192 [unity_ObjectToWorld]
+//                                     Matrix 256 [unity_WorldToObject]
+//                                     BindCB "$Globals" 0
+//                                     BindCB "UnityPerCamera" 1
+//                                     BindCB "UnityPerDraw" 2
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:16:00 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// TANGENT                  0   xyzw        1     NONE   float       
+// NORMAL                   0   xyz         2     NONE   float       
+// TEXCOORD                 0   xyzw        3     NONE   float       
+// TEXCOORD                 1   xyzw        4     NONE   float       
+// TEXCOORD                 2   xyzw        5     NONE   float       
+// TEXCOORD                 3   xyzw        6     NONE   float       
+// COLOR                    0   xyzw        7     NONE   float       
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xyz         1     NONE   float   xyz 
+// TEXCOORD                 1   xyzw        2     NONE   float   xyzw
+// TEXCOORD                 2   xyz         3     NONE   float   xyz 
+// TEXCOORD                 3   xyz         4     NONE   float   xyz 
+// TEXCOORD                 4   xyz         5     NONE   float   xyz 
+// TEXCOORD                 5   xyz         6     NONE   float   xyz 
+//
+vs_4_0
+dcl_constantbuffer cb0[16], immediateIndexed
+dcl_constantbuffer cb1[9], immediateIndexed
+dcl_constantbuffer cb2[22], immediateIndexed
+dcl_input v0.xyzw
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xyz
+dcl_output o2.xyzw
+dcl_output o3.xyz
+dcl_output o4.xyz
+dcl_output o5.xyz
+dcl_output o6.xyz
+dcl_temps 7
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
+
+ld_indexable(texture2d)(float,float,float,float) r2.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+
+// Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 386663f39ac6b5bd-vs.txt
+mov r3.xyzw, cb1[4].xyzw
+mov r4.xyzw, l(0)
+mul r4.x, -r2.x, r2.y
+mul r6.xyzw, cb10[0].xyzw, r4.xxxx
+mad r6.xyzw, cb10[1].xyzw, r4.yyyy, r6.xyzw
+mad r6.xyzw, cb10[2].xyzw, r4.zzzz, r6.xyzw
+mad r6.xyzw, cb10[3].xyzw, r4.wwww, r6.xyzw
+mul r5.xyzw, cb11[12].xyzw, r6.xxxx
+mad r5.xyzw, cb11[13].xyzw, r6.yyyy, r5.xyzw
+mad r5.xyzw, cb11[14].xyzw, r6.zzzz, r5.xyzw
+mad r5.xyzw, cb11[15].xyzw, r6.wwww, r5.xyzw
+add r3.xyz, r3.xyz, -r5.xyz
+
+mul r0.xyzw, v0.yyyy, cb2[1].xyzw
+mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
+mad r0.xyzw, cb2[3].xyzw, v0.wwww, r0.xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 386663f39ac6b5bd-vs.txt
+ne r2.w, r0.w, l(1.0)
+if_nz r2.w
+  add r2.w, r0.w, -r2.y
+  mad r0.x, r2.w, r2.x, r0.x
+endif
+
+mul r1.xyz, v0.yyyy, cb2[13].xyzx
+mad r1.xyz, cb2[12].xyzx, v0.xxxx, r1.xyzx
+mad r1.xyz, cb2[14].xyzx, v0.zzzz, r1.xyzx
+add o1.xyz, r1.xyzx, cb2[15].xyzx
+mul r0.y, r0.y, cb1[5].x
+mul r1.xzw, r0.xxwy, l(0.500000, 0.000000, 0.500000, 0.500000)
+mov o2.zw, r0.zzzw
+add o2.xy, r1.zzzz, r1.xwxx
+mov o3.xyz, v0.xyzx
+mul r0.xyz, v0.yyyy, cb2[5].xyzx
+mad r0.xyz, cb2[4].xyzx, v0.xxxx, r0.xyzx
+mad r0.xyz, cb2[6].xyzx, v0.zzzz, r0.xyzx
+add o4.xyz, r0.xyzx, cb2[7].xyzx
+mul r0.xyz, r3.yyyy, cb2[17].xyzx
+mad r0.xyz, cb2[16].xyzx, r3.xxxx, r0.xyzx
+mad r0.xyz, cb2[18].xyzx, r3.zzzz, r0.xyzx
+add o5.xyz, r0.xyzx, cb2[19].xyzx
+mul r0.xyz, cb0[15].yyyy, cb2[17].xyzx
+mad r0.xyz, cb2[16].xyzx, cb0[15].xxxx, r0.xyzx
+mad r0.xyz, cb2[18].xyzx, cb0[15].zzzz, r0.xyzx
+add o6.xyz, r0.xyzx, cb2[19].xyzx
+ret 
+// Approximately 0 instruction slots used

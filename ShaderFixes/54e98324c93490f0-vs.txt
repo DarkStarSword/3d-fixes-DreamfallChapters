@@ -1,0 +1,239 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 54e98324c93490f0-vs.txt
+// 3DMigoto: 54e98324c93490f0 | Matched 36 variants of 1 shaders: ProBuilder/Standard Vertex Color
+//
+//               Unity headers extracted from pb_StandardVertexColor.shader
+//               Shader "ProBuilder/Standard Vertex Color" {
+//                 Properties {
+//                  _BumpMap ("Normal Map", 2D) = "bump" { }
+//                  _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//                  _MainTex ("Base Color", 2D) = "white" { }
+//                  _Metallic ("Metallic", Range(0.000000,1.000000)) = 0.000000
+//                  _Gloss ("Gloss", Range(0.000000,1.000000)) = 0.800000
+//                 }
+//                 Fallback "Diffuse"
+//                 SubShader 1/1 {
+//                   Tags { "RenderType"="Opaque" }
+//                   Pass 2/2 {
+//                     Name "FORWARD_DELTA"
+//                     Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//                     Blend One One
+//                     GpuProgramID 97548
+//                     Program "vp" {
+//                       SubProgram "d3d11 " {
+// 000000001:              GpuProgramIndex 301
+// 000000002:              GpuProgramIndex 304
+// 000000004:              GpuProgramIndex 314
+// 000000008:              GpuProgramIndex 317
+// 000000010:              GpuProgramIndex 327
+// 000000020:              GpuProgramIndex 330
+// 000000040:              GpuProgramIndex 353
+// 000000080:              GpuProgramIndex 356
+// 000000100:              GpuProgramIndex 366
+// 000000200:              GpuProgramIndex 369
+// 000000400:              GpuProgramIndex 379
+// 000000800:              GpuProgramIndex 382
+// 000001000:              GpuProgramIndex 405
+// 000002000:              GpuProgramIndex 408
+// 000004000:              GpuProgramIndex 418
+// 000008000:              GpuProgramIndex 421
+// 000010000:              GpuProgramIndex 431
+// 000020000:              GpuProgramIndex 434
+// 000040000:              GpuProgramIndex 457
+// 000080000:              GpuProgramIndex 460
+// 000100000:              GpuProgramIndex 470
+// 000200000:              GpuProgramIndex 473
+// 000400000:              GpuProgramIndex 483
+// 000800000:              GpuProgramIndex 486
+// 001000000:              GpuProgramIndex 509
+// 002000000:              GpuProgramIndex 512
+// 004000000:              GpuProgramIndex 522
+// 008000000:              GpuProgramIndex 525
+// 010000000:              GpuProgramIndex 535
+// 020000000:              GpuProgramIndex 538
+// 040000000:              GpuProgramIndex 561
+// 080000000:              GpuProgramIndex 564
+// 100000000:              GpuProgramIndex 574
+// 200000000:              GpuProgramIndex 577
+// 400000000:              GpuProgramIndex 587
+// 800000000:              GpuProgramIndex 590
+//                       }
+//                     }
+//                   }
+//                 }
+//               }
+//
+//            Unity 5.3 headers extracted from pb_StandardVertexColor.shader.decompressed:
+//              API d3d11
+//              Shader model vs_4_0
+//              undeciphered1: 201510240 38 0 0
+// 000000100:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 000000400:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 000000040:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000004000:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 000010000:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 000001000:   Keywords { "POINT" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000000004:   Keywords { "POINT" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
+// 000000010:   Keywords { "POINT" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "DIRLIGHTMAP_OFF" }
+// 000000001:   Keywords { "POINT" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
+// 004000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 010000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 001000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 100000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 400000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 040000000:   Keywords { "POINT" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000100000:   Keywords { "POINT" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
+// 000400000:   Keywords { "POINT" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "DIRLIGHTMAP_OFF" }
+// 000040000:   Keywords { "POINT" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
+// 000000200:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 000000800:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 000000080:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000008000:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 000020000:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 000002000:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000000008:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
+// 000000020:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "DIRLIGHTMAP_OFF" }
+// 000000002:   Keywords { "POINT_COOKIE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
+// 008000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 020000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 002000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 200000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 800000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
+// 080000000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 000200000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
+// 000800000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "DIRLIGHTMAP_OFF" }
+// 000080000:   Keywords { "POINT_COOKIE" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
+//              undeciphered2: 1 0 2 0 0 0
+//              undeciphered3: 191 7 0 0 2 1 1 2 3 4 4 5 5 6 7 8
+//              ConstBuffer "$Globals" 256
+//              Matrix 96 [unity_WorldToLight]
+//              ConstBuffer "UnityPerDraw" 352
+//              Matrix 0 [glstate_matrix_mvp]
+//              Matrix 192 [unity_ObjectToWorld]
+//              Matrix 256 [unity_WorldToObject]
+//              BindCB "$Globals" 0
+//              BindCB "UnityPerDraw" 1
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:23:52 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// NORMAL                   0   xyz         1     NONE   float   xyz 
+// TANGENT                  0   xyzw        2     NONE   float   xyzw
+// TEXCOORD                 0   xy          3     NONE   float   xy  
+// TEXCOORD                 1   xy          4     NONE   float   xy  
+// TEXCOORD                 2   xy          5     NONE   float   xy  
+// COLOR                    0   xyzw        6     NONE   float   xyzw
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xy          1     NONE   float   xy  
+// TEXCOORD                 1     zw        1     NONE   float     zw
+// TEXCOORD                 2   xy          2     NONE   float   xy  
+// TEXCOORD                 9     z         2     NONE   float     z 
+// TEXCOORD                 3   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 4   xyz         4     NONE   float   xyz 
+// TEXCOORD                 5   xyz         5     NONE   float   xyz 
+// TEXCOORD                 6   xyz         6     NONE   float   xyz 
+// COLOR                    0   xyzw        7     NONE   float   xyzw
+// TEXCOORD                 7   xyz         8     NONE   float   xyz 
+//
+vs_4_0
+dcl_constantbuffer cb0[10], immediateIndexed
+dcl_constantbuffer cb1[19], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v1.xyz
+dcl_input v2.xyzw
+dcl_input v3.xy
+dcl_input v4.xy
+dcl_input v5.xy
+dcl_input v6.xyzw
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xy
+dcl_output o1.zw
+dcl_output o2.xy
+dcl_output o2.z
+dcl_output o3.xyzw
+dcl_output o4.xyz
+dcl_output o5.xyz
+dcl_output o6.xyz
+dcl_output o7.xyzw
+dcl_output o8.xyz
+dcl_temps 5
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb1[1].xyzw
+mad r0.xyzw, cb1[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb1[2].xyzw, v0.zzzz, r0.xyzw
+mad r0.xyzw, cb1[3].xyzw, v0.wwww, r0.xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 54e98324c93490f0-vs.txt
+ne r4.w, r0.w, l(1.0)
+if_nz r4.w
+  add r4.w, r0.w, -r4.y
+  mad r0.x, r4.w, r4.x, r0.x
+endif
+
+mov o2.z, r0.z
+mov o1.xy, v3.xyxx
+mov o1.zw, v4.xxxy
+mov o2.xy, v5.xyxx
+mul r0.xyzw, v0.yyyy, cb1[13].xyzw
+mad r0.xyzw, cb1[12].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb1[14].xyzw, v0.zzzz, r0.xyzw
+mad r0.xyzw, cb1[15].xyzw, v0.wwww, r0.xyzw
+mov o3.xyzw, r0.xyzw
+mul r1.x, v1.x, cb1[16].x
+mul r1.y, v1.x, cb1[17].x
+mul r1.z, v1.x, cb1[18].x
+mul r2.x, v1.y, cb1[16].y
+mul r2.y, v1.y, cb1[17].y
+mul r2.z, v1.y, cb1[18].y
+add r1.xyz, r1.xyzx, r2.xyzx
+mul r2.x, v1.z, cb1[16].z
+mul r2.y, v1.z, cb1[17].z
+mul r2.z, v1.z, cb1[18].z
+add r1.xyz, r1.xyzx, r2.xyzx
+dp3 r1.w, r1.xyzx, r1.xyzx
+rsq r1.w, r1.w
+mul r1.xyz, r1.wwww, r1.xyzx
+mov o4.xyz, r1.xyzx
+mul r2.xyz, v2.yyyy, cb1[13].xyzx
+mad r2.xyz, cb1[12].xyzx, v2.xxxx, r2.xyzx
+mad r2.xyz, cb1[14].xyzx, v2.zzzz, r2.xyzx
+dp3 r1.w, r2.xyzx, r2.xyzx
+rsq r1.w, r1.w
+mul r2.xyz, r1.wwww, r2.xyzx
+mov o5.xyz, r2.xyzx
+mul r3.xyz, r1.zxyz, r2.yzxy
+mad r1.xyz, r1.yzxy, r2.zxyz, -r3.xyzx
+mul r1.xyz, r1.xyzx, v2.wwww
+dp3 r1.w, r1.xyzx, r1.xyzx
+rsq r1.w, r1.w
+mul o6.xyz, r1.wwww, r1.xyzx
+mov o7.xyzw, v6.xyzw
+mul r1.xyz, r0.yyyy, cb0[7].xyzx
+mad r1.xyz, cb0[6].xyzx, r0.xxxx, r1.xyzx
+mad r0.xyz, cb0[8].xyzx, r0.zzzz, r1.xyzx
+mad o8.xyz, cb0[9].xyzx, r0.wwww, r0.xyzx
+ret 
+// Approximately 0 instruction slots used
