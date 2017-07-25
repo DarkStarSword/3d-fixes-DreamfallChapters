@@ -1,0 +1,507 @@
+// asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 6f20776bb0c9323e-ps.txt
+// 3DMigoto: 6f20776bb0c9323e |    Unity headers extracted from Reflect-Parallax_Fresnel_Illum.shader
+//    Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum" {
+//      Properties {
+//       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+//       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//       _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
+//       _Parallax ("Parallax", Float) = 0.000000
+//       _ParallaxAdjust ("Parallax Adjust(RG - OFFSET), B - Vertex Alpha Multiply", Vector) = (0.000000,0.000000,0.000000,0.000000)
+//       _ParallaxScrollSpeed (" PArralax Scroll Speed, X - Y ", Vector) = (0.000000,0.000000,0.000000,0.000000)
+//       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//       _BumpMap ("Normalmap", 2D) = "bump" { }
+//       _IllumMap ("IllumMap (RGB)", 2D) = "black" { }
+//       _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
+//       _IllumMapScale ("Illum Map Scale", Float) = 1.000000
+//       _IllumMaskScale ("Illum Mask Scale", Float) = 1.000000
+//       _IllumDepth ("IllumDepth", Float) = 0.400000
+//       _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
+//       _IllumColorScale ("IllumColor Scale", Float) = 1.000000
+//       _ReflAmount ("Reflection amount", Float) = 1.000000
+//       _ReflPow ("Reflection pow", Float) = 1.000000
+//       _InteriorPow ("Interior pow", Float) = 1.000000
+//       _InteriorAspect ("Interior Aspect", Float) = 1.000000
+//       _InteriorDistort ("Interior Distort", Range(0.000000,2.000000)) = 0.000000
+//       _Gloss ("Gloss", Range(0.000000,1.000000)) = 1.000000
+//       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
+//      }
+//      Fallback "Legacy Shaders/Diffuse"
+//      SubShader 1/2 {
+//        LOD 1000
+//        Tags { "RenderType"="Opaque" }
+//        Pass 1/3 {
+//          Name "FORWARD"
+//          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//          GpuProgramID 28986
+//          Program "fp" {
+//            SubProgram "d3d11 " {
+//              GpuProgramIndex 91
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+// Unity 5.3 headers extracted from Reflect-Parallax_Fresnel_Illum.shader.decompressed:
+//   API d3d11
+//   Shader model ps_4_0
+//   undeciphered1: 201510240 272 11 4
+//   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "LOD_FADE_CROSSFADE" }
+//   undeciphered2: 1 11 6 9 0 0
+//   undeciphered3: 0 0
+//   ConstBuffer "$Globals" 288
+//   Vector 32 [unity_ColorSpaceDielectricSpec]
+//   Vector 48 [unity_ColorSpaceLuminance]
+//   Vector 64 [unity_Lightmap_HDR]
+//   Vector 96 [_LightColor0]
+//   Vector 128 [_Color]
+//   Vector 144 [_ReflectColor]
+//   Float 160 [_Parallax]
+//   Float 164 [_Fresnel]
+//   Float 168 [_IllumMapScale]
+//   Vector 176 [_IllumColor] 3
+//   Float 188 [_IllumColorScale]
+//   Float 196 [_IllumDepth]
+//   Float 200 [_ReflAmount]
+//   Float 204 [_ReflPow]
+//   Vector 208 [_ParallaxAdjust]
+//   Float 224 [_InteriorPow]
+//   Float 228 [_InteriorAspect]
+//   Float 232 [_InteriorDistort]
+//   Float 236 [_Gloss]
+//   Float 240 [_Metalness]
+//   ConstBuffer "UnityPerCamera" 144
+//   Vector 64 [_WorldSpaceCameraPos] 3
+//   ConstBuffer "UnityLighting" 720
+//   Vector 0 [_WorldSpaceLightPos0]
+//   ConstBuffer "UnityShadows" 416
+//   Vector 384 [_LightShadowData]
+//   ConstBuffer "UnityPerDraw" 352
+//   Vector 320 [unity_LODFade]
+//   ConstBuffer "UnityReflectionProbes" 128
+//   Vector 0 [unity_SpecCube0_BoxMax]
+//   Vector 16 [unity_SpecCube0_BoxMin]
+//   Vector 32 [unity_SpecCube0_ProbePosition]
+//   Vector 48 [unity_SpecCube0_HDR]
+//   Vector 64 [unity_SpecCube1_BoxMax]
+//   Vector 80 [unity_SpecCube1_BoxMin]
+//   Vector 96 [unity_SpecCube1_ProbePosition]
+//   Vector 112 [unity_SpecCube1_HDR]
+//   SetTexture 0 [_MainTex] 2D 4
+//   SetTexture 1 [_IllumMask] 2D 8
+//   SetTexture 2 [_BumpMap] 2D 5
+//   SetTexture 3 [_Cube] CUBE 6
+//   SetTexture 4 [_IllumMap] 2D 7
+//   SetTexture 5 [_DitherMaskLOD2D] 2D 2
+//   SetTexture 6 [_ShadowMapTexture] 2D 3
+//   SetTexture 7 [unity_Lightmap] 2D 0
+//   SetTexture 8 [unity_LightmapInd] 2D -1
+//   SetTexture 9 [unity_SpecCube0] CUBE 1
+//   SetTexture 10 [unity_SpecCube1] CUBE -1
+//   BindCB "$Globals" 0
+//   BindCB "UnityPerCamera" 1
+//   BindCB "UnityLighting" 2
+//   BindCB "UnityShadows" 3
+//   BindCB "UnityPerDraw" 4
+//   BindCB "UnityReflectionProbes" 5
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:32:51 2017
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float       
+// TEXCOORD                 0   xyzw        1     NONE   float   xyzw
+// TEXCOORD                 1   xyzw        2     NONE   float   xyzw
+// TEXCOORD                 2   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+// COLOR                    0   xyzw        5     NONE   float   xyzw
+// TEXCOORD                 4   xyzw        6     NONE   float       
+// TEXCOORD                 5   xyz         7     NONE   float   xyz 
+// TEXCOORD                 6   xyzw        8     NONE   float   xy  
+// TEXCOORD                 7   xyzw        9     NONE   float   xy w
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_Target                0   xyzw        0   TARGET   float   xyzw
+//
+ps_4_0
+dcl_constantbuffer cb0[16], immediateIndexed
+dcl_constantbuffer cb1[9], immediateIndexed
+dcl_constantbuffer cb2[1], immediateIndexed
+dcl_constantbuffer cb3[25], immediateIndexed
+dcl_constantbuffer cb4[21], immediateIndexed
+dcl_constantbuffer cb5[8], immediateIndexed
+dcl_sampler s0, mode_default
+dcl_sampler s1, mode_default
+dcl_sampler s2, mode_default
+dcl_sampler s3, mode_default
+dcl_sampler s4, mode_default
+dcl_sampler s5, mode_default
+dcl_sampler s6, mode_default
+dcl_sampler s7, mode_default
+dcl_sampler s8, mode_default
+dcl_resource_texture2d (float,float,float,float) t0
+dcl_resource_texture2d (float,float,float,float) t1
+dcl_resource_texture2d (float,float,float,float) t2
+dcl_resource_texturecube (float,float,float,float) t3
+dcl_resource_texture2d (float,float,float,float) t4
+dcl_resource_texture2d (float,float,float,float) t5
+dcl_resource_texture2d (float,float,float,float) t6
+dcl_resource_texture2d (float,float,float,float) t7
+dcl_resource_texture2d (float,float,float,float) t8
+dcl_resource_texturecube (float,float,float,float) t9
+dcl_resource_texturecube (float,float,float,float) t10
+dcl_input_ps linear v1.xyzw
+dcl_input_ps linear v2.xyzw
+dcl_input_ps linear v3.xyzw
+dcl_input_ps linear v4.xyzw
+dcl_input_ps linear v5.xyzw
+dcl_input_ps linear v7.xyz
+dcl_input_ps linear v8.xy
+dcl_input_ps linear v9.xyw
+dcl_output o0.xyzw
+dcl_temps 23
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r18.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+
+// Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 6f20776bb0c9323e-ps.txt
+mov r19.xyzw, cb1[4].xyzw
+mov r20.xyzw, l(0)
+mul r20.x, -r18.x, r18.y
+mul r22.xyzw, cb10[0].xyzw, r20.xxxx
+mad r22.xyzw, cb10[1].xyzw, r20.yyyy, r22.xyzw
+mad r22.xyzw, cb10[2].xyzw, r20.zzzz, r22.xyzw
+mad r22.xyzw, cb10[3].xyzw, r20.wwww, r22.xyzw
+mul r21.xyzw, cb11[12].xyzw, r22.xxxx
+mad r21.xyzw, cb11[13].xyzw, r22.yyyy, r21.xyzw
+mad r21.xyzw, cb11[14].xyzw, r22.zzzz, r21.xyzw
+mad r21.xyzw, cb11[15].xyzw, r22.wwww, r21.xyzw
+add r19.xyz, r19.xyz, -r21.xyz
+
+mov r0.x, v2.w
+mov r0.y, v3.w
+mov r0.z, v4.w
+add r1.xyz, -r0.xyzx, r19.xyzx
+dp3 r0.w, r1.xyzx, r1.xyzx
+rsq r0.w, r0.w
+mul r2.xyz, r0.wwww, r1.xyzx
+mul r3.xyz, r2.yyyy, v3.xyzx
+mad r3.xyz, v2.xyzx, r2.xxxx, r3.xyzx
+mad r3.xyz, v4.xyzx, r2.zzzz, r3.xyzx
+max r1.w, cb0[10].y, l(0.100000)
+min r1.w, r1.w, l(32.000000)
+mul r2.w, cb0[10].x, l(0.500000)
+dp3 r3.w, r3.xyzx, r3.xyzx
+rsq r3.w, r3.w
+mul r4.xyz, r3.wwww, r3.xyzx
+mad r3.x, r3.z, r3.w, l(0.420000)
+div r3.xy, r4.xyxx, r3.xxxx
+add r3.z, cb0[12].y, l(-0.500000)
+sample r5.xyzw, v1.xyxx, t0.xyzw, s4
+mad r3.zw, r3.zzzz, r3.xxxy, v1.xxxy
+sample r6.xyzw, r3.zwzz, t1.xyzw, s8
+mul r7.xyzw, r5.xyzw, cb0[8].xyzw
+add r3.z, -r6.w, l(1.000000)
+mul r3.z, r3.z, r7.w
+mad r5.xyz, -r5.xyzx, cb0[8].xyzx, r6.xyzx
+mad r5.xyz, r3.zzzz, r5.xyzx, r7.xyzx
+sample r8.xyzw, v1.zwzz, t2.xyzw, s5
+mad r6.xy, r8.wyww, l(2.000000, 2.000000, 0.000000, 0.000000), l(-1.000000, -1.000000, 0.000000, 0.000000)
+dp2 r3.z, r6.xyxx, r6.xyxx
+min r3.z, r3.z, l(1.000000)
+add r3.z, -r3.z, l(1.000000)
+sqrt r6.z, r3.z
+dp3 r7.x, v2.xyzx, r6.xyzx
+dp3 r7.y, v3.xyzx, r6.xyzx
+dp3 r7.z, v4.xyzx, r6.xyzx
+dp3 r3.z, -r2.xyzx, r7.xyzx
+add r3.z, r3.z, r3.z
+mad r8.xyz, r7.xyzx, -r3.zzzz, -r2.xyzx
+sample r9.xyzw, r8.xyzx, t3.xyzw, s6
+log r9.xyz, r9.xyzx
+mul r9.xyz, r9.xyzx, cb0[12].wwww
+exp r9.xyz, r9.xyzx
+mul r9.xyz, r5.wwww, r9.xyzx
+dp3 r3.z, r4.xyzx, r6.xyzx
+add r3.z, -r3.z, l(1.000000)
+log r3.z, r3.z
+mul r1.w, r1.w, r3.z
+exp r1.w, r1.w
+min r1.w, r1.w, l(1.000000)
+mul r1.w, r1.w, cb0[12].z
+mul r4.xyz, r1.wwww, r9.xyzx
+mul r1.w, v1.x, cb0[10].z
+mad r1.w, r1.w, cb0[14].y, cb0[13].x
+mad r9.y, v1.y, cb0[10].z, cb0[13].y
+add r3.z, v5.w, l(-1.000000)
+mad r9.x, r3.z, -cb0[13].z, r1.w
+mad r3.xy, r2.wwww, r3.xyxx, r9.xyxx
+mul r3.zw, r6.xxxy, cb0[14].zzzz
+mad r3.xy, r3.zwzz, r5.wwww, r3.xyxx
+sample r3.xyzw, r3.xyxx, t4.xyzw, s7
+log r3.xyz, r3.xyzx
+mul r3.xyz, r3.xyzx, cb0[14].xxxx
+exp r3.xyz, r3.xyzx
+mul r6.xyz, v5.xyzx, cb0[11].xyzx
+mul r6.xyz, r6.xyzx, cb0[11].wwww
+mul r6.xyz, r6.wwww, r6.xyzx
+mul r3.xyz, r3.xyzx, r6.xyzx
+mul r1.w, r7.w, cb0[14].w
+mul r4.xyz, r4.xyzx, cb0[9].xyzx
+mad r3.xyz, r3.xyzx, r5.wwww, r4.xyzx
+div r4.xy, v7.xyxx, v7.zzzz
+frc r2.w, r4.y
+mad r4.z, r2.w, l(0.062500), cb4[20].y
+sample r4.xyzw, r4.xzxx, t5.xyzw, s2
+add r2.w, r4.w, l(-0.500000)
+lt r2.w, r2.w, l(0.000000)
+discard_nz r2.w
+div r4.xy, v9.xyxx, v9.wwww
+sample r4.xyzw, r4.xyxx, t6.xyzw, s3
+mad r2.w, -cb0[14].w, r7.w, l(1.000000)
+sample r6.xyzw, v8.xyxx, t7.xyzw, s0
+log r3.w, r6.w
+mul r3.w, r3.w, cb0[4].y
+exp r3.w, r3.w
+mul r3.w, r3.w, cb0[4].x
+mul r4.yzw, r6.xxyz, r3.wwww
+sample r9.xyzw, v8.xyxx, t8.xyzw, s0
+mad r9.xyz, r9.xyzx, l(2.000000, 2.000000, 2.000000, 0.000000), l(-1.000000, -1.000000, -1.000000, 0.000000)
+dp3 r3.w, r9.xyzx, r9.xyzx
+sqrt r3.w, r3.w
+max r3.w, r3.w, l(0.001000)
+div r9.xyz, r9.xyzx, r3.wwww
+dp3 r5.w, r7.xyzx, r9.xyzx
+max r5.w, r5.w, l(0.000000)
+add r6.w, -r3.w, l(1.000000)
+mul r10.xyz, r4.yzwy, r6.wwww
+mul r11.xyz, r3.wwww, r4.yzwy
+add r12.xy, v8.xyxx, l(0.500000, 0.000000, 0.000000, 0.000000)
+sample r13.xyzw, r12.xyxx, t7.xyzw, s0
+log r6.w, r13.w
+mul r6.w, r6.w, cb0[4].y
+exp r6.w, r6.w
+mul r6.w, r6.w, cb0[4].x
+mul r13.xyz, r13.xyzx, r6.wwww
+sample r12.xyzw, r12.xyxx, t8.xyzw, s0
+mad r12.xyz, r12.xyzx, l(2.000000, 2.000000, 2.000000, 0.000000), l(-1.000000, -1.000000, -1.000000, 0.000000)
+dp3 r6.w, r12.xyzx, r12.xyzx
+sqrt r6.w, r6.w
+max r6.w, r6.w, l(0.001000)
+div r12.xyz, r12.xyzx, r6.wwww
+dp3 r8.w, r7.xyzx, r12.xyzx
+max r8.w, r8.w, l(0.000000)
+add r9.w, -r6.w, l(1.000000)
+mul r14.xyz, r9.wwww, r13.xyzx
+mul r15.xyz, r6.wwww, r13.xyzx
+mul r14.xyz, r8.wwww, r14.xyzx
+mad r10.xyz, r10.xyzx, r5.wwww, r14.xyzx
+dp3_sat r9.w, r7.xyzx, cb2[0].xyzx
+add r10.w, -r4.x, l(1.000000)
+mul r9.w, r9.w, r10.w
+mul r14.xyz, r9.wwww, cb0[6].xyzx
+mad r16.xyz, r4.yzwy, r3.wwww, -r14.xyzx
+mul r6.xyz, r4.xxxx, r6.xyzx
+max r16.xyz, r16.xyzx, r6.xyzx
+mad r4.xyz, r4.yzwy, r3.wwww, -r16.xyzx
+mad r4.xyz, cb3[24].xxxx, r4.xyzx, r16.xyzx
+min r4.xyz, r4.xyzx, r11.xyzx
+mad r11.xyz, r13.xyzx, r6.wwww, -r14.xyzx
+max r11.xyz, r6.xyzx, r11.xyzx
+mad r13.xyz, r13.xyzx, r6.wwww, -r11.xyzx
+mad r11.xyz, cb3[24].xxxx, r13.xyzx, r11.xyzx
+min r11.xyz, r11.xyzx, r15.xyzx
+mad r13.xyz, -r9.wwww, cb0[6].xyzx, r10.xyzx
+max r6.xyz, r6.xyzx, r13.xyzx
+add r13.xyz, -r6.xyzx, r10.xyzx
+mad r6.xyz, cb3[24].xxxx, r13.xyzx, r6.xyzx
+min r6.xyz, r6.xyzx, r10.xyzx
+lt r3.w, l(0.000000), cb5[2].w
+if_nz r3.w
+  dp3 r3.w, r8.xyzx, r8.xyzx
+  rsq r3.w, r3.w
+  mul r10.xyz, r3.wwww, r8.xyzx
+  add r13.xyz, -r0.xyzx, cb5[0].xyzx
+  div r13.xyz, r13.xyzx, r10.xyzx
+  add r14.xyz, -r0.xyzx, cb5[1].xyzx
+  div r14.xyz, r14.xyzx, r10.xyzx
+  lt r15.xyz, l(0.000000, 0.000000, 0.000000, 0.000000), r10.xyzx
+  movc r13.xyz, r15.xyzx, r13.xyzx, r14.xyzx
+  min r3.w, r13.y, r13.x
+  min r3.w, r13.z, r3.w
+  add r13.xyz, r0.xyzx, -cb5[2].xyzx
+  mad r10.xyz, r10.xyzx, r3.wwww, r13.xyzx
+else 
+  mov r10.xyz, r8.xyzx
+endif 
+log r3.w, r2.w
+mul r3.w, r3.w, l(0.750000)
+exp r3.w, r3.w
+mad r4.w, -r3.w, l(0.700000), l(1.700000)
+mul r3.w, r3.w, r4.w
+mul r3.w, r3.w, l(6.000000)
+sample_l r10.xyzw, r10.xyzx, t9.xyzw, s1, r3.w
+log r4.w, r10.w
+mul r4.w, r4.w, cb5[3].y
+exp r4.w, r4.w
+mul r4.w, r4.w, cb5[3].x
+mul r13.xyz, r10.xyzx, r4.wwww
+lt r6.w, cb5[1].w, l(0.999990)
+if_nz r6.w
+  lt r6.w, l(0.000000), cb5[6].w
+  if_nz r6.w
+    dp3 r6.w, r8.xyzx, r8.xyzx
+    rsq r6.w, r6.w
+    mul r14.xyz, r6.wwww, r8.xyzx
+    add r15.xyz, -r0.xyzx, cb5[4].xyzx
+    div r15.xyz, r15.xyzx, r14.xyzx
+    add r16.xyz, -r0.xyzx, cb5[5].xyzx
+    div r16.xyz, r16.xyzx, r14.xyzx
+    lt r17.xyz, l(0.000000, 0.000000, 0.000000, 0.000000), r14.xyzx
+    movc r15.xyz, r17.xyzx, r15.xyzx, r16.xyzx
+    min r6.w, r15.y, r15.x
+    min r6.w, r15.z, r6.w
+    add r0.xyz, r0.xyzx, -cb5[6].xyzx
+    mad r8.xyz, r14.xyzx, r6.wwww, r0.xyzx
+  endif 
+  sample_l r14.xyzw, r8.xyzx, t10.xyzw, s1, r3.w
+  log r0.x, r14.w
+  mul r0.x, r0.x, cb5[7].y
+  exp r0.x, r0.x
+  mul r0.x, r0.x, cb5[7].x
+  mul r0.xyz, r14.xyzx, r0.xxxx
+  mad r8.xyz, r4.wwww, r10.xyzx, -r0.xyzx
+  mad r13.xyz, cb5[1].wwww, r8.xyzx, r0.xyzx
+endif 
+dp3 r0.x, r7.xyzx, r7.xyzx
+rsq r0.x, r0.x
+mul r0.xyz, r0.xxxx, r7.xyzx
+add r7.xyz, r5.xyzx, -cb0[2].xyzx
+mad r7.xyz, cb0[15].xxxx, r7.xyzx, cb0[2].xyzx
+mad r3.w, -cb0[15].x, cb0[2].w, cb0[2].w
+mul r5.xyz, r3.wwww, r5.xyzx
+mad r8.xyz, r1.xyzx, r0.wwww, r9.xyzx
+dp3 r4.w, r8.xyzx, r8.xyzx
+max r4.w, r4.w, l(0.001000)
+rsq r4.w, r4.w
+mul r8.xyz, r4.wwww, r8.xyzx
+dp3 r4.w, r0.xyzx, r8.xyzx
+max r4.w, r4.w, l(0.000000)
+dp3 r2.x, r0.xyzx, r2.xyzx
+dp3 r2.y, r9.xyzx, r8.xyzx
+max r2.xy, r2.xyxx, l(0.000000, 0.000000, 0.000000, 0.000000)
+mul r2.z, r2.w, r2.w
+mul r6.w, r2.z, l(0.797884583)
+mad r8.x, -r2.z, l(0.797884583), l(1.000000)
+mad r8.y, r5.w, r8.x, r6.w
+mad r6.w, r2.x, r8.x, r6.w
+mad r6.w, r8.y, r6.w, l(0.000010)
+div r6.w, l(1.000000, 1.000000, 1.000000, 1.000000), r6.w
+add r8.x, -r2.w, l(1.000000)
+mad r8.x, r8.x, l(0.968000), l(0.030000)
+log r8.x, r8.x
+div r8.x, l(10.000000), r8.x
+mul r8.y, r8.x, r8.x
+mad r8.xz, r8.xxxx, r8.xxxx, l(2.000000, 0.000000, 1.000000, 0.000000)
+mul r8.x, r8.x, l(0.159154937)
+log r4.w, r4.w
+mul r4.w, r4.w, r8.y
+exp r4.w, r4.w
+mul r4.w, r8.x, r4.w
+add r8.x, -r5.w, l(1.000000)
+mul r9.x, r8.x, r8.x
+mul r9.x, r9.x, r9.x
+mul r8.x, r8.x, r9.x
+add r2.x, -r2.x, l(1.000000)
+mul r9.x, r2.x, r2.x
+mul r9.x, r9.x, r9.x
+mul r2.x, r2.x, r9.x
+mul r9.x, r2.y, r2.y
+dp2 r9.x, r9.xxxx, r2.wwww
+add r9.x, r9.x, l(-0.500000)
+mad r8.x, r9.x, r8.x, l(1.000000)
+mad r9.x, r9.x, r2.x, l(1.000000)
+mul r8.x, r8.x, r9.x
+mul r4.w, r4.w, r6.w
+mul r4.w, r4.w, l(0.785398185)
+eq r6.w, cb0[3].w, l(0.000000)
+max r9.x, r4.w, l(0.000100)
+sqrt r9.x, r9.x
+movc r4.w, r6.w, r9.x, r4.w
+mul r4.w, r5.w, r4.w
+max r4.w, r4.w, l(0.000000)
+mul r5.w, r5.w, r8.x
+mul r2.w, r2.z, r2.w
+mad r2.w, -r2.w, l(0.280000), l(1.000000)
+mad r8.x, r2.z, r2.z, l(1.000000)
+div r8.x, l(1.000000, 1.000000, 1.000000, 1.000000), r8.x
+movc r2.w, r6.w, r2.w, r8.x
+dp3 r8.x, r7.xyzx, r7.xyzx
+ne r8.x, r8.x, l(0.000000)
+and r8.x, r8.x, l(0x3f800000)
+mul r4.w, r4.w, r8.x
+mad r3.w, cb0[14].w, r7.w, -r3.w
+add_sat r3.w, r3.w, l(1.000000)
+mad r6.xyz, r4.xyzx, r5.wwww, r6.xyzx
+mul r4.xyz, r4.xyzx, r4.wwww
+add r2.y, -r2.y, l(1.000000)
+mul r4.w, r2.y, r2.y
+mul r4.w, r4.w, r4.w
+mul r2.y, r2.y, r4.w
+add r9.xyz, -r7.xyzx, l(1.000000, 1.000000, 1.000000, 0.000000)
+mad r9.xyz, r9.xyzx, r2.yyyy, r7.xyzx
+mul r4.xyz, r4.xyzx, r9.xyzx
+mad r4.xyz, r5.xyzx, r6.xyzx, r4.xyzx
+mul r6.xyz, r13.xyzx, r2.wwww
+add r9.xyz, -r7.xyzx, r3.wwww
+mad r2.xyw, r2.xxxx, r9.xyxz, r7.xyxz
+mad r2.xyw, r6.xyxz, r2.xyxw, r4.xyxz
+mad r1.xyz, r1.xyzx, r0.wwww, r12.xyzx
+dp3 r0.w, r1.xyzx, r1.xyzx
+max r0.w, r0.w, l(0.001000)
+rsq r0.w, r0.w
+mul r1.xyz, r0.wwww, r1.xyzx
+dp3 r0.x, r0.xyzx, r1.xyzx
+dp3 r0.y, r12.xyzx, r1.xyzx
+max r0.xy, r0.xyxx, l(0.000000, 0.000000, 0.000000, 0.000000)
+mul r0.z, r0.y, r0.y
+mad r0.z, r0.z, r1.w, r2.z
+log r0.x, r0.x
+mul r0.x, r0.x, r8.y
+exp r0.x, r0.x
+mul r0.x, r0.x, r8.z
+mul r0.y, r0.z, r0.y
+mad r0.y, r0.y, l(8.000000), l(0.000100)
+div r0.x, r0.x, r0.y
+max r0.y, r0.x, l(0.000100)
+sqrt r0.y, r0.y
+movc r0.x, r6.w, r0.y, r0.x
+mad r0.xyz, r0.xxxx, r7.xyzx, r5.xyzx
+mul r0.xyz, r11.xyzx, r0.xyzx
+mad r0.xyz, r0.xyzx, r8.wwww, r2.xywx
+add o0.xyz, r3.xyzx, r0.xyzx
+mov o0.w, l(1.000000)
+ret 
+// Approximately 0 instruction slots used
