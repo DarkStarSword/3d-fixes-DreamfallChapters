@@ -3,7 +3,12 @@ Dreamfall Chapters (All Books)
 
 Update 2017-nn-nn
 -----------------
-- Re-fixed game from scratch (again!) for the DX11 / Unity 5.4 update
+- Re-fixed game from scratch (again!) for the The Final Cut / DX11 and Unity
+  5.4 updates
+
+**NOTE: The old DX9 version of the fix should be removed before installing this one**
+
+**NOTE: The installation instructions have been updated**
 
 Update 2016-06-20
 -----------------
@@ -52,6 +57,15 @@ Installation
 2. If you are running the 32bit version of the game (the GOG version recently
    switched to 32bit, and Steam will install the 32bit version if your OS is
    32bit), replace the DLLS with the ones in the 32bit directory.
+
+3. - Right click on the game in Steam -> Properties -> Set Launch Options ->
+     enter "-window-mode exclusive" (without the quotes) and click "Ok"
+   - If you are not using the steam version, launch the game with the provided
+     "Dreamfall Chapters - 3DMigoto.bat"
+
+4. If the game doesn't start with 3D Vision activated and you have followed
+   step 3 and the in game settings have full screen enabled, you may have to
+   alt+tab out and back, or try pressing alt+enter twice.
 
 Fixed
 -----
