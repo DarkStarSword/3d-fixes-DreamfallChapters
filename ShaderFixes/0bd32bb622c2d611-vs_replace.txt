@@ -1,0 +1,72 @@
+// 3DMigoto: 0bd32bb622c2d611 |    Unity headers extracted from Unlit - Transparent Colored.shader
+//    Shader "Unlit/Transparent Colored" {
+//      Properties {
+//       _MainTex ("Base (RGB), Alpha (A)", 2D) = "black" { }
+//      }
+//      SubShader 1/2 {
+//        LOD 100
+//        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "DisableBatching"="true" "RenderType"="Transparent" }
+//        Pass 1/1 {
+//          Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "DisableBatching"="true" "RenderType"="Transparent" }
+//          ZWrite Off
+//          Cull Off
+//          Blend SrcAlpha OneMinusSrcAlpha
+//          Offset -1.000000, -1.000000
+//          GpuProgramID 31787
+//          Program "vp" {
+//            SubProgram "d3d11 " {
+//              GpuProgramIndex 1
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+// Unity 5.3 headers extracted from Unlit - Transparent Colored.shader.decompressed:
+//   API d3d11
+//   Shader model vs_4_0
+//   undeciphered1: 201510240 4 0 0
+//   undeciphered2: 1 0 1 0 0 0
+//   undeciphered3: 13 3 0 0 2 1 3 4
+//   ConstBuffer "UnityPerDraw" 352
+//   Matrix 0 [glstate_matrix_mvp]
+//   BindCB "UnityPerDraw" 0
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+// ---- Created with 3Dmigoto v1.2.52 on Mon Jul 24 22:10:35 2017
+cbuffer cb0 : register(b0)
+{
+  float4 cb0[4];
+}
+
+
+
+
+// 3Dmigoto declarations
+#define cmp -
+Texture1D<float4> IniParams : register(t120);
+Texture2D<float4> StereoParams : register(t125);
+
+
+void main( 
+  float4 v0 : POSITION0,
+  float2 v1 : TEXCOORD0,
+  float4 v2 : COLOR0,
+  out float4 o0 : SV_POSITION0,
+  out float2 o1 : TEXCOORD0,
+  out float4 o2 : COLOR0)
+{
+  float4 r0;
+  uint4 bitmask, uiDest;
+  float4 fDest;
+
+  r0.xyzw = cb0[1].xyzw * v0.yyyy;
+  r0.xyzw = cb0[0].xyzw * v0.xxxx + r0.xyzw;
+  r0.xyzw = cb0[2].xyzw * v0.zzzz + r0.xyzw;
+  o0.xyzw = cb0[3].xyzw * v0.wwww + r0.xyzw;
+  o1.xy = v1.xy;
+  o2.xyzw = v2.xyzw;
+  return;
+}
