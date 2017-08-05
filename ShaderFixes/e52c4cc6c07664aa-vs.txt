@@ -1,79 +1,69 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed e52c4cc6c07664aa-vs.txt
-// 3DMigoto: e52c4cc6c07664aa | Matched 2 variants of 2 shaders: Hidden/Nature/Tree Creator Leaves Fast Optimized, Hidden/Nature/Tree Creator Leaves Optimized
+// 3DMigoto: e52c4cc6c07664aa |    Unity headers extracted from TreeCreatorLeavesFastOptimized.shader
+//    Shader "Hidden/Nature/Tree Creator Leaves Fast Optimized" {
+//      Properties {
+//       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//       _TranslucencyColor ("Translucency Color", Color) = (0.730000,0.850000,0.410000,1.000000)
+//       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.300000
+//       _TranslucencyViewDependency ("View dependency", Range(0.000000,1.000000)) = 0.700000
+//       _ShadowStrength ("Shadow Strength", Range(0.000000,1.000000)) = 1.000000
+//       _MainTex ("Base (RGB) Alpha (A)", 2D) = "white" { }
+//       _ShadowTex ("Shadow (RGB)", 2D) = "white" { }
+//      [HideInInspector]  _TreeInstanceColor ("TreeInstanceColor", Vector) = (1.000000,1.000000,1.000000,1.000000)
+//      [HideInInspector]  _TreeInstanceScale ("TreeInstanceScale", Vector) = (1.000000,1.000000,1.000000,1.000000)
+//      [HideInInspector]  _SquashAmount ("Squash", Float) = 1.000000
+//      }
+//      Dependency "BillboardShader" = "Hidden/Nature/Tree Creator Leaves Rendertex"
+//      SubShader 1/1 {
+//        LOD 200
+//        Tags { "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
+//        Pass 2/2 {
+//          Name "SHADOWCASTER"
+//          Tags { "LIGHTMODE"="SHADOWCASTER" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TreeLeaf" }
+//          GpuProgramID 94197
+//          Program "vp" {
+//            SubProgram "d3d11_9x " {
+//              GpuProgramIndex 56
+//            }
+//          }
+//        }
+//      }
+//    }
 //
-// 1:    Unity headers extracted from TreeCreatorLeavesFastOptimized.shader
-// 2:    Unity headers extracted from TreeCreatorLeavesOptimized.shader
-// 1:    Shader "Hidden/Nature/Tree Creator Leaves Fast Optimized" {
-// 2:    Shader "Hidden/Nature/Tree Creator Leaves Optimized" {
-//         Properties {
-//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//          _TranslucencyColor ("Translucency Color", Color) = (0.730000,0.850000,0.410000,1.000000)
-//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.300000
-//          _TranslucencyViewDependency ("View dependency", Range(0.000000,1.000000)) = 0.700000
-// 2:       _ShadowStrength ("Shadow Strength", Range(0.000000,1.000000)) = 0.800000
-// 1:       _ShadowStrength ("Shadow Strength", Range(0.000000,1.000000)) = 1.000000
-// 2:       _ShadowOffsetScale ("Shadow Offset Scale", Float) = 1.000000
-//          _MainTex ("Base (RGB) Alpha (A)", 2D) = "white" { }
-//          _ShadowTex ("Shadow (RGB)", 2D) = "white" { }
-// 2:       _BumpSpecMap ("Normalmap (GA) Spec (R) Shadow Offset (B)", 2D) = "bump" { }
-// 2:       _TranslucencyMap ("Trans (B) Gloss(A)", 2D) = "white" { }
-//         [HideInInspector]  _TreeInstanceColor ("TreeInstanceColor", Vector) = (1.000000,1.000000,1.000000,1.000000)
-//         [HideInInspector]  _TreeInstanceScale ("TreeInstanceScale", Vector) = (1.000000,1.000000,1.000000,1.000000)
-//         [HideInInspector]  _SquashAmount ("Squash", Float) = 1.000000
-//         }
-//         Dependency "BillboardShader" = "Hidden/Nature/Tree Creator Leaves Rendertex"
-//         SubShader 1/1 {
-//           LOD 200
-//           Tags { "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
-//           Pass 2/2 {
-//             Name "SHADOWCASTER"
-//             Tags { "LIGHTMODE"="SHADOWCASTER" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TreeLeaf" }
-// 2:          GpuProgramID 78969
-// 1:          GpuProgramID 94197
-//             Program "vp" {
-//               SubProgram "d3d11_9x " {
-//                 GpuProgramIndex 74
-//               }
-//             }
-//           }
-//         }
-//       }
-//
-// 1: Unity 5.3 headers extracted from TreeCreatorLeavesFastOptimized.shader.decompressed:
-// 2: Unity 5.3 headers extracted from TreeCreatorLeavesOptimized.shader.decompressed:
-//      API d3d11_9x
-//      Shader model vs_4_0_level_9_1
-//      undeciphered1: 201510240 86 0 0
-//      Keywords { "SHADOWS_DEPTH" }
-//      undeciphered2: 1 0 7 0 0 0
-//      undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//      ConstBuffer "$Globals" 224
-//      Vector 128 [_Wind]
-//      Vector 192 [_MainTex_ST]
-//      ConstBuffer "UnityPerCamera" 144
-//      Vector 0 [_Time]
-//      ConstBuffer "UnityLighting" 720
-//      Vector 0 [_WorldSpaceLightPos0]
-//      ConstBuffer "UnityShadows" 416
-//      Vector 80 [unity_LightShadowBias]
-//      ConstBuffer "UnityPerDraw" 352
-//      Matrix 0 [glstate_matrix_mvp]
-//      Matrix 128 [glstate_matrix_invtrans_modelview0]
-//      Matrix 192 [unity_ObjectToWorld]
-//      Matrix 256 [unity_WorldToObject]
-//      ConstBuffer "UnityPerFrame" 352
-//      Matrix 272 [unity_MatrixVP]
-//      ConstBuffer "UnityTerrain" 272
-//      Vector 96 [_TreeInstanceScale]
-//      Vector 176 [_SquashPlaneNormal]
-//      Float 192 [_SquashAmount]
-//      BindCB "$Globals" 0
-//      BindCB "UnityPerCamera" 1
-//      BindCB "UnityLighting" 2
-//      BindCB "UnityShadows" 3
-//      BindCB "UnityPerDraw" 4
-//      BindCB "UnityPerFrame" 5
-//      BindCB "UnityTerrain" 6
+// Unity 5.3 headers extracted from TreeCreatorLeavesFastOptimized.shader.decompressed:
+//   API d3d11_9x
+//   Shader model vs_4_0_level_9_1
+//   undeciphered1: 201510240 86 0 0
+//   Keywords { "SHADOWS_DEPTH" }
+//   undeciphered2: 1 0 7 0 0 0
+//   undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//   ConstBuffer "$Globals" 224
+//   Vector 128 [_Wind]
+//   Vector 192 [_MainTex_ST]
+//   ConstBuffer "UnityPerCamera" 144
+//   Vector 0 [_Time]
+//   ConstBuffer "UnityLighting" 720
+//   Vector 0 [_WorldSpaceLightPos0]
+//   ConstBuffer "UnityShadows" 416
+//   Vector 80 [unity_LightShadowBias]
+//   ConstBuffer "UnityPerDraw" 352
+//   Matrix 0 [glstate_matrix_mvp]
+//   Matrix 128 [glstate_matrix_invtrans_modelview0]
+//   Matrix 192 [unity_ObjectToWorld]
+//   Matrix 256 [unity_WorldToObject]
+//   ConstBuffer "UnityPerFrame" 352
+//   Matrix 272 [unity_MatrixVP]
+//   ConstBuffer "UnityTerrain" 272
+//   Vector 96 [_TreeInstanceScale]
+//   Vector 176 [_SquashPlaneNormal]
+//   Float 192 [_SquashAmount]
+//   BindCB "$Globals" 0
+//   BindCB "UnityPerCamera" 1
+//   BindCB "UnityLighting" 2
+//   BindCB "UnityShadows" 3
+//   BindCB "UnityPerDraw" 4
+//   BindCB "UnityPerFrame" 5
+//   BindCB "UnityTerrain" 6
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -81,7 +71,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:01:38 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:58:23 2017
 //
 //
 // Input signature:

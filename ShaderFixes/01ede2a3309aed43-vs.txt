@@ -1,119 +1,111 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 01ede2a3309aed43-vs.txt
-// 3DMigoto: 01ede2a3309aed43 | Matched 12 variants of 1 shaders: Nature/SpeedTree Billboard
+// 3DMigoto: 01ede2a3309aed43 | Matched 8 variants of 1 shaders: Nature/SpeedTree Billboard
 //
-//         Unity headers extracted from SpeedTreeBillboard.shader
-//         Shader "Nature/SpeedTree Billboard" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
-//            _HueVariation ("Hue Variation", Color) = (1.000000,0.500000,0.000000,0.100000)
-//            _MainTex ("Base (RGB)", 2D) = "white" { }
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-//            _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-//           [MaterialEnum(None,0,Fastest,1)]  _WindQuality ("Wind Quality", Range(0.000000,1.000000)) = 0.000000
-//           }
-//           Fallback "Transparent/Cutout/VertexLit"
-//           SubShader 1/2 {
-//             LOD 400
-//             Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="TransparentCutout" }
-//             Pass 4/7 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="TransparentCutout" }
-//               ZWrite Off
-//               Cull Off
-//               GpuProgramID 204388
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 2245
-// 002:              GpuProgramIndex 2247
-// 004:              GpuProgramIndex 2249
-// 008:              GpuProgramIndex 2251
-// 010:              GpuProgramIndex 2253
-// 020:              GpuProgramIndex 2255
-// 040:              GpuProgramIndex 2277
-// 080:              GpuProgramIndex 2279
-// 100:              GpuProgramIndex 2281
-// 200:              GpuProgramIndex 2283
-// 400:              GpuProgramIndex 2285
-// 800:              GpuProgramIndex 2287
-//                 }
-//               }
-//             }
-//           }
-//         }
+//        Unity headers extracted from SpeedTreeBillboard.shader
+//        Shader "Nature/SpeedTree Billboard" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
+//           _HueVariation ("Hue Variation", Color) = (1.000000,0.500000,0.000000,0.100000)
+//           _MainTex ("Base (RGB)", 2D) = "white" { }
+//           _BumpMap ("Normalmap", 2D) = "bump" { }
+//           _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//          [MaterialEnum(None,0,Fastest,1)]  _WindQuality ("Wind Quality", Range(0.000000,1.000000)) = 0.000000
+//          }
+//          Fallback "Transparent/Cutout/VertexLit"
+//          SubShader 1/2 {
+//            LOD 400
+//            Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="TransparentCutout" }
+//            Pass 4/7 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="TransparentCutout" }
+//              ZWrite Off
+//              Cull Off
+//              GpuProgramID 204388
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 1701
+// 02:              GpuProgramIndex 1703
+// 04:              GpuProgramIndex 1705
+// 08:              GpuProgramIndex 1707
+// 10:              GpuProgramIndex 1725
+// 20:              GpuProgramIndex 1727
+// 40:              GpuProgramIndex 1729
+// 80:              GpuProgramIndex 1731
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//      Unity 5.3 headers extracted from SpeedTreeBillboard.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 100 0 0
-// 100:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 004:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_CROSSFADE" }
-// 200:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 008:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" }
-// 400:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 010:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "LOD_FADE_CROSSFADE" }
-// 800:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 020:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" }
-// 040:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 001:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_CROSSFADE" }
-// 080:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
-// 002:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" }
-//        undeciphered2: 1 0 7 0 0 0
-//        undeciphered3: 25 3 0 0 3 4 4 5
-//        ConstBuffer "$Globals" 176
-//        Vector 48 [unity_ColorSpaceLuminance]
-//        Float 132 [_WindQuality]
-//        Float 136 [_WindEnabled]
-//        Vector 144 [_Color]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        Vector 96 [_ScreenParams]
-//        ConstBuffer "UnityLighting" 720
-//        Vector 608 [unity_SHAr]
-//        Vector 624 [unity_SHAg]
-//        Vector 640 [unity_SHAb]
-//        Vector 656 [unity_SHBr]
-//        Vector 672 [unity_SHBg]
-//        Vector 688 [unity_SHBb]
-//        Vector 704 [unity_SHC]
-//        ConstBuffer "UnityPerDraw" 352
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "SpeedTreeWind" 256
-//        Vector 0 [_ST_WindVector]
-//        Vector 16 [_ST_WindGlobal]
-//        Vector 96 [_ST_WindBranchAdherences]
-//        ConstBuffer "UnityBillboardPerCamera" 48
-//        Vector 0 [unity_BillboardNormal] 3
-//        Vector 16 [unity_BillboardTangent] 3
-//        Vector 32 [unity_BillboardCameraParams]
-//        ConstBuffer "UnityBillboardPerBatch" 288
-//        Vector 0 [unity_BillboardInfo]
-//        Vector 16 [unity_BillboardSize]
-//        Vector 32 [unity_BillboardImageTexCoords0]
-//        Vector 48 [unity_BillboardImageTexCoords1]
-//        Vector 64 [unity_BillboardImageTexCoords2]
-//        Vector 80 [unity_BillboardImageTexCoords3]
-//        Vector 96 [unity_BillboardImageTexCoords4]
-//        Vector 112 [unity_BillboardImageTexCoords5]
-//        Vector 128 [unity_BillboardImageTexCoords6]
-//        Vector 144 [unity_BillboardImageTexCoords7]
-//        Vector 160 [unity_BillboardImageTexCoords8]
-//        Vector 176 [unity_BillboardImageTexCoords9]
-//        Vector 192 [unity_BillboardImageTexCoords10]
-//        Vector 208 [unity_BillboardImageTexCoords11]
-//        Vector 224 [unity_BillboardImageTexCoords12]
-//        Vector 240 [unity_BillboardImageTexCoords13]
-//        Vector 256 [unity_BillboardImageTexCoords14]
-//        Vector 272 [unity_BillboardImageTexCoords15]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
-//        BindCB "SpeedTreeWind" 4
-//        BindCB "UnityBillboardPerCamera" 5
-//        BindCB "UnityBillboardPerBatch" 6
+//     Unity 5.3 headers extracted from SpeedTreeBillboard.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 100 0 0
+// 40:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
+// 04:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_CROSSFADE" }
+// 80:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
+// 08:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" }
+// 10:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
+// 01:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_CROSSFADE" }
+// 20:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" "EFFECT_BUMP" }
+// 02:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_CROSSFADE" }
+//       undeciphered2: 1 0 7 0 0 0
+//       undeciphered3: 25 3 0 0 3 4 4 5
+//       ConstBuffer "$Globals" 176
+//       Vector 48 [unity_ColorSpaceLuminance]
+//       Float 132 [_WindQuality]
+//       Float 136 [_WindEnabled]
+//       Vector 144 [_Color]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       Vector 96 [_ScreenParams]
+//       ConstBuffer "UnityLighting" 720
+//       Vector 608 [unity_SHAr]
+//       Vector 624 [unity_SHAg]
+//       Vector 640 [unity_SHAb]
+//       Vector 656 [unity_SHBr]
+//       Vector 672 [unity_SHBg]
+//       Vector 688 [unity_SHBb]
+//       Vector 704 [unity_SHC]
+//       ConstBuffer "UnityPerDraw" 352
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "SpeedTreeWind" 256
+//       Vector 0 [_ST_WindVector]
+//       Vector 16 [_ST_WindGlobal]
+//       Vector 96 [_ST_WindBranchAdherences]
+//       ConstBuffer "UnityBillboardPerCamera" 48
+//       Vector 0 [unity_BillboardNormal] 3
+//       Vector 16 [unity_BillboardTangent] 3
+//       Vector 32 [unity_BillboardCameraParams]
+//       ConstBuffer "UnityBillboardPerBatch" 288
+//       Vector 0 [unity_BillboardInfo]
+//       Vector 16 [unity_BillboardSize]
+//       Vector 32 [unity_BillboardImageTexCoords0]
+//       Vector 48 [unity_BillboardImageTexCoords1]
+//       Vector 64 [unity_BillboardImageTexCoords2]
+//       Vector 80 [unity_BillboardImageTexCoords3]
+//       Vector 96 [unity_BillboardImageTexCoords4]
+//       Vector 112 [unity_BillboardImageTexCoords5]
+//       Vector 128 [unity_BillboardImageTexCoords6]
+//       Vector 144 [unity_BillboardImageTexCoords7]
+//       Vector 160 [unity_BillboardImageTexCoords8]
+//       Vector 176 [unity_BillboardImageTexCoords9]
+//       Vector 192 [unity_BillboardImageTexCoords10]
+//       Vector 208 [unity_BillboardImageTexCoords11]
+//       Vector 224 [unity_BillboardImageTexCoords12]
+//       Vector 240 [unity_BillboardImageTexCoords13]
+//       Vector 256 [unity_BillboardImageTexCoords14]
+//       Vector 272 [unity_BillboardImageTexCoords15]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityLighting" 2
+//       BindCB "UnityPerDraw" 3
+//       BindCB "SpeedTreeWind" 4
+//       BindCB "UnityBillboardPerCamera" 5
+//       BindCB "UnityBillboardPerBatch" 6
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -121,7 +113,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:00:55 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:08:22 2017
 //
 //
 // Input signature:

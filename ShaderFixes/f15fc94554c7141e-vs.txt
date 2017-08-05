@@ -1,87 +1,84 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed f15fc94554c7141e-vs.txt
-// 3DMigoto: f15fc94554c7141e | Matched 6 variants of 2 shaders: Dreamfall/Unity5/Standard_CubemapReflection, Dreamfall/Unity5/Standard_River
+// 3DMigoto: f15fc94554c7141e | Matched 4 variants of 2 shaders: Dreamfall/Unity5/Standard_CubemapReflection, Dreamfall/Unity5/Standard_River
 //
-// 07:    Unity headers extracted from Standard_CubemapReflection.shader
-// 38:    Unity headers extracted from Standard_River.shader
-// 07:    Shader "Dreamfall/Unity5/Standard_CubemapReflection" {
-// 38:    Shader "Dreamfall/Unity5/Standard_River" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 38:       _MainTex ("Maintex (RGB)", 2D) = "white" { }
-// 07:       _ReflectColor ("Reflect Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 07:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
-// 07:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-//           _BumpMap ("Normalmap", 2D) = "bump" { }
-// 07:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-// 38:       _ParallaxMap ("Height Map", 2D) = "white" { }
-// 38:       _BumpAmt ("BumpAmount", Range(0.000000,1.000000)) = 1.000000
-// 07:       _RefMul ("Reflection Boost", Float) = 1.000000
-// 07:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
-// 38:       _Gloss ("Water Gloss", Range(0.000000,1.000000)) = 1.000000
-// 07:       _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
-// 38:       _Metallic ("Water Metalness", Range(0.000000,1.000000)) = 0.000000
-// 38:       _Fresnel ("Reflection Fresnel Exponent", Float) = 2.000000
-// 07:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
-// 38:       _Parallax ("Height", Range(-10.000000,10.000000)) = 0.000000
-// 07:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
-// 38:       _MapTrength ("Parallax Map Strength", Range(-1.000000,1.000000)) = 1.000000
-// 07:       _MetalNess ("Metalness", Range(0.000000,1.000000)) = 0.000000
-// 07:       _MetalNessAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-// 38:       _Smudge ("Water Smudge", Range(-10.000000,10.000000)) = 1.000000
-// 38:       _ReflAmount ("Reflection amount", Float) = 0.000000
-// 38:       _ReflPow ("Reflection pow", Float) = 1.000000
-// 38:       _Cube1 ("Reflection Cubemap", CUBE) = "" { }
-// 38:       _WaterSpeed ("Water Speed1", Float) = 1.000000
-// 38:       _WaterSpeed2 ("Water Speed1", Float) = 1.000000
-//          }
-// 38:      Fallback "Legacy Shaders/Diffuse"
-// 07:      Fallback "Reflective/Bumped Diffuse"
-//          SubShader 1/1 {
-// 07:        LOD 400
-// 38:        Tags { "QUEUE"="Geometry+999" "RenderType"="Opaque" }
-// 07:        Tags { "RenderType"="Opaque" }
-//            Pass 2/3 {
-//              Name "FORWARD"
-// 38:          Tags { "LIGHTMODE"="ForwardAdd" "QUEUE"="Geometry+999" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 07:          Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-//              ZWrite Off
-//              Blend One One
-// 38:          GpuProgramID 114735
-// 07:          GpuProgramID 73990
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 09:              GpuProgramIndex 183
-// 12:              GpuProgramIndex 209
-// 24:              GpuProgramIndex 235
-//                }
-//              }
-//            }
-//          }
-//        }
+// 3:    Unity headers extracted from Standard_CubemapReflection.shader
+// c:    Unity headers extracted from Standard_River.shader
+// 3:    Shader "Dreamfall/Unity5/Standard_CubemapReflection" {
+// c:    Shader "Dreamfall/Unity5/Standard_River" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// c:       _MainTex ("Maintex (RGB)", 2D) = "white" { }
+// 3:       _ReflectColor ("Reflect Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 3:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
+// 3:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+// 3:       _Cube ("Reflection Cubemap", CUBE) = "" { }
+// c:       _ParallaxMap ("Height Map", 2D) = "white" { }
+// c:       _BumpAmt ("BumpAmount", Range(0.000000,1.000000)) = 1.000000
+// 3:       _RefMul ("Reflection Boost", Float) = 1.000000
+// 3:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
+// c:       _Gloss ("Water Gloss", Range(0.000000,1.000000)) = 1.000000
+// 3:       _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
+// c:       _Metallic ("Water Metalness", Range(0.000000,1.000000)) = 0.000000
+// c:       _Fresnel ("Reflection Fresnel Exponent", Float) = 2.000000
+// 3:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
+// c:       _Parallax ("Height", Range(-10.000000,10.000000)) = 0.000000
+// 3:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
+// c:       _MapTrength ("Parallax Map Strength", Range(-1.000000,1.000000)) = 1.000000
+// 3:       _MetalNess ("Metalness", Range(0.000000,1.000000)) = 0.000000
+// 3:       _MetalNessAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+// c:       _Smudge ("Water Smudge", Range(-10.000000,10.000000)) = 1.000000
+// c:       _ReflAmount ("Reflection amount", Float) = 0.000000
+// c:       _ReflPow ("Reflection pow", Float) = 1.000000
+// c:       _Cube1 ("Reflection Cubemap", CUBE) = "" { }
+// c:       _WaterSpeed ("Water Speed1", Float) = 1.000000
+// c:       _WaterSpeed2 ("Water Speed1", Float) = 1.000000
+//         }
+// c:      Fallback "Legacy Shaders/Diffuse"
+// 3:      Fallback "Reflective/Bumped Diffuse"
+//         SubShader 1/1 {
+// c:        Tags { "QUEUE"="Geometry+999" "RenderType"="Opaque" }
+// 3:        Tags { "RenderType"="Opaque" }
+//           Pass 2/3 {
+//             Name "FORWARD"
+// c:          Tags { "LIGHTMODE"="ForwardAdd" "QUEUE"="Geometry+999" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 3:          Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//             ZWrite Off
+//             Blend One One
+// c:          GpuProgramID 126235
+// 3:          GpuProgramID 70015
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 5:              GpuProgramIndex 147
+// a:              GpuProgramIndex 173
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-// 07: Unity 5.3 headers extracted from Standard_CubemapReflection.shader.decompressed:
-// 38: Unity 5.3 headers extracted from Standard_River.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 37 0 0
-// 12:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
-// 24:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" }
-// 09:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
-//       undeciphered2: 1 0 3 0 0 0
-//       undeciphered3: 139 4 0 0 1 2 3 4 7 8
-//       ConstBuffer "$Globals" 224
-//       Vector 192 [_MainTex_ST]
-//       Vector 208 [_BumpMap_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Vector 336 [unity_WorldTransformParams]
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
+// 3: Unity 5.3 headers extracted from Standard_CubemapReflection.shader.decompressed:
+// c: Unity 5.3 headers extracted from Standard_River.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 37 0 0
+// a:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
+// 5:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
+//      undeciphered2: 1 0 3 0 0 0
+//      undeciphered3: 139 4 0 0 1 2 3 4 7 8
+//      ConstBuffer "$Globals" 224
+//      Vector 192 [_MainTex_ST]
+//      Vector 208 [_BumpMap_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -89,7 +86,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:04:50 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:01:06 2017
 //
 //
 // Input signature:

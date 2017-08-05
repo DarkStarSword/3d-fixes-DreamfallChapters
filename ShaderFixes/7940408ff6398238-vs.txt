@@ -1,108 +1,112 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 7940408ff6398238-vs.txt
-// 3DMigoto: 7940408ff6398238 | Matched 12 variants of 1 shaders: Standard (Specular setup)
+// 3DMigoto: 7940408ff6398238 | Matched 14 variants of 1 shaders: Standard (Specular setup)
 //
-//         Unity headers extracted from StandardSpecular.shader
-//         Shader "Standard (Specular setup)" {
-//           Properties {
-//            _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _MainTex ("Albedo", 2D) = "white" { }
-//            _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.500000
-//            _Glossiness ("Smoothness", Range(0.000000,1.000000)) = 0.500000
-//            _GlossMapScale ("Smoothness Factor", Range(0.000000,1.000000)) = 1.000000
-//           [Enum(Specular Alpha,0,Albedo Alpha,1)]  _SmoothnessTextureChannel ("Smoothness texture channel", Float) = 0.000000
-//            _SpecColor ("Specular", Color) = (0.200000,0.200000,0.200000,1.000000)
-//            _SpecGlossMap ("Specular", 2D) = "white" { }
-//           [ToggleOff]  _SpecularHighlights ("Specular Highlights", Float) = 1.000000
-//           [ToggleOff]  _GlossyReflections ("Glossy Reflections", Float) = 1.000000
-//            _BumpScale ("Scale", Float) = 1.000000
-//            _BumpMap ("Normal Map", 2D) = "bump" { }
-//            _Parallax ("Height Scale", Range(0.005000,0.080000)) = 0.020000
-//            _ParallaxMap ("Height Map", 2D) = "black" { }
-//            _OcclusionStrength ("Strength", Range(0.000000,1.000000)) = 1.000000
-//            _OcclusionMap ("Occlusion", 2D) = "white" { }
-//            _EmissionColor ("Color", Color) = (0.000000,0.000000,0.000000,1.000000)
-//            _EmissionMap ("Emission", 2D) = "white" { }
-//            _DetailMask ("Detail Mask", 2D) = "white" { }
-//            _DetailAlbedoMap ("Detail Albedo x2", 2D) = "grey" { }
-//            _DetailNormalMapScale ("Scale", Float) = 1.000000
-//            _DetailNormalMap ("Normal Map", 2D) = "bump" { }
-//           [Enum(UV0,0,UV1,1)]  _UVSec ("UV Set for secondary textures", Float) = 0.000000
-//           [HideInInspector]  _Mode ("__mode", Float) = 0.000000
-//           [HideInInspector]  _SrcBlend ("__src", Float) = 1.000000
-//           [HideInInspector]  _DstBlend ("__dst", Float) = 0.000000
-//           [HideInInspector]  _ZWrite ("__zw", Float) = 1.000000
-//           }
-//           CustomEditor "StandardShaderGUI"
-//           Fallback "VertexLit"
-//           SubShader 2/2 {
-//             LOD 150
-//             Tags { "RenderType"="Opaque" "PerformanceChecks"="False" }
-//             Pass 2/3 {
-//               Name "FORWARD_DELTA"
-//               Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" "PerformanceChecks"="False" }
-//               ZWrite Off
-//               Blend [_SrcBlend] One
-//               GpuProgramID 417839
-//               Program "vp" {
-//                 SubProgram "d3d11_9x " {
-// 001:              GpuProgramIndex 8296
-// 002:              GpuProgramIndex 8299
-// 004:              GpuProgramIndex 8416
-// 008:              GpuProgramIndex 8419
-// 010:              GpuProgramIndex 8536
-// 020:              GpuProgramIndex 8539
-// 040:              GpuProgramIndex 8656
-// 080:              GpuProgramIndex 8659
-// 100:              GpuProgramIndex 8776
-// 200:              GpuProgramIndex 8779
-// 400:              GpuProgramIndex 8896
-// 800:              GpuProgramIndex 8899
-//                 }
-//               }
-//             }
-//           }
-//         }
+//          Unity headers extracted from StandardSpecular.shader
+//          Shader "Standard (Specular setup)" {
+//            Properties {
+//             _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//             _MainTex ("Albedo", 2D) = "white" { }
+//             _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.500000
+//             _Glossiness ("Smoothness", Range(0.000000,1.000000)) = 0.500000
+//             _GlossMapScale ("Smoothness Factor", Range(0.000000,1.000000)) = 1.000000
+//            [Enum(Specular Alpha,0,Albedo Alpha,1)]  _SmoothnessTextureChannel ("Smoothness texture channel", Float) = 0.000000
+//             _SpecColor ("Specular", Color) = (0.200000,0.200000,0.200000,1.000000)
+//             _SpecGlossMap ("Specular", 2D) = "white" { }
+//            [ToggleOff]  _SpecularHighlights ("Specular Highlights", Float) = 1.000000
+//            [ToggleOff]  _GlossyReflections ("Glossy Reflections", Float) = 1.000000
+//             _BumpScale ("Scale", Float) = 1.000000
+//             _BumpMap ("Normal Map", 2D) = "bump" { }
+//             _Parallax ("Height Scale", Range(0.005000,0.080000)) = 0.020000
+//             _ParallaxMap ("Height Map", 2D) = "black" { }
+//             _OcclusionStrength ("Strength", Range(0.000000,1.000000)) = 1.000000
+//             _OcclusionMap ("Occlusion", 2D) = "white" { }
+//             _EmissionColor ("Color", Color) = (0.000000,0.000000,0.000000,1.000000)
+//             _EmissionMap ("Emission", 2D) = "white" { }
+//             _DetailMask ("Detail Mask", 2D) = "white" { }
+//             _DetailAlbedoMap ("Detail Albedo x2", 2D) = "grey" { }
+//             _DetailNormalMapScale ("Scale", Float) = 1.000000
+//             _DetailNormalMap ("Normal Map", 2D) = "bump" { }
+//            [Enum(UV0,0,UV1,1)]  _UVSec ("UV Set for secondary textures", Float) = 0.000000
+//            [HideInInspector]  _Mode ("__mode", Float) = 0.000000
+//            [HideInInspector]  _SrcBlend ("__src", Float) = 1.000000
+//            [HideInInspector]  _DstBlend ("__dst", Float) = 0.000000
+//            [HideInInspector]  _ZWrite ("__zw", Float) = 1.000000
+//            }
+//            CustomEditor "StandardShaderGUI"
+//            Fallback "VertexLit"
+//            SubShader 2/2 {
+//              LOD 150
+//              Tags { "RenderType"="Opaque" "PerformanceChecks"="False" }
+//              Pass 2/3 {
+//                Name "FORWARD_DELTA"
+//                Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" "PerformanceChecks"="False" }
+//                ZWrite Off
+//                Blend [_SrcBlend] One
+//                GpuProgramID 417839
+//                Program "vp" {
+//                  SubProgram "d3d11_9x " {
+// 0001:              GpuProgramIndex 7822
+// 0002:              GpuProgramIndex 7825
+// 0004:              GpuProgramIndex 7912
+// 0008:              GpuProgramIndex 7915
+// 0010:              GpuProgramIndex 8002
+// 0020:              GpuProgramIndex 8005
+// 0040:              GpuProgramIndex 8092
+// 0080:              GpuProgramIndex 8095
+// 0100:              GpuProgramIndex 8182
+// 0200:              GpuProgramIndex 8185
+// 0400:              GpuProgramIndex 8272
+// 0800:              GpuProgramIndex 8275
+// 1000:              GpuProgramIndex 8362
+// 2000:              GpuProgramIndex 8365
+//                  }
+//                }
+//              }
+//            }
+//          }
 //
-//      Unity 5.3 headers extracted from StandardSpecular.shader.decompressed:
-//        API d3d11_9x
-//        Shader model vs_4_0_level_9_1
-//        undeciphered1: 201510240 53 0 0
-// 100:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 400:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 040:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 010:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" }
-// 004:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 001:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" }
-// 200:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 800:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 080:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 020:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" }
-// 008:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 002:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" }
-//        undeciphered2: 1 0 5 0 0 0
-//        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 304
-//        Vector 160 [_MainTex_ST]
-//        Vector 176 [_DetailAlbedoMap_ST]
-//        Float 220 [_UVSec]
-//        Matrix 240 [unity_WorldToLight]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 64 [_WorldSpaceCameraPos] 3
-//        ConstBuffer "UnityLighting" 720
-//        Vector 0 [_WorldSpaceLightPos0]
-//        Vector 16 [_LightPositionRange]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityFog" 32
-//        Vector 16 [unity_FogParams]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
-//        BindCB "UnityFog" 4
+//       Unity 5.3 headers extracted from StandardSpecular.shader.decompressed:
+//         API d3d11_9x
+//         Shader model vs_4_0_level_9_1
+//         undeciphered1: 201510240 53 0 0
+// 0400:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 1000:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0100:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0040:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" }
+// 0010:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0001:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" }
+// 0004:   Keywords { "POINT" "SHADOWS_CUBE" "FOG_LINEAR" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+// 0800:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 2000:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0200:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0080:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_ALPHATEST_ON" "_NORMALMAP" }
+// 0020:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 0002:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_NORMALMAP" }
+// 0008:   Keywords { "POINT_COOKIE" "SHADOWS_CUBE" "FOG_LINEAR" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+//         undeciphered2: 1 0 5 0 0 0
+//         undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+//         ConstBuffer "$Globals" 304
+//         Vector 160 [_MainTex_ST]
+//         Vector 176 [_DetailAlbedoMap_ST]
+//         Float 220 [_UVSec]
+//         Matrix 240 [unity_WorldToLight]
+//         ConstBuffer "UnityPerCamera" 144
+//         Vector 64 [_WorldSpaceCameraPos] 3
+//         ConstBuffer "UnityLighting" 720
+//         Vector 0 [_WorldSpaceLightPos0]
+//         Vector 16 [_LightPositionRange]
+//         ConstBuffer "UnityPerDraw" 352
+//         Vector 336 [unity_WorldTransformParams]
+//         Matrix 0 [glstate_matrix_mvp]
+//         Matrix 192 [unity_ObjectToWorld]
+//         Matrix 256 [unity_WorldToObject]
+//         ConstBuffer "UnityFog" 32
+//         Vector 16 [unity_FogParams]
+//         BindCB "$Globals" 0
+//         BindCB "UnityPerCamera" 1
+//         BindCB "UnityLighting" 2
+//         BindCB "UnityPerDraw" 3
+//         BindCB "UnityFog" 4
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -110,7 +114,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:33:47 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:35:06 2017
 //
 //
 // Input signature:
@@ -249,11 +253,11 @@ dcl_output o5.xyzw
 dcl_output o6.xyz
 dcl_output o7.xyz
 dcl_temps 9
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
-dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xyzw
 
@@ -278,15 +282,6 @@ mad r0.xyzw, cb3[0].xyzw, v0.xxxx, r0.xyzw
 mad r0.xyzw, cb3[2].xyzw, v0.zzzz, r0.xyzw
 add r0.xyzw, r0.xyzw, cb3[3].xyzw
 mov o0.xyzw, r0.xyzw
-
-// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 7940408ff6398238-vs.txt
-ne r4.w, r0.w, l(1.0)
-if_nz r4.w
-  add r4.w, r0.w, -r4.y
-  mad r0.x, r4.w, r4.x, r0.x
-endif
-
 mad o2.w, r0.z, cb4[1].z, cb4[1].w
 eq r0.x, cb0[13].w, l(0.000000)
 movc r0.xy, r0.xxxx, v2.xyxx, v3.xyxx

@@ -1,72 +1,78 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed c060a20a268625a9-vs.txt
-// 3DMigoto: c060a20a268625a9 | Matched 10 variants of 5 shaders: Hidden/TerrainEngine/Splatmap/Specular-Base, Legacy Shaders/Bumped Diffuse, Legacy Shaders/Diffuse, Legacy Shaders/Transparent/Cutout/Bumped Diffuse, Legacy Shaders/Transparent/Cutout/Diffuse
+// 3DMigoto: c060a20a268625a9 | Matched 12 variants of 6 shaders: Decal/Cutout Diffuse, Hidden/TerrainEngine/Splatmap/Specular-Base, Legacy Shaders/Bumped Diffuse, Legacy Shaders/Diffuse, Legacy Shaders/Transparent/Cutout/Bumped Diffuse, Legacy Shaders/Transparent/Cutout/Diffuse
 //
-// 0c0:    Unity headers extracted from AlphaTest-Bumped.shader
-// 003:    Unity headers extracted from AlphaTest-Diffuse.shader
-// 00c:    Unity headers extracted from Normal-Bumped.shader
-// 300:    Unity headers extracted from Normal-Diffuse.shader
-// 030:    Unity headers extracted from Specular-Base.shader
-// 030:    Shader "Hidden/TerrainEngine/Splatmap/Specular-Base" {
-// 00c:    Shader "Legacy Shaders/Bumped Diffuse" {
-// 300:    Shader "Legacy Shaders/Diffuse" {
-// 0c0:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Diffuse" {
-// 003:    Shader "Legacy Shaders/Transparent/Cutout/Diffuse" {
+// 00c:    Unity headers extracted from AlphaTest-Bumped.shader
+// 300:    Unity headers extracted from AlphaTest-Diffuse.shader
+// 030:    Unity headers extracted from Decal-AlphaTest-Diffuse.shader
+// 003:    Unity headers extracted from Normal-Bumped.shader
+// c00:    Unity headers extracted from Normal-Diffuse.shader
+// 0c0:    Unity headers extracted from Specular-Base.shader
+// 030:    Shader "Decal/Cutout Diffuse" {
+// 0c0:    Shader "Hidden/TerrainEngine/Splatmap/Specular-Base" {
+// 003:    Shader "Legacy Shaders/Bumped Diffuse" {
+// c00:    Shader "Legacy Shaders/Diffuse" {
+// 00c:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Diffuse" {
+// 300:    Shader "Legacy Shaders/Transparent/Cutout/Diffuse" {
 //           Properties {
-// 030:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 030:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-// 030:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0c0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 0c0:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// 0c0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
 //            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 0c3:       _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
-// 30c:       _MainTex ("Base (RGB)", 2D) = "white" { }
-// 0cc:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// 0c3:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// 33c:       _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
+// c03:       _MainTex ("Base (RGB)", 2D) = "white" { }
+// 00f:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// 33c:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
 //           }
-// 00c:      Fallback "Legacy Shaders/Diffuse"
-// 030:      Fallback "Legacy Shaders/Specular"
-// 0c0:      Fallback "Legacy Shaders/Transparent/Cutout/Diffuse"
-// 003:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
-// 300:      Fallback "Legacy Shaders/VertexLit"
+// 030:      Fallback "Decal/Cutout VertexLit"
+// 003:      Fallback "Legacy Shaders/Diffuse"
+// 0c0:      Fallback "Legacy Shaders/Specular"
+// 00c:      Fallback "Legacy Shaders/Transparent/Cutout/Diffuse"
+// 300:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
+// c00:      Fallback "Legacy Shaders/VertexLit"
 //           SubShader 1/1 {
-// 333:        LOD 200
-// 0cc:        LOD 300
-// 0c3:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// 030:        Tags { "QUEUE"="Geometry-100" "RenderType"="Opaque" }
-// 30c:        Tags { "RenderType"="Opaque" }
+// fc0:        LOD 200
+// 00f:        LOD 300
+// 33c:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 0c0:        Tags { "QUEUE"="Geometry-100" "RenderType"="Opaque" }
+// c03:        Tags { "RenderType"="Opaque" }
 //             Pass 4/5 {
 //               Name "PREPASS"
-// 0c3:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// 030:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry-100" "RenderType"="Opaque" }
-// 30c:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+// 33c:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 0c0:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry-100" "RenderType"="Opaque" }
+// c03:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
 //               ZWrite Off
-// 003:          GpuProgramID 209656
-// 0c0:          GpuProgramID 214475
-// 030:          GpuProgramID 218413
-// 300:          GpuProgramID 223648
-// 00c:          GpuProgramID 235894
+// 300:          GpuProgramID 209656
+// 00c:          GpuProgramID 214475
+// 0c0:          GpuProgramID 218413
+// c00:          GpuProgramID 223648
+// 003:          GpuProgramID 235894
+// 030:          Offset -1.000000, -1.000000
+// 030:          GpuProgramID 226400
 //               Program "vp" {
 //                 SubProgram "d3d11 " {
-// 155:              GpuProgramIndex 351
-// 2aa:              GpuProgramIndex 361
+// 555:              GpuProgramIndex 275
+// aaa:              GpuProgramIndex 285
 //                 }
 //               }
 //             }
 //           }
 //         }
 //
-// 0c0: Unity 5.3 headers extracted from AlphaTest-Bumped.shader.decompressed:
-// 003: Unity 5.3 headers extracted from AlphaTest-Diffuse.shader.decompressed:
-// 00c: Unity 5.3 headers extracted from Normal-Bumped.shader.decompressed:
-// 300: Unity 5.3 headers extracted from Normal-Diffuse.shader.decompressed:
-// 030: Unity 5.3 headers extracted from Specular-Base.shader.decompressed:
+// 00c: Unity 5.3 headers extracted from AlphaTest-Bumped.shader.decompressed:
+// 300: Unity 5.3 headers extracted from AlphaTest-Diffuse.shader.decompressed:
+// 030: Unity 5.3 headers extracted from Decal-AlphaTest-Diffuse.shader.decompressed:
+// 003: Unity 5.3 headers extracted from Normal-Bumped.shader.decompressed:
+// c00: Unity 5.3 headers extracted from Normal-Diffuse.shader.decompressed:
+// 0c0: Unity 5.3 headers extracted from Specular-Base.shader.decompressed:
 //        API d3d11
 //        Shader model vs_4_0
 //        undeciphered1: 201510240 46 0 0
-// 2aa:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 155:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// aaa:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 555:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
 //        undeciphered2: 1 0 5 0 0 0
 //        undeciphered3: 11 3 0 0 1 2 3 4
-// 33c:   ConstBuffer "$Globals" 176
-// 0c3:   ConstBuffer "$Globals" 192
+// cc3:   ConstBuffer "$Globals" 176
+// 33c:   ConstBuffer "$Globals" 192
 //        Vector 48 [unity_ColorSpaceLuminance]
 //        Vector 144 [_MainTex_ST]
 //        ConstBuffer "UnityPerCamera" 144
@@ -97,7 +103,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:52:14 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:50:35 2017
 //
 //
 // Input signature:

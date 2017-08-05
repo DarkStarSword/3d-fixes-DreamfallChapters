@@ -1,62 +1,62 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 5eedbe3aa0819ad7-vs.txt
 // 3DMigoto: 5eedbe3aa0819ad7 | Matched 8 variants of 4 shaders: Dreamfall/Diffuse Emissive, Legacy Shaders/Bumped Specular, Legacy Shaders/Specular, Legacy Shaders/Transparent/Cutout/Bumped Specular
 //
-// 30:    Unity headers extracted from AlphaTest-BumpSpec.shader
+// c0:    Unity headers extracted from AlphaTest-BumpSpec.shader
 // 03:    Unity headers extracted from Diffuse_Emissive.shader
-// c0:    Unity headers extracted from Normal-BumpSpec.shader
+// 30:    Unity headers extracted from Normal-BumpSpec.shader
 // 0c:    Unity headers extracted from Normal-Glossy.shader
 // 03:    Shader "Dreamfall/Diffuse Emissive" {
-// c0:    Shader "Legacy Shaders/Bumped Specular" {
+// 30:    Shader "Legacy Shaders/Bumped Specular" {
 // 0c:    Shader "Legacy Shaders/Specular" {
-// 30:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Specular" {
+// c0:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Specular" {
 //          Properties {
 //           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
 // 03:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-// 30:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
-// cc:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// c0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
+// 3c:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
 // 03:       _Emissive ("Emissive", Float) = 1.000000
-// 3c:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// c0:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-// cc:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 30:       _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" { }
+// cc:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// 30:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// 3c:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// c0:       _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" { }
 // 03:       _Output ("Output", Float) = 1.000000
 // f0:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// 30:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// c0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
 //          }
-// c0:      Fallback "Legacy Shaders/Specular"
-// 30:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
+// 30:      Fallback "Legacy Shaders/Specular"
+// c0:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
 // 0c:      Fallback "Legacy Shaders/VertexLit"
 // 03:      Fallback "Reflective/Bumped Diffuse"
-// 3f:      SubShader 1/1 {
-// c0:      SubShader 1/2 {
+// cf:      SubShader 1/1 {
+// 30:      SubShader 1/2 {
 // 0c:        LOD 300
 // f3:        LOD 400
-// 30:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// cf:        Tags { "RenderType"="Opaque" }
+// c0:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 3f:        Tags { "RenderType"="Opaque" }
 //            Pass 4/5 {
 //              Name "PREPASS"
-// 30:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// cf:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+// c0:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 3f:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
 //              ZWrite Off
 // 0c:          GpuProgramID 205893
-// c0:          GpuProgramID 230906
-// 30:          GpuProgramID 233133
+// 30:          GpuProgramID 230906
+// c0:          GpuProgramID 233133
 // 03:          GpuProgramID 253799
 //              Program "vp" {
 //                SubProgram "d3d11 " {
-// 51:              GpuProgramIndex 229
-// a2:              GpuProgramIndex 237
-// 04:              GpuProgramIndex 311
-// 08:              GpuProgramIndex 321
+// 51:              GpuProgramIndex 173
+// a2:              GpuProgramIndex 181
+// 04:              GpuProgramIndex 235
+// 08:              GpuProgramIndex 245
 //                }
 //              }
 //            }
 //          }
 //        }
 //
-// 30: Unity 5.3 headers extracted from AlphaTest-BumpSpec.shader.decompressed:
+// c0: Unity 5.3 headers extracted from AlphaTest-BumpSpec.shader.decompressed:
 // 03: Unity 5.3 headers extracted from Diffuse_Emissive.shader.decompressed:
-// c0: Unity 5.3 headers extracted from Normal-BumpSpec.shader.decompressed:
+// 30: Unity 5.3 headers extracted from Normal-BumpSpec.shader.decompressed:
 // 0c: Unity 5.3 headers extracted from Normal-Glossy.shader.decompressed:
 //       API d3d11
 //       Shader model vs_4_0
@@ -65,8 +65,8 @@
 // 55:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
 //       undeciphered2: 1 0 4 0 0 0
 //       undeciphered3: 11 3 0 0 1 2 3 4
-// cf:   ConstBuffer "$Globals" 192
-// 30:   ConstBuffer "$Globals" 208
+// 3f:   ConstBuffer "$Globals" 192
+// c0:   ConstBuffer "$Globals" 208
 //       Vector 48 [unity_ColorSpaceLuminance]
 //       Vector 160 [_MainTex_ST]
 //       ConstBuffer "UnityPerCamera" 144
@@ -94,7 +94,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:26:45 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:29:13 2017
 //
 //
 // Input signature:

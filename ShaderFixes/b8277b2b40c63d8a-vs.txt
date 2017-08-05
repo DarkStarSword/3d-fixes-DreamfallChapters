@@ -1,82 +1,78 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed b8277b2b40c63d8a-vs.txt
-// 3DMigoto: b8277b2b40c63d8a | Matched 6 variants of 1 shaders: Dreamfall/Unity5/Standard_Disintegrate_Portal
+// 3DMigoto: b8277b2b40c63d8a | Matched 4 variants of 1 shaders: Dreamfall/Unity5/Standard_Disintegrate_Portal
 //
-//        Unity headers extracted from Standard_Disintegrate_Portal.shader
-//        Shader "Dreamfall/Unity5/Standard_Disintegrate_Portal" {
-//          Properties {
-//           _MainTex ("Texture (RGB)", 2D) = "white" { }
-//           _NoiseTex ("Effect Map (RGB)", 2D) = "white" { }
-//           _DistortTex ("Distort Map(RGB)", 2D) = "white" { }
-//           _DistortAmount ("Distort Amount", Float) = 0.000000
-//           _parallaxStrenght ("Paralax Strenght", Float) = 1.000000
-//           _ParallaxAdjust (" Height Adjust", Range(-1.000000,1.000000)) = 0.000000
-//           _DisintegrateAmount ("Effect Amount", Range(0.010000,1.010000)) = 0.000000
-//           _DissolveColor ("Edge Color", Color) = (1.000000,0.500000,0.200000,0.000000)
-//           _EdgeEmission ("Edge Emission", Color) = (0.000000,0.000000,0.000000,0.000000)
-//           _DissolveEdge ("Edge Range", Range(0.000000,0.100000)) = 0.010000
-//           _EdgeDarknesMax ("Edge Darknes Max", Range(0.000000,1.000000)) = 1.000000
-//           _EdgeDarknesMin ("Edge Darknes Min", Range(0.000000,1.000000)) = 0.000000
-//           _EmissionFloat ("Emission Strength", Float) = 1.000000
-//           _Ilum ("Ilum Strength", Float) = 1.000000
-//           _distGlow ("Distort Glow", Float) = 1.000000
-//           _RotationSpeed ("RotationSpeed", Float) = 1.000000
-//           _RotationSpeed2 ("RotationSpeed 2", Float) = -2.000000
-//          }
-//          Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
-//          SubShader 1/1 {
-//            Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-//            Pass 4/6 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-//              ZWrite Off
-//              GpuProgramID 215152
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 137
-// 02:              GpuProgramIndex 139
-// 04:              GpuProgramIndex 141
-// 08:              GpuProgramIndex 143
-// 10:              GpuProgramIndex 145
-// 20:              GpuProgramIndex 147
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Standard_Disintegrate_Portal.shader
+//       Shader "Dreamfall/Unity5/Standard_Disintegrate_Portal" {
+//         Properties {
+//          _MainTex ("Texture (RGB)", 2D) = "white" { }
+//          _NoiseTex ("Effect Map (RGB)", 2D) = "white" { }
+//          _DistortTex ("Distort Map(RGB)", 2D) = "white" { }
+//          _DistortAmount ("Distort Amount", Float) = 0.000000
+//          _parallaxStrenght ("Paralax Strenght", Float) = 1.000000
+//          _ParallaxAdjust (" Height Adjust", Range(-1.000000,1.000000)) = 0.000000
+//          _DisintegrateAmount ("Effect Amount", Range(0.010000,1.010000)) = 0.000000
+//          _DissolveColor ("Edge Color", Color) = (1.000000,0.500000,0.200000,0.000000)
+//          _EdgeEmission ("Edge Emission", Color) = (0.000000,0.000000,0.000000,0.000000)
+//          _DissolveEdge ("Edge Range", Range(0.000000,0.100000)) = 0.010000
+//          _EdgeDarknesMax ("Edge Darknes Max", Range(0.000000,1.000000)) = 1.000000
+//          _EdgeDarknesMin ("Edge Darknes Min", Range(0.000000,1.000000)) = 0.000000
+//          _EmissionFloat ("Emission Strength", Float) = 1.000000
+//          _Ilum ("Ilum Strength", Float) = 1.000000
+//          _distGlow ("Distort Glow", Float) = 1.000000
+//          _RotationSpeed ("RotationSpeed", Float) = 1.000000
+//          _RotationSpeed2 ("RotationSpeed 2", Float) = -2.000000
+//         }
+//         Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
+//         SubShader 1/1 {
+//           Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+//           Pass 4/6 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+//             ZWrite Off
+//             GpuProgramID 215152
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 105
+// 2:              GpuProgramIndex 107
+// 4:              GpuProgramIndex 109
+// 8:              GpuProgramIndex 111
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Standard_Disintegrate_Portal.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 45 0 0
-// 08:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 15 4 0 0 2 1 1 2 3 4
-//       ConstBuffer "$Globals" 288
-//       Vector 48 [unity_ColorSpaceLuminance]
-//       Vector 240 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityLighting" 720
-//       Vector 608 [unity_SHAr]
-//       Vector 624 [unity_SHAg]
-//       Vector 640 [unity_SHAb]
-//       Vector 656 [unity_SHBr]
-//       Vector 672 [unity_SHBg]
-//       Vector 688 [unity_SHBb]
-//       Vector 704 [unity_SHC]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityLighting" 2
-//       BindCB "UnityPerDraw" 3
+//    Unity 5.3 headers extracted from Standard_Disintegrate_Portal.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 45 0 0
+// 8:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 15 4 0 0 2 1 1 2 3 4
+//      ConstBuffer "$Globals" 288
+//      Vector 48 [unity_ColorSpaceLuminance]
+//      Vector 240 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityLighting" 720
+//      Vector 608 [unity_SHAr]
+//      Vector 624 [unity_SHAg]
+//      Vector 640 [unity_SHAb]
+//      Vector 656 [unity_SHBr]
+//      Vector 672 [unity_SHBg]
+//      Vector 688 [unity_SHBb]
+//      Vector 704 [unity_SHC]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityLighting" 2
+//      BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -84,7 +80,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:50:02 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:48:44 2017
 //
 //
 // Input signature:

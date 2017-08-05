@@ -1,84 +1,75 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed a1de30675dee63bf-vs.txt
-// 3DMigoto: a1de30675dee63bf | Matched 6 variants of 3 shaders: Dreamfall/FX/Plasma Flow, Dreamfall/FX/Rorschach, Dreamfall/FX/Rorschach Additive
+// 3DMigoto: a1de30675dee63bf | Matched 4 variants of 2 shaders: Dreamfall/FX/Rorschach, Dreamfall/FX/Rorschach Additive
 //
-// 0c:    Unity headers extracted from PlasmaFlow.shader
-// 03:    Unity headers extracted from Rorschach.shader
-// 30:    Unity headers extracted from Rorschach_additive.shader
-// 0c:    Shader "Dreamfall/FX/Plasma Flow" {
-// 30:    Shader "Dreamfall/FX/Rorschach Additive" {
-// 03:    Shader "Dreamfall/FX/Rorschach" {
-//          Properties {
-// 33:       _Color ("Color", Color) = (1.000000,0.500000,0.200000,0.000000)
-// 0c:       _MainTex ("Texture (RGB)", 2D) = "white" { }
-// 33:       _MainTex ("Effect Mask (RGB)", 2D) = "white" { }
-//           _NoiseTex1 ("Effect Map 1", 2D) = "white" { }
-//           _NoiseTex2 ("Effect Map 2", 2D) = "white" { }
-// 33:       _DisintegrateAmount ("Cutoff", Float) = 0.000000
-// 0c:       _DisintegrateAmount ("Effect Amount", Range(0.000000,1.010000)) = 0.000000
-// 0c:       _DissolveColor ("Edge Color", Color) = (1.000000,0.500000,0.200000,0.000000)
-// 33:       _TileFactor ("Tile Factor", Float) = 1.000000
-// 0c:       _EmissionFloat ("Emission Multiplier", Float) = 1.000000
-// 0c:       _TileFactor ("Tile Factor", Range(0.000000,4.000000)) = 1.000000
-//           _Effect1UvX ("Effect 1 UV X speed", Float) = 1.000000
-//           _Effect1UvY ("Effect 1 UV Y speed", Float) = 1.000000
-//           _Effect2UvX ("Effect 2 UV X speed", Float) = 1.000000
-//           _Effect2UvY ("Effect 2 UV Y speed", Float) = 1.000000
-// 33:       _MasterSpeed ("Master Speed", Float) = 1.000000
-//          }
-//          Fallback "Diffuse"
-//          SubShader 1/1 {
-// 30:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-// 0f:        Tags { "RenderType"="Opaque" }
-//            Pass 4/5 {
-//              Name "PREPASS"
-// 30:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-// 0f:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//              ZWrite Off
-// 30:          Blend SrcColor One
-// 03:          GpuProgramID 230791
-// 0c:          GpuProgramID 234812
-// 30:          GpuProgramID 208365
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 15:              GpuProgramIndex 61
-// 2a:              GpuProgramIndex 69
-//                }
-//              }
-//            }
-//          }
-//        }
+// 3:    Unity headers extracted from Rorschach.shader
+// c:    Unity headers extracted from Rorschach_additive.shader
+// c:    Shader "Dreamfall/FX/Rorschach Additive" {
+// 3:    Shader "Dreamfall/FX/Rorschach" {
+//         Properties {
+//          _Color ("Color", Color) = (1.000000,0.500000,0.200000,0.000000)
+//          _MainTex ("Effect Mask (RGB)", 2D) = "white" { }
+//          _NoiseTex1 ("Effect Map 1", 2D) = "white" { }
+//          _NoiseTex2 ("Effect Map 2", 2D) = "white" { }
+//          _DisintegrateAmount ("Cutoff", Float) = 0.000000
+//          _TileFactor ("Tile Factor", Float) = 1.000000
+//          _Effect1UvX ("Effect 1 UV X speed", Float) = 1.000000
+//          _Effect1UvY ("Effect 1 UV Y speed", Float) = 1.000000
+//          _Effect2UvX ("Effect 2 UV X speed", Float) = 1.000000
+//          _Effect2UvY ("Effect 2 UV Y speed", Float) = 1.000000
+//          _MasterSpeed ("Master Speed", Float) = 1.000000
+//         }
+//         Fallback "Diffuse"
+//         SubShader 1/1 {
+// c:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+// 3:        Tags { "RenderType"="Opaque" }
+//           Pass 4/5 {
+//             Name "PREPASS"
+// c:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+// 3:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//             ZWrite Off
+// c:          Blend SrcColor One
+// 3:          GpuProgramID 230791
+// c:          GpuProgramID 208365
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 5:              GpuProgramIndex 61
+// a:              GpuProgramIndex 69
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-// 0c: Unity 5.3 headers extracted from PlasmaFlow.shader.decompressed:
-// 03: Unity 5.3 headers extracted from Rorschach.shader.decompressed:
-// 30: Unity 5.3 headers extracted from Rorschach_additive.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 44 0 0
-// 2a:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
-// 15:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 11 3 0 0 1 2 3 4
-//       ConstBuffer "$Globals" 224
-//       Vector 48 [unity_ColorSpaceLuminance]
-//       Vector 192 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityLighting" 720
-//       Vector 608 [unity_SHAr]
-//       Vector 624 [unity_SHAg]
-//       Vector 640 [unity_SHAb]
-//       Vector 656 [unity_SHBr]
-//       Vector 672 [unity_SHBg]
-//       Vector 688 [unity_SHBb]
-//       Vector 704 [unity_SHC]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityLighting" 2
-//       BindCB "UnityPerDraw" 3
+// 3: Unity 5.3 headers extracted from Rorschach.shader.decompressed:
+// c: Unity 5.3 headers extracted from Rorschach_additive.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 44 0 0
+// a:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
+// 5:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 11 3 0 0 1 2 3 4
+//      ConstBuffer "$Globals" 224
+//      Vector 48 [unity_ColorSpaceLuminance]
+//      Vector 192 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityLighting" 720
+//      Vector 608 [unity_SHAr]
+//      Vector 624 [unity_SHAg]
+//      Vector 640 [unity_SHAb]
+//      Vector 656 [unity_SHBr]
+//      Vector 672 [unity_SHBg]
+//      Vector 688 [unity_SHBb]
+//      Vector 704 [unity_SHC]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityLighting" 2
+//      BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -86,7 +77,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:44:12 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:43:53 2017
 //
 //
 // Input signature:

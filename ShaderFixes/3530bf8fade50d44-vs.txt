@@ -1,10 +1,12 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 3530bf8fade50d44-vs.txt
-// 3DMigoto: 3530bf8fade50d44 | Matched 6 variants of 2 shaders: Dreamfall/Unity5/Standard_BumpedDetail, Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided
+// 3DMigoto: 3530bf8fade50d44 | Matched 6 variants of 3 shaders: Dreamfall/Unity5/Standard_BumpedDetail, Dreamfall/Unity5/Standard_BumpedDetail_Cutout, Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided
 //
-// 07:    Unity headers extracted from Standard_BumpedDetail.shader
-// 38:    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
-// 07:    Shader "Dreamfall/Unity5/Standard_BumpedDetail" {
-// 38:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
+// 03:    Unity headers extracted from Standard_BumpedDetail.shader
+// 0c:    Unity headers extracted from Standard_BumpedDetail_Cutout.shader
+// 30:    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
+// 03:    Shader "Dreamfall/Unity5/Standard_BumpedDetail" {
+// 0c:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout" {
+// 30:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
 //          Properties {
 //           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
 //           _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
@@ -19,45 +21,49 @@
 //           _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
 //           _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
 //           _VColorMult ("Vertex Color Strength", Range(0.000000,1.000000)) = 0.000000
-// 38:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// 3c:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
 //          }
 //          Fallback "Legacy Shaders/Diffuse"
-//          SubShader 1/1 {
-//            LOD 400
-// 38:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// 07:        Tags { "RenderType"="Opaque" }
-// 07:        Pass 1/3 {
-// 38:        Pass 1/4 {
+//          SubShader 2/2 {
+//            LOD 100
+// 3c:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 03:        Tags { "RenderType"="Opaque" }
+// 03:        Pass 1/3 {
+// 3c:        Pass 1/4 {
 //              Name "FORWARD"
-// 38:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
-// 07:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 38:          Cull Off
-// 07:          GpuProgramID 27432
-// 38:          ColorMask RGB
-// 38:          GpuProgramID 54458
+// 3c:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
+// 03:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 30:          Cull Off
+// 03:          GpuProgramID 291915
+// 3c:          ColorMask RGB
+// 30:          GpuProgramID 206674
+// 0c:          GpuProgramID 333222
 //              Program "vp" {
 //                SubProgram "d3d11 " {
-// 09:              GpuProgramIndex 39
-// 12:              GpuProgramIndex 59
-// 24:              GpuProgramIndex 79
+// 01:              GpuProgramIndex 335
+// 04:              GpuProgramIndex 343
+// 02:              GpuProgramIndex 355
+// 08:              GpuProgramIndex 363
+// 10:              GpuProgramIndex 79
+// 20:              GpuProgramIndex 99
 //                }
 //              }
 //            }
 //          }
 //        }
 //
-// 07: Unity 5.3 headers extracted from Standard_BumpedDetail.shader.decompressed:
-// 38: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
+// 03: Unity 5.3 headers extracted from Standard_BumpedDetail.shader.decompressed:
+// 0c: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout.shader.decompressed:
+// 30: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
 //       API d3d11
 //       Shader model vs_4_0
 //       undeciphered1: 201510240 70 0 0
-// 12:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
-// 24:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" }
-// 09:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
+// 2a:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
+// 15:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
 //       undeciphered2: 1 0 4 0 0 0
 //       undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
-// 07:   ConstBuffer "$Globals" 240
-// 38:   ConstBuffer "$Globals" 256
+// 03:   ConstBuffer "$Globals" 240
+// 3c:   ConstBuffer "$Globals" 256
 //       Vector 48 [unity_ColorSpaceLuminance]
 //       Vector 192 [_MainTex_ST]
 //       Vector 208 [_BumpMap_ST]
@@ -97,7 +103,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:15:08 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:19:51 2017
 //
 //
 // Input signature:

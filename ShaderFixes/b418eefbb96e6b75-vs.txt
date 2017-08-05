@@ -1,110 +1,86 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed b418eefbb96e6b75-vs.txt
-// 3DMigoto: b418eefbb96e6b75 | Matched 9 variants of 3 shaders: Dreamfall/Unity5/Standard_BarutiJacket, Dreamfall/Unity5/Standard_DirectionBlend, Dreamfall/Unity5/Standard_MaskedTint_Ilum
+// 3DMigoto: b418eefbb96e6b75 | Matched 4 variants of 2 shaders: Dreamfall/Unity5/Standard_BarutiJacket, Dreamfall/Unity5/Standard_MaskedTint_Ilum
 //
-// 007:    Unity headers extracted from Standard_BarutiJacket.shader
-// 1c0:    Unity headers extracted from Standard_DirectionBlend.shader
-// 038:    Unity headers extracted from Standard_MaskedTint_Ilum.shader
-// 007:    Shader "Dreamfall/Unity5/Standard_BarutiJacket" {
-// 1c0:    Shader "Dreamfall/Unity5/Standard_DirectionBlend" {
-// 038:    Shader "Dreamfall/Unity5/Standard_MaskedTint_Ilum" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _BlendColor ("Blend Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 007:       _ReflectMap ("Reflection Map (RBG)", 2D) = "white" { }
-// 007:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
-// 1c0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 1c0:       _BlendTex ("Blend (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-// 1c0:       _BlendBump ("Blend Normal (RGB)", 2D) = "bump" { }
-// 1c0:       _BlendTile ("Blend Map Tile Factor", Float) = 1.000000
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-// 007:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-// 1c0:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-// 038:       _TintMask ("Tint Mask (RGB)", 2D) = "Black" { }
-// 1c0:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
-// 007:       _RefMul ("Reflection Boost", Float) = 1.000000
-// 038:       _TintColorR ("Tint Color - R", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 007:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
-// 1c0:       _Boost ("Fresnel Boost", Float) = 1.000000
-// 038:       _TintColorB ("Tint Color - G", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _Direction ("Direction", Vector) = (0.000000,1.000000,0.000000,1.000000)
-// 038:       _TintColorG ("Tint Color - B", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _Adjust ("Fresnel Adjust", Range(-1.000000,1.000000)) = 0.000000
-// 038:       _Color_Mul ("Tint Color Multiply", Float) = 2.000000
-// 038:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
-// 1c0:       _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
-// 1c0:       _2ndAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
-// 038:       _GlossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.500000
-// 038:       _GlossHigh ("Gloss High", Range(0.000000,1.000000)) = 0.800000
-// 1c0:       _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
-// 1c0:       _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
-// 03f:       _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
-// 1c0:       _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
-// 038:       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
-// 007:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
-// 1c0:       _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
-// 038:       _MetalNessAlphaFactor ("Metal Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-// 007:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
-// 038:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
-// 007:       _MetalNess ("Metalness", Range(0.000000,1.000000)) = 0.000000
-// 007:       _MetalNessAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-//           }
-// 038:      Fallback "Legacy Shaders/Diffuse"
-// 007:      Fallback "Reflective/Bumped Diffuse"
-// 1c0:      Fallback "Specular"
-//           SubShader 1/1 {
-//             LOD 400
-//             Tags { "RenderType"="Opaque" }
-//             Pass 2/3 {
-//               Name "FORWARD"
-//               Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-//               ZWrite Off
-//               Blend One One
-// 1c0:          GpuProgramID 101156
-// 038:          GpuProgramID 109889
-// 007:          GpuProgramID 97627
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 048:              GpuProgramIndex 183
-// 001:              GpuProgramIndex 185
-// 090:              GpuProgramIndex 209
-// 002:              GpuProgramIndex 211
-// 120:              GpuProgramIndex 235
-// 004:              GpuProgramIndex 237
-//                 }
+// 3:    Unity headers extracted from Standard_BarutiJacket.shader
+// c:    Unity headers extracted from Standard_MaskedTint_Ilum.shader
+// 3:    Shader "Dreamfall/Unity5/Standard_BarutiJacket" {
+// c:    Shader "Dreamfall/Unity5/Standard_MaskedTint_Ilum" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 3:       _ReflectMap ("Reflection Map (RBG)", 2D) = "white" { }
+// 3:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
+//          _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+// 3:       _Cube ("Reflection Cubemap", CUBE) = "" { }
+// c:       _TintMask ("Tint Mask (RGB)", 2D) = "Black" { }
+// 3:       _RefMul ("Reflection Boost", Float) = 1.000000
+// c:       _TintColorR ("Tint Color - R", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 3:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
+// c:       _TintColorB ("Tint Color - G", Color) = (1.000000,1.000000,1.000000,1.000000)
+// c:       _TintColorG ("Tint Color - B", Color) = (1.000000,1.000000,1.000000,1.000000)
+// c:       _Color_Mul ("Tint Color Multiply", Float) = 2.000000
+// c:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
+// c:       _GlossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.500000
+// c:       _GlossHigh ("Gloss High", Range(0.000000,1.000000)) = 0.800000
+//          _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
+// c:       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
+// 3:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
+// c:       _MetalNessAlphaFactor ("Metal Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+// 3:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
+// c:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
+// 3:       _MetalNess ("Metalness", Range(0.000000,1.000000)) = 0.000000
+// 3:       _MetalNessAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+//         }
+// c:      Fallback "Legacy Shaders/Diffuse"
+// 3:      Fallback "Reflective/Bumped Diffuse"
+// 3:      SubShader 1/1 {
+// c:      SubShader 1/2 {
+// c:        LOD 1000
+// 3:        LOD 400
+//           Tags { "RenderType"="Opaque" }
+//           Pass 2/3 {
+//             Name "FORWARD"
+//             Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//             ZWrite Off
+//             Blend One One
+// c:          GpuProgramID 110690
+// 3:          GpuProgramID 66347
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 4:              GpuProgramIndex 127
+// 8:              GpuProgramIndex 140
+// 1:              GpuProgramIndex 149
+// 2:              GpuProgramIndex 175
 //               }
 //             }
 //           }
 //         }
+//       }
 //
-// 007: Unity 5.3 headers extracted from Standard_BarutiJacket.shader.decompressed:
-// 1c0: Unity 5.3 headers extracted from Standard_DirectionBlend.shader.decompressed:
-// 038: Unity 5.3 headers extracted from Standard_MaskedTint_Ilum.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 37 0 0
-// 090:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
-// 120:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" }
-// 048:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
-// 002:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" "FOG_EXP" }
-// 004:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" "FOG_EXP2" }
-// 001:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" "FOG_LINEAR" }
-//        undeciphered2: 1 0 3 0 0 0
-//        undeciphered3: 139 4 0 0 1 2 3 4 7 8
-//        ConstBuffer "$Globals" 272
-//        Vector 240 [_MainTex_ST]
-// 03f:   Vector 256 [_BumpMap_ST]
-// 1c0:   Vector 256 [_Detail_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
+// 3: Unity 5.3 headers extracted from Standard_BarutiJacket.shader.decompressed:
+// c: Unity 5.3 headers extracted from Standard_MaskedTint_Ilum.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 37 0 0
+// 8:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
+// 4:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
+// 2:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" "FOG_EXP" }
+// 1:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" "FOG_LINEAR" }
+//      undeciphered2: 1 0 3 0 0 0
+//      undeciphered3: 139 4 0 0 1 2 3 4 7 8
+//      ConstBuffer "$Globals" 272
+//      Vector 240 [_MainTex_ST]
+//      Vector 256 [_BumpMap_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -112,7 +88,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:49:04 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:47:54 2017
 //
 //
 // Input signature:

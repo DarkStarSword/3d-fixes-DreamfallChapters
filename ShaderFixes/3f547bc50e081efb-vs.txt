@@ -1,60 +1,56 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 3f547bc50e081efb-vs.txt
-// 3DMigoto: 3f547bc50e081efb | Matched 6 variants of 1 shaders: Dreamfall/FX/Cornea Reflections
+// 3DMigoto: 3f547bc50e081efb | Matched 4 variants of 1 shaders: Dreamfall/FX/Cornea Reflections
 //
-//        Unity headers extracted from Cornea Reflections.shader
-//        Shader "Dreamfall/FX/Cornea Reflections" {
-//          Properties {
-//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//           _Fresnel ("Reflection Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
-//           _Cube ("Reflection Cubemap", CUBE) = "" { }
-//           _RefMult ("Reflect Amount", Float) = 1.000000
-//          }
-//          SubShader 1/1 {
-//            Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-//            Pass 4/5 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-//              ZWrite Off
-//              Blend One One
-//              GpuProgramID 247090
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 251
-// 02:              GpuProgramIndex 259
-// 04:              GpuProgramIndex 267
-// 08:              GpuProgramIndex 275
-// 10:              GpuProgramIndex 283
-// 20:              GpuProgramIndex 291
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Cornea Reflections.shader
+//       Shader "Dreamfall/FX/Cornea Reflections" {
+//         Properties {
+//          _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//          _Fresnel ("Reflection Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
+//          _Cube ("Reflection Cubemap", CUBE) = "" { }
+//          _RefMult ("Reflect Amount", Float) = 1.000000
+//         }
+//         SubShader 1/1 {
+//           Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//           Pass 4/5 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//             ZWrite Off
+//             Blend One One
+//             GpuProgramID 247090
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 195
+// 2:              GpuProgramIndex 203
+// 4:              GpuProgramIndex 211
+// 8:              GpuProgramIndex 219
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Cornea Reflections.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 30 0 0
-// 08:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 3 0 0 0
-//       undeciphered3: 19 3 0 0 1 2 4 5
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 64 [_WorldSpaceCameraPos] 3
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "UnityPerCamera" 0
-//       BindCB "UnityPerDraw" 1
-//       BindCB "UnityLightmaps" 2
+//    Unity 5.3 headers extracted from Cornea Reflections.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 30 0 0
+// 8:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 3 0 0 0
+//      undeciphered3: 19 3 0 0 1 2 4 5
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "UnityPerCamera" 0
+//      BindCB "UnityPerDraw" 1
+//      BindCB "UnityLightmaps" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -62,7 +58,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:17:53 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:22:04 2017
 //
 //
 // Input signature:

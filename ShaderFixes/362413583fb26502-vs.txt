@@ -1,103 +1,95 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 362413583fb26502-vs.txt
-// 3DMigoto: 362413583fb26502 | Matched 12 variants of 1 shaders: Nature/SpeedTree
+// 3DMigoto: 362413583fb26502 | Matched 8 variants of 1 shaders: Nature/SpeedTree
 //
-//         Unity headers extracted from SpeedTree.shader
-//         Shader "Nature/SpeedTree" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _HueVariation ("Hue Variation", Color) = (1.000000,0.500000,0.000000,0.100000)
-//            _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
-//            _DetailTex ("Detail", 2D) = "black" { }
-//            _BumpMap ("Normal Map", 2D) = "bump" { }
-//            _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.333000
-//           [MaterialEnum(Off,0,Front,1,Back,2)]  _Cull ("Cull", Float) = 2.000000
-//           [MaterialEnum(None,0,Fastest,1,Fast,2,Better,3,Best,4,Palm,5)]  _WindQuality ("Wind Quality", Range(0.000000,5.000000)) = 0.000000
-//           }
-//           CustomEditor "SpeedTreeMaterialInspector"
-//           Fallback "Transparent/Cutout/VertexLit"
-//           SubShader 1/2 {
-//             LOD 400
-//             Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="Opaque" }
-//             Pass 4/7 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="Opaque" }
-//               ZWrite Off
-//               Cull [_Cull]
-//               GpuProgramID 257623
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 6677
-// 002:              GpuProgramIndex 6679
-// 004:              GpuProgramIndex 6681
-// 008:              GpuProgramIndex 6683
-// 010:              GpuProgramIndex 6685
-// 020:              GpuProgramIndex 6687
-// 040:              GpuProgramIndex 6709
-// 080:              GpuProgramIndex 6711
-// 100:              GpuProgramIndex 6713
-// 200:              GpuProgramIndex 6715
-// 400:              GpuProgramIndex 6717
-// 800:              GpuProgramIndex 6719
-//                 }
-//               }
-//             }
-//           }
-//         }
+//        Unity headers extracted from SpeedTree.shader
+//        Shader "Nature/SpeedTree" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _HueVariation ("Hue Variation", Color) = (1.000000,0.500000,0.000000,0.100000)
+//           _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
+//           _DetailTex ("Detail", 2D) = "black" { }
+//           _BumpMap ("Normal Map", 2D) = "bump" { }
+//           _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.333000
+//          [MaterialEnum(Off,0,Front,1,Back,2)]  _Cull ("Cull", Float) = 2.000000
+//          [MaterialEnum(None,0,Fastest,1,Fast,2,Better,3,Best,4,Palm,5)]  _WindQuality ("Wind Quality", Range(0.000000,5.000000)) = 0.000000
+//          }
+//          CustomEditor "SpeedTreeMaterialInspector"
+//          Fallback "Transparent/Cutout/VertexLit"
+//          SubShader 1/2 {
+//            LOD 400
+//            Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="Opaque" }
+//            Pass 4/7 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "DisableBatching"="LodFading" "RenderType"="Opaque" }
+//              ZWrite Off
+//              Cull [_Cull]
+//              GpuProgramID 257623
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 5057
+// 02:              GpuProgramIndex 5059
+// 04:              GpuProgramIndex 5061
+// 08:              GpuProgramIndex 5063
+// 10:              GpuProgramIndex 5081
+// 20:              GpuProgramIndex 5083
+// 40:              GpuProgramIndex 5085
+// 80:              GpuProgramIndex 5087
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//      Unity 5.3 headers extracted from SpeedTree.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 175 0 3
-// 100:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 004:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 200:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 008:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 400:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 010:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 800:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 020:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 040:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 001:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 080:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-// 002:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
-//        undeciphered2: 1 0 5 0 0 0
-//        undeciphered3: 63 6 0 0 2 1 1 2 3 4 4 5 5 6
-//        ConstBuffer "$Globals" 192
-//        Vector 48 [unity_ColorSpaceLuminance]
-//        Float 128 [_WindQuality]
-//        Float 132 [_WindEnabled]
-//        Vector 144 [_HueVariation]
-//        Vector 160 [_Color]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityLighting" 720
-//        Vector 608 [unity_SHAr]
-//        Vector 624 [unity_SHAg]
-//        Vector 640 [unity_SHAb]
-//        Vector 656 [unity_SHBr]
-//        Vector 672 [unity_SHBg]
-//        Vector 688 [unity_SHBb]
-//        Vector 704 [unity_SHC]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 320 [unity_LODFade]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "SpeedTreeWind" 256
-//        Vector 0 [_ST_WindVector]
-//        Vector 16 [_ST_WindGlobal]
-//        Vector 32 [_ST_WindBranch]
-//        Vector 48 [_ST_WindBranchTwitch]
-//        Vector 64 [_ST_WindBranchWhip]
-//        Vector 80 [_ST_WindBranchAnchor]
-//        Vector 96 [_ST_WindBranchAdherences]
-//        Vector 112 [_ST_WindTurbulences]
-//        Vector 240 [_ST_WindAnimation]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
-//        BindCB "SpeedTreeWind" 4
+//     Unity 5.3 headers extracted from SpeedTree.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 175 0 3
+// 40:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 04:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 80:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 08:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 10:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 01:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 20:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_BUMP" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+// 02:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" "LOD_FADE_PERCENTAGE" "EFFECT_HUE_VARIATION" "GEOM_TYPE_BRANCH_DETAIL" }
+//       undeciphered2: 1 0 5 0 0 0
+//       undeciphered3: 63 6 0 0 2 1 1 2 3 4 4 5 5 6
+//       ConstBuffer "$Globals" 192
+//       Vector 48 [unity_ColorSpaceLuminance]
+//       Float 128 [_WindQuality]
+//       Float 132 [_WindEnabled]
+//       Vector 144 [_HueVariation]
+//       Vector 160 [_Color]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityLighting" 720
+//       Vector 608 [unity_SHAr]
+//       Vector 624 [unity_SHAg]
+//       Vector 640 [unity_SHAb]
+//       Vector 656 [unity_SHBr]
+//       Vector 672 [unity_SHBg]
+//       Vector 688 [unity_SHBb]
+//       Vector 704 [unity_SHC]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 320 [unity_LODFade]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "SpeedTreeWind" 256
+//       Vector 0 [_ST_WindVector]
+//       Vector 16 [_ST_WindGlobal]
+//       Vector 32 [_ST_WindBranch]
+//       Vector 48 [_ST_WindBranchTwitch]
+//       Vector 64 [_ST_WindBranchWhip]
+//       Vector 80 [_ST_WindBranchAnchor]
+//       Vector 96 [_ST_WindBranchAdherences]
+//       Vector 112 [_ST_WindTurbulences]
+//       Vector 240 [_ST_WindAnimation]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityLighting" 2
+//       BindCB "UnityPerDraw" 3
+//       BindCB "SpeedTreeWind" 4
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -105,7 +97,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:15:24 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:20:03 2017
 //
 //
 // Input signature:

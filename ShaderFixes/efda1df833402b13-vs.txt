@@ -1,58 +1,40 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed efda1df833402b13-vs.txt
-// 3DMigoto: efda1df833402b13 | Matched 7 variants of 4 shaders: Character/Hologram, Dreamfall/Unity5/Standard_BarutiJacket, Dreamfall/Unity5/Standard_DirectionBlend, Dreamfall/Unity5/Standard_MaskedTint_Ilum
+// 3DMigoto: efda1df833402b13 | Matched 6 variants of 3 shaders: Character/Hologram, Dreamfall/Unity5/Standard_BarutiJacket, Dreamfall/Unity5/Standard_MaskedTint_Ilum
 //
 // 3c:    Unity headers extracted from Hologram.shader
 // 01:    Unity headers extracted from Standard_BarutiJacket.shader
-// 40:    Unity headers extracted from Standard_DirectionBlend.shader
 // 02:    Unity headers extracted from Standard_MaskedTint_Ilum.shader
 // 3c:    Shader "Character/Hologram" {
 // 01:    Shader "Dreamfall/Unity5/Standard_BarutiJacket" {
-// 40:    Shader "Dreamfall/Unity5/Standard_DirectionBlend" {
 // 02:    Shader "Dreamfall/Unity5/Standard_MaskedTint_Ilum" {
 //          Properties {
-// 43:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 03:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
 // 3c:       _MainTex ("Texture", 2D) = "white" { }
-// 40:       _BlendColor ("Blend Color", Color) = (1.000000,1.000000,1.000000,1.000000)
 // 3c:       _BumpMap ("Bumpmap", 2D) = "bump" { }
 // 01:       _ReflectMap ("Reflection Map (RBG)", 2D) = "white" { }
 // 01:       _Fresnel ("Specular Fresnel Exponent", Range(0.010000,16.000000)) = 1.000000
-// 40:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
 // 3c:       _RimColor ("Rim Color", Color) = (0.260000,0.700000,1.000000,0.000000)
-// 40:       _BlendTex ("Blend (RGB) Gloss (A)", 2D) = "white" { }
 // 03:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
 // 3c:       _RimPower ("Rim Power", Range(0.100000,8.000000)) = 3.000000
-// 40:       _BlendBump ("Blend Normal (RGB)", 2D) = "bump" { }
+// 03:       _BumpMap ("Normalmap", 2D) = "bump" { }
 // 3c:       _ClipPower ("Clip Power", Range(0.000000,301.000000)) = 200.000000
-// 40:       _BlendTile ("Blend Map Tile Factor", Float) = 1.000000
 // 3c:       _Brightness ("Brightness", Range(0.000000,3.000000)) = 1.500000
-// 43:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// 3c:       _DiffuseAmount ("Diffuse Amount", Range(0.000000,1.000000)) = 0.000000
 // 01:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-// 40:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-// 3c:       _GlowBoost ("Glowboost", Float) = 1.000000
 // 02:       _TintMask ("Tint Mask (RGB)", 2D) = "Black" { }
-// 40:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
+// 3c:       _DiffuseAmount ("Diffuse Amount", Range(0.000000,1.000000)) = 0.000000
 // 01:       _RefMul ("Reflection Boost", Float) = 1.000000
 // 02:       _TintColorR ("Tint Color - R", Color) = (1.000000,1.000000,1.000000,1.000000)
 // 01:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 1.000000
-// 40:       _Boost ("Fresnel Boost", Float) = 1.000000
+// 3c:       _GlowBoost ("Glowboost", Float) = 1.000000
 // 02:       _TintColorB ("Tint Color - G", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 40:       _Direction ("Direction", Vector) = (0.000000,1.000000,0.000000,1.000000)
 // 02:       _TintColorG ("Tint Color - B", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 40:       _Adjust ("Fresnel Adjust", Range(-1.000000,1.000000)) = 0.000000
 // 02:       _Color_Mul ("Tint Color Multiply", Float) = 2.000000
 // 02:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
-// 40:       _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
-// 40:       _2ndAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
 // 02:       _GlossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.500000
 // 02:       _GlossHigh ("Gloss High", Range(0.000000,1.000000)) = 0.800000
-// 40:       _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
-// 40:       _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
 // 03:       _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
-// 40:       _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
 // 02:       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
 // 01:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
-// 40:       _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
 // 02:       _MetalNessAlphaFactor ("Metal Alpha Factor", Range(0.000000,1.000000)) = 1.000000
 // 01:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
 // 02:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
@@ -62,32 +44,32 @@
 // 3c:      Fallback "Diffuse"
 // 02:      Fallback "Legacy Shaders/Diffuse"
 // 01:      Fallback "Reflective/Bumped Diffuse"
-// 40:      Fallback "Specular"
-//          SubShader 1/1 {
-// 43:        LOD 400
+// 3d:      SubShader 1/1 {
+// 02:      SubShader 1/2 {
+// 02:        LOD 1000
+// 01:        LOD 400
 // 3c:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
 // 3c:        Pass 3/3 {
-// 43:        Tags { "RenderType"="Opaque" }
-// 43:        Pass 2/3 {
+// 03:        Tags { "RenderType"="Opaque" }
+// 03:        Pass 2/3 {
 //              Name "FORWARD"
 // 3c:          Tags { "LIGHTMODE"="ForwardAdd" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-// 43:          Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 03:          Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
 //              ZWrite Off
-// 43:          Blend One One
+// 03:          Blend One One
 // 3c:          Blend SrcAlpha One
 // 3c:          ColorMask RGB
-// 40:          GpuProgramID 101156
-// 02:          GpuProgramID 109889
-// 01:          GpuProgramID 97627
-// 3c:          GpuProgramID 125884
+// 02:          GpuProgramID 110690
+// 01:          GpuProgramID 66347
+// 3c:          GpuProgramID 69002
 //              Program "vp" {
 //                SubProgram "d3d11 " {
-// 42:              GpuProgramIndex 157
-// 01:              GpuProgramIndex 159
-// 04:              GpuProgramIndex 49
-// 08:              GpuProgramIndex 55
-// 10:              GpuProgramIndex 58
-// 20:              GpuProgramIndex 61
+// 02:              GpuProgramIndex 114
+// 01:              GpuProgramIndex 123
+// 04:              GpuProgramIndex 37
+// 08:              GpuProgramIndex 43
+// 10:              GpuProgramIndex 46
+// 20:              GpuProgramIndex 49
 //                }
 //              }
 //            }
@@ -96,12 +78,11 @@
 //
 // 3c: Unity 5.3 headers extracted from Hologram.shader.decompressed:
 // 01: Unity 5.3 headers extracted from Standard_BarutiJacket.shader.decompressed:
-// 40: Unity 5.3 headers extracted from Standard_DirectionBlend.shader.decompressed:
 // 02: Unity 5.3 headers extracted from Standard_MaskedTint_Ilum.shader.decompressed:
 //       API d3d11
 //       Shader model vs_4_0
 //       undeciphered1: 201510240 37 0 0
-// 42:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" }
+// 02:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" }
 // 01:   Keywords { "DIRECTIONAL_COOKIE" "SHADOWS_SCREEN" }
 // 20:   Keywords { "DIRECTIONAL_COOKIE" }
 // 04:   Keywords { "POINT" }
@@ -111,8 +92,7 @@
 //       undeciphered3: 139 4 0 0 1 2 3 4 7 8
 //       ConstBuffer "$Globals" 272
 //       Vector 240 [_MainTex_ST]
-// 3f:   Vector 256 [_BumpMap_ST]
-// 40:   Vector 256 [_Detail_ST]
+//       Vector 256 [_BumpMap_ST]
 //       ConstBuffer "UnityPerCamera" 144
 //       Vector 80 [_ProjectionParams]
 //       ConstBuffer "UnityPerDraw" 352
@@ -130,7 +110,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:04:26 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:00:47 2017
 //
 //
 // Input signature:

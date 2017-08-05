@@ -1,72 +1,52 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 2b5ad0655e3e45b6-vs.txt
-// 3DMigoto: 2b5ad0655e3e45b6 | Matched 4 variants of 2 shaders: Dreamfall/FX/River (Supports Shadows), Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor
+// 3DMigoto: 2b5ad0655e3e45b6 | Matched 2 variants of 1 shaders: Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor
 //
-// c:    Unity headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader
-// 3:    Unity headers extracted from ReflectRiver.shader
-// 3:    Shader "Dreamfall/FX/River (Supports Shadows)" {
-// c:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor" {
+//       Unity headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader
+//       Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor" {
 //         Properties {
 //          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 3:       _MainTex ("Maintex (RGB)", 2D) = "white" { }
-// c:       _SpecColor ("Specular Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// c:       _ReflectColor ("Reflect Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// c:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// c:       _Fresnel ("Fresnel", Float) = 1.000000
-// c:       _DetailMulti ("Detail Strength", Float) = 1.000000
-// c:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+//          _SpecColor ("Specular Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _ReflectColor ("Reflect Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//          _Fresnel ("Fresnel", Float) = 1.000000
+//          _DetailMulti ("Detail Strength", Float) = 1.000000
+//          _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
 //          _BumpMap ("Normalmap", 2D) = "bump" { }
-// 3:       _BumpAmt ("BumpAmount", Range(0.000000,1.000000)) = 1.000000
-// c:       _DetailBumpMap ("DetailMap", 2D) = "bump" { }
-// c:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-// 3:       _Fresnel ("Reflection Fresnel Exponent", Float) = 2.000000
-// c:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-// 3:       _ReflAmount ("Reflection amount", Float) = 2.000000
-// 3:       _ReflPow ("Reflection pow", Float) = 1.000000
-// 3:       _Cube1 ("Reflection Cubemap Red", CUBE) = "" { }
-// 3:       _Cube2 ("Reflection Cubemap Green", CUBE) = "" { }
-// 3:       _Cube3 ("Reflection Cubemap Blue", CUBE) = "" { }
-// 3:       _WaterSpeed ("Water Speed1", Float) = 1.000000
-// 3:       _WaterSpeed2 ("Water Speed1", Float) = 1.000000
+//          _DetailBumpMap ("DetailMap", 2D) = "bump" { }
+//          _Cube ("Reflection Cubemap", CUBE) = "" { }
+//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
 //         }
-// 3:      Fallback "Diffuse"
-// c:      Fallback "Reflective/Bumped Diffuse"
+//         Fallback "Reflective/Bumped Diffuse"
 //         SubShader 1/1 {
-// c:        LOD 400
-// 3:        Tags { "RenderType"="Opaque" }
-// 3:        Pass 4/5 {
-// c:        Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
-// c:        Pass 4/6 {
+//           LOD 400
+//           Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+//           Pass 4/6 {
 //             Name "PREPASS"
-// c:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
-// 3:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//             Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
 //             ZWrite Off
-// c:          Cull Off
-// 3:          GpuProgramID 222045
-// c:          GpuProgramID 254299
+//             Cull Off
+//             GpuProgramID 254299
 //             Program "vp" {
 //               SubProgram "d3d11 " {
-// 5:              GpuProgramIndex 231
-// a:              GpuProgramIndex 239
+// 1:              GpuProgramIndex 175
+// 2:              GpuProgramIndex 183
 //               }
 //             }
 //           }
 //         }
 //       }
 //
-// c: Unity 5.3 headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader.decompressed:
-// 3: Unity 5.3 headers extracted from ReflectRiver.shader.decompressed:
+//    Unity 5.3 headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader.decompressed:
 //      API d3d11
 //      Shader model vs_4_0
 //      undeciphered1: 201510240 46 0 0
-// a:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
-// 5:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" }
+// 2:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" }
 //      undeciphered2: 1 0 5 0 0 0
 //      undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-// 3:   ConstBuffer "$Globals" 240
-// c:   ConstBuffer "$Globals" 256
+//      ConstBuffer "$Globals" 256
 //      Vector 176 [_MainTex_ST]
-// 3:   Vector 192 [_BumpMap_ST]
-// c:   Vector 192 [_DetailBumpMap_ST]
+//      Vector 192 [_DetailBumpMap_ST]
 //      ConstBuffer "UnityPerCamera" 144
 //      Vector 80 [_ProjectionParams]
 //      ConstBuffer "UnityShadows" 416
@@ -91,7 +71,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:12:17 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:17:44 2017
 //
 //
 // Input signature:

@@ -1,92 +1,84 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 86f4af4b7a0e6392-vs.txt
-// 3DMigoto: 86f4af4b7a0e6392 | Matched 12 variants of 1 shaders: Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum CubeInterior
+// 3DMigoto: 86f4af4b7a0e6392 | Matched 8 variants of 1 shaders: Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum CubeInterior
 //
-//         Unity headers extracted from Reflect-Parallax_Fresnel_Illum_Cube.shader
-//         Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum CubeInterior" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-//            _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-//            _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//            _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
-//            _Parallax ("Distort", Float) = 0.000000
-//            _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//            _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//            _CubeInterior ("Interior Cubemap", CUBE) = "_Skybox" { }
-//            _IntOffset ("Interior Offset", Vector) = (0.000000,0.000000,0.000000,0.000000)
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-//            _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
-//            _IllumDepth ("Mask Depth", Float) = 0.400000
-//            _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
-//            _IllumColorScale ("IllumColor Scale", Float) = 1.000000
-//            _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
-//            _ReflAmount ("Reflection amount", Float) = 1.000000
-//            _ReflPow ("Reflection pow", Float) = 1.000000
-//            _ReflInteriorAmount ("Interior amount", Float) = 1.000000
-//            _ReflInteriorPow ("Interior pow", Float) = 1.000000
-//           }
-//           Fallback "Reflective/Bumped Diffuse"
-//           SubShader 1/1 {
-//             LOD 500
-//             Tags { "RenderType"="Opaque" }
-//             Pass 4/5 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-//               GpuProgramID 258670
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 249
-// 002:              GpuProgramIndex 251
-// 004:              GpuProgramIndex 257
-// 008:              GpuProgramIndex 259
-// 010:              GpuProgramIndex 265
-// 020:              GpuProgramIndex 267
-// 040:              GpuProgramIndex 273
-// 080:              GpuProgramIndex 275
-// 100:              GpuProgramIndex 281
-// 200:              GpuProgramIndex 283
-// 400:              GpuProgramIndex 289
-// 800:              GpuProgramIndex 291
-//                 }
-//               }
-//             }
-//           }
-//         }
+//        Unity headers extracted from Reflect-Parallax_Fresnel_Illum_Cube.shader
+//        Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum CubeInterior" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+//           _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//           _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
+//           _Parallax ("Distort", Float) = 0.000000
+//           _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//           _CubeInterior ("Interior Cubemap", CUBE) = "_Skybox" { }
+//           _IntOffset ("Interior Offset", Vector) = (0.000000,0.000000,0.000000,0.000000)
+//           _BumpMap ("Normalmap", 2D) = "bump" { }
+//           _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
+//           _IllumDepth ("Mask Depth", Float) = 0.400000
+//           _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
+//           _IllumColorScale ("IllumColor Scale", Float) = 1.000000
+//           _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
+//           _ReflAmount ("Reflection amount", Float) = 1.000000
+//           _ReflPow ("Reflection pow", Float) = 1.000000
+//           _ReflInteriorAmount ("Interior amount", Float) = 1.000000
+//           _ReflInteriorPow ("Interior pow", Float) = 1.000000
+//          }
+//          Fallback "Reflective/Bumped Diffuse"
+//          SubShader 1/1 {
+//            LOD 500
+//            Tags { "RenderType"="Opaque" }
+//            Pass 4/5 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//              ZWrite Off
+//              GpuProgramID 258670
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 193
+// 02:              GpuProgramIndex 195
+// 04:              GpuProgramIndex 201
+// 08:              GpuProgramIndex 203
+// 10:              GpuProgramIndex 209
+// 20:              GpuProgramIndex 211
+// 40:              GpuProgramIndex 217
+// 80:              GpuProgramIndex 219
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//      Unity 5.3 headers extracted from Reflect-Parallax_Fresnel_Illum_Cube.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 38 0 0
-// 040:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 010:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 400:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 100:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 004:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 001:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 080:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 020:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 800:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 200:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 008:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 002:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 288
-//        Vector 240 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+//     Unity 5.3 headers extracted from Reflect-Parallax_Fresnel_Illum_Cube.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 38 0 0
+// 40:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 10:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 04:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 01:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 80:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 20:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 08:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 02:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//       ConstBuffer "$Globals" 288
+//       Vector 240 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -94,7 +86,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:37:25 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:38:08 2017
 //
 //
 // Input signature:

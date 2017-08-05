@@ -1,100 +1,76 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed ca0d2d7b6353c173-vs.txt
-// 3DMigoto: ca0d2d7b6353c173 | Matched 12 variants of 2 shaders: Dreamfall/FX/River (Supports Shadows), Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor
+// 3DMigoto: ca0d2d7b6353c173 | Matched 4 variants of 1 shaders: Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor
 //
-// fc0:    Unity headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader
-// 03f:    Unity headers extracted from ReflectRiver.shader
-// 03f:    Shader "Dreamfall/FX/River (Supports Shadows)" {
-// fc0:    Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 03f:       _MainTex ("Maintex (RGB)", 2D) = "white" { }
-// fc0:       _SpecColor ("Specular Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _ReflectColor ("Reflect Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// fc0:       _Fresnel ("Fresnel", Float) = 1.000000
-// fc0:       _DetailMulti ("Detail Strength", Float) = 1.000000
-// fc0:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-// 03f:       _BumpAmt ("BumpAmount", Range(0.000000,1.000000)) = 1.000000
-// fc0:       _DetailBumpMap ("DetailMap", 2D) = "bump" { }
-// fc0:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-// 03f:       _Fresnel ("Reflection Fresnel Exponent", Float) = 2.000000
-// fc0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-// 03f:       _ReflAmount ("Reflection amount", Float) = 2.000000
-// 03f:       _ReflPow ("Reflection pow", Float) = 1.000000
-// 03f:       _Cube1 ("Reflection Cubemap Red", CUBE) = "" { }
-// 03f:       _Cube2 ("Reflection Cubemap Green", CUBE) = "" { }
-// 03f:       _Cube3 ("Reflection Cubemap Blue", CUBE) = "" { }
-// 03f:       _WaterSpeed ("Water Speed1", Float) = 1.000000
-// 03f:       _WaterSpeed2 ("Water Speed1", Float) = 1.000000
-//           }
-// 03f:      Fallback "Diffuse"
-// fc0:      Fallback "Reflective/Bumped Diffuse"
-//           SubShader 1/1 {
-// fc0:        LOD 400
-// 03f:        Tags { "RenderType"="Opaque" }
-// 03f:        Pass 4/5 {
-// fc0:        Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
-// fc0:        Pass 4/6 {
-//               Name "PREPASS"
-// fc0:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
-// 03f:          Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-// fc0:          Cull Off
-// 03f:          GpuProgramID 222045
-// fc0:          GpuProgramID 254299
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 041:              GpuProgramIndex 245
-// 082:              GpuProgramIndex 253
-// 104:              GpuProgramIndex 261
-// 208:              GpuProgramIndex 269
-// 410:              GpuProgramIndex 277
-// 820:              GpuProgramIndex 285
-//                 }
+//       Unity headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader
+//       Shader "Dreamfall/Reflective/Fresnel/Bumped Specular DetailBump Cutout 2sided VertexColor" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _SpecColor ("Specular Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _ReflectColor ("Reflect Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//          _Fresnel ("Fresnel", Float) = 1.000000
+//          _DetailMulti ("Detail Strength", Float) = 1.000000
+//          _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+//          _DetailBumpMap ("DetailMap", 2D) = "bump" { }
+//          _Cube ("Reflection Cubemap", CUBE) = "" { }
+//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//         }
+//         Fallback "Reflective/Bumped Diffuse"
+//         SubShader 1/1 {
+//           LOD 400
+//           Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+//           Pass 4/6 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+//             ZWrite Off
+//             Cull Off
+//             GpuProgramID 254299
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 189
+// 2:              GpuProgramIndex 197
+// 4:              GpuProgramIndex 205
+// 8:              GpuProgramIndex 213
 //               }
 //             }
 //           }
 //         }
+//       }
 //
-// fc0: Unity 5.3 headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader.decompressed:
-// 03f: Unity 5.3 headers extracted from ReflectRiver.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 55 0 0
-// 208:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
-// 03f:   ConstBuffer "$Globals" 224
-// fc0:   ConstBuffer "$Globals" 240
-//        Vector 48 [unity_ColorSpaceLuminance]
-//        Vector 176 [_MainTex_ST]
-// 03f:   Vector 192 [_BumpMap_ST]
-// fc0:   Vector 192 [_DetailBumpMap_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityLighting" 720
-//        Vector 608 [unity_SHAr]
-//        Vector 624 [unity_SHAg]
-//        Vector 640 [unity_SHAb]
-//        Vector 656 [unity_SHBr]
-//        Vector 672 [unity_SHBg]
-//        Vector 688 [unity_SHBb]
-//        Vector 704 [unity_SHC]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
+//    Unity 5.3 headers extracted from Reflect-BumpDetailCutout2sidedVertColor.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 55 0 0
+// 8:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
+//      ConstBuffer "$Globals" 240
+//      Vector 48 [unity_ColorSpaceLuminance]
+//      Vector 176 [_MainTex_ST]
+//      Vector 192 [_DetailBumpMap_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityLighting" 720
+//      Vector 608 [unity_SHAr]
+//      Vector 624 [unity_SHAg]
+//      Vector 640 [unity_SHAb]
+//      Vector 656 [unity_SHBr]
+//      Vector 672 [unity_SHBg]
+//      Vector 688 [unity_SHBb]
+//      Vector 704 [unity_SHC]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityLighting" 2
+//      BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -102,7 +78,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:54:42 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:52:38 2017
 //
 //
 // Input signature:

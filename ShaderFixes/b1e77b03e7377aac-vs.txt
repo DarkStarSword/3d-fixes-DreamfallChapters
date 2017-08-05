@@ -1,128 +1,129 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed b1e77b03e7377aac-vs.txt
-// 3DMigoto: b1e77b03e7377aac | Matched 9 variants of 3 shaders: Dreamfall/Unity5/Standard_VertexBlend_2Tex_Ilum, Dreamfall/Unity5/VertexBlend/Standard_WetGround, Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum Window
+// 3DMigoto: b1e77b03e7377aac | Matched 6 variants of 3 shaders: Dreamfall/Unity5/Standard_VertexBlend_2Tex_Ilum, Dreamfall/Unity5/VertexBlend/Standard_WetGround, Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum Window
 //
-// 007:    Unity headers extracted from Reflect-Parallax_Fresnel_Illum_Window.shader
-// 1c0:    Unity headers extracted from Standard_VertexBlend_2Tex_Ilum.shader
-// 038:    Unity headers extracted from Standard_WetGround.shader
-// 1c0:    Shader "Dreamfall/Unity5/Standard_VertexBlend_2Tex_Ilum" {
-// 038:    Shader "Dreamfall/Unity5/VertexBlend/Standard_WetGround" {
-// 007:    Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum Window" {
-//           Properties {
-// 038:       _Col ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 007:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 038:       _Col2 ("2nd Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _Col2 ("Tint Color 2 ", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 007:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-// 007:       _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
-// 1c0:       _IlumColor ("Ilum Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 038:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-// 038:       _2ndTex ("2nd (RGB) RefStrGloss (A)", 2D) = "white" { }
-// 1c0:       _MainTex ("Base - UV1", 2D) = "black" { }
-// 007:       _Parallax ("Height", Range(-10.000000,10.000000)) = 0.000000
-// 1c0:       _2ndTex ("2nd - vertex Red - UV2", 2D) = "black" { }
-// 007:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-// 038:       _NoiseTex ("Noisemap (RGB)", 2D) = "black" { }
-// 1c0:       _Bump1 ("_Bump Base - UV1", 2D) = "bump" { }
-// 007:       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-// 1c0:       _Bump2 ("_Bump 2nd - UV2", 2D) = "bump" { }
-// 03f:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// 038:       _BumpMap2 ("Normalmap 2", 2D) = "bump" { }
-// 007:       _IllumMap ("IllumMap (RGB)", 2D) = "black" { }
-// 1c0:       _NoiseTex ("VertexColor Noise (RGB) - UV2", 2D) = "black" { }
-// 007:       _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
-// 1c0:       _IlumMap ("Ilum Map, Masked by vertex G - UV1", 2D) = "black" { }
-// 038:       _WetSpots ("WetSpots (Green Vertex Color)", Range(0.000000,1.000000)) = 0.000000
-// 007:       _IllumMapScale ("Illum Map Scale", Float) = 1.000000
-// 1c0:       _IlumAmount ("Ilum Amount", Float) = 1.000000
-// 038:       _WetCol ("Wet Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 038:       _GlossHigh ("GlossHigh", Range(0.000000,1.000000)) = 0.800000
-// 007:       _IllumMaskScale ("Illum Mask Scale", Float) = 1.000000
-// 1c0:       _IlumFade ("Ilum Fade", Float) = 1.000000
-// 038:       _GlossLow ("GlossLow", Range(0.000000,1.000000)) = 0.600000
-// 007:       _IllumMaskOffset ("Illum Mask Offset", Float) = 1.000000
-// 1c0:       _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
-// 1c0:       _2ndMainAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
-// 038:       _GlossWet ("Water Gloss", Range(0.000000,1.000000)) = 1.000000
-// 007:       _IllumDepth ("IllumDepth", Float) = 0.400000
-// 007:       _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
-// 1c0:       _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
-// 038:       _MetalWet ("Water Metallness", Range(0.000000,1.000000)) = 0.000000
-// 1c0:       _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
-// 007:       _IllumColorScale ("IllumColor Scale", Float) = 1.000000
-// 038:       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
-// 007:       _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
-// 1c0:       _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
-// 1c0:       _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
-//           }
-// 1f8:      Fallback "Legacy Shaders/Diffuse"
-// 007:      Fallback "Reflective/Bumped Diffuse"
-//           SubShader 1/1 {
-// 1f8:        LOD 100
-// 007:        LOD 500
-//             Tags { "RenderType"="Opaque" }
-// 1f8:        Pass 1/3 {
-// 007:        Pass 1/5 {
-//               Name "FORWARD"
-//               Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 038:          GpuProgramID 18401
-// 1c0:          GpuProgramID 18556
-// 007:          GpuProgramID 5059
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 049:              GpuProgramIndex 39
-// 092:              GpuProgramIndex 59
-// 124:              GpuProgramIndex 79
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 03:    Unity headers extracted from Reflect-Parallax_Fresnel_Illum_Window.shader
+// 30:    Unity headers extracted from Standard_VertexBlend_2Tex_Ilum.shader
+// 0c:    Unity headers extracted from Standard_WetGround.shader
+// 30:    Shader "Dreamfall/Unity5/Standard_VertexBlend_2Tex_Ilum" {
+// 0c:    Shader "Dreamfall/Unity5/VertexBlend/Standard_WetGround" {
+// 03:    Shader "Self-Illumin/Dreamfall/Reflective/Fresnel/Parallax Diffuse Illum Window" {
+//          Properties {
+// 0c:       _Col ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 30:       _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 03:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0c:       _Col2 ("2nd Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 30:       _Col2 ("Tint Color 2 ", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 03:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+// 03:       _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
+// 30:       _IlumColor ("Ilum Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0c:       _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+// 0c:       _2ndTex ("2nd (RGB) RefStrGloss (A)", 2D) = "white" { }
+// 30:       _MainTex ("Base - UV1", 2D) = "black" { }
+// 03:       _Parallax ("Height", Range(-10.000000,10.000000)) = 0.000000
+// 30:       _2ndTex ("2nd - vertex Red - UV2", 2D) = "black" { }
+// 03:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+// 0c:       _NoiseTex ("Noisemap (RGB)", 2D) = "black" { }
+// 30:       _Bump1 ("_Bump Base - UV1", 2D) = "bump" { }
+// 03:       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+// 30:       _Bump2 ("_Bump 2nd - UV2", 2D) = "bump" { }
+// 0f:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// 0c:       _BumpMap2 ("Normalmap 2", 2D) = "bump" { }
+// 03:       _IllumMap ("IllumMap (RGB)", 2D) = "black" { }
+// 30:       _NoiseTex ("VertexColor Noise (RGB) - UV2", 2D) = "black" { }
+// 03:       _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
+// 30:       _IlumMap ("Ilum Map, Masked by vertex G - UV1", 2D) = "black" { }
+// 0c:       _WetSpots ("WetSpots (Green Vertex Color)", Range(0.000000,1.000000)) = 0.000000
+// 03:       _IllumMapScale ("Illum Map Scale", Float) = 1.000000
+// 30:       _IlumAmount ("Ilum Amount", Float) = 1.000000
+// 0c:       _WetCol ("Wet Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0c:       _GlossHigh ("GlossHigh", Range(0.000000,1.000000)) = 0.800000
+// 03:       _IllumMaskScale ("Illum Mask Scale", Float) = 1.000000
+// 30:       _IlumFade ("Ilum Fade", Float) = 1.000000
+// 0c:       _GlossLow ("GlossLow", Range(0.000000,1.000000)) = 0.600000
+// 03:       _IllumMaskOffset ("Illum Mask Offset", Float) = 1.000000
+// 30:       _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
+// 30:       _2ndMainAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
+// 0c:       _GlossWet ("Water Gloss", Range(0.000000,1.000000)) = 1.000000
+// 03:       _IllumDepth ("IllumDepth", Float) = 0.400000
+// 03:       _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
+// 30:       _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
+// 0c:       _MetalWet ("Water Metallness", Range(0.000000,1.000000)) = 0.000000
+// 30:       _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
+// 03:       _IllumColorScale ("IllumColor Scale", Float) = 1.000000
+// 0c:       _Metalness ("Metalness", Range(0.000000,1.000000)) = 0.000000
+// 03:       _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
+// 30:       _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
+// 30:       _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
+//          }
+// 3c:      Fallback "Legacy Shaders/Diffuse"
+// 03:      Fallback "Reflective/Bumped Diffuse"
+// 0f:      SubShader 1/1 {
+// 30:      SubShader 2/2 {
+// 3c:        LOD 100
+// 03:        LOD 500
+//            Tags { "RenderType"="Opaque" }
+// 3c:        Pass 1/3 {
+// 03:        Pass 1/5 {
+//              Name "FORWARD"
+//              Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 30:          GpuProgramID 265310
+// 03:          GpuProgramID 5059
+// 0c:          GpuProgramID 59734
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 10:              GpuProgramIndex 335
+// 20:              GpuProgramIndex 355
+// 05:              GpuProgramIndex 39
+// 0a:              GpuProgramIndex 59
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 007: Unity 5.3 headers extracted from Reflect-Parallax_Fresnel_Illum_Window.shader.decompressed:
-// 1c0: Unity 5.3 headers extracted from Standard_VertexBlend_2Tex_Ilum.shader.decompressed:
-// 038: Unity 5.3 headers extracted from Standard_WetGround.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 68 0 0
-// 092:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
-// 124:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" }
-// 049:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
-//        ConstBuffer "$Globals" 240
-//        Vector 48 [unity_ColorSpaceLuminance]
-//        Vector 208 [_MainTex_ST]
-// 007:   Vector 224 [_BumpMap_ST]
-// 1f8:   Vector 224 [_NoiseTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityLighting" 720
-//        Vector 32 [unity_4LightPosX0]
-//        Vector 48 [unity_4LightPosY0]
-//        Vector 64 [unity_4LightPosZ0]
-//        Vector 80 [unity_4LightAtten0]
-//        Vector 96 [unity_LightColor0]
-//        Vector 112 [unity_LightColor1]
-//        Vector 128 [unity_LightColor2]
-//        Vector 144 [unity_LightColor3]
-//        Vector 160 [unity_LightColor4]
-//        Vector 176 [unity_LightColor5]
-//        Vector 192 [unity_LightColor6]
-//        Vector 208 [unity_LightColor7]
-//        Vector 656 [unity_SHBr]
-//        Vector 672 [unity_SHBg]
-//        Vector 688 [unity_SHBb]
-//        Vector 704 [unity_SHC]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
+// 03: Unity 5.3 headers extracted from Reflect-Parallax_Fresnel_Illum_Window.shader.decompressed:
+// 30: Unity 5.3 headers extracted from Standard_VertexBlend_2Tex_Ilum.shader.decompressed:
+// 0c: Unity 5.3 headers extracted from Standard_WetGround.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 68 0 0
+// 2a:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
+// 15:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
+//       ConstBuffer "$Globals" 240
+//       Vector 48 [unity_ColorSpaceLuminance]
+//       Vector 208 [_MainTex_ST]
+// 03:   Vector 224 [_BumpMap_ST]
+// 3c:   Vector 224 [_NoiseTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityLighting" 720
+//       Vector 32 [unity_4LightPosX0]
+//       Vector 48 [unity_4LightPosY0]
+//       Vector 64 [unity_4LightPosZ0]
+//       Vector 80 [unity_4LightAtten0]
+//       Vector 96 [unity_LightColor0]
+//       Vector 112 [unity_LightColor1]
+//       Vector 128 [unity_LightColor2]
+//       Vector 144 [unity_LightColor3]
+//       Vector 160 [unity_LightColor4]
+//       Vector 176 [unity_LightColor5]
+//       Vector 192 [unity_LightColor6]
+//       Vector 208 [unity_LightColor7]
+//       Vector 656 [unity_SHBr]
+//       Vector 672 [unity_SHBg]
+//       Vector 688 [unity_SHBb]
+//       Vector 704 [unity_SHC]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityLighting" 2
+//       BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -130,7 +131,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:48:32 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:47:27 2017
 //
 //
 // Input signature:

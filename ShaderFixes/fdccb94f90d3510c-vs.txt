@@ -1,72 +1,68 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed fdccb94f90d3510c-vs.txt
-// 3DMigoto: fdccb94f90d3510c | Matched 6 variants of 1 shaders: Chickenlord/Reflective/Fresnel/Diffuse
+// 3DMigoto: fdccb94f90d3510c | Matched 4 variants of 1 shaders: Chickenlord/Reflective/Fresnel/Diffuse
 //
-//        Unity headers extracted from Reflect-Diffuse_Fresnel.shader
-//        Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//           _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
-//           _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//          }
-//          Fallback "Reflective/VertexLit"
-//          SubShader 1/1 {
-//            LOD 200
-//            Tags { "RenderType"="Opaque" }
-//            Pass 4/5 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//              ZWrite Off
-//              GpuProgramID 219263
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 236
-// 02:              GpuProgramIndex 240
-// 04:              GpuProgramIndex 244
-// 08:              GpuProgramIndex 248
-// 10:              GpuProgramIndex 252
-// 20:              GpuProgramIndex 256
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Reflect-Diffuse_Fresnel.shader
+//       Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//          _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
+//          _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//          _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//         }
+//         Fallback "Reflective/VertexLit"
+//         SubShader 1/1 {
+//           LOD 200
+//           Tags { "RenderType"="Opaque" }
+//           Pass 4/5 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//             ZWrite Off
+//             GpuProgramID 219263
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 180
+// 2:              GpuProgramIndex 184
+// 4:              GpuProgramIndex 188
+// 8:              GpuProgramIndex 192
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 49 0 0
-// 08:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 11 3 0 0 1 2 3 4
-//       ConstBuffer "$Globals" 208
-//       Vector 48 [unity_ColorSpaceLuminance]
-//       Vector 176 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 64 [_WorldSpaceCameraPos] 3
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityLighting" 720
-//       Vector 608 [unity_SHAr]
-//       Vector 624 [unity_SHAg]
-//       Vector 640 [unity_SHAb]
-//       Vector 656 [unity_SHBr]
-//       Vector 672 [unity_SHBg]
-//       Vector 688 [unity_SHBb]
-//       Vector 704 [unity_SHC]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityLighting" 2
-//       BindCB "UnityPerDraw" 3
+//    Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 49 0 0
+// 8:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 11 3 0 0 1 2 3 4
+//      ConstBuffer "$Globals" 208
+//      Vector 48 [unity_ColorSpaceLuminance]
+//      Vector 176 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityLighting" 720
+//      Vector 608 [unity_SHAr]
+//      Vector 624 [unity_SHAg]
+//      Vector 640 [unity_SHAb]
+//      Vector 656 [unity_SHBr]
+//      Vector 672 [unity_SHBg]
+//      Vector 688 [unity_SHBb]
+//      Vector 704 [unity_SHC]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityLighting" 2
+//      BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -74,7 +70,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:07:57 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:03:44 2017
 //
 //
 // Input signature:

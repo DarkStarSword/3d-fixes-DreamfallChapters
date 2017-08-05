@@ -1,80 +1,68 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed c1d4d6bed7d888a7-vs.txt
-// 3DMigoto: c1d4d6bed7d888a7 | Matched 18 variants of 1 shaders: ProBuilder/Standard Vertex Color
+// 3DMigoto: c1d4d6bed7d888a7 | Matched 12 variants of 1 shaders: ProBuilder/Standard Vertex Color
 //
-//           Unity headers extracted from pb_StandardVertexColor.shader
-//           Shader "ProBuilder/Standard Vertex Color" {
-//             Properties {
-//              _BumpMap ("Normal Map", 2D) = "bump" { }
-//              _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//              _MainTex ("Base Color", 2D) = "white" { }
-//              _Metallic ("Metallic", Range(0.000000,1.000000)) = 0.000000
-//              _Gloss ("Gloss", Range(0.000000,1.000000)) = 0.800000
-//             }
-//             Fallback "Diffuse"
-//             SubShader 1/1 {
-//               Tags { "RenderType"="Opaque" }
-//               Pass 1/2 {
-//                 Name "FORWARD"
-//                 Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-//                 GpuProgramID 24238
-//                 Program "vp" {
-//                   SubProgram "d3d11 " {
-// 00001:              GpuProgramIndex 14
-// 00002:              GpuProgramIndex 19
-// 00004:              GpuProgramIndex 24
-// 00008:              GpuProgramIndex 29
-// 00010:              GpuProgramIndex 34
-// 00020:              GpuProgramIndex 39
-// 00040:              GpuProgramIndex 51
-// 00080:              GpuProgramIndex 55
-// 00100:              GpuProgramIndex 59
-// 00200:              GpuProgramIndex 63
-// 00400:              GpuProgramIndex 67
-// 00800:              GpuProgramIndex 71
-// 01000:              GpuProgramIndex 80
-// 02000:              GpuProgramIndex 83
-// 04000:              GpuProgramIndex 86
-// 08000:              GpuProgramIndex 89
-// 10000:              GpuProgramIndex 92
-// 20000:              GpuProgramIndex 95
-//                   }
+//         Unity headers extracted from pb_StandardVertexColor.shader
+//         Shader "ProBuilder/Standard Vertex Color" {
+//           Properties {
+//            _BumpMap ("Normal Map", 2D) = "bump" { }
+//            _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//            _MainTex ("Base Color", 2D) = "white" { }
+//            _Metallic ("Metallic", Range(0.000000,1.000000)) = 0.000000
+//            _Gloss ("Gloss", Range(0.000000,1.000000)) = 0.800000
+//           }
+//           Fallback "Diffuse"
+//           SubShader 1/1 {
+//             Tags { "RenderType"="Opaque" }
+//             Pass 1/2 {
+//               Name "FORWARD"
+//               Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//               GpuProgramID 24238
+//               Program "vp" {
+//                 SubProgram "d3d11 " {
+// 001:              GpuProgramIndex 14
+// 002:              GpuProgramIndex 19
+// 004:              GpuProgramIndex 24
+// 008:              GpuProgramIndex 29
+// 010:              GpuProgramIndex 41
+// 020:              GpuProgramIndex 45
+// 040:              GpuProgramIndex 49
+// 080:              GpuProgramIndex 53
+// 100:              GpuProgramIndex 62
+// 200:              GpuProgramIndex 65
+// 400:              GpuProgramIndex 68
+// 800:              GpuProgramIndex 71
 //                 }
 //               }
 //             }
 //           }
+//         }
 //
-//        Unity 5.3 headers extracted from pb_StandardVertexColor.shader.decompressed:
-//          API d3d11
-//          Shader model vs_4_0
-//          undeciphered1: 201510240 38 0 0
-// 00200:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
-// 00100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 00800:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" }
-// 00400:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
-// 00040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 08000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
-// 04000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" }
-// 10000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
-// 01000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 00004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
-// 00008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "DIRLIGHTMAP_OFF" }
-// 00010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "DIRLIGHTMAP_OFF" }
-// 00020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_OFF" }
-// 00001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
-// 00002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "DIRLIGHTMAP_OFF" }
-//          undeciphered2: 1 0 2 0 0 0
-//          undeciphered3: 191 7 0 0 2 1 1 2 3 4 4 5 5 6 7 8
-//          ConstBuffer "UnityPerCamera" 144
-//          Vector 80 [_ProjectionParams]
-//          ConstBuffer "UnityPerDraw" 352
-//          Matrix 0 [glstate_matrix_mvp]
-//          Matrix 192 [unity_ObjectToWorld]
-//          Matrix 256 [unity_WorldToObject]
-//          BindCB "UnityPerCamera" 0
-//          BindCB "UnityPerDraw" 1
+//      Unity 5.3 headers extracted from pb_StandardVertexColor.shader.decompressed:
+//        API d3d11
+//        Shader model vs_4_0
+//        undeciphered1: 201510240 38 0 0
+// 080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
+// 040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
+// 010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 800:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
+// 400:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 200:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
+// 100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "DIRLIGHTMAP_OFF" }
+// 008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "DIRLIGHTMAP_OFF" }
+// 001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "DIRLIGHTMAP_OFF" }
+// 002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "DIRLIGHTMAP_OFF" }
+//        undeciphered2: 1 0 2 0 0 0
+//        undeciphered3: 191 7 0 0 2 1 1 2 3 4 4 5 5 6 7 8
+//        ConstBuffer "UnityPerCamera" 144
+//        Vector 80 [_ProjectionParams]
+//        ConstBuffer "UnityPerDraw" 352
+//        Matrix 0 [glstate_matrix_mvp]
+//        Matrix 192 [unity_ObjectToWorld]
+//        Matrix 256 [unity_WorldToObject]
+//        BindCB "UnityPerCamera" 0
+//        BindCB "UnityPerDraw" 1
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -82,7 +70,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:52:37 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:50:57 2017
 //
 //
 // Input signature:

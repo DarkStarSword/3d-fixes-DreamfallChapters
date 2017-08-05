@@ -1,64 +1,60 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 7791542bf6168eb7-vs.txt
-// 3DMigoto: 7791542bf6168eb7 | Matched 6 variants of 1 shaders: Legacy Shaders/Reflective/Diffuse
+// 3DMigoto: 7791542bf6168eb7 | Matched 4 variants of 1 shaders: Legacy Shaders/Reflective/Diffuse
 //
-//        Unity headers extracted from Reflect-Diffuse.shader
-//        Shader "Legacy Shaders/Reflective/Diffuse" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//           _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//          }
-//          Fallback "Legacy Shaders/Reflective/VertexLit"
-//          SubShader 1/1 {
-//            LOD 200
-//            Tags { "RenderType"="Opaque" }
-//            Pass 4/5 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//              ZWrite Off
-//              GpuProgramID 254012
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 339
-// 02:              GpuProgramIndex 349
-// 04:              GpuProgramIndex 359
-// 08:              GpuProgramIndex 369
-// 10:              GpuProgramIndex 379
-// 20:              GpuProgramIndex 389
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Reflect-Diffuse.shader
+//       Shader "Legacy Shaders/Reflective/Diffuse" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//          _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//          _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//         }
+//         Fallback "Legacy Shaders/Reflective/VertexLit"
+//         SubShader 1/1 {
+//           LOD 200
+//           Tags { "RenderType"="Opaque" }
+//           Pass 4/5 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//             ZWrite Off
+//             GpuProgramID 254012
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 263
+// 2:              GpuProgramIndex 273
+// 4:              GpuProgramIndex 283
+// 8:              GpuProgramIndex 293
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Reflect-Diffuse.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 32 0 0
-// 08:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 27 4 0 0 1 2 3 4 4 5
-//       ConstBuffer "$Globals" 208
-//       Vector 160 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 64 [_WorldSpaceCameraPos] 3
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
-//       BindCB "UnityLightmaps" 3
+//    Unity 5.3 headers extracted from Reflect-Diffuse.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 32 0 0
+// 8:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//      ConstBuffer "$Globals" 208
+//      Vector 160 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
+//      BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -66,7 +62,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:33:20 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:34:44 2017
 //
 //
 // Input signature:

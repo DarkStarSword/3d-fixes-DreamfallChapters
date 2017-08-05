@@ -1,69 +1,65 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed f716a80615a36ec7-vs.txt
-// 3DMigoto: f716a80615a36ec7 | Matched 6 variants of 1 shaders: Dreamfall/FX/Fresnel Additive Distort Parallax
+// 3DMigoto: f716a80615a36ec7 | Matched 4 variants of 1 shaders: Dreamfall/FX/Fresnel Additive Distort Parallax
 //
-//        Unity headers extracted from Additive-FresnelDistort.shader
-//        Shader "Dreamfall/FX/Fresnel Additive Distort Parallax" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-//           _Parallax ("Height", Range(0.005000,0.200000)) = 0.020000
-//           _FresnelExp ("Fresnel Exp", Float) = 3.500000
-//           _FresnelCol ("Fresnel Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _FresnelAmt ("Fresnel Amount", Float) = 1.000000
-//           _ParallaxMap ("Heightmap (A)", 2D) = "grey" { }
-//           _DistortMap ("DistortMap", 2D) = "black" { }
-//           _DistortAmt ("Distort Amount", Float) = 0.000000
-//           _DistortSpeed ("Distort Speed", Float) = 0.000000
-//          }
-//          Fallback "Specular"
-//          SubShader 1/1 {
-//            Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
-//            Pass 1/5 {
-//              Name "FORWARD"
-//              Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
-//              ZWrite Off
-//              Blend One One
-//              GpuProgramID 23364
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 31
-// 02:              GpuProgramIndex 35
-// 04:              GpuProgramIndex 51
-// 08:              GpuProgramIndex 55
-// 10:              GpuProgramIndex 71
-// 20:              GpuProgramIndex 75
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Additive-FresnelDistort.shader
+//       Shader "Dreamfall/FX/Fresnel Additive Distort Parallax" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+//          _Parallax ("Height", Range(0.005000,0.200000)) = 0.020000
+//          _FresnelExp ("Fresnel Exp", Float) = 3.500000
+//          _FresnelCol ("Fresnel Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _FresnelAmt ("Fresnel Amount", Float) = 1.000000
+//          _ParallaxMap ("Heightmap (A)", 2D) = "grey" { }
+//          _DistortMap ("DistortMap", 2D) = "black" { }
+//          _DistortAmt ("Distort Amount", Float) = 0.000000
+//          _DistortSpeed ("Distort Speed", Float) = 0.000000
+//         }
+//         Fallback "Specular"
+//         SubShader 1/1 {
+//           Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+//           Pass 1/5 {
+//             Name "FORWARD"
+//             Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
+//             ZWrite Off
+//             Blend One One
+//             GpuProgramID 23364
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 31
+// 2:              GpuProgramIndex 35
+// 4:              GpuProgramIndex 51
+// 8:              GpuProgramIndex 55
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Additive-FresnelDistort.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 28 0 0
-// 08:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 04:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 10:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 01:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 27 4 0 0 1 2 3 4 4 5
-//       ConstBuffer "$Globals" 208
-//       Vector 192 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
-//       BindCB "UnityLightmaps" 3
+//    Unity 5.3 headers extracted from Additive-FresnelDistort.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 28 0 0
+// 8:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 4:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 1:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//      ConstBuffer "$Globals" 208
+//      Vector 192 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
+//      BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -71,7 +67,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:06:12 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:02:17 2017
 //
 //
 // Input signature:

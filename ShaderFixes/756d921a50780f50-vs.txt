@@ -1,92 +1,92 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 756d921a50780f50-vs.txt
-// 3DMigoto: 756d921a50780f50 | Matched 24 variants of 4 shaders: Dreamfall/FX/AdditiveGlowScroll, Dreamfall/FX/AdditiveGlowScroll_NoZwrite, Dreamfall/FX/GlowScroll, Dreamfall/FX/GlowSignScroll
+// 3DMigoto: 756d921a50780f50 | Matched 16 variants of 4 shaders: Dreamfall/FX/AdditiveGlowScroll, Dreamfall/FX/AdditiveGlowScroll_NoZwrite, Dreamfall/FX/GlowScroll, Dreamfall/FX/GlowSignScroll
 //
-// 00003f:    Unity headers extracted from AdditiveGlowScroll.shader
-// fc0000:    Unity headers extracted from AdditiveGlowScroll_NoZwrite.shader
-// 000fc0:    Unity headers extracted from GlowScroll.shader
-// 03f000:    Unity headers extracted from glowsign_scroll.shader
-// 00003f:    Shader "Dreamfall/FX/AdditiveGlowScroll" {
-// fc0000:    Shader "Dreamfall/FX/AdditiveGlowScroll_NoZwrite" {
-// 000fc0:    Shader "Dreamfall/FX/GlowScroll" {
-// 03f000:    Shader "Dreamfall/FX/GlowSignScroll" {
-//              Properties {
-// 03f000:       _Color ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0fff:       _Color1 ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-//               _Color2 ("Color 2 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0fff:       _MainTex ("Diffuse 2 (RGB)", 2D) = "black" { }
-// 03f000:       _MainTex ("Diffuse(RGB)", 2D) = "black" { }
-// fc0fff:       _MainTex2 ("Diffuse 2 (RGB)", 2D) = "black" { }
-// 03f000:       _MainTex2 ("Diffuse2(RGB)", 2D) = "black" { }
-// 03f000:       _Scroll1 ("ScrollSpeed 1", Float) = 1.000000
-// fc0fff:       _Scroll1x ("ScrollSpeed 1 x", Float) = 0.000000
-// fc0fff:       _Scroll1y ("ScrollSpeed 1 y", Float) = 0.000000
-// 03f000:       _Scroll2 ("ScrollSpeed 2", Float) = 1.000000
-// fc0fff:       _Scroll2x ("ScrollSpeed 2 x", Float) = 0.000000
-// 03f000:       _Scroll3 ("ScrollSpeed y 1", Float) = 0.000000
-// fc0fff:       _Scroll2y ("ScrollSpeed 2 y", Float) = 0.000000
-// 03f000:       _Scroll4 ("ScrollSpeed y 2", Float) = 0.000000
-// 03f000:       _Boost ("Boost Color", Float) = 1.000000
-// fc0fff:       _Boost1 ("Boost Diffuse 1", Float) = 1.000000
-// fc0fff:       _Boost2 ("Boost Diffuse 2", Float) = 1.000000
-//              }
-//              SubShader 1/1 {
-// 000fc0:        Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
-// fff03f:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-//                Pass 4/5 {
-//                  Name "PREPASS"
-// 000fc0:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
-// fff03f:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-//                  ZWrite Off
-// fc0fff:          Cull Off
-// fff03f:          Blend SrcAlpha One
-// fc0fc0:          GpuProgramID 219798
-// 03f000:          GpuProgramID 228626
-// 00003f:          GpuProgramID 250055
-//                  Program "vp" {
-//                    SubProgram "d3d11 " {
-// 041041:              GpuProgramIndex 251
-// 082082:              GpuProgramIndex 259
-// 104104:              GpuProgramIndex 267
-// 208208:              GpuProgramIndex 275
-// 410410:              GpuProgramIndex 283
-// 820820:              GpuProgramIndex 291
-//                    }
+// 000f:    Unity headers extracted from AdditiveGlowScroll.shader
+// f000:    Unity headers extracted from AdditiveGlowScroll_NoZwrite.shader
+// 00f0:    Unity headers extracted from GlowScroll.shader
+// 0f00:    Unity headers extracted from glowsign_scroll.shader
+// 000f:    Shader "Dreamfall/FX/AdditiveGlowScroll" {
+// f000:    Shader "Dreamfall/FX/AdditiveGlowScroll_NoZwrite" {
+// 00f0:    Shader "Dreamfall/FX/GlowScroll" {
+// 0f00:    Shader "Dreamfall/FX/GlowSignScroll" {
+//            Properties {
+// 0f00:       _Color ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0ff:       _Color1 ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+//             _Color2 ("Color 2 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0ff:       _MainTex ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 0f00:       _MainTex ("Diffuse(RGB)", 2D) = "black" { }
+// f0ff:       _MainTex2 ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 0f00:       _MainTex2 ("Diffuse2(RGB)", 2D) = "black" { }
+// 0f00:       _Scroll1 ("ScrollSpeed 1", Float) = 1.000000
+// f0ff:       _Scroll1x ("ScrollSpeed 1 x", Float) = 0.000000
+// f0ff:       _Scroll1y ("ScrollSpeed 1 y", Float) = 0.000000
+// 0f00:       _Scroll2 ("ScrollSpeed 2", Float) = 1.000000
+// f0ff:       _Scroll2x ("ScrollSpeed 2 x", Float) = 0.000000
+// 0f00:       _Scroll3 ("ScrollSpeed y 1", Float) = 0.000000
+// f0ff:       _Scroll2y ("ScrollSpeed 2 y", Float) = 0.000000
+// 0f00:       _Scroll4 ("ScrollSpeed y 2", Float) = 0.000000
+// 0f00:       _Boost ("Boost Color", Float) = 1.000000
+// f0ff:       _Boost1 ("Boost Diffuse 1", Float) = 1.000000
+// f0ff:       _Boost2 ("Boost Diffuse 2", Float) = 1.000000
+//            }
+//            SubShader 1/1 {
+// 00f0:        Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+// ff0f:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//              Pass 4/5 {
+//                Name "PREPASS"
+// 00f0:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+// ff0f:          Tags { "LIGHTMODE"="PrePassFinal" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//                ZWrite Off
+// f0ff:          Cull Off
+// ff0f:          Blend SrcAlpha One
+// f0f0:          GpuProgramID 219798
+// 0f00:          GpuProgramID 223704
+// 000f:          GpuProgramID 250055
+//                Program "vp" {
+//                  SubProgram "d3d11 " {
+// 1011:              GpuProgramIndex 195
+// 2022:              GpuProgramIndex 203
+// 4044:              GpuProgramIndex 211
+// 8088:              GpuProgramIndex 219
+// 0100:              GpuProgramIndex 367
+// 0200:              GpuProgramIndex 375
+// 0400:              GpuProgramIndex 383
+// 0800:              GpuProgramIndex 391
 //                  }
 //                }
 //              }
 //            }
+//          }
 //
-// 00003f: Unity 5.3 headers extracted from AdditiveGlowScroll.shader.decompressed:
-// fc0000: Unity 5.3 headers extracted from AdditiveGlowScroll_NoZwrite.shader.decompressed:
-// 000fc0: Unity 5.3 headers extracted from GlowScroll.shader.decompressed:
-// 03f000: Unity 5.3 headers extracted from glowsign_scroll.shader.decompressed:
-//           API d3d11
-//           Shader model vs_4_0
-//           undeciphered1: 201510240 14 0 0
-// 208208:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104104:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820820:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410410:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082082:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041041:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//           undeciphered2: 1 0 4 0 0 0
-//           undeciphered3: 25 3 0 0 3 4 4 5
-//           ConstBuffer "$Globals" 256
-// 03f000:   Vector 192 [_MainTex2_ST]
-// fc0fff:   Vector 192 [_MainTex_ST]
-// fc0fff:   Vector 208 [_MainTex2_ST]
-// 03f000:   Vector 208 [_MainTex_ST]
-//           ConstBuffer "UnityPerCamera" 144
-//           Vector 80 [_ProjectionParams]
-//           ConstBuffer "UnityPerDraw" 352
-//           Matrix 0 [glstate_matrix_mvp]
-//           Matrix 192 [unity_ObjectToWorld]
-//           ConstBuffer "UnityLightmaps" 32
-//           Vector 0 [unity_LightmapST]
-//           BindCB "$Globals" 0
-//           BindCB "UnityPerCamera" 1
-//           BindCB "UnityPerDraw" 2
-//           BindCB "UnityLightmaps" 3
+// 000f: Unity 5.3 headers extracted from AdditiveGlowScroll.shader.decompressed:
+// f000: Unity 5.3 headers extracted from AdditiveGlowScroll_NoZwrite.shader.decompressed:
+// 00f0: Unity 5.3 headers extracted from GlowScroll.shader.decompressed:
+// 0f00: Unity 5.3 headers extracted from glowsign_scroll.shader.decompressed:
+//         API d3d11
+//         Shader model vs_4_0
+//         undeciphered1: 201510240 14 0 0
+// 8888:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4444:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2222:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1111:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//         undeciphered2: 1 0 4 0 0 0
+//         undeciphered3: 25 3 0 0 3 4 4 5
+//         ConstBuffer "$Globals" 256
+// 0f00:   Vector 192 [_MainTex2_ST]
+// f0ff:   Vector 192 [_MainTex_ST]
+// f0ff:   Vector 208 [_MainTex2_ST]
+// 0f00:   Vector 208 [_MainTex_ST]
+//         ConstBuffer "UnityPerCamera" 144
+//         Vector 80 [_ProjectionParams]
+//         ConstBuffer "UnityPerDraw" 352
+//         Matrix 0 [glstate_matrix_mvp]
+//         Matrix 192 [unity_ObjectToWorld]
+//         ConstBuffer "UnityLightmaps" 32
+//         Vector 0 [unity_LightmapST]
+//         BindCB "$Globals" 0
+//         BindCB "UnityPerCamera" 1
+//         BindCB "UnityPerDraw" 2
+//         BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -94,7 +94,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:32:48 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:34:16 2017
 //
 //
 // Input signature:

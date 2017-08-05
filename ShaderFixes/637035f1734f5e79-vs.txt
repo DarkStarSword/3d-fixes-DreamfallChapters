@@ -1,88 +1,82 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 637035f1734f5e79-vs.txt
-// 3DMigoto: 637035f1734f5e79 | Matched 12 variants of 2 shaders: Chickenlord/Detail/Bumped Specular, Enviro/BumpedDiffuseOverlaySM2
+// 3DMigoto: 637035f1734f5e79 | Matched 8 variants of 2 shaders: Chickenlord/Detail/Bumped Specular, Enviro/BumpedDiffuseOverlaySM2
 //
-// fc0:    Unity headers extracted from Blend SM2.shader
-// 03f:    Unity headers extracted from Bumped_Detail.shader
-// 03f:    Shader "Chickenlord/Detail/Bumped Specular" {
-// fc0:    Shader "Enviro/BumpedDiffuseOverlaySM2" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _Opacity ("Color over opacity", Range(0.000000,1.000000)) = 1.000000
-// 03f:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// fc0:       _MainTex ("Color over (RGBA)", 2D) = "white" { }
-// 03f:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-// fc0:       _BumpMap ("Normalmap over", 2D) = "bump" { }
-// 03f:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// fc0:       _MainTex2 ("Color under (RGBA)", 2D) = "white" { }
-// fc0:       _BumpMap2 ("Normalmap under", 2D) = "bump" { }
-// 03f:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
-//           }
-// fc0:      Fallback "Bumped Diffuse"
-// 03f:      Fallback "Specular"
-// 03f:      SubShader 1/1 {
-// fc0:      SubShader 1/2 {
-//             LOD 400
-//             Tags { "RenderType"="Opaque" }
-//             Pass 4/5 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-// fc0:          GpuProgramID 229317
-// 03f:          GpuProgramID 229929
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 175
-// 002:              GpuProgramIndex 179
-// 004:              GpuProgramIndex 183
-// 008:              GpuProgramIndex 187
-// 010:              GpuProgramIndex 191
-// 020:              GpuProgramIndex 195
-// 040:              GpuProgramIndex 247
-// 080:              GpuProgramIndex 255
-// 100:              GpuProgramIndex 263
-// 200:              GpuProgramIndex 271
-// 400:              GpuProgramIndex 279
-// 800:              GpuProgramIndex 287
-//                 }
-//               }
-//             }
-//           }
-//         }
+// f0:    Unity headers extracted from Blend SM2.shader
+// 0f:    Unity headers extracted from Bumped_Detail.shader
+// 0f:    Shader "Chickenlord/Detail/Bumped Specular" {
+// f0:    Shader "Enviro/BumpedDiffuseOverlaySM2" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0:       _Opacity ("Color over opacity", Range(0.000000,1.000000)) = 1.000000
+// 0f:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// f0:       _MainTex ("Color over (RGBA)", 2D) = "white" { }
+// 0f:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// f0:       _BumpMap ("Normalmap over", 2D) = "bump" { }
+// 0f:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0f:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// f0:       _MainTex2 ("Color under (RGBA)", 2D) = "white" { }
+// f0:       _BumpMap2 ("Normalmap under", 2D) = "bump" { }
+// 0f:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0f:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
+//          }
+// f0:      Fallback "Bumped Diffuse"
+// 0f:      Fallback "Specular"
+// 0f:      SubShader 1/1 {
+// f0:      SubShader 1/2 {
+//            LOD 400
+//            Tags { "RenderType"="Opaque" }
+//            Pass 4/5 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//              ZWrite Off
+// f0:          GpuProgramID 229317
+// 0f:          GpuProgramID 229929
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 135
+// 02:              GpuProgramIndex 139
+// 04:              GpuProgramIndex 143
+// 08:              GpuProgramIndex 147
+// 10:              GpuProgramIndex 191
+// 20:              GpuProgramIndex 199
+// 40:              GpuProgramIndex 207
+// 80:              GpuProgramIndex 215
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// fc0: Unity 5.3 headers extracted from Blend SM2.shader.decompressed:
-// 03f: Unity 5.3 headers extracted from Bumped_Detail.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 22 0 0
-// 208:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 5 0 0 0
-//        undeciphered3: 25 3 0 0 3 4 4 5
-//        ConstBuffer "$Globals" 224
-//        Vector 160 [_MainTex_ST]
-// 03f:   Vector 176 [_Detail_ST]
-// fc0:   Vector 176 [_MainTex2_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityShadows" 416
-//        Vector 400 [unity_ShadowFadeCenterAndType]
-//        ConstBuffer "UnityPerDraw" 352
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 64 [glstate_matrix_modelview0]
-//        Matrix 192 [unity_ObjectToWorld]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityShadows" 2
-//        BindCB "UnityPerDraw" 3
-//        BindCB "UnityLightmaps" 4
+// f0: Unity 5.3 headers extracted from Blend SM2.shader.decompressed:
+// 0f: Unity 5.3 headers extracted from Bumped_Detail.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 22 0 0
+// 88:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 44:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 22:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 11:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 5 0 0 0
+//       undeciphered3: 25 3 0 0 3 4 4 5
+//       ConstBuffer "$Globals" 224
+//       Vector 160 [_MainTex_ST]
+// 0f:   Vector 176 [_Detail_ST]
+// f0:   Vector 176 [_MainTex2_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityShadows" 416
+//       Vector 400 [unity_ShadowFadeCenterAndType]
+//       ConstBuffer "UnityPerDraw" 352
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 64 [glstate_matrix_modelview0]
+//       Matrix 192 [unity_ObjectToWorld]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityShadows" 2
+//       BindCB "UnityPerDraw" 3
+//       BindCB "UnityLightmaps" 4
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -90,7 +84,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:27:57 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:30:14 2017
 //
 //
 // Input signature:

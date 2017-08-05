@@ -1,86 +1,78 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 2299c93c1fc1d86e-vs.txt
-// 3DMigoto: 2299c93c1fc1d86e | Matched 12 variants of 1 shaders: Dreamfall/WorldProject/Blurred Reflective Bump Detail
+// 3DMigoto: 2299c93c1fc1d86e | Matched 8 variants of 1 shaders: Dreamfall/WorldProject/Blurred Reflective Bump Detail
 //
-//         Unity headers extracted from ReflectiveBumpWorldOverlay.shader
-//         Shader "Dreamfall/WorldProject/Blurred Reflective Bump Detail" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//            _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-//            _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-//            _DetailBump ("Detail Normalmap", 2D) = "bump" { }
-//            _DetailAmt ("Detail Amount", Float) = 0.000000
-//            _UVScale ("UV Scale", Float) = 1.000000
-//            _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//            _Blur ("reflection blur", Range(0.000000,10.000000)) = 1.000000
-//            _RefMask ("Optional Blurred Reflection Mask (RGB)", 2D) = "white" { }
-//            _Fresnel ("Fresnel Power", Range(0.010000,8.000000)) = 1.000000
-//            _RefMul ("Reflection Boost", Float) = 1.000000
-//            _RefPow ("Reflection Power", Float) = 1.000000
-//            _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 0.000000
-//           }
-//           Fallback "Reflective/Bumped Diffuse"
-//           SubShader 1/1 {
-//             LOD 400
-//             Tags { "RenderType"="Opaque" }
-//             Pass 2/5 {
-//               Name "FORWARD"
-//               Tags { "LIGHTMODE"="ForwardAdd" "RenderType"="Opaque" }
-//               ZWrite Off
-//               Blend One One
-//               GpuProgramID 65976
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 010:              GpuProgramIndex 101
-// 020:              GpuProgramIndex 105
-// 040:              GpuProgramIndex 107
-// 080:              GpuProgramIndex 109
-// 100:              GpuProgramIndex 111
-// 200:              GpuProgramIndex 115
-// 400:              GpuProgramIndex 117
-// 800:              GpuProgramIndex 119
-// 001:              GpuProgramIndex 91
-// 002:              GpuProgramIndex 95
-// 004:              GpuProgramIndex 97
-// 008:              GpuProgramIndex 99
-//                 }
-//               }
-//             }
-//           }
-//         }
+//        Unity headers extracted from ReflectiveBumpWorldOverlay.shader
+//        Shader "Dreamfall/WorldProject/Blurred Reflective Bump Detail" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//           _MainTex ("Base (RGB) RefStrGloss (A)", 2D) = "white" { }
+//           _BumpMap ("Normalmap", 2D) = "bump" { }
+//           _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
+//           _DetailBump ("Detail Normalmap", 2D) = "bump" { }
+//           _DetailAmt ("Detail Amount", Float) = 0.000000
+//           _UVScale ("UV Scale", Float) = 1.000000
+//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//           _Blur ("reflection blur", Range(0.000000,10.000000)) = 1.000000
+//           _RefMask ("Optional Blurred Reflection Mask (RGB)", 2D) = "white" { }
+//           _Fresnel ("Fresnel Power", Range(0.010000,8.000000)) = 1.000000
+//           _RefMul ("Reflection Boost", Float) = 1.000000
+//           _RefPow ("Reflection Power", Float) = 1.000000
+//           _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 0.000000
+//          }
+//          Fallback "Reflective/Bumped Diffuse"
+//          SubShader 1/1 {
+//            LOD 400
+//            Tags { "RenderType"="Opaque" }
+//            Pass 2/5 {
+//              Name "FORWARD"
+//              Tags { "LIGHTMODE"="ForwardAdd" "RenderType"="Opaque" }
+//              ZWrite Off
+//              Blend One One
+//              GpuProgramID 65976
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 71
+// 02:              GpuProgramIndex 75
+// 04:              GpuProgramIndex 77
+// 08:              GpuProgramIndex 79
+// 10:              GpuProgramIndex 81
+// 20:              GpuProgramIndex 85
+// 40:              GpuProgramIndex 87
+// 80:              GpuProgramIndex 89
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//      Unity 5.3 headers extracted from ReflectiveBumpWorldOverlay.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 41 0 0
-// 080:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP" }
-// 800:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" }
-// 008:   Keywords { "DIRECTIONAL_COOKIE" "FOG_LINEAR" }
-// 010:   Keywords { "POINT" "FOG_EXP" }
-// 100:   Keywords { "POINT" "FOG_EXP2" }
-// 001:   Keywords { "POINT" "FOG_LINEAR" }
-// 040:   Keywords { "POINT_COOKIE" "FOG_EXP" }
-// 400:   Keywords { "POINT_COOKIE" "FOG_EXP2" }
-// 004:   Keywords { "POINT_COOKIE" "FOG_LINEAR" }
-// 020:   Keywords { "SPOT" "FOG_EXP" }
-// 200:   Keywords { "SPOT" "FOG_EXP2" }
-// 002:   Keywords { "SPOT" "FOG_LINEAR" }
-//        undeciphered2: 1 0 3 0 0 0
-//        undeciphered3: 139 4 0 0 1 2 3 4 7 8
-//        ConstBuffer "$Globals" 272
-//        Float 220 [_Fresnel]
-//        Vector 256 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 64 [_WorldSpaceCameraPos] 3
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
+//     Unity 5.3 headers extracted from ReflectiveBumpWorldOverlay.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 41 0 0
+// 80:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP" }
+// 08:   Keywords { "DIRECTIONAL_COOKIE" "FOG_LINEAR" }
+// 10:   Keywords { "POINT" "FOG_EXP" }
+// 01:   Keywords { "POINT" "FOG_LINEAR" }
+// 40:   Keywords { "POINT_COOKIE" "FOG_EXP" }
+// 04:   Keywords { "POINT_COOKIE" "FOG_LINEAR" }
+// 20:   Keywords { "SPOT" "FOG_EXP" }
+// 02:   Keywords { "SPOT" "FOG_LINEAR" }
+//       undeciphered2: 1 0 3 0 0 0
+//       undeciphered3: 139 4 0 0 1 2 3 4 7 8
+//       ConstBuffer "$Globals" 272
+//       Float 220 [_Fresnel]
+//       Vector 256 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 64 [_WorldSpaceCameraPos] 3
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -88,7 +80,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:09:58 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:15:44 2017
 //
 //
 // Input signature:
@@ -137,11 +129,11 @@ dcl_output o5.xyz
 dcl_output o6.xyzw
 dcl_output o7.xyz
 dcl_temps 8
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
-dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 ld_indexable(texture2d)(float,float,float,float) r3.xyzw, l(0, 0, 0, 0), t125.xyzw
 
@@ -166,15 +158,6 @@ mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
 mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
 add r0.xyzw, r0.xyzw, cb2[3].xyzw
 mov o0.xyzw, r0.xyzw
-
-// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 2299c93c1fc1d86e-vs.txt
-ne r3.w, r0.w, l(1.0)
-if_nz r3.w
-  add r3.w, r0.w, -r3.y
-  mad r0.x, r3.w, r3.x, r0.x
-endif
-
 mov o1.z, r0.z
 mad o1.xy, v3.xyxx, cb0[16].xyxx, cb0[16].zwzz
 mov r0.y, cb2[16].y

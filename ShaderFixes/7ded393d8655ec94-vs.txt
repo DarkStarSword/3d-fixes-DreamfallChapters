@@ -1,74 +1,70 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 7ded393d8655ec94-vs.txt
-// 3DMigoto: 7ded393d8655ec94 | Matched 12 variants of 2 shaders: Dreamfall/Bumped Specular 2 Sided, Dreamfall/Bumped Specular 2 Sided RIKKE
+// 3DMigoto: 7ded393d8655ec94 | Matched 8 variants of 2 shaders: Dreamfall/Bumped Specular 2 Sided, Dreamfall/Bumped Specular 2 Sided RIKKE
 //
-// 03f:    Unity headers extracted from Normal-BumpSpec2Sided.shader
-// fc0:    Unity headers extracted from Normal-BumpSpecEmissive2Sided_Rikke.shader
-// fc0:    Shader "Dreamfall/Bumped Specular 2 Sided RIKKE" {
-// 03f:    Shader "Dreamfall/Bumped Specular 2 Sided" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 03f:       _EmissionColor ("Emission Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-//            _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-//            _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// fc0:       _EmissiveColor ("Emissive Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _EmissiveMap ("Emissive", 2D) = "black" { }
-// fc0:       _EmissiveStrength ("Emissionstrength", Float) = 1.000000
-//           }
-//           Fallback "Specular"
-//           SubShader 1/1 {
-//             LOD 400
-//             Tags { "RenderType"="Opaque" }
-//             Pass 4/5 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-//               Cull Off
-// fc0:          GpuProgramID 234495
-// 03f:          GpuProgramID 255809
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 041:              GpuProgramIndex 337
-// 082:              GpuProgramIndex 347
-// 104:              GpuProgramIndex 357
-// 208:              GpuProgramIndex 367
-// 410:              GpuProgramIndex 377
-// 820:              GpuProgramIndex 387
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 0f:    Unity headers extracted from Normal-BumpSpec2Sided.shader
+// f0:    Unity headers extracted from Normal-BumpSpecEmissive2Sided_Rikke.shader
+// f0:    Shader "Dreamfall/Bumped Specular 2 Sided RIKKE" {
+// 0f:    Shader "Dreamfall/Bumped Specular 2 Sided" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 0f:       _EmissionColor ("Emission Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+//           _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+//           _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0f:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// f0:       _EmissiveColor ("Emissive Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0:       _EmissiveMap ("Emissive", 2D) = "black" { }
+// f0:       _EmissiveStrength ("Emissionstrength", Float) = 1.000000
+//          }
+//          Fallback "Specular"
+//          SubShader 1/1 {
+//            LOD 400
+//            Tags { "RenderType"="Opaque" }
+//            Pass 4/5 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//              ZWrite Off
+//              Cull Off
+// f0:          GpuProgramID 234495
+// 0f:          GpuProgramID 255809
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 11:              GpuProgramIndex 261
+// 22:              GpuProgramIndex 271
+// 44:              GpuProgramIndex 281
+// 88:              GpuProgramIndex 291
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 03f: Unity 5.3 headers extracted from Normal-BumpSpec2Sided.shader.decompressed:
-// fc0: Unity 5.3 headers extracted from Normal-BumpSpecEmissive2Sided_Rikke.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 38 0 0
-// 208:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 224
-//        Vector 176 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+// 0f: Unity 5.3 headers extracted from Normal-BumpSpec2Sided.shader.decompressed:
+// f0: Unity 5.3 headers extracted from Normal-BumpSpecEmissive2Sided_Rikke.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 38 0 0
+// 88:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 44:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 22:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 11:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+//       ConstBuffer "$Globals" 224
+//       Vector 176 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -76,7 +72,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:35:01 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:36:11 2017
 //
 //
 // Input signature:

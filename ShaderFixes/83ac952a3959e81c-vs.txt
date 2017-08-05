@@ -1,74 +1,69 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 83ac952a3959e81c-vs.txt
-// 3DMigoto: 83ac952a3959e81c | Matched 9 variants of 2 shaders: Chickenlord/Reflective/Fresnel/Diffuse, Chickenlord/Reflective/Fresnel/Specular
+// 3DMigoto: 83ac952a3959e81c | Matched 6 variants of 2 shaders: Chickenlord/Reflective/Fresnel/Diffuse, Chickenlord/Reflective/Fresnel/Specular
 //
-// 03f:    Unity headers extracted from Reflect-Diffuse_Fresnel.shader
-// 1c0:    Unity headers extracted from Reflect-Glossy_Fresnel.shader
-// 03f:    Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
-// 1c0:    Shader "Chickenlord/Reflective/Fresnel/Specular" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 1c0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-//            _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//            _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
-// 1c0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//            _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//           }
-//           Fallback "Reflective/VertexLit"
-//           SubShader 1/1 {
-// 03f:        LOD 200
-// 1c0:        LOD 300
-//             Tags { "RenderType"="Opaque" }
-//             Pass 1/5 {
-//               Name "FORWARD"
-//               Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 1c0:          GpuProgramID 27926
-// 03f:          GpuProgramID 52358
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 23
-// 002:              GpuProgramIndex 27
-// 040:              GpuProgramIndex 35
-// 004:              GpuProgramIndex 43
-// 008:              GpuProgramIndex 47
-// 080:              GpuProgramIndex 61
-// 010:              GpuProgramIndex 63
-// 020:              GpuProgramIndex 67
-// 100:              GpuProgramIndex 87
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 0f:    Unity headers extracted from Reflect-Diffuse_Fresnel.shader
+// 30:    Unity headers extracted from Reflect-Glossy_Fresnel.shader
+// 0f:    Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
+// 30:    Shader "Chickenlord/Reflective/Fresnel/Specular" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 30:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 30:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//           _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
+// 30:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//          }
+//          Fallback "Reflective/VertexLit"
+//          SubShader 1/1 {
+// 0f:        LOD 200
+// 30:        LOD 300
+//            Tags { "RenderType"="Opaque" }
+//            Pass 1/5 {
+//              Name "FORWARD"
+//              Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 30:          GpuProgramID 27926
+// 0f:          GpuProgramID 52358
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 23
+// 02:              GpuProgramIndex 27
+// 10:              GpuProgramIndex 35
+// 04:              GpuProgramIndex 43
+// 08:              GpuProgramIndex 47
+// 20:              GpuProgramIndex 61
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 03f: Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
-// 1c0: Unity 5.3 headers extracted from Reflect-Glossy_Fresnel.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 28 0 0
-// 088:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 120:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 042:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 004:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 010:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 001:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 27 4 0 0 1 2 3 4 4 5
-//        ConstBuffer "$Globals" 192
-//        Vector 176 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 64 [_WorldSpaceCameraPos] 3
-//        ConstBuffer "UnityPerDraw" 352
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+// 0f: Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
+// 30: Unity 5.3 headers extracted from Reflect-Glossy_Fresnel.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 28 0 0
+// 28:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 12:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 04:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 01:   Keywords { "DIRECTIONAL" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//       ConstBuffer "$Globals" 192
+//       Vector 176 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 64 [_WorldSpaceCameraPos] 3
+//       ConstBuffer "UnityPerDraw" 352
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -76,7 +71,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:36:34 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:37:23 2017
 //
 //
 // Input signature:
@@ -122,11 +117,11 @@ dcl_output o3.xyz
 dcl_output o4.xyz
 dcl_output o5.xyzw
 dcl_temps 8
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
-dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 ld_indexable(texture2d)(float,float,float,float) r3.xyzw, l(0, 0, 0, 0), t125.xyzw
 
@@ -151,15 +146,6 @@ mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
 mad r0.xyzw, cb2[2].xyzw, v0.zzzz, r0.xyzw
 add r0.xyzw, r0.xyzw, cb2[3].xyzw
 mov o0.xyzw, r0.xyzw
-
-// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 83ac952a3959e81c-vs.txt
-ne r3.w, r0.w, l(1.0)
-if_nz r3.w
-  add r3.w, r0.w, -r3.y
-  mad r0.x, r3.w, r3.x, r0.x
-endif
-
 mov o1.z, r0.z
 mad o1.xy, v3.xyxx, cb0[11].xyxx, cb0[11].zwzz
 mul r0.x, v2.x, cb2[16].x

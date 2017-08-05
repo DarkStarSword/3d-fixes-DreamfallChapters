@@ -1,98 +1,92 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 004d320468f5ea72-vs.txt
-// 3DMigoto: 004d320468f5ea72 | Matched 18 variants of 2 shaders: Hidden/TerrainEngine/Splatmap/Standard-AddPass, Nature/Terrain/Standard
+// 3DMigoto: 004d320468f5ea72 | Matched 12 variants of 2 shaders: Hidden/TerrainEngine/Splatmap/Standard-AddPass, Nature/Terrain/Standard
 //
-// 001ff:    Unity headers extracted from Standard-AddPass.shader
-// 3fe00:    Unity headers extracted from Standard-FirstPass.shader
-// 001ff:    Shader "Hidden/TerrainEngine/Splatmap/Standard-AddPass" {
-// 3fe00:    Shader "Nature/Terrain/Standard" {
-//             Properties {
-//             [HideInInspector]  _Control ("Control (RGBA)", 2D) = "red" { }
-//             [HideInInspector]  _Splat3 ("Layer 3 (A)", 2D) = "white" { }
-//             [HideInInspector]  _Splat2 ("Layer 2 (B)", 2D) = "white" { }
-//             [HideInInspector]  _Splat1 ("Layer 1 (G)", 2D) = "white" { }
-//             [HideInInspector]  _Splat0 ("Layer 0 (R)", 2D) = "white" { }
-//             [HideInInspector]  _Normal3 ("Normal 3 (A)", 2D) = "bump" { }
-//             [HideInInspector]  _Normal2 ("Normal 2 (B)", 2D) = "bump" { }
-//             [HideInInspector]  _Normal1 ("Normal 1 (G)", 2D) = "bump" { }
-//             [HideInInspector]  _Normal0 ("Normal 0 (R)", 2D) = "bump" { }
-//             [HideInInspector] [Gamma]  _Metallic0 ("Metallic 0", Range(0.000000,1.000000)) = 0.000000
-//             [HideInInspector] [Gamma]  _Metallic1 ("Metallic 1", Range(0.000000,1.000000)) = 0.000000
-//             [HideInInspector] [Gamma]  _Metallic2 ("Metallic 2", Range(0.000000,1.000000)) = 0.000000
-//             [HideInInspector] [Gamma]  _Metallic3 ("Metallic 3", Range(0.000000,1.000000)) = 0.000000
-//             [HideInInspector]  _Smoothness0 ("Smoothness 0", Range(0.000000,1.000000)) = 1.000000
-//             [HideInInspector]  _Smoothness1 ("Smoothness 1", Range(0.000000,1.000000)) = 1.000000
-//             [HideInInspector]  _Smoothness2 ("Smoothness 2", Range(0.000000,1.000000)) = 1.000000
-//             [HideInInspector]  _Smoothness3 ("Smoothness 3", Range(0.000000,1.000000)) = 1.000000
-// 3fe00:      [HideInInspector]  _MainTex ("BaseMap (RGB)", 2D) = "white" { }
-// 3fe00:      [HideInInspector]  _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//             }
-// 3fe00:      Dependency "AddPassShader" = "Hidden/TerrainEngine/Splatmap/Standard-AddPass"
-// 001ff:      Fallback "Hidden/TerrainEngine/Splatmap/Diffuse-AddPass"
-// 3fe00:      Dependency "BaseMapShader" = "Hidden/TerrainEngine/Splatmap/Standard-Base"
-// 3fe00:      Fallback "Nature/Terrain/Diffuse"
-//             SubShader 1/1 {
-// 3fe00:        Tags { "QUEUE"="Geometry-100" "RenderType"="Opaque" }
-// 001ff:        Tags { "QUEUE"="Geometry-99" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
-//               Pass 1/3 {
-//                 Name "FORWARD"
-// 3fe00:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry-100" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 001ff:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry-99" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 3fe00:          GpuProgramID 12995
-// 001ff:          ZWrite Off
-// 001ff:          Blend One One
-// 001ff:          GpuProgramID 5070
-//                 Program "vp" {
-//                   SubProgram "d3d11 " {
-// 00201:              GpuProgramIndex 111
-// 00402:              GpuProgramIndex 113
-// 00804:              GpuProgramIndex 115
-// 01008:              GpuProgramIndex 131
-// 02010:              GpuProgramIndex 133
-// 04020:              GpuProgramIndex 135
-// 08040:              GpuProgramIndex 151
-// 10080:              GpuProgramIndex 153
-// 20100:              GpuProgramIndex 155
-//                   }
+// 03f:    Unity headers extracted from Standard-AddPass.shader
+// fc0:    Unity headers extracted from Standard-FirstPass.shader
+// 03f:    Shader "Hidden/TerrainEngine/Splatmap/Standard-AddPass" {
+// fc0:    Shader "Nature/Terrain/Standard" {
+//           Properties {
+//           [HideInInspector]  _Control ("Control (RGBA)", 2D) = "red" { }
+//           [HideInInspector]  _Splat3 ("Layer 3 (A)", 2D) = "white" { }
+//           [HideInInspector]  _Splat2 ("Layer 2 (B)", 2D) = "white" { }
+//           [HideInInspector]  _Splat1 ("Layer 1 (G)", 2D) = "white" { }
+//           [HideInInspector]  _Splat0 ("Layer 0 (R)", 2D) = "white" { }
+//           [HideInInspector]  _Normal3 ("Normal 3 (A)", 2D) = "bump" { }
+//           [HideInInspector]  _Normal2 ("Normal 2 (B)", 2D) = "bump" { }
+//           [HideInInspector]  _Normal1 ("Normal 1 (G)", 2D) = "bump" { }
+//           [HideInInspector]  _Normal0 ("Normal 0 (R)", 2D) = "bump" { }
+//           [HideInInspector] [Gamma]  _Metallic0 ("Metallic 0", Range(0.000000,1.000000)) = 0.000000
+//           [HideInInspector] [Gamma]  _Metallic1 ("Metallic 1", Range(0.000000,1.000000)) = 0.000000
+//           [HideInInspector] [Gamma]  _Metallic2 ("Metallic 2", Range(0.000000,1.000000)) = 0.000000
+//           [HideInInspector] [Gamma]  _Metallic3 ("Metallic 3", Range(0.000000,1.000000)) = 0.000000
+//           [HideInInspector]  _Smoothness0 ("Smoothness 0", Range(0.000000,1.000000)) = 1.000000
+//           [HideInInspector]  _Smoothness1 ("Smoothness 1", Range(0.000000,1.000000)) = 1.000000
+//           [HideInInspector]  _Smoothness2 ("Smoothness 2", Range(0.000000,1.000000)) = 1.000000
+//           [HideInInspector]  _Smoothness3 ("Smoothness 3", Range(0.000000,1.000000)) = 1.000000
+// fc0:      [HideInInspector]  _MainTex ("BaseMap (RGB)", 2D) = "white" { }
+// fc0:      [HideInInspector]  _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           }
+// fc0:      Dependency "AddPassShader" = "Hidden/TerrainEngine/Splatmap/Standard-AddPass"
+// 03f:      Fallback "Hidden/TerrainEngine/Splatmap/Diffuse-AddPass"
+// fc0:      Dependency "BaseMapShader" = "Hidden/TerrainEngine/Splatmap/Standard-Base"
+// fc0:      Fallback "Nature/Terrain/Diffuse"
+//           SubShader 1/1 {
+// fc0:        Tags { "QUEUE"="Geometry-100" "RenderType"="Opaque" }
+// 03f:        Tags { "QUEUE"="Geometry-99" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+//             Pass 1/3 {
+//               Name "FORWARD"
+// fc0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry-100" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 03f:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry-99" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// fc0:          GpuProgramID 12995
+// 03f:          ZWrite Off
+// 03f:          Blend One One
+// 03f:          GpuProgramID 5070
+//               Program "vp" {
+//                 SubProgram "d3d11 " {
+// 208:              GpuProgramIndex 111
+// 410:              GpuProgramIndex 113
+// 820:              GpuProgramIndex 115
+// 041:              GpuProgramIndex 91
+// 082:              GpuProgramIndex 93
+// 104:              GpuProgramIndex 95
 //                 }
 //               }
 //             }
 //           }
+//         }
 //
-// 001ff: Unity 5.3 headers extracted from Standard-AddPass.shader.decompressed:
-// 3fe00: Unity 5.3 headers extracted from Standard-FirstPass.shader.decompressed:
-//          API d3d11
-//          Shader model vs_4_0
-//          undeciphered1: 201510240 45 0 0
-// 02010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
-// 10080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_TERRAIN_NORMAL_MAP" }
-// 00402:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
-// 04020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
-// 20100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_TERRAIN_NORMAL_MAP" }
-// 00804:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
-// 01008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
-// 08040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_TERRAIN_NORMAL_MAP" }
-// 00201:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
-//          undeciphered2: 1 0 4 0 0 0
-//          undeciphered3: 27 4 0 0 1 2 3 4 4 5
-//          ConstBuffer "$Globals" 240
-//          Vector 128 [_Control_ST]
-//          Vector 176 [_Splat0_ST]
-//          Vector 192 [_Splat1_ST]
-//          Vector 208 [_Splat2_ST]
-//          Vector 224 [_Splat3_ST]
-//          ConstBuffer "UnityPerCamera" 144
-//          Vector 80 [_ProjectionParams]
-//          ConstBuffer "UnityPerDraw" 352
-//          Vector 336 [unity_WorldTransformParams]
-//          Matrix 0 [glstate_matrix_mvp]
-//          Matrix 192 [unity_ObjectToWorld]
-//          Matrix 256 [unity_WorldToObject]
-//          ConstBuffer "UnityLightmaps" 32
-//          Vector 0 [unity_LightmapST]
-//          BindCB "$Globals" 0
-//          BindCB "UnityPerCamera" 1
-//          BindCB "UnityPerDraw" 2
-//          BindCB "UnityLightmaps" 3
+// 03f: Unity 5.3 headers extracted from Standard-AddPass.shader.decompressed:
+// fc0: Unity 5.3 headers extracted from Standard-FirstPass.shader.decompressed:
+//        API d3d11
+//        Shader model vs_4_0
+//        undeciphered1: 201510240 45 0 0
+// 410:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
+// 082:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
+// 820:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
+// 104:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
+// 208:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_TERRAIN_NORMAL_MAP" }
+// 041:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_TERRAIN_NORMAL_MAP" }
+//        undeciphered2: 1 0 4 0 0 0
+//        undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//        ConstBuffer "$Globals" 240
+//        Vector 128 [_Control_ST]
+//        Vector 176 [_Splat0_ST]
+//        Vector 192 [_Splat1_ST]
+//        Vector 208 [_Splat2_ST]
+//        Vector 224 [_Splat3_ST]
+//        ConstBuffer "UnityPerCamera" 144
+//        Vector 80 [_ProjectionParams]
+//        ConstBuffer "UnityPerDraw" 352
+//        Vector 336 [unity_WorldTransformParams]
+//        Matrix 0 [glstate_matrix_mvp]
+//        Matrix 192 [unity_ObjectToWorld]
+//        Matrix 256 [unity_WorldToObject]
+//        ConstBuffer "UnityLightmaps" 32
+//        Vector 0 [unity_LightmapST]
+//        BindCB "$Globals" 0
+//        BindCB "UnityPerCamera" 1
+//        BindCB "UnityPerDraw" 2
+//        BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -100,7 +94,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:00:26 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:07:59 2017
 //
 //
 // Input signature:

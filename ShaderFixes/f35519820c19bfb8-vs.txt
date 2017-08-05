@@ -1,65 +1,61 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed f35519820c19bfb8-vs.txt
-// 3DMigoto: f35519820c19bfb8 | Matched 6 variants of 1 shaders: Dreamfall/FX/Additive Cutout VertexColored
+// 3DMigoto: f35519820c19bfb8 | Matched 4 variants of 1 shaders: Dreamfall/FX/Additive Cutout VertexColored
 //
-//        Unity headers extracted from AdditiveCutoutVertexColored.shader
-//        Shader "Dreamfall/FX/Additive Cutout VertexColored" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _MainTex ("Base (RGB)", 2D) = "white" { }
-//           _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-//           _Boost ("Boost", Float) = 1.000000
-//          }
-//          Fallback "Reflective/Bumped Diffuse"
-//          SubShader 1/1 {
-//            LOD 400
-//            Tags { "QUEUE"="Transparent" "RenderType"="TransparentCutout" }
-//            Pass 1/6 {
-//              Name "FORWARD"
-//              Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
-//              Cull Off
-//              Blend One One
-//              ColorMask RGB
-//              GpuProgramID 23034
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 31
-// 02:              GpuProgramIndex 35
-// 04:              GpuProgramIndex 51
-// 08:              GpuProgramIndex 55
-// 10:              GpuProgramIndex 71
-// 20:              GpuProgramIndex 75
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from AdditiveCutoutVertexColored.shader
+//       Shader "Dreamfall/FX/Additive Cutout VertexColored" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _MainTex ("Base (RGB)", 2D) = "white" { }
+//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//          _Boost ("Boost", Float) = 1.000000
+//         }
+//         Fallback "Reflective/Bumped Diffuse"
+//         SubShader 1/1 {
+//           LOD 400
+//           Tags { "QUEUE"="Transparent" "RenderType"="TransparentCutout" }
+//           Pass 1/6 {
+//             Name "FORWARD"
+//             Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
+//             Cull Off
+//             Blend One One
+//             ColorMask RGB
+//             GpuProgramID 23034
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 31
+// 2:              GpuProgramIndex 35
+// 4:              GpuProgramIndex 51
+// 8:              GpuProgramIndex 55
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from AdditiveCutoutVertexColored.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 28 0 0
-// 08:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 04:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 10:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 01:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 31 5 0 0 2 1 1 2 3 4 4 5
-//       ConstBuffer "$Globals" 192
-//       Vector 160 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
-//       BindCB "UnityLightmaps" 3
+//    Unity 5.3 headers extracted from AdditiveCutoutVertexColored.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 28 0 0
+// 8:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 4:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 1:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 31 5 0 0 2 1 1 2 3 4 4 5
+//      ConstBuffer "$Globals" 192
+//      Vector 160 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
+//      BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -67,7 +63,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:05:17 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:01:29 2017
 //
 //
 // Input signature:

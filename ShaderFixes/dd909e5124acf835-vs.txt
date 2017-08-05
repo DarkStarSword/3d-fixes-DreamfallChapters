@@ -1,84 +1,80 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed dd909e5124acf835-vs.txt
-// 3DMigoto: dd909e5124acf835 | Matched 6 variants of 1 shaders: Dreamfall/Bumped Specular Cloth
+// 3DMigoto: dd909e5124acf835 | Matched 4 variants of 1 shaders: Dreamfall/Bumped Specular Cloth
 //
-//        Unity headers extracted from Normal-Bump-Cloth.shader
-//        Shader "Dreamfall/Bumped Specular Cloth" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-//           _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-//           _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-//           _BumpMap ("Normalmap", 2D) = "bump" { }
-//           _MeshOffsetR ("Offset (R)", Float) = 1.000000
-//           _MeshOffsetG ("Offset (G)", Float) = 1.000000
-//           _MeshOffsetB ("Offset (B)", Float) = 1.000000
-//           _WindDirection ("Wind", Vector) = (0.000000,0.000000,0.000000,0.000000)
-//           _Speed1 ("Speed 1", Float) = 1.000000
-//           _Scale1 ("Scale 1", Float) = 1.000000
-//           _Scale2 ("Scale 2", Float) = 1.000000
-//           _Strength1 ("Strength 1", Float) = 1.000000
-//           _Strength2 ("Strength 2", Float) = 1.000000
-//          }
-//          Fallback "Specular"
-//          SubShader 1/1 {
-//            LOD 400
-//            Tags { "RenderType"="Opaque" }
-//            Pass 4/6 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//              ZWrite Off
-//              GpuProgramID 223794
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 249
-// 02:              GpuProgramIndex 257
-// 04:              GpuProgramIndex 265
-// 08:              GpuProgramIndex 273
-// 10:              GpuProgramIndex 281
-// 20:              GpuProgramIndex 289
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Normal-Bump-Cloth.shader
+//       Shader "Dreamfall/Bumped Specular Cloth" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+//          _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+//          _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+//          _MeshOffsetR ("Offset (R)", Float) = 1.000000
+//          _MeshOffsetG ("Offset (G)", Float) = 1.000000
+//          _MeshOffsetB ("Offset (B)", Float) = 1.000000
+//          _WindDirection ("Wind", Vector) = (0.000000,0.000000,0.000000,0.000000)
+//          _Speed1 ("Speed 1", Float) = 1.000000
+//          _Scale1 ("Scale 1", Float) = 1.000000
+//          _Scale2 ("Scale 2", Float) = 1.000000
+//          _Strength1 ("Strength 1", Float) = 1.000000
+//          _Strength2 ("Strength 2", Float) = 1.000000
+//         }
+//         Fallback "Specular"
+//         SubShader 1/1 {
+//           LOD 400
+//           Tags { "RenderType"="Opaque" }
+//           Pass 4/6 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//             ZWrite Off
+//             GpuProgramID 223794
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 193
+// 2:              GpuProgramIndex 201
+// 4:              GpuProgramIndex 209
+// 8:              GpuProgramIndex 217
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from Normal-Bump-Cloth.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 92 0 0
-// 08:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//       ConstBuffer "$Globals" 256
-//       Float 148 [_MeshOffsetR]
-//       Float 152 [_MeshOffsetG]
-//       Float 156 [_MeshOffsetB]
-//       Float 160 [_Speed1]
-//       Float 164 [_Scale1]
-//       Float 168 [_Scale2]
-//       Float 172 [_Strength1]
-//       Float 176 [_Strength2]
-//       Vector 192 [_WindDirection]
-//       Vector 208 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 0 [_Time]
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Vector 336 [unity_WorldTransformParams]
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
-//       BindCB "UnityLightmaps" 3
+//    Unity 5.3 headers extracted from Normal-Bump-Cloth.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 92 0 0
+// 8:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//      ConstBuffer "$Globals" 256
+//      Float 148 [_MeshOffsetR]
+//      Float 152 [_MeshOffsetG]
+//      Float 156 [_MeshOffsetB]
+//      Float 160 [_Speed1]
+//      Float 164 [_Scale1]
+//      Float 168 [_Scale2]
+//      Float 172 [_Strength1]
+//      Float 176 [_Strength2]
+//      Vector 192 [_WindDirection]
+//      Vector 208 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 0 [_Time]
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
+//      BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -86,7 +82,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:59:43 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:56:50 2017
 //
 //
 // Input signature:

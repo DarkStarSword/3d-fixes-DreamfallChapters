@@ -1,149 +1,143 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed fc689012451bf159-vs.txt
-// 3DMigoto: fc689012451bf159 | Matched 27 variants of 1 shaders: Standard (Specular setup)
+// 3DMigoto: fc689012451bf159 | Matched 24 variants of 1 shaders: Standard (Specular setup)
 //
-//             Unity headers extracted from StandardSpecular.shader
-//             Shader "Standard (Specular setup)" {
-//               Properties {
-//                _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//                _MainTex ("Albedo", 2D) = "white" { }
-//                _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.500000
-//                _Glossiness ("Smoothness", Range(0.000000,1.000000)) = 0.500000
-//                _GlossMapScale ("Smoothness Factor", Range(0.000000,1.000000)) = 1.000000
-//               [Enum(Specular Alpha,0,Albedo Alpha,1)]  _SmoothnessTextureChannel ("Smoothness texture channel", Float) = 0.000000
-//                _SpecColor ("Specular", Color) = (0.200000,0.200000,0.200000,1.000000)
-//                _SpecGlossMap ("Specular", 2D) = "white" { }
-//               [ToggleOff]  _SpecularHighlights ("Specular Highlights", Float) = 1.000000
-//               [ToggleOff]  _GlossyReflections ("Glossy Reflections", Float) = 1.000000
-//                _BumpScale ("Scale", Float) = 1.000000
-//                _BumpMap ("Normal Map", 2D) = "bump" { }
-//                _Parallax ("Height Scale", Range(0.005000,0.080000)) = 0.020000
-//                _ParallaxMap ("Height Map", 2D) = "black" { }
-//                _OcclusionStrength ("Strength", Range(0.000000,1.000000)) = 1.000000
-//                _OcclusionMap ("Occlusion", 2D) = "white" { }
-//                _EmissionColor ("Color", Color) = (0.000000,0.000000,0.000000,1.000000)
-//                _EmissionMap ("Emission", 2D) = "white" { }
-//                _DetailMask ("Detail Mask", 2D) = "white" { }
-//                _DetailAlbedoMap ("Detail Albedo x2", 2D) = "grey" { }
-//                _DetailNormalMapScale ("Scale", Float) = 1.000000
-//                _DetailNormalMap ("Normal Map", 2D) = "bump" { }
-//               [Enum(UV0,0,UV1,1)]  _UVSec ("UV Set for secondary textures", Float) = 0.000000
-//               [HideInInspector]  _Mode ("__mode", Float) = 0.000000
-//               [HideInInspector]  _SrcBlend ("__src", Float) = 1.000000
-//               [HideInInspector]  _DstBlend ("__dst", Float) = 0.000000
-//               [HideInInspector]  _ZWrite ("__zw", Float) = 1.000000
-//               }
-//               CustomEditor "StandardShaderGUI"
-//               Fallback "VertexLit"
-//               SubShader 1/2 {
-//                 LOD 300
-//                 Tags { "RenderType"="Opaque" "PerformanceChecks"="False" }
-//                 Pass 1/4 {
-//                   Name "FORWARD"
-//                   Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" "PerformanceChecks"="False" }
-//                   ZWrite [_ZWrite]
-//                   Blend [_SrcBlend] [_DstBlend]
-//                   GpuProgramID 1926
-//                   Program "vp" {
-//                     SubProgram "d3d11 " {
-// 0010000:              GpuProgramIndex 1017
-// 0020000:              GpuProgramIndex 1037
-// 0040000:              GpuProgramIndex 1077
-// 0080000:              GpuProgramIndex 1097
-// 0100000:              GpuProgramIndex 1117
-// 0200000:              GpuProgramIndex 1157
-// 0400000:              GpuProgramIndex 1177
-// 0800000:              GpuProgramIndex 1197
-// 1000000:              GpuProgramIndex 1237
-// 2000000:              GpuProgramIndex 1257
-// 4000000:              GpuProgramIndex 1277
-// 0000001:              GpuProgramIndex 597
-// 0000002:              GpuProgramIndex 617
-// 0000004:              GpuProgramIndex 637
-// 0000008:              GpuProgramIndex 677
-// 0000010:              GpuProgramIndex 697
-// 0000020:              GpuProgramIndex 717
-// 0000040:              GpuProgramIndex 757
-// 0000080:              GpuProgramIndex 777
-// 0000100:              GpuProgramIndex 797
-// 0000200:              GpuProgramIndex 837
-// 0000400:              GpuProgramIndex 857
-// 0000800:              GpuProgramIndex 877
-// 0001000:              GpuProgramIndex 917
-// 0002000:              GpuProgramIndex 937
-// 0004000:              GpuProgramIndex 957
-// 0008000:              GpuProgramIndex 997
-//                     }
-//                   }
-//                 }
-//               }
-//             }
+//            Unity headers extracted from StandardSpecular.shader
+//            Shader "Standard (Specular setup)" {
+//              Properties {
+//               _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//               _MainTex ("Albedo", 2D) = "white" { }
+//               _Cutoff ("Alpha Cutoff", Range(0.000000,1.000000)) = 0.500000
+//               _Glossiness ("Smoothness", Range(0.000000,1.000000)) = 0.500000
+//               _GlossMapScale ("Smoothness Factor", Range(0.000000,1.000000)) = 1.000000
+//              [Enum(Specular Alpha,0,Albedo Alpha,1)]  _SmoothnessTextureChannel ("Smoothness texture channel", Float) = 0.000000
+//               _SpecColor ("Specular", Color) = (0.200000,0.200000,0.200000,1.000000)
+//               _SpecGlossMap ("Specular", 2D) = "white" { }
+//              [ToggleOff]  _SpecularHighlights ("Specular Highlights", Float) = 1.000000
+//              [ToggleOff]  _GlossyReflections ("Glossy Reflections", Float) = 1.000000
+//               _BumpScale ("Scale", Float) = 1.000000
+//               _BumpMap ("Normal Map", 2D) = "bump" { }
+//               _Parallax ("Height Scale", Range(0.005000,0.080000)) = 0.020000
+//               _ParallaxMap ("Height Map", 2D) = "black" { }
+//               _OcclusionStrength ("Strength", Range(0.000000,1.000000)) = 1.000000
+//               _OcclusionMap ("Occlusion", 2D) = "white" { }
+//               _EmissionColor ("Color", Color) = (0.000000,0.000000,0.000000,1.000000)
+//               _EmissionMap ("Emission", 2D) = "white" { }
+//               _DetailMask ("Detail Mask", 2D) = "white" { }
+//               _DetailAlbedoMap ("Detail Albedo x2", 2D) = "grey" { }
+//               _DetailNormalMapScale ("Scale", Float) = 1.000000
+//               _DetailNormalMap ("Normal Map", 2D) = "bump" { }
+//              [Enum(UV0,0,UV1,1)]  _UVSec ("UV Set for secondary textures", Float) = 0.000000
+//              [HideInInspector]  _Mode ("__mode", Float) = 0.000000
+//              [HideInInspector]  _SrcBlend ("__src", Float) = 1.000000
+//              [HideInInspector]  _DstBlend ("__dst", Float) = 0.000000
+//              [HideInInspector]  _ZWrite ("__zw", Float) = 1.000000
+//              }
+//              CustomEditor "StandardShaderGUI"
+//              Fallback "VertexLit"
+//              SubShader 1/2 {
+//                LOD 300
+//                Tags { "RenderType"="Opaque" "PerformanceChecks"="False" }
+//                Pass 1/4 {
+//                  Name "FORWARD"
+//                  Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" "PerformanceChecks"="False" }
+//                  ZWrite [_ZWrite]
+//                  Blend [_SrcBlend] [_DstBlend]
+//                  GpuProgramID 1926
+//                  Program "vp" {
+//                    SubProgram "d3d11 " {
+// 008000:              GpuProgramIndex 1017
+// 010000:              GpuProgramIndex 1057
+// 020000:              GpuProgramIndex 1077
+// 040000:              GpuProgramIndex 1117
+// 080000:              GpuProgramIndex 1137
+// 100000:              GpuProgramIndex 1177
+// 200000:              GpuProgramIndex 1197
+// 400000:              GpuProgramIndex 1237
+// 800000:              GpuProgramIndex 1257
+// 000001:              GpuProgramIndex 577
+// 000002:              GpuProgramIndex 597
+// 000004:              GpuProgramIndex 637
+// 000008:              GpuProgramIndex 657
+// 000010:              GpuProgramIndex 697
+// 000020:              GpuProgramIndex 717
+// 000040:              GpuProgramIndex 757
+// 000080:              GpuProgramIndex 777
+// 000100:              GpuProgramIndex 817
+// 000200:              GpuProgramIndex 837
+// 000400:              GpuProgramIndex 877
+// 000800:              GpuProgramIndex 897
+// 001000:              GpuProgramIndex 937
+// 002000:              GpuProgramIndex 957
+// 004000:              GpuProgramIndex 997
+//                    }
+//                  }
+//                }
+//              }
+//            }
 //
-//          Unity 5.3 headers extracted from StandardSpecular.shader.decompressed:
-//            API d3d11
-//            Shader model vs_4_0
-//            undeciphered1: 201510240 67 0 0
-// 0080000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0400000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0002000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000400:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
-// 0000010:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000002:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" }
-// 2000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0010000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000080:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0100000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0800000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0004000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000800:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
-// 0000020:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000004:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" "_NORMALMAP" }
-// 4000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0020000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000100:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0040000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0200000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0001000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000200:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
-// 0000008:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000001:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_NORMALMAP" }
-// 1000000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0008000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 0000040:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-//            undeciphered2: 1 0 4 0 0 0
-//            undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-//            ConstBuffer "$Globals" 240
-//            Vector 48 [unity_ColorSpaceLuminance]
-//            Vector 160 [_MainTex_ST]
-//            Vector 176 [_DetailAlbedoMap_ST]
-//            Float 220 [_UVSec]
-//            ConstBuffer "UnityPerCamera" 144
-//            Vector 64 [_WorldSpaceCameraPos] 3
-//            ConstBuffer "UnityLighting" 720
-//            Vector 32 [unity_4LightPosX0]
-//            Vector 48 [unity_4LightPosY0]
-//            Vector 64 [unity_4LightPosZ0]
-//            Vector 80 [unity_4LightAtten0]
-//            Vector 96 [unity_LightColor0]
-//            Vector 112 [unity_LightColor1]
-//            Vector 128 [unity_LightColor2]
-//            Vector 144 [unity_LightColor3]
-//            Vector 160 [unity_LightColor4]
-//            Vector 176 [unity_LightColor5]
-//            Vector 192 [unity_LightColor6]
-//            Vector 208 [unity_LightColor7]
-//            Vector 656 [unity_SHBr]
-//            Vector 672 [unity_SHBg]
-//            Vector 688 [unity_SHBb]
-//            Vector 704 [unity_SHC]
-//            ConstBuffer "UnityPerDraw" 352
-//            Vector 336 [unity_WorldTransformParams]
-//            Matrix 0 [glstate_matrix_mvp]
-//            Matrix 192 [unity_ObjectToWorld]
-//            Matrix 256 [unity_WorldToObject]
-//            BindCB "$Globals" 0
-//            BindCB "UnityPerCamera" 1
-//            BindCB "UnityLighting" 2
-//            BindCB "UnityPerDraw" 3
+//         Unity 5.3 headers extracted from StandardSpecular.shader.decompressed:
+//           API d3d11
+//           Shader model vs_4_0
+//           undeciphered1: 201510240 67 0 0
+// 080000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 200000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 002000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000800:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 000020:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000002:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" }
+// 000008:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+// 800000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 020000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 008000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 000200:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000080:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+// 040000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 100000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 001000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000400:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 000010:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000001:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_NORMALMAP" }
+// 000004:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+// 400000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 010000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 004000:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 000100:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 000040:   Keywords { "DIRECTIONAL" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "_EMISSION" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+//           undeciphered2: 1 0 4 0 0 0
+//           undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+//           ConstBuffer "$Globals" 240
+//           Vector 48 [unity_ColorSpaceLuminance]
+//           Vector 160 [_MainTex_ST]
+//           Vector 176 [_DetailAlbedoMap_ST]
+//           Float 220 [_UVSec]
+//           ConstBuffer "UnityPerCamera" 144
+//           Vector 64 [_WorldSpaceCameraPos] 3
+//           ConstBuffer "UnityLighting" 720
+//           Vector 32 [unity_4LightPosX0]
+//           Vector 48 [unity_4LightPosY0]
+//           Vector 64 [unity_4LightPosZ0]
+//           Vector 80 [unity_4LightAtten0]
+//           Vector 96 [unity_LightColor0]
+//           Vector 112 [unity_LightColor1]
+//           Vector 128 [unity_LightColor2]
+//           Vector 144 [unity_LightColor3]
+//           Vector 160 [unity_LightColor4]
+//           Vector 176 [unity_LightColor5]
+//           Vector 192 [unity_LightColor6]
+//           Vector 208 [unity_LightColor7]
+//           Vector 656 [unity_SHBr]
+//           Vector 672 [unity_SHBg]
+//           Vector 688 [unity_SHBb]
+//           Vector 704 [unity_SHC]
+//           ConstBuffer "UnityPerDraw" 352
+//           Vector 336 [unity_WorldTransformParams]
+//           Matrix 0 [glstate_matrix_mvp]
+//           Matrix 192 [unity_ObjectToWorld]
+//           Matrix 256 [unity_WorldToObject]
+//           BindCB "$Globals" 0
+//           BindCB "UnityPerCamera" 1
+//           BindCB "UnityLighting" 2
+//           BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -151,7 +145,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:07:37 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 23:03:27 2017
 //
 //
 // Input signature:
@@ -199,11 +193,11 @@ dcl_output o5.xyzw
 dcl_output o6.xyzw
 dcl_output o7.xyz
 dcl_temps 10
+dcl_constantbuffer cb10[4], immediateIndexed
+dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
-dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 ld_indexable(texture2d)(float,float,float,float) r5.xyzw, l(0, 0, 0, 0), t125.xyzw
 
@@ -228,15 +222,6 @@ mad r0.xyzw, cb3[0].xyzw, v0.xxxx, r0.xyzw
 mad r0.xyzw, cb3[2].xyzw, v0.zzzz, r0.xyzw
 add r0.xyzw, r0.xyzw, cb3[3].xyzw
 mov o0.xyzw, r0.xyzw
-
-// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed fc689012451bf159-vs.txt
-ne r5.w, r0.w, l(1.0)
-if_nz r5.w
-  add r5.w, r0.w, -r5.y
-  mad r0.x, r5.w, r5.x, r0.x
-endif
-
 mov o2.w, r0.z
 eq r0.x, cb0[13].w, l(0.000000)
 movc r0.xy, r0.xxxx, v2.xyxx, v3.xyxx

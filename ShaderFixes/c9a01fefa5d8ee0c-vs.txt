@@ -1,74 +1,70 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed c9a01fefa5d8ee0c-vs.txt
-// 3DMigoto: c9a01fefa5d8ee0c | Matched 12 variants of 2 shaders: Legacy Shaders/Bumped Diffuse, Legacy Shaders/Transparent/Cutout/Bumped Diffuse
+// 3DMigoto: c9a01fefa5d8ee0c | Matched 8 variants of 2 shaders: Legacy Shaders/Bumped Diffuse, Legacy Shaders/Transparent/Cutout/Bumped Diffuse
 //
-// fc0:    Unity headers extracted from AlphaTest-Bumped.shader
-// 03f:    Unity headers extracted from Normal-Bumped.shader
-// 03f:    Shader "Legacy Shaders/Bumped Diffuse" {
-// fc0:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Diffuse" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
-// 03f:       _MainTex ("Base (RGB)", 2D) = "white" { }
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-// fc0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-//           }
-// 03f:      Fallback "Legacy Shaders/Diffuse"
-// fc0:      Fallback "Legacy Shaders/Transparent/Cutout/Diffuse"
-//           SubShader 1/1 {
-//             LOD 300
-// fc0:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// 03f:        Tags { "RenderType"="Opaque" }
-//             Pass 1/5 {
-//               Name "FORWARD"
-// fc0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
-// 03f:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// fc0:          ColorMask RGB
-// 03f:          GpuProgramID 1415
-// fc0:          GpuProgramID 4395
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 041:              GpuProgramIndex 43
-// 082:              GpuProgramIndex 45
-// 104:              GpuProgramIndex 69
-// 208:              GpuProgramIndex 71
-// 410:              GpuProgramIndex 95
-// 820:              GpuProgramIndex 97
-//                 }
-//               }
-//             }
-//           }
-//         }
+// f0:    Unity headers extracted from AlphaTest-Bumped.shader
+// 0f:    Unity headers extracted from Normal-Bumped.shader
+// 0f:    Shader "Legacy Shaders/Bumped Diffuse" {
+// f0:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Diffuse" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0:       _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
+// 0f:       _MainTex ("Base (RGB)", 2D) = "white" { }
+//           _BumpMap ("Normalmap", 2D) = "bump" { }
+// f0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//          }
+// 0f:      Fallback "Legacy Shaders/Diffuse"
+// f0:      Fallback "Legacy Shaders/Transparent/Cutout/Diffuse"
+//          SubShader 1/1 {
+//            LOD 300
+// f0:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 0f:        Tags { "RenderType"="Opaque" }
+//            Pass 1/5 {
+//              Name "FORWARD"
+// f0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
+// 0f:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// f0:          ColorMask RGB
+// 0f:          GpuProgramID 1415
+// f0:          GpuProgramID 4395
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 11:              GpuProgramIndex 43
+// 22:              GpuProgramIndex 45
+// 44:              GpuProgramIndex 69
+// 88:              GpuProgramIndex 71
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// fc0: Unity 5.3 headers extracted from AlphaTest-Bumped.shader.decompressed:
-// 03f: Unity 5.3 headers extracted from Normal-Bumped.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 38 0 0
-// 104:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 410:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 041:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 208:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-// 03f:   ConstBuffer "$Globals" 176
-// fc0:   ConstBuffer "$Globals" 192
-//        Vector 144 [_MainTex_ST]
-//        Vector 160 [_BumpMap_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+// f0: Unity 5.3 headers extracted from AlphaTest-Bumped.shader.decompressed:
+// 0f: Unity 5.3 headers extracted from Normal-Bumped.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 38 0 0
+// 44:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 11:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 88:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 22:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+// 0f:   ConstBuffer "$Globals" 176
+// f0:   ConstBuffer "$Globals" 192
+//       Vector 144 [_MainTex_ST]
+//       Vector 160 [_BumpMap_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -76,7 +72,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:54:34 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:52:32 2017
 //
 //
 // Input signature:

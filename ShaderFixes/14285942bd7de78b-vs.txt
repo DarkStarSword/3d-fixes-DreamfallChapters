@@ -1,5 +1,5 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 14285942bd7de78b-vs.txt
-// 3DMigoto: 14285942bd7de78b | Matched 9 variants of 1 shaders: Standard (Specular setup)
+// 3DMigoto: 14285942bd7de78b | Matched 12 variants of 1 shaders: Standard (Specular setup)
 //
 //         Unity headers extracted from StandardSpecular.shader
 //         Shader "Standard (Specular setup)" {
@@ -45,15 +45,18 @@
 //               GpuProgramID 385030
 //               Program "vp" {
 //                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 6156
-// 002:              GpuProgramIndex 6228
-// 004:              GpuProgramIndex 6300
-// 008:              GpuProgramIndex 6372
-// 010:              GpuProgramIndex 6444
-// 020:              GpuProgramIndex 6516
-// 040:              GpuProgramIndex 6588
-// 080:              GpuProgramIndex 6660
-// 100:              GpuProgramIndex 6732
+// 001:              GpuProgramIndex 5874
+// 002:              GpuProgramIndex 5928
+// 004:              GpuProgramIndex 5982
+// 008:              GpuProgramIndex 6036
+// 010:              GpuProgramIndex 6090
+// 020:              GpuProgramIndex 6144
+// 040:              GpuProgramIndex 6198
+// 080:              GpuProgramIndex 6252
+// 100:              GpuProgramIndex 6306
+// 200:              GpuProgramIndex 6360
+// 400:              GpuProgramIndex 6414
+// 800:              GpuProgramIndex 6468
 //                 }
 //               }
 //             }
@@ -64,15 +67,18 @@
 //        API d3d11
 //        Shader model vs_4_0
 //        undeciphered1: 201510240 83 0 0
-// 040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
-// 002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 200:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHABLEND_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 400:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
 // 001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_NORMALMAP" }
-// 100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
-// 004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
+// 800:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHAPREMULTIPLY_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_ALPHATEST_ON" "_NORMALMAP" }
+// 010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_NORMALMAP" "_SPECGLOSSMAP" }
+// 008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "_EMISSION" "VERTEXLIGHT_ON" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" "_NORMALMAP" }
 //        undeciphered2: 1 0 5 0 0 0
 //        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
 //        ConstBuffer "$Globals" 240
@@ -122,7 +128,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:06:04 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:12:31 2017
 //
 //
 // Input signature:

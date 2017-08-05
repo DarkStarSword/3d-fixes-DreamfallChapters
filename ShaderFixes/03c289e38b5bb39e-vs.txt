@@ -1,103 +1,101 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 03c289e38b5bb39e-vs.txt
-// 3DMigoto: 03c289e38b5bb39e | Matched 12 variants of 4 shaders: Dreamfall/FX/AdditiveGlowScroll, Dreamfall/FX/AdditiveGlowScroll_NoZwrite, Dreamfall/FX/GlowScroll, Dreamfall/FX/GlowSignScroll
+// 3DMigoto: 03c289e38b5bb39e | Matched 8 variants of 4 shaders: Dreamfall/FX/AdditiveGlowScroll, Dreamfall/FX/AdditiveGlowScroll_NoZwrite, Dreamfall/FX/GlowScroll, Dreamfall/FX/GlowSignScroll
 //
-// 007:    Unity headers extracted from AdditiveGlowScroll.shader
-// e00:    Unity headers extracted from AdditiveGlowScroll_NoZwrite.shader
-// 038:    Unity headers extracted from GlowScroll.shader
-// 1c0:    Unity headers extracted from glowsign_scroll.shader
-// 007:    Shader "Dreamfall/FX/AdditiveGlowScroll" {
-// e00:    Shader "Dreamfall/FX/AdditiveGlowScroll_NoZwrite" {
-// 038:    Shader "Dreamfall/FX/GlowScroll" {
-// 1c0:    Shader "Dreamfall/FX/GlowSignScroll" {
-//           Properties {
-// 1c0:       _Color ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-// e3f:       _Color1 ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _Color2 ("Color 2 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
-// e3f:       _MainTex ("Diffuse 2 (RGB)", 2D) = "black" { }
-// 1c0:       _MainTex ("Diffuse(RGB)", 2D) = "black" { }
-// e3f:       _MainTex2 ("Diffuse 2 (RGB)", 2D) = "black" { }
-// 1c0:       _MainTex2 ("Diffuse2(RGB)", 2D) = "black" { }
-// 1c0:       _Scroll1 ("ScrollSpeed 1", Float) = 1.000000
-// e3f:       _Scroll1x ("ScrollSpeed 1 x", Float) = 0.000000
-// e3f:       _Scroll1y ("ScrollSpeed 1 y", Float) = 0.000000
-// 1c0:       _Scroll2 ("ScrollSpeed 2", Float) = 1.000000
-// e3f:       _Scroll2x ("ScrollSpeed 2 x", Float) = 0.000000
-// 1c0:       _Scroll3 ("ScrollSpeed y 1", Float) = 0.000000
-// e3f:       _Scroll2y ("ScrollSpeed 2 y", Float) = 0.000000
-// 1c0:       _Scroll4 ("ScrollSpeed y 2", Float) = 0.000000
-// 1c0:       _Boost ("Boost Color", Float) = 1.000000
-// e3f:       _Boost1 ("Boost Diffuse 1", Float) = 1.000000
-// e3f:       _Boost2 ("Boost Diffuse 2", Float) = 1.000000
-//           }
-//           SubShader 1/1 {
-// 038:        Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
-// fc7:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-//             Pass 1/5 {
-//               Name "FORWARD"
-// 038:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// fc7:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
-// e00:          ZWrite Off
-// e3f:          Cull Off
-// fc7:          Blend SrcAlpha One
-// e38:          GpuProgramID 16726
-// 1c0:          GpuProgramID 34883
-// 007:          GpuProgramID 41171
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 249:              GpuProgramIndex 39
-// 492:              GpuProgramIndex 59
-// 924:              GpuProgramIndex 79
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 03:    Unity headers extracted from AdditiveGlowScroll.shader
+// c0:    Unity headers extracted from AdditiveGlowScroll_NoZwrite.shader
+// 0c:    Unity headers extracted from GlowScroll.shader
+// 30:    Unity headers extracted from glowsign_scroll.shader
+// 03:    Shader "Dreamfall/FX/AdditiveGlowScroll" {
+// c0:    Shader "Dreamfall/FX/AdditiveGlowScroll_NoZwrite" {
+// 0c:    Shader "Dreamfall/FX/GlowScroll" {
+// 30:    Shader "Dreamfall/FX/GlowSignScroll" {
+//          Properties {
+// 30:       _Color ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// cf:       _Color1 ("Color 1 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _Color2 ("Color 2 Tint", Color) = (1.000000,1.000000,1.000000,1.000000)
+// cf:       _MainTex ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 30:       _MainTex ("Diffuse(RGB)", 2D) = "black" { }
+// cf:       _MainTex2 ("Diffuse 2 (RGB)", 2D) = "black" { }
+// 30:       _MainTex2 ("Diffuse2(RGB)", 2D) = "black" { }
+// 30:       _Scroll1 ("ScrollSpeed 1", Float) = 1.000000
+// cf:       _Scroll1x ("ScrollSpeed 1 x", Float) = 0.000000
+// cf:       _Scroll1y ("ScrollSpeed 1 y", Float) = 0.000000
+// 30:       _Scroll2 ("ScrollSpeed 2", Float) = 1.000000
+// cf:       _Scroll2x ("ScrollSpeed 2 x", Float) = 0.000000
+// 30:       _Scroll3 ("ScrollSpeed y 1", Float) = 0.000000
+// cf:       _Scroll2y ("ScrollSpeed 2 y", Float) = 0.000000
+// 30:       _Scroll4 ("ScrollSpeed y 2", Float) = 0.000000
+// 30:       _Boost ("Boost Color", Float) = 1.000000
+// cf:       _Boost1 ("Boost Diffuse 1", Float) = 1.000000
+// cf:       _Boost2 ("Boost Diffuse 2", Float) = 1.000000
+//          }
+//          SubShader 1/1 {
+// 0c:        Tags { "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "RenderType"="Opaque" }
+// f3:        Tags { "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
+//            Pass 1/5 {
+//              Name "FORWARD"
+// 0c:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Geometry" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// f3:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="Transparent" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="Transparent" }
+// f0:          ZWrite Off
+// cf:          Cull Off
+// f3:          Blend SrcAlpha One
+// cc:          GpuProgramID 16726
+// 30:          GpuProgramID 31981
+// 03:          GpuProgramID 41171
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 55:              GpuProgramIndex 39
+// aa:              GpuProgramIndex 59
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 007: Unity 5.3 headers extracted from AdditiveGlowScroll.shader.decompressed:
-// e00: Unity 5.3 headers extracted from AdditiveGlowScroll_NoZwrite.shader.decompressed:
-// 038: Unity 5.3 headers extracted from GlowScroll.shader.decompressed:
-// 1c0: Unity 5.3 headers extracted from glowsign_scroll.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 58 0 0
-// 492:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
-// 924:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "VERTEXLIGHT_ON" }
-// 249:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 11 3 0 0 1 2 3 4
-//        ConstBuffer "$Globals" 224
-//        Vector 48 [unity_ColorSpaceLuminance]
-// 1c0:   Vector 192 [_MainTex2_ST]
-// e3f:   Vector 192 [_MainTex_ST]
-// e3f:   Vector 208 [_MainTex2_ST]
-// 1c0:   Vector 208 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityLighting" 720
-//        Vector 32 [unity_4LightPosX0]
-//        Vector 48 [unity_4LightPosY0]
-//        Vector 64 [unity_4LightPosZ0]
-//        Vector 80 [unity_4LightAtten0]
-//        Vector 96 [unity_LightColor0]
-//        Vector 112 [unity_LightColor1]
-//        Vector 128 [unity_LightColor2]
-//        Vector 144 [unity_LightColor3]
-//        Vector 160 [unity_LightColor4]
-//        Vector 176 [unity_LightColor5]
-//        Vector 192 [unity_LightColor6]
-//        Vector 208 [unity_LightColor7]
-//        Vector 656 [unity_SHBr]
-//        Vector 672 [unity_SHBg]
-//        Vector 688 [unity_SHBb]
-//        Vector 704 [unity_SHC]
-//        ConstBuffer "UnityPerDraw" 352
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityLighting" 2
-//        BindCB "UnityPerDraw" 3
+// 03: Unity 5.3 headers extracted from AdditiveGlowScroll.shader.decompressed:
+// c0: Unity 5.3 headers extracted from AdditiveGlowScroll_NoZwrite.shader.decompressed:
+// 0c: Unity 5.3 headers extracted from GlowScroll.shader.decompressed:
+// 30: Unity 5.3 headers extracted from glowsign_scroll.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 58 0 0
+// aa:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "VERTEXLIGHT_ON" }
+// 55:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "VERTEXLIGHT_ON" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 11 3 0 0 1 2 3 4
+//       ConstBuffer "$Globals" 224
+//       Vector 48 [unity_ColorSpaceLuminance]
+// 30:   Vector 192 [_MainTex2_ST]
+// cf:   Vector 192 [_MainTex_ST]
+// cf:   Vector 208 [_MainTex2_ST]
+// 30:   Vector 208 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityLighting" 720
+//       Vector 32 [unity_4LightPosX0]
+//       Vector 48 [unity_4LightPosY0]
+//       Vector 64 [unity_4LightPosZ0]
+//       Vector 80 [unity_4LightAtten0]
+//       Vector 96 [unity_LightColor0]
+//       Vector 112 [unity_LightColor1]
+//       Vector 128 [unity_LightColor2]
+//       Vector 144 [unity_LightColor3]
+//       Vector 160 [unity_LightColor4]
+//       Vector 176 [unity_LightColor5]
+//       Vector 192 [unity_LightColor6]
+//       Vector 208 [unity_LightColor7]
+//       Vector 656 [unity_SHBr]
+//       Vector 672 [unity_SHBg]
+//       Vector 688 [unity_SHBb]
+//       Vector 704 [unity_SHC]
+//       ConstBuffer "UnityPerDraw" 352
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityLighting" 2
+//       BindCB "UnityPerDraw" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -105,7 +103,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:01:27 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:08:47 2017
 //
 //
 // Input signature:

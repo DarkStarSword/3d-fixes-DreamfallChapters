@@ -1,84 +1,64 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 22211066a66d970c-vs.txt
-// 3DMigoto: 22211066a66d970c | Matched 6 variants of 2 shaders: Dreamfall/Unity5/Standard VertexColor_CheapGloss, Dreamfall/Unity5/Standard_VertexBlend_2Tex
+// 3DMigoto: 22211066a66d970c | Matched 2 variants of 1 shaders: Dreamfall/Unity5/Standard_VertexBlend_2Tex
 //
-// 38:    Unity headers extracted from StandardVertexColor_CheapGloss.shader
-// 07:    Unity headers extracted from Standard_VertexBlend_2Tex.shader
-// 38:    Shader "Dreamfall/Unity5/Standard VertexColor_CheapGloss" {
-// 07:    Shader "Dreamfall/Unity5/Standard_VertexBlend_2Tex" {
-//          Properties {
-// 07:       _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 38:       _Color ("Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 07:       _Col2 ("Tint Color 2", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 38:       _MainTex ("Albedo (RGB)", 2D) = "white" { }
-// 07:       _MainTex ("Base", 2D) = "black" { }
-// 38:       _NormalTex ("Normal (RGB)", 2D) = "bump" { }
-// 07:       _2ndTex ("2nd - vertex Red", 2D) = "black" { }
-// 38:       _NormalMul ("Normal Multiplier", Float) = 1.000000
-// 38:       _AlphaFactor ("AlphaFactor", Range(0.000000,1.000000)) = 1.000000
-// 07:       _Bump1 ("_Bump Base", 2D) = "bump" { }
-// 07:       _Bump2 ("_Bump 2nd", 2D) = "bump" { }
-// 38:       _glossHigh ("Gloss High", Range(0.000000,1.000000)) = 1.000000
-// 07:       _NoiseTex ("VertexColor Noise (RGB)", 2D) = "black" { }
-// 38:       _glossLow ("Gloss Low", Range(0.000000,1.000000)) = 0.000000
-// 07:       _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
-// 38:       _MetalNess ("Metalness", Range(0.000000,1.000000)) = 0.000000
-// 07:       _2ndMainAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
-// 38:       _MetalNessAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-// 07:       _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
-// 38:       _VColorMult ("Vertex Color Strength", Range(0.000000,1.000000)) = 0.000000
-// 07:       _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
-// 38:       _LightProbeMulti ("Lightprobe Multiply", Float) = 1.000000
-// 38:       _LightProbePow ("Lightprobe Power", Float) = 1.000000
-// 07:       _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
-// 07:       _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
-//          }
-//          Fallback "Legacy Shaders/Diffuse"
-//          SubShader 1/1 {
-// 07:        LOD 100
-// 38:        LOD 200
-//            Tags { "RenderType"="Opaque" }
-//            Pass 2/3 {
-//              Name "FORWARD"
-//              Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-//              ZWrite Off
-//              Blend One One
-// 38:          GpuProgramID 106118
-// 07:          GpuProgramID 107111
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 09:              GpuProgramIndex 183
-// 12:              GpuProgramIndex 209
-// 24:              GpuProgramIndex 235
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from Standard_VertexBlend_2Tex.shader
+//       Shader "Dreamfall/Unity5/Standard_VertexBlend_2Tex" {
+//         Properties {
+//          _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _Col2 ("Tint Color 2", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _MainTex ("Base", 2D) = "black" { }
+//          _2ndTex ("2nd - vertex Red", 2D) = "black" { }
+//          _Bump1 ("_Bump Base", 2D) = "bump" { }
+//          _Bump2 ("_Bump 2nd", 2D) = "bump" { }
+//          _NoiseTex ("VertexColor Noise (RGB)", 2D) = "black" { }
+//          _MainAlphaFactor ("Alpha Factor Main", Range(0.000000,1.000000)) = 1.000000
+//          _2ndMainAlphaFactor ("Alpha Factor Seccond", Range(0.000000,1.000000)) = 1.000000
+//          _MainGloss ("Gloss Main", Range(0.000000,1.000000)) = 0.800000
+//          _2ndGloss ("Gloss Seccond", Range(0.000000,1.000000)) = 0.200000
+//          _MainMetallness ("Metallness Main", Range(0.000000,1.000000)) = 0.000000
+//          _2ndMetallness ("Metallness Seccond", Range(0.000000,1.000000)) = 0.000000
+//         }
+//         Fallback "Legacy Shaders/Diffuse"
+//         SubShader 1/2 {
+//           LOD 1000
+//           Tags { "RenderType"="Opaque" }
+//           Pass 2/3 {
+//             Name "FORWARD"
+//             Tags { "LIGHTMODE"="ForwardAdd" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//             ZWrite Off
+//             Blend One One
+//             GpuProgramID 70463
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 127
+// 2:              GpuProgramIndex 140
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-// 38: Unity 5.3 headers extracted from StandardVertexColor_CheapGloss.shader.decompressed:
-// 07: Unity 5.3 headers extracted from Standard_VertexBlend_2Tex.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 37 0 0
-// 12:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
-// 24:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" }
-// 09:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
-//       undeciphered2: 1 0 3 0 0 0
-//       undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
-//       ConstBuffer "$Globals" 224
-//       Vector 192 [_MainTex_ST]
-// 07:   Vector 208 [_NoiseTex_ST]
-// 38:   Vector 208 [_NormalTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Vector 336 [unity_WorldTransformParams]
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
+//    Unity 5.3 headers extracted from Standard_VertexBlend_2Tex.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 37 0 0
+// 2:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP" }
+// 1:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_LINEAR" }
+//      undeciphered2: 1 0 3 0 0 0
+//      undeciphered3: 143 5 0 0 2 1 1 2 3 4 7 8
+//      ConstBuffer "$Globals" 224
+//      Vector 192 [_MainTex_ST]
+//      Vector 208 [_NoiseTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -86,7 +66,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:09:49 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:15:38 2017
 //
 //
 // Input signature:

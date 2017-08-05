@@ -1,86 +1,80 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed ec160fe69e61e745-vs.txt
-// 3DMigoto: ec160fe69e61e745 | Matched 9 variants of 1 shaders: Self-Illumin/Dreamfall/Robot Eyes
+// 3DMigoto: ec160fe69e61e745 | Matched 6 variants of 1 shaders: Self-Illumin/Dreamfall/Robot Eyes
 //
-//         Unity headers extracted from Reflect-Parallax_RobotEyes.shader
-//         Shader "Self-Illumin/Dreamfall/Robot Eyes" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//            _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-//            _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-//            _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//            _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
-//            _Parallax ("Height", Float) = 0.000000
-//            _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//            _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//            _BumpMap ("Normalmap", 2D) = "bump" { }
-//            _IllumMap ("IllumMap (RGB)", 2D) = "black" { }
-//            _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
-//            _IllumMapScale ("Illum Map Scale", Float) = 1.000000
-//            _IllumMaskScale ("Illum Mask Scale", Float) = 1.000000
-//            _IllumMaskOffset ("Illum Mask Offset", Float) = 1.000000
-//            _IllumDepth ("IllumDepth", Float) = 0.400000
-//            _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
-//            _IllumColorScale ("IllumColor Scale", Float) = 1.000000
-//            _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
-//            _ReflAmount ("Reflection amount", Float) = 1.000000
-//            _ReflPow ("Reflection pow", Float) = 1.000000
-//           }
-//           Fallback "Reflective/Bumped Diffuse"
-//           SubShader 1/1 {
-//             LOD 500
-//             Tags { "RenderType"="Opaque" }
-//             Pass 1/5 {
-//               Name "FORWARD"
-//               Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-//               GpuProgramID 23999
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 31
-// 002:              GpuProgramIndex 33
-// 004:              GpuProgramIndex 35
-// 008:              GpuProgramIndex 51
-// 010:              GpuProgramIndex 53
-// 020:              GpuProgramIndex 55
-// 040:              GpuProgramIndex 71
-// 080:              GpuProgramIndex 73
-// 100:              GpuProgramIndex 75
-//                 }
-//               }
-//             }
-//           }
-//         }
+//        Unity headers extracted from Reflect-Parallax_RobotEyes.shader
+//        Shader "Self-Illumin/Dreamfall/Robot Eyes" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+//           _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//           _Fresnel ("Reflection Fresnel Exponent", Range(0.010000,6.000000)) = 1.000000
+//           _Parallax ("Height", Float) = 0.000000
+//           _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//           _BumpMap ("Normalmap", 2D) = "bump" { }
+//           _IllumMap ("IllumMap (RGB)", 2D) = "black" { }
+//           _IllumMask ("IllumMask (RGB)", 2D) = "white" { }
+//           _IllumMapScale ("Illum Map Scale", Float) = 1.000000
+//           _IllumMaskScale ("Illum Mask Scale", Float) = 1.000000
+//           _IllumMaskOffset ("Illum Mask Offset", Float) = 1.000000
+//           _IllumDepth ("IllumDepth", Float) = 0.400000
+//           _IllumColor ("Illum Color", Color) = (0.500000,0.500000,0.500000,0.500000)
+//           _IllumColorScale ("IllumColor Scale", Float) = 1.000000
+//           _EmissionLM ("Emission (Lightmapper)", Float) = 0.000000
+//           _ReflAmount ("Reflection amount", Float) = 1.000000
+//           _ReflPow ("Reflection pow", Float) = 1.000000
+//          }
+//          Fallback "Reflective/Bumped Diffuse"
+//          SubShader 1/1 {
+//            LOD 500
+//            Tags { "RenderType"="Opaque" }
+//            Pass 1/5 {
+//              Name "FORWARD"
+//              Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+//              GpuProgramID 23999
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 31
+// 02:              GpuProgramIndex 33
+// 04:              GpuProgramIndex 35
+// 08:              GpuProgramIndex 51
+// 10:              GpuProgramIndex 53
+// 20:              GpuProgramIndex 55
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//      Unity 5.3 headers extracted from Reflect-Parallax_RobotEyes.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 38 0 0
-// 010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 256
-//        Vector 224 [_MainTex_ST]
-//        Vector 240 [_BumpMap_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+//     Unity 5.3 headers extracted from Reflect-Parallax_RobotEyes.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 38 0 0
+// 10:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 02:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 20:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 04:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 08:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 01:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//       ConstBuffer "$Globals" 256
+//       Vector 224 [_MainTex_ST]
+//       Vector 240 [_BumpMap_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -88,7 +82,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 07:03:25 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:59:57 2017
 //
 //
 // Input signature:

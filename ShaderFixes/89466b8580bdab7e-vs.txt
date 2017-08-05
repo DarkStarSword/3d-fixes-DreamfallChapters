@@ -1,80 +1,74 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 89466b8580bdab7e-vs.txt
-// 3DMigoto: 89466b8580bdab7e | Matched 12 variants of 2 shaders: Chickenlord/Reflective/Fresnel/Diffuse, Chickenlord/Reflective/Fresnel/Specular
+// 3DMigoto: 89466b8580bdab7e | Matched 8 variants of 2 shaders: Chickenlord/Reflective/Fresnel/Diffuse, Chickenlord/Reflective/Fresnel/Specular
 //
-// 03f:    Unity headers extracted from Reflect-Diffuse_Fresnel.shader
-// fc0:    Unity headers extracted from Reflect-Glossy_Fresnel.shader
-// 03f:    Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
-// fc0:    Shader "Chickenlord/Reflective/Fresnel/Specular" {
-//           Properties {
-//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// fc0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-//            _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-//            _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
-// fc0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 03f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-//            _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-//           }
-//           Fallback "Reflective/VertexLit"
-//           SubShader 1/1 {
-// 03f:        LOD 200
-// fc0:        LOD 300
-//             Tags { "RenderType"="Opaque" }
-//             Pass 4/5 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-// 03f:          GpuProgramID 219263
-// fc0:          GpuProgramID 254350
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 001:              GpuProgramIndex 238
-// 002:              GpuProgramIndex 242
-// 004:              GpuProgramIndex 246
-// 008:              GpuProgramIndex 250
-// 010:              GpuProgramIndex 254
-// 020:              GpuProgramIndex 258
-// 040:              GpuProgramIndex 326
-// 080:              GpuProgramIndex 332
-// 100:              GpuProgramIndex 338
-// 200:              GpuProgramIndex 344
-// 400:              GpuProgramIndex 350
-// 800:              GpuProgramIndex 356
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 0f:    Unity headers extracted from Reflect-Diffuse_Fresnel.shader
+// f0:    Unity headers extracted from Reflect-Glossy_Fresnel.shader
+// 0f:    Shader "Chickenlord/Reflective/Fresnel/Diffuse" {
+// f0:    Shader "Chickenlord/Reflective/Fresnel/Specular" {
+//          Properties {
+//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// f0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+//           _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+//           _Fresnel ("Reflection Fresnel Exponent", Range(0.000000,6.000000)) = 1.000000
+// f0:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 0f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+//           _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+//          }
+//          Fallback "Reflective/VertexLit"
+//          SubShader 1/1 {
+// 0f:        LOD 200
+// f0:        LOD 300
+//            Tags { "RenderType"="Opaque" }
+//            Pass 4/5 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//              ZWrite Off
+// 0f:          GpuProgramID 219263
+// f0:          GpuProgramID 254350
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 01:              GpuProgramIndex 182
+// 02:              GpuProgramIndex 186
+// 04:              GpuProgramIndex 190
+// 08:              GpuProgramIndex 194
+// 10:              GpuProgramIndex 250
+// 20:              GpuProgramIndex 256
+// 40:              GpuProgramIndex 262
+// 80:              GpuProgramIndex 268
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 03f: Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
-// fc0: Unity 5.3 headers extracted from Reflect-Glossy_Fresnel.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 42 0 0
-// 208:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 4 0 0 0
-//        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 224
-//        Vector 176 [_MainTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 64 [_WorldSpaceCameraPos] 3
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityPerDraw" 2
-//        BindCB "UnityLightmaps" 3
+// 0f: Unity 5.3 headers extracted from Reflect-Diffuse_Fresnel.shader.decompressed:
+// f0: Unity 5.3 headers extracted from Reflect-Glossy_Fresnel.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 42 0 0
+// 88:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 44:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 22:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 11:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 4 0 0 0
+//       undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+//       ConstBuffer "$Globals" 224
+//       Vector 176 [_MainTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 64 [_WorldSpaceCameraPos] 3
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityPerDraw" 2
+//       BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -82,7 +76,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:38:01 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:38:38 2017
 //
 //
 // Input signature:

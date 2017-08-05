@@ -1,51 +1,51 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 2f4354e505ea4853-vs.txt
 // 3DMigoto: 2f4354e505ea4853 | Matched 12 variants of 4 shaders: Legacy Shaders/Bumped Specular, Legacy Shaders/Parallax Diffuse, Legacy Shaders/Reflective/Bumped Diffuse, Legacy Shaders/Transparent/Cutout/Bumped Specular
 //
-// 038:    Unity headers extracted from AlphaTest-BumpSpec.shader
-// e00:    Unity headers extracted from Normal-BumpSpec.shader
-// 1c0:    Unity headers extracted from Normal-Parallax.shader
+// 1c0:    Unity headers extracted from AlphaTest-BumpSpec.shader
+// 038:    Unity headers extracted from Normal-BumpSpec.shader
+// e00:    Unity headers extracted from Normal-Parallax.shader
 // 007:    Unity headers extracted from Reflect-Bumped.shader
-// e00:    Shader "Legacy Shaders/Bumped Specular" {
-// 1c0:    Shader "Legacy Shaders/Parallax Diffuse" {
+// 038:    Shader "Legacy Shaders/Bumped Specular" {
+// e00:    Shader "Legacy Shaders/Parallax Diffuse" {
 // 007:    Shader "Legacy Shaders/Reflective/Bumped Diffuse" {
-// 038:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Specular" {
+// 1c0:    Shader "Legacy Shaders/Transparent/Cutout/Bumped Specular" {
 //           Properties {
 //            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 1c0:       _Parallax ("Height", Range(0.005000,0.080000)) = 0.020000
+// e00:       _Parallax ("Height", Range(0.005000,0.080000)) = 0.020000
 // 007:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-// 038:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
-// e00:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 1c0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,0.000000)
+// 038:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
 // 007:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-// 1c0:       _MainTex ("Base (RGB)", 2D) = "white" { }
-// 038:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// e00:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// e00:       _MainTex ("Base (RGB)", 2D) = "white" { }
+// 1c0:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// 038:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
 // 007:       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-// e00:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 038:       _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" { }
+// 038:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// 1c0:       _MainTex ("Base (RGB) TransGloss (A)", 2D) = "white" { }
 //            _BumpMap ("Normalmap", 2D) = "bump" { }
-// 038:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-// 1c0:       _ParallaxMap ("Heightmap (A)", 2D) = "black" { }
+// 1c0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// e00:       _ParallaxMap ("Heightmap (A)", 2D) = "black" { }
 //           }
-// 1c0:      Fallback "Legacy Shaders/Bumped Diffuse"
+// e00:      Fallback "Legacy Shaders/Bumped Diffuse"
 // 007:      Fallback "Legacy Shaders/Reflective/VertexLit"
-// e00:      Fallback "Legacy Shaders/Specular"
-// 038:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
-// 03f:      SubShader 1/1 {
-// fc0:      SubShader 1/2 {
+// 038:      Fallback "Legacy Shaders/Specular"
+// 1c0:      Fallback "Legacy Shaders/Transparent/Cutout/VertexLit"
+// 1c7:      SubShader 1/1 {
+// e38:      SubShader 1/2 {
 // 007:        LOD 300
-// e38:        LOD 400
-// 1c0:        LOD 500
-// 038:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// fc7:        Tags { "RenderType"="Opaque" }
+// 1f8:        LOD 400
+// e00:        LOD 500
+// 1c0:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// e3f:        Tags { "RenderType"="Opaque" }
 //             Pass 1/5 {
 //               Name "FORWARD"
-// 038:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
-// fc7:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 038:          ColorMask RGB
-// e00:          GpuProgramID 26406
-// 1c0:          GpuProgramID 32371
+// 1c0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
+// e3f:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 1c0:          ColorMask RGB
+// 038:          GpuProgramID 26406
+// e00:          GpuProgramID 32371
 // 007:          GpuProgramID 63950
-// 038:          GpuProgramID 9084
+// 1c0:          GpuProgramID 9084
 //               Program "vp" {
 //                 SubProgram "d3d11 " {
 // 249:              GpuProgramIndex 11
@@ -57,9 +57,9 @@
 //           }
 //         }
 //
-// 038: Unity 5.3 headers extracted from AlphaTest-BumpSpec.shader.decompressed:
-// e00: Unity 5.3 headers extracted from Normal-BumpSpec.shader.decompressed:
-// 1c0: Unity 5.3 headers extracted from Normal-Parallax.shader.decompressed:
+// 1c0: Unity 5.3 headers extracted from AlphaTest-BumpSpec.shader.decompressed:
+// 038: Unity 5.3 headers extracted from Normal-BumpSpec.shader.decompressed:
+// e00: Unity 5.3 headers extracted from Normal-Parallax.shader.decompressed:
 // 007: Unity 5.3 headers extracted from Reflect-Bumped.shader.decompressed:
 //        API d3d11
 //        Shader model vs_4_0
@@ -69,8 +69,8 @@
 // 249:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" }
 //        undeciphered2: 1 0 4 0 0 0
 //        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-// fc7:   ConstBuffer "$Globals" 192
-// 038:   ConstBuffer "$Globals" 208
+// e3f:   ConstBuffer "$Globals" 192
+// 1c0:   ConstBuffer "$Globals" 208
 //        Vector 160 [_MainTex_ST]
 //        Vector 176 [_BumpMap_ST]
 //        ConstBuffer "UnityPerCamera" 144
@@ -93,7 +93,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:13:27 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:18:36 2017
 //
 //
 // Input signature:

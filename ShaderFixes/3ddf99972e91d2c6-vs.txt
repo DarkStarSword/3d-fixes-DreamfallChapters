@@ -1,95 +1,97 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 3ddf99972e91d2c6-vs.txt
-// 3DMigoto: 3ddf99972e91d2c6 | Matched 18 variants of 2 shaders: Dreamfall/Fresnel/Bumped Colored Specular, Dreamfall/Unity5/Standard_BumpedDetail_Ilum
+// 3DMigoto: 3ddf99972e91d2c6 | Matched 12 variants of 2 shaders: Dreamfall/Fresnel/Bumped Colored Specular, Dreamfall/Unity5/Standard_BumpedDetail_Ilum
 //
-// 3fe00:    Unity headers extracted from BumpColorSpecFresnel.shader
-// 001ff:    Unity headers extracted from Standard_BumpedDetail_Ilum.shader
-// 3fe00:    Shader "Dreamfall/Fresnel/Bumped Colored Specular" {
-// 001ff:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Ilum" {
-//             Properties {
-//              _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 001ff:       _GlowColor ("Glow Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 3fe00:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 001ff:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-// 3fe00:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-// 3fe00:       _MainTex ("Base (RGB) ", 2D) = "white" { }
-// 3fe00:       _SpecMap ("Specular Map (R)", 2D) = "white" { }
-//              _BumpMap ("Normalmap", 2D) = "bump" { }
-// 001ff:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-// 3fe00:       _FresnelCol ("Fresnel Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 001ff:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
-// 3fe00:       _Fresnel ("Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
-// 001ff:       _DetailBumpFactor ("Detail Bump Ammount", Range(0.000000,1.000000)) = 1.000000
-// 3fe00:       _FresnelMult ("Reflect Multiplier", Float) = 1.000000
-// 001ff:       _AlphaFactor ("Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-// 001ff:       _GlossHigh ("Glossy High", Range(0.000000,1.000000)) = 0.800000
-// 001ff:       _GlossLow ("Glossy Low", Range(0.000000,1.000000)) = 0.200000
-// 001ff:       _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
-// 001ff:       _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-// 001ff:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
-// 001ff:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
-//             }
-// 001ff:      Fallback "Legacy Shaders/Diffuse"
-// 3fe00:      Fallback "Specular"
-//             SubShader 1/1 {
-//               LOD 400
-//               Tags { "RenderType"="Opaque" }
-// 001ff:        Pass 1/3 {
-// 3fe00:        Pass 1/5 {
-//                 Name "FORWARD"
-//                 Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 3fe00:          GpuProgramID 10612
-// 001ff:          GpuProgramID 57441
-//                 Program "vp" {
-//                   SubProgram "d3d11 " {
-// 00201:              GpuProgramIndex 31
-// 00402:              GpuProgramIndex 33
-// 00804:              GpuProgramIndex 35
-// 01008:              GpuProgramIndex 51
-// 02010:              GpuProgramIndex 53
-// 04020:              GpuProgramIndex 55
-// 08040:              GpuProgramIndex 71
-// 10080:              GpuProgramIndex 73
-// 20100:              GpuProgramIndex 75
-//                   }
+// fc0:    Unity headers extracted from BumpColorSpecFresnel.shader
+// 03f:    Unity headers extracted from Standard_BumpedDetail_Ilum.shader
+// fc0:    Shader "Dreamfall/Fresnel/Bumped Colored Specular" {
+// 03f:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Ilum" {
+//           Properties {
+//            _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 03f:       _GlowColor ("Glow Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// fc0:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 03f:       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+// fc0:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+// fc0:       _MainTex ("Base (RGB) ", 2D) = "white" { }
+// fc0:       _SpecMap ("Specular Map (R)", 2D) = "white" { }
+//            _BumpMap ("Normalmap", 2D) = "bump" { }
+// 03f:       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
+// fc0:       _FresnelCol ("Fresnel Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 03f:       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
+// fc0:       _Fresnel ("Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
+// 03f:       _DetailBumpFactor ("Detail Bump Ammount", Range(0.000000,1.000000)) = 1.000000
+// fc0:       _FresnelMult ("Reflect Multiplier", Float) = 1.000000
+// 03f:       _AlphaFactor ("Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+// 03f:       _GlossHigh ("Glossy High", Range(0.000000,1.000000)) = 0.800000
+// 03f:       _GlossLow ("Glossy Low", Range(0.000000,1.000000)) = 0.200000
+// 03f:       _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
+// 03f:       _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+// 03f:       _Illum ("IllumMap (RGB)", 2D) = "black" { }
+// 03f:       _EmissionLM ("Emission (Lightmapper)", Float) = 1.000000
+//           }
+// 03f:      Fallback "Legacy Shaders/Diffuse"
+// fc0:      Fallback "Specular"
+// fc0:      SubShader 1/1 {
+// 03f:      SubShader 1/2 {
+// 03f:        LOD 1000
+// fc0:        LOD 400
+//             Tags { "RenderType"="Opaque" }
+// 03f:        Pass 1/3 {
+// fc0:        Pass 1/5 {
+//               Name "FORWARD"
+//               Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// fc0:          GpuProgramID 10612
+// 03f:          GpuProgramID 21968
+//               Program "vp" {
+//                 SubProgram "d3d11 " {
+// 001:              GpuProgramIndex 15
+// 002:              GpuProgramIndex 16
+// 004:              GpuProgramIndex 17
+// 008:              GpuProgramIndex 25
+// 010:              GpuProgramIndex 26
+// 020:              GpuProgramIndex 27
+// 040:              GpuProgramIndex 31
+// 080:              GpuProgramIndex 33
+// 100:              GpuProgramIndex 35
+// 200:              GpuProgramIndex 51
+// 400:              GpuProgramIndex 53
+// 800:              GpuProgramIndex 55
 //                 }
 //               }
 //             }
 //           }
+//         }
 //
-// 3fe00: Unity 5.3 headers extracted from BumpColorSpecFresnel.shader.decompressed:
-// 001ff: Unity 5.3 headers extracted from Standard_BumpedDetail_Ilum.shader.decompressed:
-//          API d3d11
-//          Shader model vs_4_0
-//          undeciphered1: 201510240 40 0 0
-// 02010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 10080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00402:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 04020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00804:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 01008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 08040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00201:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//          undeciphered2: 1 0 4 0 0 0
-//          undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
-//          ConstBuffer "$Globals" 256
-//          Vector 208 [_MainTex_ST]
-//          Vector 224 [_BumpMap_ST]
-// 001ff:   Vector 240 [_Detail_ST]
-// 3fe00:   Vector 240 [_SpecMap_ST]
-//          ConstBuffer "UnityPerCamera" 144
-//          Vector 80 [_ProjectionParams]
-//          ConstBuffer "UnityPerDraw" 352
-//          Vector 336 [unity_WorldTransformParams]
-//          Matrix 0 [glstate_matrix_mvp]
-//          Matrix 192 [unity_ObjectToWorld]
-//          Matrix 256 [unity_WorldToObject]
-//          ConstBuffer "UnityLightmaps" 32
-//          Vector 0 [unity_LightmapST]
-//          BindCB "$Globals" 0
-//          BindCB "UnityPerCamera" 1
-//          BindCB "UnityPerDraw" 2
-//          BindCB "UnityLightmaps" 3
+// fc0: Unity 5.3 headers extracted from BumpColorSpecFresnel.shader.decompressed:
+// 03f: Unity 5.3 headers extracted from Standard_BumpedDetail_Ilum.shader.decompressed:
+//        API d3d11
+//        Shader model vs_4_0
+//        undeciphered1: 201510240 40 0 0
+// 410:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 082:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 820:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 104:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 208:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 041:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//        undeciphered2: 1 0 4 0 0 0
+//        undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+//        ConstBuffer "$Globals" 256
+//        Vector 208 [_MainTex_ST]
+//        Vector 224 [_BumpMap_ST]
+// 03f:   Vector 240 [_Detail_ST]
+// fc0:   Vector 240 [_SpecMap_ST]
+//        ConstBuffer "UnityPerCamera" 144
+//        Vector 80 [_ProjectionParams]
+//        ConstBuffer "UnityPerDraw" 352
+//        Vector 336 [unity_WorldTransformParams]
+//        Matrix 0 [glstate_matrix_mvp]
+//        Matrix 192 [unity_ObjectToWorld]
+//        Matrix 256 [unity_WorldToObject]
+//        ConstBuffer "UnityLightmaps" 32
+//        Vector 0 [unity_LightmapST]
+//        BindCB "$Globals" 0
+//        BindCB "UnityPerCamera" 1
+//        BindCB "UnityPerDraw" 2
+//        BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -97,7 +99,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:17:32 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:21:45 2017
 //
 //
 // Input signature:

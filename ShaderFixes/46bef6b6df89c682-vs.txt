@@ -1,10 +1,12 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 46bef6b6df89c682-vs.txt
-// 3DMigoto: 46bef6b6df89c682 | Matched 18 variants of 2 shaders: Dreamfall/Unity5/Standard_BumpedDetail, Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided
+// 3DMigoto: 46bef6b6df89c682 | Matched 18 variants of 3 shaders: Dreamfall/Unity5/Standard_BumpedDetail, Dreamfall/Unity5/Standard_BumpedDetail_Cutout, Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided
 //
-// 001ff:    Unity headers extracted from Standard_BumpedDetail.shader
-// 3fe00:    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
-// 001ff:    Shader "Dreamfall/Unity5/Standard_BumpedDetail" {
-// 3fe00:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
+// 0003f:    Unity headers extracted from Standard_BumpedDetail.shader
+// 00fc0:    Unity headers extracted from Standard_BumpedDetail_Cutout.shader
+// 3f000:    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
+// 0003f:    Shader "Dreamfall/Unity5/Standard_BumpedDetail" {
+// 00fc0:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout" {
+// 3f000:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
 //             Properties {
 //              _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
 //              _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
@@ -19,57 +21,65 @@
 //              _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
 //              _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
 //              _VColorMult ("Vertex Color Strength", Range(0.000000,1.000000)) = 0.000000
-// 3fe00:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+// 3ffc0:       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
 //             }
 //             Fallback "Legacy Shaders/Diffuse"
-//             SubShader 1/1 {
-//               LOD 400
-// 3fe00:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-// 001ff:        Tags { "RenderType"="Opaque" }
-// 001ff:        Pass 1/3 {
-// 3fe00:        Pass 1/4 {
+//             SubShader 2/2 {
+//               LOD 100
+// 3ffc0:        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 0003f:        Tags { "RenderType"="Opaque" }
+// 0003f:        Pass 1/3 {
+// 3ffc0:        Pass 1/4 {
 //                 Name "FORWARD"
-// 3fe00:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
-// 001ff:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
-// 3fe00:          Cull Off
-// 001ff:          GpuProgramID 27432
-// 3fe00:          ColorMask RGB
-// 3fe00:          GpuProgramID 54458
+// 3ffc0:          Tags { "LIGHTMODE"="ForwardBase" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "SHADOWSUPPORT"="true" "RenderType"="TransparentCutout" }
+// 0003f:          Tags { "LIGHTMODE"="ForwardBase" "SHADOWSUPPORT"="true" "RenderType"="Opaque" }
+// 3f000:          Cull Off
+// 0003f:          GpuProgramID 291915
+// 3ffc0:          ColorMask RGB
+// 3f000:          GpuProgramID 206674
+// 00fc0:          GpuProgramID 333222
 //                 Program "vp" {
 //                   SubProgram "d3d11 " {
-// 00201:              GpuProgramIndex 31
-// 00402:              GpuProgramIndex 33
-// 00804:              GpuProgramIndex 35
-// 01008:              GpuProgramIndex 51
-// 02010:              GpuProgramIndex 53
-// 04020:              GpuProgramIndex 55
-// 08040:              GpuProgramIndex 71
-// 10080:              GpuProgramIndex 73
-// 20100:              GpuProgramIndex 75
+// 00001:              GpuProgramIndex 327
+// 00002:              GpuProgramIndex 329
+// 00004:              GpuProgramIndex 331
+// 00040:              GpuProgramIndex 335
+// 00080:              GpuProgramIndex 337
+// 00100:              GpuProgramIndex 339
+// 00008:              GpuProgramIndex 347
+// 00010:              GpuProgramIndex 349
+// 00020:              GpuProgramIndex 351
+// 00200:              GpuProgramIndex 355
+// 00400:              GpuProgramIndex 357
+// 00800:              GpuProgramIndex 359
+// 01000:              GpuProgramIndex 71
+// 02000:              GpuProgramIndex 73
+// 04000:              GpuProgramIndex 75
+// 08000:              GpuProgramIndex 91
+// 10000:              GpuProgramIndex 93
+// 20000:              GpuProgramIndex 95
 //                   }
 //                 }
 //               }
 //             }
 //           }
 //
-// 001ff: Unity 5.3 headers extracted from Standard_BumpedDetail.shader.decompressed:
-// 3fe00: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
+// 0003f: Unity 5.3 headers extracted from Standard_BumpedDetail.shader.decompressed:
+// 00fc0: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout.shader.decompressed:
+// 3f000: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
 //          API d3d11
 //          Shader model vs_4_0
 //          undeciphered1: 201510240 40 0 0
-// 02010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 10080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00402:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 04020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00804:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-// 01008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 08040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 00201:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 10410:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 02082:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 20820:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 04104:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+// 08208:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 01041:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
 //          undeciphered2: 1 0 4 0 0 0
 //          undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-// 001ff:   ConstBuffer "$Globals" 240
-// 3fe00:   ConstBuffer "$Globals" 256
+// 0003f:   ConstBuffer "$Globals" 240
+// 3ffc0:   ConstBuffer "$Globals" 256
 //          Vector 192 [_MainTex_ST]
 //          Vector 208 [_BumpMap_ST]
 //          Vector 224 [_Detail_ST]
@@ -93,7 +103,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:20:05 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:23:51 2017
 //
 //
 // Input signature:

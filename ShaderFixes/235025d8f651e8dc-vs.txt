@@ -1,99 +1,95 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 235025d8f651e8dc-vs.txt
-// 3DMigoto: 235025d8f651e8dc | Matched 12 variants of 2 shaders: Dreamfall/BlurredReflective/Bumped Spec Vertex Color, Dreamfall/VertexBlend/2Tex_Fresnel
+// 3DMigoto: 235025d8f651e8dc | Matched 8 variants of 2 shaders: Dreamfall/BlurredReflective/Bumped Spec Vertex Color, Dreamfall/VertexBlend/2Tex_Fresnel
 //
-// 03f:    Unity headers extracted from BlurredRef-BumpSpec_VColor.shader
-// fc0:    Unity headers extracted from VertexBlend_2Tex_Fresnel.shader
-// 03f:    Shader "Dreamfall/BlurredReflective/Bumped Spec Vertex Color" {
-// fc0:    Shader "Dreamfall/VertexBlend/2Tex_Fresnel" {
-//           Properties {
-// fc0:       _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 03f:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// fc0:       _Col2 ("Tint Color 2", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 03f:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
-// fc0:       _SpecColor ("Specular Color", Color) = (0.100000,0.100000,0.100000,1.000000)
-// 03f:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 03f:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// fc0:       _Shininess1 ("Shininess 1", Range(0.010000,1.000000)) = 0.400000
-// 03f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
-// fc0:       _Shininess2 ("Shininess 2", Range(0.010000,1.000000)) = 0.400000
-// fc0:       _MainTex ("Base", 2D) = "black" { }
-// 03f:       _RefMask ("Roughness(R)/Metalness(G)", 2D) = "black" { }
-// fc0:       _2ndTex ("2nd - vertex Red", 2D) = "black" { }
-// 03f:       _BumpMap ("Normalmap", 2D) = "bump" { }
-// fc0:       _Bump1 ("_Bump Base", 2D) = "bump" { }
-// 03f:       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
-// 03f:       _Blur ("reflection blur", Range(0.000000,10.000000)) = 1.000000
-// fc0:       _Bump2 ("_Bump 2nd", 2D) = "bump" { }
-// 03f:       _Fresnel ("Fresnel Power", Range(0.010000,8.000000)) = 1.000000
-// fc0:       _NoiseTex ("VertexColor Noise (RGB)", 2D) = "black" { }
-// fc0:       _Fresnel ("Reflection Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
-// 03f:       _RZero ("Fresnel Zero", Float) = 0.000000
-// fc0:       _FresnelColor ("Fresnel Color", Color) = (0.000000,0.000000,0.000000,0.000000)
-// fc0:       _Cube ("Reflection Cubemap", CUBE) = "" { }
-//            _RefMul ("Reflection Boost", Float) = 1.000000
-// 03f:       _RefPow ("Reflection Power", Float) = 1.000000
-// 03f:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 0.000000
-//           }
-// 03f:      Fallback "Reflective/VertexLit"
-// fc0:      Fallback "Specular"
-//           SubShader 1/1 {
-// fc0:        LOD 100
-// 03f:        LOD 200
-//             Tags { "RenderType"="Opaque" }
-//             Pass 4/5 {
-//               Name "PREPASS"
-//               Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
-//               ZWrite Off
-// fc0:          GpuProgramID 206290
-// 03f:          GpuProgramID 232492
-//               Program "vp" {
-//                 SubProgram "d3d11 " {
-// 041:              GpuProgramIndex 247
-// 082:              GpuProgramIndex 255
-// 104:              GpuProgramIndex 263
-// 208:              GpuProgramIndex 271
-// 410:              GpuProgramIndex 279
-// 820:              GpuProgramIndex 287
-//                 }
-//               }
-//             }
-//           }
-//         }
+// 0f:    Unity headers extracted from BlurredRef-BumpSpec_VColor.shader
+// f0:    Unity headers extracted from VertexBlend_2Tex_Fresnel.shader
+// 0f:    Shader "Dreamfall/BlurredReflective/Bumped Spec Vertex Color" {
+// f0:    Shader "Dreamfall/VertexBlend/2Tex_Fresnel" {
+//          Properties {
+// f0:       _Col ("Tint Color 1", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0f:       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// f0:       _Col2 ("Tint Color 2", Color) = (1.000000,1.000000,1.000000,1.000000)
+// 0f:       _ReflectColor ("Reflection Color", Color) = (1.000000,1.000000,1.000000,0.500000)
+// f0:       _SpecColor ("Specular Color", Color) = (0.100000,0.100000,0.100000,1.000000)
+// 0f:       _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 0f:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// f0:       _Shininess1 ("Shininess 1", Range(0.010000,1.000000)) = 0.400000
+// 0f:       _MainTex ("Base (RGB) RefStrength (A)", 2D) = "white" { }
+// f0:       _Shininess2 ("Shininess 2", Range(0.010000,1.000000)) = 0.400000
+// f0:       _MainTex ("Base", 2D) = "black" { }
+// 0f:       _RefMask ("Roughness(R)/Metalness(G)", 2D) = "black" { }
+// f0:       _2ndTex ("2nd - vertex Red", 2D) = "black" { }
+// 0f:       _BumpMap ("Normalmap", 2D) = "bump" { }
+// f0:       _Bump1 ("_Bump Base", 2D) = "bump" { }
+// 0f:       _Cube ("Reflection Cubemap", CUBE) = "_Skybox" { }
+// 0f:       _Blur ("reflection blur", Range(0.000000,10.000000)) = 1.000000
+// f0:       _Bump2 ("_Bump 2nd", 2D) = "bump" { }
+// 0f:       _Fresnel ("Fresnel Power", Range(0.010000,8.000000)) = 1.000000
+// f0:       _NoiseTex ("VertexColor Noise (RGB)", 2D) = "black" { }
+// f0:       _Fresnel ("Reflection Fresnel Exponent", Range(0.100000,6.000000)) = 1.000000
+// 0f:       _RZero ("Fresnel Zero", Float) = 0.000000
+// f0:       _FresnelColor ("Fresnel Color", Color) = (0.000000,0.000000,0.000000,0.000000)
+// f0:       _Cube ("Reflection Cubemap", CUBE) = "" { }
+//           _RefMul ("Reflection Boost", Float) = 1.000000
+// 0f:       _RefPow ("Reflection Power", Float) = 1.000000
+// 0f:       _AlbedoBlend ("0 = lighting modifies reflection", Range(0.000000,1.000000)) = 0.000000
+//          }
+// 0f:      Fallback "Reflective/VertexLit"
+// f0:      Fallback "Specular"
+//          SubShader 1/1 {
+// f0:        LOD 100
+// 0f:        LOD 200
+//            Tags { "RenderType"="Opaque" }
+//            Pass 4/5 {
+//              Name "PREPASS"
+//              Tags { "LIGHTMODE"="PrePassFinal" "RenderType"="Opaque" }
+//              ZWrite Off
+// f0:          GpuProgramID 206290
+// 0f:          GpuProgramID 232492
+//              Program "vp" {
+//                SubProgram "d3d11 " {
+// 11:              GpuProgramIndex 191
+// 22:              GpuProgramIndex 199
+// 44:              GpuProgramIndex 207
+// 88:              GpuProgramIndex 215
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-// 03f: Unity 5.3 headers extracted from BlurredRef-BumpSpec_VColor.shader.decompressed:
-// fc0: Unity 5.3 headers extracted from VertexBlend_2Tex_Fresnel.shader.decompressed:
-//        API d3d11
-//        Shader model vs_4_0
-//        undeciphered1: 201510240 46 0 0
-// 208:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 104:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 820:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 410:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 082:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 041:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//        undeciphered2: 1 0 5 0 0 0
-//        undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//        ConstBuffer "$Globals" 256
-//        Vector 192 [_MainTex_ST]
-// 03f:   Vector 208 [_BumpMap_ST]
-// fc0:   Vector 208 [_NoiseTex_ST]
-//        ConstBuffer "UnityPerCamera" 144
-//        Vector 80 [_ProjectionParams]
-//        ConstBuffer "UnityShadows" 416
-//        Vector 400 [unity_ShadowFadeCenterAndType]
-//        ConstBuffer "UnityPerDraw" 352
-//        Vector 336 [unity_WorldTransformParams]
-//        Matrix 0 [glstate_matrix_mvp]
-//        Matrix 64 [glstate_matrix_modelview0]
-//        Matrix 192 [unity_ObjectToWorld]
-//        Matrix 256 [unity_WorldToObject]
-//        ConstBuffer "UnityLightmaps" 32
-//        Vector 0 [unity_LightmapST]
-//        BindCB "$Globals" 0
-//        BindCB "UnityPerCamera" 1
-//        BindCB "UnityShadows" 2
-//        BindCB "UnityPerDraw" 3
-//        BindCB "UnityLightmaps" 4
+// 0f: Unity 5.3 headers extracted from BlurredRef-BumpSpec_VColor.shader.decompressed:
+// f0: Unity 5.3 headers extracted from VertexBlend_2Tex_Fresnel.shader.decompressed:
+//       API d3d11
+//       Shader model vs_4_0
+//       undeciphered1: 201510240 46 0 0
+// 88:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 44:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 22:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 11:   Keywords { "LIGHTMAP_ON" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//       undeciphered2: 1 0 5 0 0 0
+//       undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//       ConstBuffer "$Globals" 256
+//       Vector 192 [_MainTex_ST]
+// 0f:   Vector 208 [_BumpMap_ST]
+// f0:   Vector 208 [_NoiseTex_ST]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 80 [_ProjectionParams]
+//       ConstBuffer "UnityShadows" 416
+//       Vector 400 [unity_ShadowFadeCenterAndType]
+//       ConstBuffer "UnityPerDraw" 352
+//       Vector 336 [unity_WorldTransformParams]
+//       Matrix 0 [glstate_matrix_mvp]
+//       Matrix 64 [glstate_matrix_modelview0]
+//       Matrix 192 [unity_ObjectToWorld]
+//       Matrix 256 [unity_WorldToObject]
+//       ConstBuffer "UnityLightmaps" 32
+//       Vector 0 [unity_LightmapST]
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
+//       BindCB "UnityShadows" 2
+//       BindCB "UnityPerDraw" 3
+//       BindCB "UnityLightmaps" 4
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -101,7 +97,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:10:10 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:15:52 2017
 //
 //
 // Input signature:

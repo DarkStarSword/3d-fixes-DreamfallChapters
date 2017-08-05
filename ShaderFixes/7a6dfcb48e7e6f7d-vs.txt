@@ -1,64 +1,60 @@
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 7a6dfcb48e7e6f7d-vs.txt
-// 3DMigoto: 7a6dfcb48e7e6f7d | Matched 6 variants of 1 shaders: Hidden/TerrainEngine/Details/Vertexlit
+// 3DMigoto: 7a6dfcb48e7e6f7d | Matched 4 variants of 1 shaders: Hidden/TerrainEngine/Details/Vertexlit
 //
-//        Unity headers extracted from atsv2 vertexlit.shader
-//        Shader "Hidden/TerrainEngine/Details/Vertexlit" {
-//          Properties {
-//           _Color ("Main Color r:ampl g:speed b:time", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
-//           _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-//          }
-//          SubShader 1/1 {
-//            LOD 200
-//            Tags { "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
-//            Pass 4/5 {
-//              Name "PREPASS"
-//              Tags { "LIGHTMODE"="PrePassFinal" "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
-//              ZWrite Off
-//              GpuProgramID 255162
-//              Program "vp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 337
-// 02:              GpuProgramIndex 347
-// 04:              GpuProgramIndex 357
-// 08:              GpuProgramIndex 367
-// 10:              GpuProgramIndex 377
-// 20:              GpuProgramIndex 387
-//                }
-//              }
-//            }
-//          }
-//        }
+//       Unity headers extracted from atsv2 vertexlit.shader
+//       Shader "Hidden/TerrainEngine/Details/Vertexlit" {
+//         Properties {
+//          _Color ("Main Color r:ampl g:speed b:time", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _MainTex ("Base (RGB) Trans (A)", 2D) = "white" { }
+//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//         }
+//         SubShader 1/1 {
+//           LOD 200
+//           Tags { "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
+//           Pass 4/5 {
+//             Name "PREPASS"
+//             Tags { "LIGHTMODE"="PrePassFinal" "IGNOREPROJECTOR"="true" "RenderType"="TreeLeaf" }
+//             ZWrite Off
+//             GpuProgramID 255162
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+// 1:              GpuProgramIndex 261
+// 2:              GpuProgramIndex 271
+// 4:              GpuProgramIndex 281
+// 8:              GpuProgramIndex 291
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-//     Unity 5.3 headers extracted from atsv2 vertexlit.shader.decompressed:
-//       API d3d11
-//       Shader model vs_4_0
-//       undeciphered1: 201510240 61 0 0
-// 08:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
-// 04:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
-// 20:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" "UNITY_HDR_ON" }
-// 10:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP2" }
-// 02:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
-// 01:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
-//       undeciphered2: 1 0 4 0 0 0
-//       undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
-//       ConstBuffer "$Globals" 224
-//       Vector 144 [_Color]
-//       Vector 160 [_MainTex_ST]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 0 [_Time]
-//       Vector 80 [_ProjectionParams]
-//       ConstBuffer "UnityPerDraw" 352
-//       Vector 336 [unity_WorldTransformParams]
-//       Matrix 0 [glstate_matrix_mvp]
-//       Matrix 192 [unity_ObjectToWorld]
-//       Matrix 256 [unity_WorldToObject]
-//       ConstBuffer "UnityLightmaps" 32
-//       Vector 0 [unity_LightmapST]
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityPerDraw" 2
-//       BindCB "UnityLightmaps" 3
+//    Unity 5.3 headers extracted from atsv2 vertexlit.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 61 0 0
+// 8:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" "UNITY_HDR_ON" }
+// 4:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_EXP" }
+// 2:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" "UNITY_HDR_ON" }
+// 1:   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "DYNAMICLIGHTMAP_OFF" "FOG_LINEAR" }
+//      undeciphered2: 1 0 4 0 0 0
+//      undeciphered3: 159 6 0 0 2 1 1 2 3 4 4 5 7 8
+//      ConstBuffer "$Globals" 224
+//      Vector 144 [_Color]
+//      Vector 160 [_MainTex_ST]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 0 [_Time]
+//      Vector 80 [_ProjectionParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Vector 336 [unity_WorldTransformParams]
+//      Matrix 0 [glstate_matrix_mvp]
+//      Matrix 192 [unity_ObjectToWorld]
+//      Matrix 256 [unity_WorldToObject]
+//      ConstBuffer "UnityLightmaps" 32
+//      Vector 0 [unity_LightmapST]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
+//      BindCB "UnityLightmaps" 3
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -66,7 +62,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:34:07 2017
+//   using 3Dmigoto v1.2.52 on Mon Jul 24 22:35:26 2017
 //
 //
 // Input signature:
