@@ -80,6 +80,7 @@ cbuffer cb0 : register(b0)
 Texture1D<float4> IniParams : register(t120);
 Texture2D<float4> StereoParams : register(t125);
 
+#include "hud.hlsl"
 
 void main( 
   float4 v0 : POSITION0,
@@ -105,5 +106,8 @@ void main(
   r0.w = dot(v0.xy, cb0[9].zw);
   o3.zw = r0.zw * cb0[8].zw + cb0[8].xy;
   o3.xy = v0.xy * cb0[6].zw + cb0[6].xy;
+
+to_hud_depth(o0);
+
   return;
 }

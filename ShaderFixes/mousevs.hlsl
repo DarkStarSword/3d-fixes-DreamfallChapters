@@ -10,6 +10,8 @@ Texture1D<float4> IniParams : register(t120);
 Texture2D<float4> cursor_mask : register(t100);
 Texture2D<float4> cursor_color : register(t101);
 
+#include "hud.hlsl"
+
 void main(
 		out float4 pos : SV_Position0,
 		out float2 texcoord : TEXCOORD0,
@@ -75,4 +77,5 @@ void main(
 	// could automatically adjust it from the depth buffer:
 	//mouse_pos.xy = (mouse_pos.xy / resolution * 2 - 1);
 	//pos.x += adjust_from_depth_buffer(mouse_pos.x, mouse_pos.y);
+	to_hud_depth(pos);
 }
