@@ -85,7 +85,7 @@ void main(
   o1.xyzw = v1.xyzw;
   o2.xy = v2.xy;
 
-to_hud_depth(o0);
+handle_text(o0);
 
   return;
 }

@@ -1,5 +1,3 @@
-#define cursor_pos IniParams[1].xy
-
 Texture2D<float4> StereoParams : register(t125);
 Texture1D<float4> IniParams : register(t120);
 

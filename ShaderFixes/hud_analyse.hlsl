@@ -1,6 +1,3 @@
-#define icon_idx   IniParams[1].z
-#define selection_circle 2
-
 Texture2D<float4> StereoParams : register(t125);
 Texture1D<float4> IniParams : register(t120);
 
@@ -64,6 +61,6 @@ void main()
 
 	HUD_Depth_UAV[0].pos = calc_0bd32bb622c2d611_pos(find_quad_center());
 
-	if (icon_idx == selection_circle)
+	if (texture_filter == selection_circle)
 		HUD_Depth_UAV[0].selection_circle_seen = true;
 }
