@@ -1,9 +1,8 @@
-#define cursor_pos IniParams[1].xy
-
 #include "crosshair.hlsl"
 
 struct hud_info {
 	float2 pos;
+	bool selection_circle_seen;
 };
 
 StructuredBuffer<struct hud_info> hud_srv : register(t105);
