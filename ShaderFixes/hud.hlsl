@@ -11,6 +11,10 @@
 #define subtitle_text 3
 #define loading_screen_graphic 4
 
+#ifndef IS_FULLSCREEN
+#define IS_FULLSCREEN false
+#endif
+
 struct hud_info {
 	float2 pos;
 	bool selection_circle_seen;
@@ -23,6 +27,9 @@ Texture2D<float> hud_depth : register(t106);
 void to_hud_depth(inout float4 pos)
 {
 	if (hud_srv[0].loading_seen)
+		return;
+
+	if (IS_FULLSCREEN)
 		return;
 
 	// Nearly equivelent to using adjust_from_stereo2mono_depth_buffer
