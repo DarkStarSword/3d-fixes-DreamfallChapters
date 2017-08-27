@@ -49,7 +49,7 @@ void handle_subtitle(inout float4 pos)
 
 void handle_text(inout float4 pos)
 {
-	if (texture_filter == subtitle_text) {
+	if (pos.y < -0.75 && texture_filter == subtitle_text) {
 		handle_subtitle(pos);
 		return;
 	}
