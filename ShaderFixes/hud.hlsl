@@ -32,6 +32,12 @@ void to_hud_depth(inout float4 pos)
 	if (IS_FULLSCREEN)
 		return;
 
+	// Inventory HUD is drawn with W != 0. Leave it alone for now. Maybe
+	// later we can detect it and line the cursor up with it, or move it to
+	// a more appropriate depth.
+	if (pos.w != 1)
+		return;
+
 	// Nearly equivelent to using adjust_from_stereo2mono_depth_buffer
 	// favouring the cursor dropping to the background where there is
 	// something obscuring the view in one eye, but uses separate depth
