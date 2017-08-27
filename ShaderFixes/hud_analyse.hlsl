@@ -60,6 +60,11 @@ float4 find_quad_center()
 [numthreads(1, 1, 1)]
 void main()
 {
+	if (texture_filter == loading_screen_graphic) {
+		HUD_Depth_UAV[0].loading_seen = true;
+		return;
+	}
+
 	if (HUD_Depth_UAV[0].selection_circle_seen)
 		return;
 

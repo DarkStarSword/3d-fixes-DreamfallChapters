@@ -9,10 +9,12 @@
 
 #define selection_circle 2
 #define subtitle_text 3
+#define loading_screen_graphic 4
 
 struct hud_info {
 	float2 pos;
 	bool selection_circle_seen;
+	bool loading_seen;
 };
 
 StructuredBuffer<struct hud_info> hud_srv : register(t105);
@@ -20,6 +22,9 @@ Texture2D<float> hud_depth : register(t106);
 
 void to_hud_depth(inout float4 pos)
 {
+	if (hud_srv[0].loading_seen)
+		return;
+
 	// Nearly equivelent to using adjust_from_stereo2mono_depth_buffer
 	// favouring the cursor dropping to the background where there is
 	// something obscuring the view in one eye, but uses separate depth
