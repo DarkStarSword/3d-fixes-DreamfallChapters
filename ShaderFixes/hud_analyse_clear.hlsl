@@ -10,5 +10,6 @@ void main()
 {
 	HUD_Depth_UAV[0].pos = cursor_pos * 2 - 1;
 	HUD_Depth_UAV[0].selection_circle_seen = false;
+	HUD_Depth_UAV[0].action_icon_seen = false;
 	HUD_Depth_UAV[0].loading_seen = false;
 }

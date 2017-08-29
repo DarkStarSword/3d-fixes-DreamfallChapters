@@ -10,6 +10,7 @@
 #define selection_circle 2
 #define subtitle_text 3
 #define loading_screen_graphic 4
+#define action_icon 5
 
 #ifndef IS_FULLSCREEN
 #define IS_FULLSCREEN false
@@ -18,6 +19,7 @@
 struct hud_info {
 	float2 pos;
 	bool selection_circle_seen;
+	bool action_icon_seen;
 	bool loading_seen;
 };
 
@@ -67,7 +69,7 @@ void handle_subtitle(inout float4 pos)
 
 void handle_text(inout float4 pos)
 {
-	if (pos.y < -0.75 && texture_filter == subtitle_text) {
+	if (pos.y < -0.7 && texture_filter == subtitle_text) {
 		handle_subtitle(pos);
 		return;
 	}
