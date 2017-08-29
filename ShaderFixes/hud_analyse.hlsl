@@ -14,14 +14,21 @@ cbuffer cb0 : register(b13)
 
 #include "hud_vb_0bd32bb622c2d611.hlsl"
 
-[numthreads(1, 1, 1)]
-void main()
+void analyse_floating_icons_shader()
 {
 	float2 pos;
 
 	// Disable HUD adjustment entirely whenever loading graphic is on screen:
 	if (texture_filter == loading_screen_graphic) {
 		HUD_Depth_UAV[0].loading_seen = true;
+		return;
+	}
+
+	// Set fixed depth whenever inventory circle is on screen:
+	if (HUD_Depth_UAV[0].inventory_seen)
+		return;
+	if (texture_filter == inventory_circle) {
+		HUD_Depth_UAV[0].inventory_seen = 1;
 		return;
 	}
 
@@ -53,4 +60,19 @@ void main()
 	// Whatever other graphics are drawn with this shader will get the HUD
 	// depth if no higher priority HUD elements are also present:
 	HUD_Depth_UAV[0].pos = pos;
+}
+
+[numthreads(1, 1, 1)]
+void main()
+{
+	if (hud_shader == hud_shader_inventory_examine_icons) {
+		// Set fixed depth whenever inventory is being examined:
+		if (texture_filter == inventory_examine_circles)
+			HUD_Depth_UAV[0].inventory_seen = 2;
+		return;
+	}
+
+	// assert(hud_shader == hud_shader_floating_icons)
+
+	analyse_floating_icons_shader();
 }
