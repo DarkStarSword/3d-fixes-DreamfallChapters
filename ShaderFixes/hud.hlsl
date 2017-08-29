@@ -11,8 +11,8 @@
 #define hud_shader_floating_icons 1
 #define hud_shader_inventory_examine_icons 2
 
-#define inventory_depth 3.4
-#define inventory_depth_examine 0.475
+#define inventory_depth IniParams[2].x // FIXME: Preset release seems buggy and is not restoring the right value
+#define inventory_depth_examine IniParams[2].x
 
 #define selection_circle 2
 #define subtitle_text 3
