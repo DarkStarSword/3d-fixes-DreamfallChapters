@@ -162,7 +162,7 @@ dcl_input_ps linear v1.xyz
 dcl_input_ps linear v2.xyz
 dcl_input_ps linear v3.xyz
 dcl_output o0.xyzw
-dcl_temps 9
+dcl_temps 8
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -201,11 +201,7 @@ add r2.xyzw, r2.xyzw, cb1[21].xyzw
 
 add r6.x, r5.x, -r4.y
 mul r6.x, r4.x, r6.x
-mul r8.xyzw, cb10[0].xyzw, r6.xxxx
-mul r7.xyzw, cb11[12].xyzw, r8.xxxx
-mad r7.xyzw, cb11[13].xyzw, r8.yyyy, r7.xyzw
-mad r7.xyzw, cb11[14].xyzw, r8.zzzz, r7.xyzw
-mad r7.xyzw, cb11[15].xyzw, r8.wwww, r7.xyzw
+mul r7.xyzw, cb10[0].xyzw, r6.xxxx
 add r2.xyz, r2.xyzw, -r7.xyzx
 
 mul r0.yzw, r2.yyyy, cb2[13].xxyz

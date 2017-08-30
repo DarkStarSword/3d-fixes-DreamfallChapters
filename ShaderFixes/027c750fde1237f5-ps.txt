@@ -111,7 +111,7 @@ dcl_resource_texture2d (float,float,float,float) t6
 dcl_input_ps linear v1.xyw
 dcl_input_ps linear v2.xyz
 dcl_output o0.xyzw
-dcl_temps 15
+dcl_temps 13
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -125,11 +125,7 @@ ld_indexable(texture2d)(float,float,float,float) r6.xyzw, l(0, 0, 0, 0), t125.xy
 // asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 027c750fde1237f5-ps.txt
 mov r7.xyzw, cb1[4].xyzw
 mul r8.x, -r6.x, r6.y
-mul r10.xyzw, cb10[0].xyzw, r8.xxxx
-mul r9.xyzw, cb11[12].xyzw, r10.xxxx
-mad r9.xyzw, cb11[13].xyzw, r10.yyyy, r9.xyzw
-mad r9.xyzw, cb11[14].xyzw, r10.zzzz, r9.xyzw
-mad r9.xyzw, cb11[15].xyzw, r10.wwww, r9.xyzw
+mul r9.xyzw, cb10[0].xyzw, r8.xxxx
 add r7.xyz, r7.xyz, -r9.xyz
 
 add r0.x, -cb3[24].x, l(1.000000)
@@ -141,8 +137,8 @@ mad r1.z, cb1[7].x, r2.x, cb1[7].y
 div r1.z, l(1.000000, 1.000000, 1.000000, 1.000000), r1.z
 mul r2.xyz, r0.yzwy, r1.zzzz
 
-// copy depth from r2.z to r11.x:
-mov r11.x, r2.z
+// copy depth from r2.z to r10.x:
+mov r10.x, r2.z
 
 mul r3.xyz, r2.yyyy, cb2[19].xyzx
 mad r2.xyw, cb2[18].xyxz, r2.xxxx, r3.xyxz
@@ -152,14 +148,10 @@ add r2.xyw, r2.xyxw, cb2[21].xyxz
 // Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 027c750fde1237f5-ps.txt
 
-add r12.x, r11.x, -r6.y
-mul r12.x, r6.x, r12.x
-mul r14.xyzw, cb10[0].xyzw, r12.xxxx
-mul r13.xyzw, cb11[12].xyzw, r14.xxxx
-mad r13.xyzw, cb11[13].xyzw, r14.yyyy, r13.xyzw
-mad r13.xyzw, cb11[14].xyzw, r14.zzzz, r13.xyzw
-mad r13.xyzw, cb11[15].xyzw, r14.wwww, r13.xyzw
-add r2.xyw, r2.xyzw, -r13.xyxz
+add r11.x, r10.x, -r6.y
+mul r11.x, r6.x, r11.x
+mul r12.xyzw, cb10[0].xyzw, r11.xxxx
+add r2.xyw, r2.xyzw, -r12.xyxz
 
 mul r3.xyzw, r2.yyyy, cb3[9].xyzw
 mad r3.xyzw, cb3[8].xyzw, r2.xxxx, r3.xyzw

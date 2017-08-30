@@ -1,76 +1,73 @@
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 46bda9c6f2b9741c-ps.txt
-// 3DMigoto: 46bda9c6f2b9741c | Matched 6 variants of 2 shaders: Chickenlord/Rim Lighting, Dreamfall/Bumped Specular 2 Sided
+// 3DMigoto: 46bda9c6f2b9741c | Matched 4 variants of 2 shaders: Chickenlord/Rim Lighting, Dreamfall/Bumped Specular 2 Sided
 //
-// 07:    Unity headers extracted from Normal-BumpSpec2Sided.shader
-// 38:    Unity headers extracted from Rim_Opaque.shader
-// 38:    Shader "Chickenlord/Rim Lighting" {
-// 07:    Shader "Dreamfall/Bumped Specular 2 Sided" {
-//          Properties {
-//           _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//           _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 07:       _EmissionColor ("Emission Color", Color) = (0.500000,0.500000,0.500000,1.000000)
-// 38:       _RimColor ("Rim Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-// 38:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
-// 07:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
-//           _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-//           _BumpMap ("Normalmap", 2D) = "bump" { }
-// 38:       _RS ("Rim Power", Range(0.200000,6.000000)) = 2.500000
-//          }
-// 38:      Fallback "Diffuse"
-// 07:      Fallback "Specular"
-//          SubShader 1/1 {
-// 38:        LOD 200
-// 07:        LOD 400
-//            Tags { "RenderType"="Opaque" }
-//            Pass 2/5 {
-//              Name "FORWARD"
-//              Tags { "LIGHTMODE"="ForwardAdd" "RenderType"="Opaque" }
-//              ZWrite Off
-// 07:          Cull Off
-//              Blend One One
-// 07:          GpuProgramID 122683
-// 38:          GpuProgramID 80958
-//              Program "fp" {
-//                SubProgram "d3d11 " {
-// 08:              GpuProgramIndex 202
-// 10:              GpuProgramIndex 217
-// 20:              GpuProgramIndex 232
-// 01:              GpuProgramIndex 266
-// 02:              GpuProgramIndex 281
-// 04:              GpuProgramIndex 296
-//                }
-//              }
-//            }
-//          }
-//        }
+// 3:    Unity headers extracted from Normal-BumpSpec2Sided.shader
+// c:    Unity headers extracted from Rim_Opaque.shader
+// c:    Shader "Chickenlord/Rim Lighting" {
+// 3:    Shader "Dreamfall/Bumped Specular 2 Sided" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _SpecColor ("Specular Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// 3:       _EmissionColor ("Emission Color", Color) = (0.500000,0.500000,0.500000,1.000000)
+// c:       _RimColor ("Rim Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+// c:       _Shininess ("Shininess", Range(0.010000,1.000000)) = 0.078125
+// 3:       _Shininess ("Shininess", Range(0.030000,1.000000)) = 0.078125
+//          _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+// c:       _RS ("Rim Power", Range(0.200000,6.000000)) = 2.500000
+//         }
+// c:      Fallback "Diffuse"
+// 3:      Fallback "Specular"
+//         SubShader 1/1 {
+// c:        LOD 200
+// 3:        LOD 400
+//           Tags { "RenderType"="Opaque" }
+//           Pass 2/5 {
+//             Name "FORWARD"
+//             Tags { "LIGHTMODE"="ForwardAdd" "RenderType"="Opaque" }
+//             ZWrite Off
+// 3:          Cull Off
+//             Blend One One
+// 3:          GpuProgramID 122683
+// c:          GpuProgramID 80958
+//             Program "fp" {
+//               SubProgram "d3d11 " {
+// 4:              GpuProgramIndex 157
+// 8:              GpuProgramIndex 172
+// 1:              GpuProgramIndex 205
+// 2:              GpuProgramIndex 220
+//               }
+//             }
+//           }
+//         }
+//       }
 //
-// 07: Unity 5.3 headers extracted from Normal-BumpSpec2Sided.shader.decompressed:
-// 38: Unity 5.3 headers extracted from Rim_Opaque.shader.decompressed:
-//       API d3d11
-//       Shader model ps_4_0
-//       undeciphered1: 201510240 46 4 0
-// 12:   Keywords { "SPOT" "FOG_EXP" }
-// 24:   Keywords { "SPOT" "FOG_EXP2" }
-// 09:   Keywords { "SPOT" "FOG_LINEAR" }
-//       undeciphered2: 1 4 3 4 0 0
-//       undeciphered3: 0 0
-//       ConstBuffer "$Globals" 272
-//       Vector 96 [_LightColor0]
-//       Vector 112 [_SpecColor]
-//       Vector 192 [_Color]
-//       Float 224 [_Shininess]
-//       Matrix 128 [unity_WorldToLight]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 64 [_WorldSpaceCameraPos] 3
-//       ConstBuffer "UnityLighting" 720
-//       Vector 0 [_WorldSpaceLightPos0]
-//       SetTexture 0 [_MainTex] 2D 2
-//       SetTexture 1 [_BumpMap] 2D 3
-//       SetTexture 2 [_LightTexture0] 2D 0
-//       SetTexture 3 [_LightTextureB0] 2D 1
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
-//       BindCB "UnityLighting" 2
+// 3: Unity 5.3 headers extracted from Normal-BumpSpec2Sided.shader.decompressed:
+// c: Unity 5.3 headers extracted from Rim_Opaque.shader.decompressed:
+//      API d3d11
+//      Shader model ps_4_0
+//      undeciphered1: 201510240 46 4 0
+// a:   Keywords { "SPOT" "FOG_EXP" }
+// 5:   Keywords { "SPOT" "FOG_LINEAR" }
+//      undeciphered2: 1 4 3 4 0 0
+//      undeciphered3: 0 0
+//      ConstBuffer "$Globals" 272
+//      Vector 96 [_LightColor0]
+//      Vector 112 [_SpecColor]
+//      Vector 192 [_Color]
+//      Float 224 [_Shininess]
+//      Matrix 128 [unity_WorldToLight]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      ConstBuffer "UnityLighting" 720
+//      Vector 0 [_WorldSpaceLightPos0]
+//      SetTexture 0 [_MainTex] 2D 2
+//      SetTexture 1 [_BumpMap] 2D 3
+//      SetTexture 2 [_LightTexture0] 2D 0
+//      SetTexture 3 [_LightTextureB0] 2D 1
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityLighting" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -78,7 +75,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:20:04 2017
+//   using 3Dmigoto v1.2.61 on Thu Aug 17 01:12:27 2017
 //
 //
 // Input signature:
@@ -119,7 +116,7 @@ dcl_input_ps linear v3.xyz
 dcl_input_ps linear v4.xyz
 dcl_input_ps linear v5.xyz
 dcl_output o0.xyzw
-dcl_temps 11
+dcl_temps 10
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -132,16 +129,8 @@ ld_indexable(texture2d)(float,float,float,float) r6.xyzw, l(0, 0, 0, 0), t125.xy
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 46bda9c6f2b9741c-ps.txt
 mov r7.xyzw, cb1[4].xyzw
-mov r8.xyzw, l(0)
 mul r8.x, -r6.x, r6.y
-mul r10.xyzw, cb10[0].xyzw, r8.xxxx
-mad r10.xyzw, cb10[1].xyzw, r8.yyyy, r10.xyzw
-mad r10.xyzw, cb10[2].xyzw, r8.zzzz, r10.xyzw
-mad r10.xyzw, cb10[3].xyzw, r8.wwww, r10.xyzw
-mul r9.xyzw, cb11[12].xyzw, r10.xxxx
-mad r9.xyzw, cb11[13].xyzw, r10.yyyy, r9.xyzw
-mad r9.xyzw, cb11[14].xyzw, r10.zzzz, r9.xyzw
-mad r9.xyzw, cb11[15].xyzw, r10.wwww, r9.xyzw
+mul r9.xyzw, cb10[0].xyzw, r8.xxxx
 add r7.xyz, r7.xyz, -r9.xyz
 
 mul r0.xyzw, v5.yyyy, cb0[9].xyzw

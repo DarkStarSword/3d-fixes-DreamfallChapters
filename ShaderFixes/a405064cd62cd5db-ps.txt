@@ -1,65 +1,73 @@
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed a405064cd62cd5db-ps.txt
-// 3DMigoto: a405064cd62cd5db | Matched 8 variants of 1 shaders: Hidden/FogVolume_Rotation
+// 3DMigoto: a405064cd62cd5db | Matched 12 variants of 2 shaders: Hidden/FogVolume_Rotation, Hidden/FogVolume_Rotation_SHADE
 //
-//        Unity headers extracted from FogVolume_Rotation.shader
-//        Shader "Hidden/FogVolume_Rotation" {
-//          SubShader 1/1 {
-//            Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//            Pass 1/1 {
-//              Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//              ZTest Always
-//              ZWrite Off
-//              Cull Front
-//              Blend SrcAlpha OneMinusSrcAlpha
-//              GpuProgramID 59518
-//              Program "fp" {
-//                SubProgram "d3d11 " {
-// 01:              GpuProgramIndex 193
-// 02:              GpuProgramIndex 195
-// 04:              GpuProgramIndex 197
-// 08:              GpuProgramIndex 199
-// 10:              GpuProgramIndex 201
-// 20:              GpuProgramIndex 203
-// 40:              GpuProgramIndex 205
-// 80:              GpuProgramIndex 207
-//                }
-//              }
-//            }
-//          }
-//        }
+// 0ff:    Unity headers extracted from FogVolume_Rotation.shader
+// f00:    Unity headers extracted from FogVolume_Rotation_SHADE.shader
+// 0ff:    Shader "Hidden/FogVolume_Rotation" {
+// f00:    Shader "Hidden/FogVolume_Rotation_SHADE" {
+//           SubShader 1/1 {
+//             Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//             Pass 1/1 {
+//               Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//               ZTest Always
+//               ZWrite Off
+//               Cull Front
+//               Blend SrcAlpha OneMinusSrcAlpha
+// f00:          GpuProgramID 57605
+// 0ff:          GpuProgramID 59518
+//               Program "fp" {
+//                 SubProgram "d3d11 " {
+// 400:              GpuProgramIndex 101
+// 800:              GpuProgramIndex 103
+// 001:              GpuProgramIndex 193
+// 002:              GpuProgramIndex 195
+// 004:              GpuProgramIndex 197
+// 008:              GpuProgramIndex 199
+// 010:              GpuProgramIndex 201
+// 020:              GpuProgramIndex 203
+// 040:              GpuProgramIndex 205
+// 080:              GpuProgramIndex 207
+// 100:              GpuProgramIndex 97
+// 200:              GpuProgramIndex 99
+//                 }
+//               }
+//             }
+//           }
+//         }
 //
-//     Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
-//       API d3d11
-//       Shader model ps_4_0
-//       undeciphered1: 201510240 59 1 0
-// 10:   Keywords { "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
-// 20:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
-// 02:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_INSCATTERING" }
-// 80:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
-// 08:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_INSCATTERING" }
-// 01:   Keywords { "_FOG_VOLUME_INSCATTERING" }
-// 40:   Keywords { "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
-// 04:   Keywords { "_SHADE" "_FOG_VOLUME_INSCATTERING" }
-//       undeciphered2: 1 1 2 1 0 0
-//       undeciphered3: 0 0
-//       ConstBuffer "$Globals" 320
-//       Vector 96 [_Color]
-//       Vector 112 [_InscatteringColor]
-//       Vector 128 [_BoxMin]
-//       Vector 144 [_BoxMax]
-//       Vector 240 [L] 3
-//       Float 252 [_InscatteringIntensity]
-//       Float 256 [InscatteringShape]
-//       Float 260 [_Visibility]
-//       Float 264 [InscatteringStartDistance]
-//       Float 272 [InscatteringTransitionWideness]
-//       Float 312 [Exposure]
-//       ConstBuffer "UnityPerCamera" 144
-//       Vector 64 [_WorldSpaceCameraPos] 3
-//       Vector 112 [_ZBufferParams]
-//       SetTexture 0 [_CameraDepthTexture] 2D 0
-//       BindCB "$Globals" 0
-//       BindCB "UnityPerCamera" 1
+// 0ff: Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
+// f00: Unity 5.3 headers extracted from FogVolume_Rotation_SHADE.shader.decompressed:
+//        API d3d11
+//        Shader model ps_4_0
+//        undeciphered1: 201510240 59 1 0
+// 410:   Keywords { "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 820:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 202:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_INSCATTERING" }
+// 080:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 008:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_INSCATTERING" }
+// 101:   Keywords { "_FOG_VOLUME_INSCATTERING" }
+// 040:   Keywords { "_SHADE" "_COLLISION" "_FOG_VOLUME_INSCATTERING" }
+// 004:   Keywords { "_SHADE" "_FOG_VOLUME_INSCATTERING" }
+//        undeciphered2: 1 1 2 1 0 0
+//        undeciphered3: 0 0
+//        ConstBuffer "$Globals" 320
+//        Vector 96 [_Color]
+//        Vector 112 [_InscatteringColor]
+//        Vector 128 [_BoxMin]
+//        Vector 144 [_BoxMax]
+//        Vector 240 [L] 3
+//        Float 252 [_InscatteringIntensity]
+//        Float 256 [InscatteringShape]
+//        Float 260 [_Visibility]
+//        Float 264 [InscatteringStartDistance]
+//        Float 272 [InscatteringTransitionWideness]
+//        Float 312 [Exposure]
+//        ConstBuffer "UnityPerCamera" 144
+//        Vector 64 [_WorldSpaceCameraPos] 3
+//        Vector 112 [_ZBufferParams]
+//        SetTexture 0 [_CameraDepthTexture] 2D 0
+//        BindCB "$Globals" 0
+//        BindCB "UnityPerCamera" 1
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -67,7 +75,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:44:48 2017
+//   using 3Dmigoto v1.2.61 on Thu Aug 17 01:39:53 2017
 //
 //
 // Input signature:
@@ -100,7 +108,7 @@ dcl_input_ps linear v3.xyz
 dcl_input_ps linear v4.xyz
 dcl_input_ps linear v5.xyz
 dcl_output o0.xyzw
-dcl_temps 9
+dcl_temps 8
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -113,16 +121,8 @@ ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xy
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed a405064cd62cd5db-ps.txt
 mov r5.xyzw, cb1[4].xyzw
-mov r6.xyzw, l(0)
 mul r6.x, -r4.x, r4.y
-mul r8.xyzw, cb10[0].xyzw, r6.xxxx
-mad r8.xyzw, cb10[1].xyzw, r6.yyyy, r8.xyzw
-mad r8.xyzw, cb10[2].xyzw, r6.zzzz, r8.xyzw
-mad r8.xyzw, cb10[3].xyzw, r6.wwww, r8.xyzw
-mul r7.xyzw, cb11[12].xyzw, r8.xxxx
-mad r7.xyzw, cb11[13].xyzw, r8.yyyy, r7.xyzw
-mad r7.xyzw, cb11[14].xyzw, r8.zzzz, r7.xyzw
-mad r7.xyzw, cb11[15].xyzw, r8.wwww, r7.xyzw
+mul r7.xyzw, cb10[0].xyzw, r6.xxxx
 add r5.xyz, r5.xyz, -r7.xyz
 
 add r0.xyz, |v5.xyzx|, -cb0[9].xyzx

@@ -1,71 +1,78 @@
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 437c9f2b667943c5-ps.txt
-// 3DMigoto: 437c9f2b667943c5 |    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
-//    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
-//      Properties {
-//       _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
-//       _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
-//       _BumpMap ("Normalmap", 2D) = "bump" { }
-//       _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
-//       _DetailBump ("Detail Normalmap", 2D) = "bump" { }
-//       _NormalMul ("Normal Multiplier", Float) = 1.000000
-//       _DetailBumpFactor ("Detail Bump Ammount", Range(0.000000,1.000000)) = 1.000000
-//       _AlphaFactor ("Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-//       _GlossHigh ("Glossy High", Range(0.000000,1.000000)) = 0.800000
-//       _GlossLow ("Glossy Low", Range(0.000000,1.000000)) = 0.200000
-//       _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
-//       _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
-//       _VColorMult ("Vertex Color Strength", Range(0.000000,1.000000)) = 0.000000
-//       _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
-//      }
-//      Fallback "Legacy Shaders/Diffuse"
-//      SubShader 1/1 {
-//        LOD 400
-//        Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-//        Pass 3/4 {
-//          Name "DEFERRED"
-//          Tags { "LIGHTMODE"="Deferred" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
-//          Cull Off
-//          GpuProgramID 180392
-//          Program "fp" {
-//            SubProgram "d3d11 " {
-//              GpuProgramIndex 247
-//            }
-//          }
-//        }
-//      }
-//    }
+// 3DMigoto: 437c9f2b667943c5 | Matched 2 variants of 2 shaders: Dreamfall/Unity5/Standard_BumpedDetail_Cutout, Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided
 //
-// Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
-//   API d3d11
-//   Shader model ps_4_0
-//   undeciphered1: 201510240 170 8 0
-//   Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
-//   undeciphered2: 1 6 2 5 0 0
-//   undeciphered3: 0 0
-//   ConstBuffer "$Globals" 288
-//   Vector 32 [unity_ColorSpaceDielectricSpec]
-//   Vector 48 [unity_ColorSpaceLuminance]
-//   Vector 64 [unity_Lightmap_HDR]
-//   Float 128 [_NormalMul]
-//   Vector 144 [_Color]
-//   Float 160 [_DetailBumpFactor]
-//   Float 164 [_AlphaFactor]
-//   Float 168 [_GlossHigh]
-//   Float 172 [_GlossLow]
-//   Float 176 [_MetalNesAlphaFactor]
-//   Float 180 [_Metallness]
-//   Float 184 [_VColorMult]
-//   Float 272 [_Cutoff]
-//   ConstBuffer "UnityPerCamera" 144
-//   Vector 64 [_WorldSpaceCameraPos] 3
-//   SetTexture 0 [_MainTex] 2D 1
-//   SetTexture 1 [_Detail] 2D 3
-//   SetTexture 2 [_BumpMap] 2D 2
-//   SetTexture 3 [_DetailBump] 2D 4
-//   SetTexture 4 [unity_Lightmap] 2D 0
-//   SetTexture 5 [unity_LightmapInd] 2D -1
-//   BindCB "$Globals" 0
-//   BindCB "UnityPerCamera" 1
+// 1:    Unity headers extracted from Standard_BumpedDetail_Cutout.shader
+// 2:    Unity headers extracted from Standard_BumpedDetail_Cutout2Sided.shader
+// 1:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout" {
+// 2:    Shader "Dreamfall/Unity5/Standard_BumpedDetail_Cutout2Sided" {
+//         Properties {
+//          _Color ("Main Color", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _MainTex ("Base (RGB) Gloss (A)", 2D) = "white" { }
+//          _BumpMap ("Normalmap", 2D) = "bump" { }
+//          _Detail ("Detail Base (RGB) Gloss (A)", 2D) = "white" { }
+//          _DetailBump ("Detail Normalmap", 2D) = "bump" { }
+//          _NormalMul ("Normal Multiplier", Float) = 1.000000
+//          _DetailBumpFactor ("Detail Bump Ammount", Range(0.000000,1.000000)) = 1.000000
+//          _AlphaFactor ("Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+//          _GlossHigh ("Glossy High", Range(0.000000,1.000000)) = 0.800000
+//          _GlossLow ("Glossy Low", Range(0.000000,1.000000)) = 0.200000
+//          _Metallness ("Metallness", Range(0.000000,1.000000)) = 0.000000
+//          _MetalNesAlphaFactor ("Metalness Alpha Factor", Range(0.000000,1.000000)) = 1.000000
+//          _VColorMult ("Vertex Color Strength", Range(0.000000,1.000000)) = 0.000000
+//          _Cutoff ("Alpha cutoff", Range(0.000000,1.000000)) = 0.500000
+//         }
+//         Fallback "Legacy Shaders/Diffuse"
+//         SubShader 2/2 {
+//           LOD 100
+//           Tags { "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+//           Pass 3/4 {
+//             Name "DEFERRED"
+//             Tags { "LIGHTMODE"="Deferred" "QUEUE"="AlphaTest" "IGNOREPROJECTOR"="true" "RenderType"="TransparentCutout" }
+// 2:          Cull Off
+// 1:          GpuProgramID 505975
+// 2:          GpuProgramID 337685
+//             Program "fp" {
+//               SubProgram "d3d11 " {
+// 2:              GpuProgramIndex 327
+// 1:              GpuProgramIndex 591
+//               }
+//             }
+//           }
+//         }
+//       }
+//
+// 1: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout.shader.decompressed:
+// 2: Unity 5.3 headers extracted from Standard_BumpedDetail_Cutout2Sided.shader.decompressed:
+//      API d3d11
+//      Shader model ps_4_0
+//      undeciphered1: 201510240 170 8 0
+//      Keywords { "LIGHTMAP_ON" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+//      undeciphered2: 1 6 2 5 0 0
+//      undeciphered3: 0 0
+//      ConstBuffer "$Globals" 288
+//      Vector 32 [unity_ColorSpaceDielectricSpec]
+//      Vector 48 [unity_ColorSpaceLuminance]
+//      Vector 64 [unity_Lightmap_HDR]
+//      Float 128 [_NormalMul]
+//      Vector 144 [_Color]
+//      Float 160 [_DetailBumpFactor]
+//      Float 164 [_AlphaFactor]
+//      Float 168 [_GlossHigh]
+//      Float 172 [_GlossLow]
+//      Float 176 [_MetalNesAlphaFactor]
+//      Float 180 [_Metallness]
+//      Float 184 [_VColorMult]
+//      Float 272 [_Cutoff]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      SetTexture 0 [_MainTex] 2D 1
+//      SetTexture 1 [_Detail] 2D 3
+//      SetTexture 2 [_BumpMap] 2D 2
+//      SetTexture 3 [_DetailBump] 2D 4
+//      SetTexture 4 [unity_Lightmap] 2D 0
+//      SetTexture 5 [unity_LightmapInd] 2D -1
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -73,7 +80,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:19:04 2017
+//   using 3Dmigoto v1.2.61 on Thu Aug 17 01:11:34 2017
 //
 //
 // Input signature:
@@ -125,7 +132,7 @@ dcl_output o0.xyzw
 dcl_output o1.xyzw
 dcl_output o2.xyzw
 dcl_output o3.xyzw
-dcl_temps 16
+dcl_temps 15
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -138,16 +145,8 @@ ld_indexable(texture2d)(float,float,float,float) r11.xyzw, l(0, 0, 0, 0), t125.x
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 437c9f2b667943c5-ps.txt
 mov r12.xyzw, cb1[4].xyzw
-mov r13.xyzw, l(0)
 mul r13.x, -r11.x, r11.y
-mul r15.xyzw, cb10[0].xyzw, r13.xxxx
-mad r15.xyzw, cb10[1].xyzw, r13.yyyy, r15.xyzw
-mad r15.xyzw, cb10[2].xyzw, r13.zzzz, r15.xyzw
-mad r15.xyzw, cb10[3].xyzw, r13.wwww, r15.xyzw
-mul r14.xyzw, cb11[12].xyzw, r15.xxxx
-mad r14.xyzw, cb11[13].xyzw, r15.yyyy, r14.xyzw
-mad r14.xyzw, cb11[14].xyzw, r15.zzzz, r14.xyzw
-mad r14.xyzw, cb11[15].xyzw, r15.wwww, r14.xyzw
+mul r14.xyzw, cb10[0].xyzw, r13.xxxx
 add r12.xyz, r12.xyz, -r14.xyz
 
 sample r0.xyzw, v2.xyxx, t1.xyzw, s3

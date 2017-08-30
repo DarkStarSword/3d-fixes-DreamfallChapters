@@ -1,61 +1,67 @@
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed b3a8561cd2ae292f-ps.txt
-// 3DMigoto: b3a8561cd2ae292f | Matched 4 variants of 1 shaders: Hidden/FogVolume_Rotation
+// 3DMigoto: b3a8561cd2ae292f | Matched 6 variants of 2 shaders: Hidden/FogVolume_Rotation, Hidden/FogVolume_Rotation_SHADE
 //
-//       Unity headers extracted from FogVolume_Rotation.shader
-//       Shader "Hidden/FogVolume_Rotation" {
-//         SubShader 1/1 {
-//           Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//           Pass 1/1 {
-//             Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//             ZTest Always
-//             ZWrite Off
-//             Cull Front
-//             Blend SrcAlpha OneMinusSrcAlpha
-//             GpuProgramID 59518
-//             Program "fp" {
-//               SubProgram "d3d11 " {
-// 1:              GpuProgramIndex 217
-// 2:              GpuProgramIndex 219
-// 4:              GpuProgramIndex 221
-// 8:              GpuProgramIndex 223
-//               }
-//             }
-//           }
-//         }
-//       }
+// 0f:    Unity headers extracted from FogVolume_Rotation.shader
+// 30:    Unity headers extracted from FogVolume_Rotation_SHADE.shader
+// 0f:    Shader "Hidden/FogVolume_Rotation" {
+// 30:    Shader "Hidden/FogVolume_Rotation_SHADE" {
+//          SubShader 1/1 {
+//            Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//            Pass 1/1 {
+//              Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//              ZTest Always
+//              ZWrite Off
+//              Cull Front
+//              Blend SrcAlpha OneMinusSrcAlpha
+// 30:          GpuProgramID 57605
+// 0f:          GpuProgramID 59518
+//              Program "fp" {
+//                SubProgram "d3d11 " {
+// 10:              GpuProgramIndex 109
+// 20:              GpuProgramIndex 111
+// 01:              GpuProgramIndex 217
+// 02:              GpuProgramIndex 219
+// 04:              GpuProgramIndex 221
+// 08:              GpuProgramIndex 223
+//                }
+//              }
+//            }
+//          }
+//        }
 //
-//    Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
-//      API d3d11
-//      Shader model ps_4_0
-//      undeciphered1: 201510240 94 1 1
-// 1:   Keywords { "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
-// 2:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
-// 8:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
-// 4:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
-//      undeciphered2: 1 2 2 2 0 0
-//      undeciphered3: 0 0
-//      ConstBuffer "$Globals" 320
-//      Vector 96 [_Color]
-//      Vector 112 [_InscatteringColor]
-//      Vector 128 [_BoxMin]
-//      Vector 144 [_BoxMax]
-//      Vector 240 [L] 3
-//      Float 252 [_InscatteringIntensity]
-//      Float 256 [InscatteringShape]
-//      Float 260 [_Visibility]
-//      Float 264 [InscatteringStartDistance]
-//      Float 272 [InscatteringTransitionWideness]
-//      Float 280 [_RayStep]
-//      Float 300 [_SceneIntersectionThreshold]
-//      Float 308 [SlyCollision]
-//      Float 312 [Exposure]
-//      ConstBuffer "UnityPerCamera" 144
-//      Vector 64 [_WorldSpaceCameraPos] 3
-//      Vector 112 [_ZBufferParams]
-//      SetTexture 0 [_CameraDepthTexture] 2D 0
-//      SetTexture 1 [_Gradient] 2D 1
-//      BindCB "$Globals" 0
-//      BindCB "UnityPerCamera" 1
+// 0f: Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
+// 30: Unity 5.3 headers extracted from FogVolume_Rotation_SHADE.shader.decompressed:
+//       API d3d11
+//       Shader model ps_4_0
+//       undeciphered1: 201510240 94 1 1
+// 11:   Keywords { "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 22:   Keywords { "_DOUBLE_LAYER" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 08:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+// 04:   Keywords { "_SHADE" "_COLLISION" "_FOG_GRADIENT" "_FOG_VOLUME_INSCATTERING" }
+//       undeciphered2: 1 2 2 2 0 0
+//       undeciphered3: 0 0
+//       ConstBuffer "$Globals" 320
+//       Vector 96 [_Color]
+//       Vector 112 [_InscatteringColor]
+//       Vector 128 [_BoxMin]
+//       Vector 144 [_BoxMax]
+//       Vector 240 [L] 3
+//       Float 252 [_InscatteringIntensity]
+//       Float 256 [InscatteringShape]
+//       Float 260 [_Visibility]
+//       Float 264 [InscatteringStartDistance]
+//       Float 272 [InscatteringTransitionWideness]
+//       Float 280 [_RayStep]
+//       Float 300 [_SceneIntersectionThreshold]
+//       Float 308 [SlyCollision]
+//       Float 312 [Exposure]
+//       ConstBuffer "UnityPerCamera" 144
+//       Vector 64 [_WorldSpaceCameraPos] 3
+//       Vector 112 [_ZBufferParams]
+//       SetTexture 0 [_CameraDepthTexture] 2D 0
+//       SetTexture 1 [_Gradient] 2D 1
+//       BindCB "$Globals" 0
+//       BindCB "UnityPerCamera" 1
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -63,7 +69,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:48:56 2017
+//   using 3Dmigoto v1.2.61 on Thu Aug 17 01:44:37 2017
 //
 //
 // Input signature:
@@ -98,7 +104,7 @@ dcl_input_ps linear v3.xyz
 dcl_input_ps linear v4.xyz
 dcl_input_ps linear v5.xyz
 dcl_output o0.xyzw
-dcl_temps 11
+dcl_temps 10
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -111,16 +117,8 @@ ld_indexable(texture2d)(float,float,float,float) r6.xyzw, l(0, 0, 0, 0), t125.xy
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed b3a8561cd2ae292f-ps.txt
 mov r7.xyzw, cb1[4].xyzw
-mov r8.xyzw, l(0)
 mul r8.x, -r6.x, r6.y
-mul r10.xyzw, cb10[0].xyzw, r8.xxxx
-mad r10.xyzw, cb10[1].xyzw, r8.yyyy, r10.xyzw
-mad r10.xyzw, cb10[2].xyzw, r8.zzzz, r10.xyzw
-mad r10.xyzw, cb10[3].xyzw, r8.wwww, r10.xyzw
-mul r9.xyzw, cb11[12].xyzw, r10.xxxx
-mad r9.xyzw, cb11[13].xyzw, r10.yyyy, r9.xyzw
-mad r9.xyzw, cb11[14].xyzw, r10.zzzz, r9.xyzw
-mad r9.xyzw, cb11[15].xyzw, r10.wwww, r9.xyzw
+mul r9.xyzw, cb10[0].xyzw, r8.xxxx
 add r7.xyz, r7.xyz, -r9.xyz
 
 add r0.xyz, v3.xyzx, -v5.xyzx

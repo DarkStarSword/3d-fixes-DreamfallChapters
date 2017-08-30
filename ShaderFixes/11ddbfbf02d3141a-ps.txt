@@ -1,66 +1,74 @@
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 11ddbfbf02d3141a-ps.txt
-// 3DMigoto: 11ddbfbf02d3141a |    Unity headers extracted from FogVolume_Rotation.shader
-//    Shader "Hidden/FogVolume_Rotation" {
-//      SubShader 1/1 {
-//        Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//        Pass 1/1 {
-//          Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
-//          ZTest Always
-//          ZWrite Off
-//          Cull Front
-//          Blend SrcAlpha OneMinusSrcAlpha
-//          GpuProgramID 59518
-//          Program "fp" {
-//            SubProgram "d3d11 " {
-//              GpuProgramIndex 231
-//            }
-//          }
-//        }
-//      }
-//    }
+// 3DMigoto: 11ddbfbf02d3141a | Matched 2 variants of 2 shaders: Hidden/FogVolume_Rotation, Hidden/FogVolume_Rotation_SHADE
 //
-// Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
-//   API d3d11
-//   Shader model ps_4_0
-//   undeciphered1: 201510240 134 1 3
-//   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
-//   undeciphered2: 1 2 3 2 0 0
-//   undeciphered3: 0 0
-//   ConstBuffer "$Globals" 336
-//   Vector 96 [_Color]
-//   Vector 112 [_InscatteringColor]
-//   Vector 128 [_BoxMin]
-//   Vector 144 [_BoxMax]
-//   Vector 160 [Speed]
-//   Vector 176 [Stretch]
-//   Vector 208 [_ShadowColor]
-//   Vector 240 [L] 3
-//   Float 252 [_InscatteringIntensity]
-//   Float 256 [InscatteringShape]
-//   Float 260 [_Visibility]
-//   Float 264 [InscatteringStartDistance]
-//   Float 272 [InscatteringTransitionWideness]
-//   Float 276 [_3DNoiseScale]
-//   Float 280 [_RayStep]
-//   Float 284 [gain]
-//   Float 288 [threshold]
-//   Float 292 [SwirlAdjust]
-//   Float 296 [Shade]
-//   Float 304 [ShadowBrightness]
-//   Float 312 [Exposure]
-//   Float 316 [FadeDistance]
-//   Float 320 [ShadowShift]
-//   ConstBuffer "UnityPerCamera" 144
-//   Vector 0 [_Time]
-//   Vector 64 [_WorldSpaceCameraPos] 3
-//   Vector 112 [_ZBufferParams]
-//   ConstBuffer "UnityPerDraw" 352
-//   Matrix 192 [unity_ObjectToWorld]
-//   SetTexture 0 [_CameraDepthTexture] 2D 0
-//   SetTexture 1 [_NoiseVolume] 3D 1
-//   BindCB "$Globals" 0
-//   BindCB "UnityPerCamera" 1
-//   BindCB "UnityPerDraw" 2
+// 1:    Unity headers extracted from FogVolume_Rotation.shader
+// 2:    Unity headers extracted from FogVolume_Rotation_SHADE.shader
+// 1:    Shader "Hidden/FogVolume_Rotation" {
+// 2:    Shader "Hidden/FogVolume_Rotation_SHADE" {
+//         SubShader 1/1 {
+//           Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//           Pass 1/1 {
+//             Tags { "QUEUE"="Overlay" "IGNOREPROJECTOR"="true" "RenderType"="FogVolume" }
+//             ZTest Always
+//             ZWrite Off
+//             Cull Front
+//             Blend SrcAlpha OneMinusSrcAlpha
+// 2:          GpuProgramID 57605
+// 1:          GpuProgramID 59518
+//             Program "fp" {
+//               SubProgram "d3d11 " {
+// 2:              GpuProgramIndex 115
+// 1:              GpuProgramIndex 231
+//               }
+//             }
+//           }
+//         }
+//       }
+//
+// 1: Unity 5.3 headers extracted from FogVolume_Rotation.shader.decompressed:
+// 2: Unity 5.3 headers extracted from FogVolume_Rotation_SHADE.shader.decompressed:
+//      API d3d11
+//      Shader model ps_4_0
+//      undeciphered1: 201510240 134 1 3
+// 2:   Keywords { "_DOUBLE_LAYER" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+// 1:   Keywords { "_DOUBLE_LAYER" "_SHADE" "_FOG_VOLUME_NOISE" "_FOG_VOLUME_INSCATTERING" }
+//      undeciphered2: 1 2 3 2 0 0
+//      undeciphered3: 0 0
+//      ConstBuffer "$Globals" 336
+//      Vector 96 [_Color]
+//      Vector 112 [_InscatteringColor]
+//      Vector 128 [_BoxMin]
+//      Vector 144 [_BoxMax]
+//      Vector 160 [Speed]
+//      Vector 176 [Stretch]
+//      Vector 208 [_ShadowColor]
+//      Vector 240 [L] 3
+//      Float 252 [_InscatteringIntensity]
+//      Float 256 [InscatteringShape]
+//      Float 260 [_Visibility]
+//      Float 264 [InscatteringStartDistance]
+//      Float 272 [InscatteringTransitionWideness]
+//      Float 276 [_3DNoiseScale]
+//      Float 280 [_RayStep]
+//      Float 284 [gain]
+//      Float 288 [threshold]
+//      Float 292 [SwirlAdjust]
+//      Float 296 [Shade]
+//      Float 304 [ShadowBrightness]
+//      Float 312 [Exposure]
+//      Float 316 [FadeDistance]
+//      Float 320 [ShadowShift]
+//      ConstBuffer "UnityPerCamera" 144
+//      Vector 0 [_Time]
+//      Vector 64 [_WorldSpaceCameraPos] 3
+//      Vector 112 [_ZBufferParams]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 192 [unity_ObjectToWorld]
+//      SetTexture 0 [_CameraDepthTexture] 2D 0
+//      SetTexture 1 [_NoiseVolume] 3D 1
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerCamera" 1
+//      BindCB "UnityPerDraw" 2
 //
 // Headers extracted with DarkStarSword's extract_unity53_shaders.py
 // https://github.com/DarkStarSword/3d-fixes
@@ -68,7 +76,7 @@
 //
 // Generated by Microsoft (R) D3D Shader Disassembler
 //
-//   using 3Dmigoto v1.2.52 on Tue Jan 31 06:05:23 2017
+//   using 3Dmigoto v1.2.61 on Thu Aug 17 00:58:37 2017
 //
 //
 // Input signature:
@@ -105,7 +113,7 @@ dcl_input_ps linear v4.xyz
 dcl_input_ps linear v5.xyz
 dcl_input_ps linear v6.xyz
 dcl_output o0.xyzw
-dcl_temps 20
+dcl_temps 19
 dcl_constantbuffer cb10[4], immediateIndexed
 dcl_constantbuffer cb11[22], immediateIndexed
 
@@ -118,16 +126,8 @@ ld_indexable(texture2d)(float,float,float,float) r15.xyzw, l(0, 0, 0, 0), t125.x
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 11ddbfbf02d3141a-ps.txt
 mov r16.xyzw, cb1[4].xyzw
-mov r17.xyzw, l(0)
 mul r17.x, -r15.x, r15.y
-mul r19.xyzw, cb10[0].xyzw, r17.xxxx
-mad r19.xyzw, cb10[1].xyzw, r17.yyyy, r19.xyzw
-mad r19.xyzw, cb10[2].xyzw, r17.zzzz, r19.xyzw
-mad r19.xyzw, cb10[3].xyzw, r17.wwww, r19.xyzw
-mul r18.xyzw, cb11[12].xyzw, r19.xxxx
-mad r18.xyzw, cb11[13].xyzw, r19.yyyy, r18.xyzw
-mad r18.xyzw, cb11[14].xyzw, r19.zzzz, r18.xyzw
-mad r18.xyzw, cb11[15].xyzw, r19.wwww, r18.xyzw
+mul r18.xyzw, cb10[0].xyzw, r17.xxxx
 add r16.xyz, r16.xyz, -r18.xyz
 
 add r0.xyz, v3.xyzx, -v5.xyzx
