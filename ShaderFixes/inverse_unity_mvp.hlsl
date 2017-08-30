@@ -12,7 +12,6 @@ cbuffer UnityPerDraw : register(b11) {
 	uniform float4 unity_WorldTransformParams; // w is usually 1.0, or -1.0 for odd-negative scale transforms
 }
 
-RWBuffer<float4> OutputInverseMVP : register(u0);
 RWBuffer<float4> OutputInverseVP : register(u1);
 groupshared matrix inv_mvp;
 
@@ -53,7 +52,6 @@ void main(uint3 tid: SV_DispatchThreadID)
 	// instructions in this shader by doing the opposite of this advice.
 	float4 inv_mvp_slice = inverse_transpose_parallel(glstate_matrix_mvp, tid.x);
 	inv_mvp[tid.x] = inv_mvp_slice;
-	OutputInverseMVP[tid.x] = inv_mvp_slice;
 
 	// Sync all threads in (our one and only) group to make sure inv_mvp is written:
 	GroupMemoryBarrierWithGroupSync();
