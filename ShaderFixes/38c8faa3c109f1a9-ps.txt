@@ -149,7 +149,6 @@ dcl_input_ps linear v6.xyz
 dcl_output o0.xyzw
 dcl_temps 13
 dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125

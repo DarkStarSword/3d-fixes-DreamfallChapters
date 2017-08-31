@@ -161,7 +161,6 @@ dcl_temps 8
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
 dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xyzw
 

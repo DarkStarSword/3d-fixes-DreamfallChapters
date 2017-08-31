@@ -143,7 +143,6 @@ dcl_output o9.xyzw
 dcl_output o10.xyzw
 dcl_temps 10
 dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125

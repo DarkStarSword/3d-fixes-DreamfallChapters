@@ -75,7 +75,6 @@ dcl_output o1.zw
 dcl_output o2.xyzw
 dcl_temps 8
 dcl_constantbuffer cb10[4], immediateIndexed
-dcl_constantbuffer cb11[22], immediateIndexed
 dcl_constantbuffer cb13[9], immediateIndexed
 
 // 3DMigoto StereoParams:
