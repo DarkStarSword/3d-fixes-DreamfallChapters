@@ -1,4 +1,4 @@
-// DO NOT AUTOFIX - causes artefacts! Volumetric light shafts final interpolation
+// DO NOT AUTOFIX - manually stereoise instead! Volumetric light shafts final interpolation
 // 3DMigoto: fd5ce6ff932e7623 | Matched 4 variants of 1 shaders: Hidden/Final Interpolation
 //
 //       Unity headers extracted from FinalInterpolation.shader
@@ -72,11 +72,20 @@ dcl_constantbuffer cb1[4], immediateIndexed
 dcl_input v0.xyzw
 dcl_output_siv o0.xyzw, position
 dcl_output o1.xyz
-dcl_temps 1
+dcl_temps 2
+
+dcl_resource_texture2d (float,float,float,float) t125
+ld_indexable(texture2d)(float,float,float,float) r1.xyzw, l(0, 0, 0, 0), t125.xyzw
+
 mul r0.xyzw, v0.yyyy, cb1[1].xyzw
 mad r0.xyzw, cb1[0].xyzw, v0.xxxx, r0.xyzw
 mad r0.xyzw, cb1[2].xyzw, v0.zzzz, r0.xyzw
 mad r0.xyzw, cb1[3].xyzw, v0.wwww, r0.xyzw
+
+// Manually stereoise output + texcoord:
+add r1.w, r0.w, -r1.y
+mad r0.x, r1.w, r1.x, r0.x
+
 mov o0.xyzw, r0.xyzw
 mul o1.y, r0.y, cb0[5].x
 mov o1.xz, r0.xxwx
