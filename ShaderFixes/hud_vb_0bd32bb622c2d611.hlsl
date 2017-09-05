@@ -16,6 +16,17 @@ float2 calc_0bd32bb622c2d611_pos(float4 pos)
 {
 	float4 r0, o0;
 
+	// Important to set W=1 here, otherwise we might end up returning NaN
+	// (or infinite?) which will mess up the conditionals in is_fullscreen
+	// in a non-obvious way - if only a single side is checked the compiler
+	// generates lt; if_nz and reports everything is fullscreen, but if
+	// multiple sides are checked the compiler generates ge; if_z and
+	// reports nothing is fullscreen. This impacts things inconsistently -
+	// the fade to black texture in menus is OK, but the white background
+	// in the intro cinematic is not - probably depends on what is in the
+	// vertex buffer in place of W I suppose.
+	pos.zw = float2(0, 1);
+
 	r0 = cb0[1].xyzw * pos.yyyy;
 	r0 = cb0[0].xyzw * pos.xxxx + r0.xyzw;
 	r0 = cb0[2].xyzw * pos.zzzz + r0.xyzw;
