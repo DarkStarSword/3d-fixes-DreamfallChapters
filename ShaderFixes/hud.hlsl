@@ -15,7 +15,7 @@
 #define inventory_depth_examine IniParams[2].x
 
 #define selection_circle 2
-#define subtitle_text 3
+// #define subtitle_text 3 // Hash proved unreliable - if we need this, try enabling hash tracking
 #define loading_screen_graphic 4
 #define action_icon 5
 #define inventory_circle 6
@@ -85,19 +85,9 @@ void handle_subtitle(inout float4 pos)
 	float depth = 1.#INF;
 	float x, y;
 
-	for (x = -0.8, y = 0.8; x <= 0.8; x += 0.1) {
+	for (x = -0.8, y = 0.8; x <= 0.8; x += 0.05) {
 		depth = min(depth, world_z_from_depth_buffer(x, y));
 	}
 
 	pos.x += separation * (depth - convergence) / depth;
-}
-
-void handle_text(inout float4 pos)
-{
-	if (pos.y < -0.7 && texture_filter == subtitle_text) {
-		handle_subtitle(pos);
-		return;
-	}
-
-	to_hud_depth(pos);
 }
