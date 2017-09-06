@@ -91,7 +91,9 @@ void to_hud_depth(inout float4 pos)
 
 bool is_subtitle(float4 cb0_3)
 {
-	return all(cb0_3 == float4(0, -0.8, 0.5, 1));
+	return all(cb0_3.xzw == float3(0, 0.5, 1)) && (
+		cb0_3.y == -0.8 || /* Regular subtitles */
+		cb0_3.y < -0.668291); /* Two subtitles rendered simultaneously */
 }
 
 void handle_subtitle(inout float4 pos)
