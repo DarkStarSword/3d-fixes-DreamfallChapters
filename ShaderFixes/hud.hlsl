@@ -4,10 +4,10 @@
 #define convergence StereoParams.Load(0).y
 #define stereo_eye StereoParams.Load(0).z
 
-#define subtitle_depth IniParams[0].x
-#define cursor_pos     IniParams[1].xy
-#define texture_filter IniParams[1].z
-#define hud_shader     IniParams[1].w
+#define min_subtitle_depth IniParams[0].x
+#define cursor_pos         IniParams[1].xy
+#define texture_filter     IniParams[1].z
+#define hud_shader         IniParams[1].w
 
 #define hud_shader_floating_icons 1
 #define hud_shader_inventory_examine_icons 2
@@ -104,7 +104,7 @@ void handle_subtitle(inout float4 pos)
 		depth = min(depth, world_z_from_depth_buffer(x, y));
 	}
 
-	pos.x += separation * (depth - convergence) / depth;
+	pos.x += separation * max((depth - convergence) / depth, min_subtitle_depth);
 }
 
 void handle_text(inout float4 pos, float4 cb0_3)

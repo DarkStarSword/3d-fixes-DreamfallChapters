@@ -6,6 +6,8 @@ Texture1D<float4> IniParams : register(t120);
 void main(float4 pos : SV_Position0, out float4 result : SV_Target0)
 {
 	result = float4(0, 0, 1, 1);
-	if (IniParams[7].y)
+	if (IniParams[7].y == 1)
 		result = float4(1, 0, 0, 1);
+	else if (IniParams[7].y == 2)
+		result = float4(0, 1, 0, 1);
 }

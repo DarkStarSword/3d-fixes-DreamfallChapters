@@ -19,6 +19,8 @@ void main(
 		}
 		pos.xy = hud_srv[0].text_pos[text_idx];
 	}
+	if (IniParams[7].y == 2)
+		pos.xy = cursor_pos * 2 - 1;
 	pos.y *= -1;
 
 	// Not using vertex buffers so manufacture our own coordinates.
@@ -43,10 +45,12 @@ void main(
 	};
 	pos.zw = float2(0, 1);
 
-	if (IniParams[7].y) {
+	if (IniParams[7].y == 1) {
 		if (depth_idx == 0)
 			to_hud_depth(pos);
 		else
 			pos.x += hud_depth.Load(int3(depth_idx, 0, 0));
+	} else if (IniParams[7].y == 2) {
+		pos.x += adjust_from_depth_buffer(cursor_pos.x * 2 - 1, cursor_pos.y * 2 - 1);
 	}
 }
