@@ -2,6 +2,7 @@
 
 #define separation StereoParams.Load(0).x
 #define convergence StereoParams.Load(0).y
+#define stereo_eye StereoParams.Load(0).z
 
 #define subtitle_depth IniParams[0].x
 #define cursor_pos     IniParams[1].xy
@@ -10,6 +11,7 @@
 
 #define hud_shader_floating_icons 1
 #define hud_shader_inventory_examine_icons 2
+#define hud_shader_text 3
 
 #define inventory_depth IniParams[2].x
 #define inventory_depth_examine IniParams[2].x
@@ -26,11 +28,14 @@
 #endif
 
 struct hud_info {
-	float2 pos;
-	bool selection_circle_seen;
-	bool action_icon_seen;
-	bool loading_seen;
-	int inventory_seen;
+	/*  0:8  */ float2 pos;
+	/*  8:12 */ bool selection_circle_seen;
+	/* 12:16 */ bool action_icon_seen;
+	/* 16:20 */ bool icon_seen;
+	/* 20:24 */ bool loading_seen;
+	/* 24:28 */ int inventory_seen;
+	/* 28:32 */ int text_counter;
+	/* 32:96 */ float2 text_pos[8];
 };
 
 StructuredBuffer<struct hud_info> hud_srv : register(t105);
@@ -38,9 +43,11 @@ Texture2D<float> hud_depth : register(t106);
 
 void to_hud_depth(inout float4 pos)
 {
+	// Disable HUD adjustment entirely whenever loading graphic is on screen:
 	if (hud_srv[0].loading_seen)
 		return;
 
+	// Do not adjust full screen backgrounds:
 	if (IS_FULLSCREEN)
 		return;
 
@@ -65,18 +72,26 @@ void to_hud_depth(inout float4 pos)
 		return;
 	}
 
-	// Nearly equivelent to using adjust_from_stereo2mono_depth_buffer
-	// favouring the cursor dropping to the background where there is
-	// something obscuring the view in one eye, but uses separate depth
-	// tests performed on each eye that were merged together into a
-	// stereo2mono resource, which gives significantly better performance
-	// in SLI* since only one pixel needs to be sent between GPUs instead
-	// of the entire depth buffer (which was a problem above 1080p).
-	float eye = StereoParams.Load(0).z;
-	if (eye == 1)
-		pos.x += min(-hud_depth.Load(int3(0, 0, 0)), hud_depth.Load(int3(1, 0, 0)));
-	else
-		pos.x += max(hud_depth.Load(int3(0, 0, 0)), -hud_depth.Load(int3(1, 0, 0)));
+	if (!hud_srv[0].icon_seen == 1 && hud_srv[0].text_counter > 0) {
+		float min_adj = 1.#INF;
+		uint i;
+
+		// No icons were drawn/captured, but non-subtitle text was. Use
+		// the depth of the closest text to makes conversation choice
+		// text comfortable.
+		for (i = 0; i < hud_srv[0].text_counter; i++)
+			min_adj = min(min_adj, -stereo_eye * hud_depth.Load(int3(1 + i, 0, 0)));
+
+		pos.x += -stereo_eye * min_adj;
+		return;
+	}
+
+	pos.x += hud_depth.Load(int3(0, 0, 0));
+}
+
+bool is_subtitle(float4 cb0_3)
+{
+	return all(cb0_3 == float4(0, -0.8, 0.5, 1));
 }
 
 void handle_subtitle(inout float4 pos)
@@ -90,4 +105,12 @@ void handle_subtitle(inout float4 pos)
 	}
 
 	pos.x += separation * (depth - convergence) / depth;
+}
+
+void handle_text(inout float4 pos, float4 cb0_3)
+{
+	if (is_subtitle(cb0_3))
+		handle_subtitle(pos);
+	else
+		to_hud_depth(pos);
 }

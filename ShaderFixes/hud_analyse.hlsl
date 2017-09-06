@@ -39,6 +39,7 @@ void analyse_floating_icons_shader()
 		return;
 	if (texture_filter == selection_circle) {
 		HUD_Depth_UAV[0].selection_circle_seen = true;
+		HUD_Depth_UAV[0].icon_seen = true;
 		HUD_Depth_UAV[0].pos = pos;
 		return;
 	}
@@ -54,25 +55,57 @@ void analyse_floating_icons_shader()
 		return;
 	if (texture_filter == action_icon) {
 		HUD_Depth_UAV[0].pos = pos;
+		HUD_Depth_UAV[0].icon_seen = true;
 		HUD_Depth_UAV[0].action_icon_seen = true;
+		return;
 	}
 
 	// Whatever other graphics are drawn with this shader will get the HUD
 	// depth if no higher priority HUD elements are also present:
 	HUD_Depth_UAV[0].pos = pos;
+	HUD_Depth_UAV[0].icon_seen = true;
 }
+
+void analyse_inventory_shader()
+{
+	// Set fixed depth whenever inventory is being examined:
+	if (texture_filter == inventory_examine_circles)
+		HUD_Depth_UAV[0].inventory_seen = 2;
+}
+
+void analyse_text_shader()
+{
+	// Subtitles use a simple adjustment in the hud shader, not here:
+	if (is_subtitle(cb0[3]))
+		return;
+
+	// Floating text next to icons does not use the MVP for position,
+	// disregard it:
+	if (all(cb0[3].xy == 0))
+		return;
+
+	// Record the positions of any remaining text being drawn - this will
+	// capture the dialog choices text:
+	int idx = HUD_Depth_UAV[0].text_counter;
+	if (idx < 8) {
+		HUD_Depth_UAV[0].text_pos[idx] = cb0[3].xy * float2(1, -1);
+		HUD_Depth_UAV[0].text_counter = idx + 1;
+	}
+}
+
 
 [numthreads(1, 1, 1)]
 void main()
 {
-	if (hud_shader == hud_shader_inventory_examine_icons) {
-		// Set fixed depth whenever inventory is being examined:
-		if (texture_filter == inventory_examine_circles)
-			HUD_Depth_UAV[0].inventory_seen = 2;
-		return;
+	switch (hud_shader) {
+		case hud_shader_floating_icons:
+			analyse_floating_icons_shader();
+			return;
+		case hud_shader_inventory_examine_icons:
+			analyse_inventory_shader();
+			return;
+		case hud_shader_text:
+			analyse_text_shader();
+			return;
 	}
-
-	// assert(hud_shader == hud_shader_floating_icons)
-
-	analyse_floating_icons_shader();
 }

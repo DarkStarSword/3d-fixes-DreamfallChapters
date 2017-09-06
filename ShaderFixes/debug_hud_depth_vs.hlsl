@@ -7,21 +7,34 @@ void main(
 		out float4 pos : SV_Position0,
 		uint vertex : SV_VertexID)
 {
-	pos.xy = hud_srv[0].pos;
+	uint depth_idx = vertex / 6;
+
+	if (depth_idx == 0) {
+		pos.xy = hud_srv[0].pos;
+	} else {
+		uint text_idx = depth_idx - 1;
+		if (text_idx >= hud_srv[0].text_counter) {
+			pos = 0;
+			return;
+		}
+		pos.xy = hud_srv[0].text_pos[text_idx];
+	}
 	pos.y *= -1;
 
 	// Not using vertex buffers so manufacture our own coordinates.
-	switch(vertex) {
+	switch(vertex % 6) {
 		case 0:
 			pos.xy += float2(-0.005, -0.005);
 			break;
 		case 1:
+		case 4:
 			pos.xy += float2(-0.005, 0.005);
 			break;
 		case 2:
+		case 3:
 			pos.xy += float2(0.005, -0.005);
 			break;
-		case 3:
+		case 5:
 			pos.xy += float2(0.005, 0.005);
 			break;
 		default:
@@ -30,6 +43,10 @@ void main(
 	};
 	pos.zw = float2(0, 1);
 
-	if (IniParams[7].y)
-		to_hud_depth(pos);
+	if (IniParams[7].y) {
+		if (depth_idx == 0)
+			to_hud_depth(pos);
+		else
+			pos.x += hud_depth.Load(int3(depth_idx, 0, 0));
+	}
 }

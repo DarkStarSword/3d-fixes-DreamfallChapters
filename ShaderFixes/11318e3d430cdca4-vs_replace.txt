@@ -85,10 +85,7 @@ void main(
   o1.xyzw = v1.xyzw;
   o2.xy = v2.xy;
 
-if (all(cb0[3] == float4(0, -0.8, 0.5, 1)))
-	handle_subtitle(o0);
-else
-	to_hud_depth(o0);
+handle_text(o0, cb0[3]);
 
   return;
 }
