@@ -50,18 +50,15 @@ void analyse_floating_icons_shader()
 		return;
 
 	// Action icons have priority over random other graphics (important so
-	// that the location text doesn't steal the HUD depth). Allow later
-	// action icons to override former icons because while the consequence
-	// text is displayed there is a phantom icon that can steal the HUD
-	// depth.
+	// that the location text doesn't steal the HUD depth):
+	if (HUD_Depth_UAV[0].action_icon_seen)
+		return;
 	if (texture_filter == action_icon) {
 		HUD_Depth_UAV[0].pos = pos;
 		HUD_Depth_UAV[0].icon_seen = true;
 		HUD_Depth_UAV[0].action_icon_seen = true;
 		return;
 	}
-	if (HUD_Depth_UAV[0].action_icon_seen)
-		return;
 
 	// Whatever other graphics are drawn with this shader will get the HUD
 	// depth if no higher priority HUD elements are also present:
