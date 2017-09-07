@@ -102,7 +102,7 @@ void handle_subtitle(inout float4 pos)
 	float depth = 1.#INF;
 	float x, y;
 
-	for (x = -0.8, y = 0.8; x <= 0.8; x += 0.05) {
+	for (x = -0.8, y = 0.8; x <= 0.8; x += 0.02) {
 		depth = min(depth, world_z_from_depth_buffer(x, y));
 	}
 
