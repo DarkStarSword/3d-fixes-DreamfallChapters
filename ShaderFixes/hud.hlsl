@@ -8,6 +8,8 @@
 #define cursor_pos         IniParams[1].xy
 #define texture_filter     IniParams[1].z
 #define hud_shader         IniParams[1].w
+#define rt_size            IniParams[4].xy
+#define res_size           IniParams[4].zw
 
 #define hud_shader_floating_icons 1
 #define hud_shader_inventory_examine_icons 2

@@ -97,6 +97,10 @@ void analyse_text_shader()
 [numthreads(1, 1, 1)]
 void main()
 {
+	// Disregard off-screen render targets:
+	if (any(rt_size != res_size))
+		return;
+
 	switch (hud_shader) {
 		case hud_shader_floating_icons:
 			analyse_floating_icons_shader();
