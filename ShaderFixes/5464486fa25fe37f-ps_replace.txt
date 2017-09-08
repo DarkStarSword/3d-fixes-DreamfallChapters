@@ -69,7 +69,7 @@ SamplerState s0_s : register(s0);
 
 
 // Unity constant buffers reconstructed with DarkStarSword's hlsltool.py:
-// hlsltool.py --reconstruct-unity-cbuffers -I /home/dss/3d-fixes/Dreamfall Chapters/ --no-validate -f 5464486fa25fe37f-ps_replace.txt
+// hlsltool.py --reconstruct-unity-cbuffers -I /home/dss/Dreamfall Chapters --fxc /home/dss/fxc.exe -f 5464486fa25fe37f-ps_replace.txt
 
 cbuffer UnityPerCamera : register(b1) {
   float4 _ZBufferParams : packoffset(c7);
@@ -102,6 +102,8 @@ cbuffer Globals : register(b0) {
 #define cmp -
 Texture1D<float4> IniParams : register(t120);
 Texture2D<float4> StereoParams : register(t125);
+#define separation StereoParams.Load(0).x
+#define convergence StereoParams.Load(0).y
 
 
 void main( 
@@ -113,6 +115,19 @@ void main(
   float4 r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12;
   uint4 bitmask, uiDest;
   float4 fDest;
+
+// Googled _ProjInfo, found this:
+// https://forum.unity3d.com/threads/screen-space-raytracing-and-depth-buffer-sample-filtering.157330/
+//P = this.camera.projectionMatrix;
+//
+//Vector4 projInfo = new Vector4
+//	((-2.0f / (Screen.width * P[0])),
+//	 (-2.0f / (Screen.height * P[5])),
+//	 ((1.0f - P[2]) / P[0]),
+//	 ((1.0f + P[6]) / P[5]));
+
+// So, we can easily derive the FOV from this:
+float fov = -2 / (_ProjInfo.x * _ScreenSize.x);
 
   r0.xyzw = t0.Sample(s0_s, w1.xy).xyzw;
   r0.x = _ZBufferParams.z * r0.x + _ZBufferParams.w;
@@ -126,11 +141,17 @@ void main(
     r0.yz = _MainTex_TexelSize.zw * w1.xy;
     r0.yz = r0.yz * _ProjInfo.xy + _ProjInfo.zw;
     r1.xy = r0.yz * r1.zz;
+
+r1.x += separation * (r1.z - convergence) / fov;
+
     r2.xyzw = t2.Sample(s2_s, w1.xy).xyzw;
     r0.yzw = r2.xyz * float3(2,2,2) + float3(-1,-1,-1);
     r2.xyz = _WorldToCameraMatrix[1].xyz * r0.zzz;
     r2.xyz = _WorldToCameraMatrix[0].xyz * r0.yyy + r2.xyz;
     r0.yzw = _WorldToCameraMatrix[2].xyz * r0.www + r2.xyz;
+
+// Normal - do not adjust
+
     r1.w = dot(r1.xyz, r1.xyz);
     r1.w = rsqrt(r1.w);
     r2.xyz = r1.xyz * r1.www;
@@ -163,6 +184,10 @@ void main(
       r7.xyz = _ProjectToPixelMatrix[0].xyw * r5.xxx + r7.xyz;
       r7.xyz = _ProjectToPixelMatrix[2].xyw * r5.zzz + r7.xyz;
       r7.xyz = _ProjectToPixelMatrix[3].xyw + r7.xyz;
+
+r6.x -= separation * (r0.z - convergence) * _ScreenSize.x / 2;
+r7.x -= separation * (r5.z - convergence) * _ScreenSize.x / 2;
+
       r1.w = 1 / r6.z;
       r2.w = 1 / r7.z;
       r4.zw = r6.yx * r1.ww;
