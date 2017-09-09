@@ -140,7 +140,7 @@ dcl_input_ps linear v6.xyz
 dcl_input_ps linear v7.xyz
 dcl_input_ps linear v9.xyzw
 dcl_output o0.xyzw
-dcl_temps 12
+dcl_temps 10
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -151,10 +151,9 @@ ld_indexable(texture2d)(float,float,float,float) r8.xyzw, l(0, 0, 0, 0), t125.xy
 
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --fix-unity-reflection --only-autofixed 359db43b6439a64b-ps.txt
-mov r9.xyzw, cb1[4].xyzw
-mul r10.x, -r8.x, r8.y
-mul r11.xyzw, cb10[0].xyzw, r10.xxxx
-add r9.xyz, r9.xyz, -r11.xyz
+
+mul r8.w, -r8.x, r8.y
+mad r9.xyz, -r8.wwww, cb10[0].xyzw, cb1[4].xyzw
 
 sample r0.xyzw, v2.xyxx, t1.xyzw, s5
 mul r0.xyzw, r0.xyzw, l(1.800000, 1.800000, 1.800000, 1.800000)
