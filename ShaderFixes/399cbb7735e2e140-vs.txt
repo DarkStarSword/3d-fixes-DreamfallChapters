@@ -133,7 +133,7 @@ dcl_output o5.xyzw
 dcl_output o6.xyzw
 dcl_output o7.xyz
 dcl_output o8.xyzw
-dcl_temps 8
+dcl_temps 6
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -144,10 +144,9 @@ ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xy
 
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 399cbb7735e2e140-vs.txt
-mov r5.xyzw, cb1[4].xyzw
-mul r6.x, -r4.x, r4.y
-mul r7.xyzw, cb10[0].xyzw, r6.xxxx
-add r5.xyz, r5.xyz, -r7.xyz
+
+mul r4.w, -r4.x, r4.y
+mad r5.xyz, -r4.wwww, cb10[0].xyzw, cb1[4].xyzw
 
 mul r0.xyzw, v0.yyyy, cb2[1].xyzw
 mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw

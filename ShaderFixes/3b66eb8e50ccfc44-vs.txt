@@ -217,7 +217,7 @@ dcl_output o4.xyzw
 dcl_output o5.xyzw
 dcl_output o6.xyzw
 dcl_output o7.xyzw
-dcl_temps 7
+dcl_temps 5
 
 // 3DMigoto StereoParams:
 dcl_resource_texture2d (float,float,float,float) t125
@@ -228,10 +228,9 @@ ld_indexable(texture2d)(float,float,float,float) r3.xyzw, l(0, 0, 0, 0), t125.xy
 
 // Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
 // asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 3b66eb8e50ccfc44-vs.txt
-mov r4.xyzw, cb1[4].xyzw
-mul r5.x, -r3.x, r3.y
-mul r6.xyzw, cb10[0].xyzw, r5.xxxx
-add r4.xyz, r4.xyz, -r6.xyz
+
+mul r3.w, -r3.x, r3.y
+mad r4.xyz, -r3.wwww, cb10[0].xyzw, cb1[4].xyzw
 
 mul r0.xyzw, v0.yyyy, cb2[1].xyzw
 mad r0.xyzw, cb2[0].xyzw, v0.xxxx, r0.xyzw
