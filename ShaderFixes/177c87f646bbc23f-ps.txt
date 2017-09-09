@@ -1,4 +1,4 @@
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 177c87f646bbc23f-ps.txt
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 177c87f646bbc23f-ps.txt
 // 3DMigoto: 177c87f646bbc23f |    Unity headers extracted from Internal-ScreenSpaceShadows.shader
 //    Shader "Hidden/Internal-ScreenSpaceShadows" {
 //      Properties {
@@ -62,6 +62,7 @@
 // TEXCOORD                 2   xyz         2     NONE   float   xyz 
 // TEXCOORD                 3   xyz         3     NONE   float   xyz 
 // SV_POSITION              0   xyzw        4      POS   float       
+// TEXCOORD                 4      w        3     NONE   float      w
 //
 //
 // Output signature:
@@ -83,7 +84,10 @@ dcl_input_ps linear v1.xyz
 dcl_input_ps linear v2.xyz
 dcl_input_ps linear v3.xyz
 dcl_output o0.xyzw
-dcl_temps 6
+dcl_temps 5
+
+// New input from vertex shader with unity_CameraInvProjection[0].x:
+dcl_input_ps linear v3.w
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -105,19 +109,26 @@ mad r0.xyz, cb0[8].wwww, r0.xzwx, r1.xyzx
 // copy depth from r0.z to r3.x:
 mov r3.x, r0.z
 
+
+// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 177c87f646bbc23f-ps.txt
+
+add r4.x, r3.x, -r2.y
+mul r4.x, r2.x, r4.x
+ne r2.w, l(0.0, 0.0, 0.0, 0.0), v3.w
+if_nz r2.w
+  mad r0.x, -r4.x, v3.w, r0.x
+endif
+
 mul r1.xyzw, r0.yyyy, cb1[19].xyzw
 mad r1.xyzw, cb1[18].xyzw, r0.xxxx, r1.xyzw
 mad r1.xyzw, cb1[20].xyzw, r0.zzzz, r1.xyzw
 mad_sat r0.x, r0.z, cb2[24].z, cb2[24].w
 add r1.xyzw, r1.xyzw, cb1[21].xyzw
 
-// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 177c87f646bbc23f-ps.txt
-
-add r4.x, r3.x, -r2.y
-mul r4.x, r2.x, r4.x
-mul r5.xyzw, cb10[0].xyzw, r4.xxxx
-add r1.xyz, r1.xyzw, -r5.xyzx
+if_z r2.w
+  mad r1.xyz, -r4.xxxx, cb10[0].xyzx, r1.xyzw
+endif
 
 mul r0.yzw, r1.yyyy, cb2[9].xxyz
 mad r0.yzw, cb2[8].xxyz, r1.xxxx, r0.yyzw

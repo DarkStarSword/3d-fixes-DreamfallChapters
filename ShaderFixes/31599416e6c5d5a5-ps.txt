@@ -1,4 +1,4 @@
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 31599416e6c5d5a5-ps.txt
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 31599416e6c5d5a5-ps.txt
 // 3DMigoto: 31599416e6c5d5a5 |    Unity headers extracted from Internal-PrePassCollectShadows.shader
 //    Shader "Hidden/ShadowSoftener-ScreenSpaceShadows" {
 //      Properties {
@@ -74,6 +74,7 @@
 // TEXCOORD                 2   xyz         2     NONE   float   xyz 
 // TEXCOORD                 3   xyz         3     NONE   float   xyz 
 // SV_POSITION              0   xyzw        4      POS   float       
+// TEXCOORD                 4      w        3     NONE   float      w
 //
 //
 // Output signature:
@@ -96,7 +97,10 @@ dcl_input_ps linear v1.xyz
 dcl_input_ps linear v2.xyz
 dcl_input_ps linear v3.xyz
 dcl_output o0.xyzw
-dcl_temps 10
+dcl_temps 9
+
+// New input from vertex shader with unity_CameraInvProjection[0].x:
+dcl_input_ps linear v3.w
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -118,18 +122,25 @@ mad r0.xyz, cb1[8].wwww, r0.xyzx, r1.xyzx
 // copy depth from r0.z to r7.x:
 mov r7.x, r0.z
 
+
+// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 31599416e6c5d5a5-ps.txt
+
+add r8.x, r7.x, -r6.y
+mul r8.x, r6.x, r8.x
+ne r6.w, l(0.0, 0.0, 0.0, 0.0), v3.w
+if_nz r6.w
+  mad r0.x, -r8.x, v3.w, r0.x
+endif
+
 mul r1.xyzw, r0.yyyy, cb2[19].xyzw
 mad r1.xyzw, cb2[18].xyzw, r0.xxxx, r1.xyzw
 mad r0.xyzw, cb2[20].xyzw, r0.zzzz, r1.xyzw
 add r0.xyzw, r0.xyzw, cb2[21].xyzw
 
-// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 31599416e6c5d5a5-ps.txt
-
-add r8.x, r7.x, -r6.y
-mul r8.x, r6.x, r8.x
-mul r9.xyzw, cb10[0].xyzw, r8.xxxx
-add r0.xyz, r0.xyzw, -r9.xyzx
+if_z r6.w
+  mad r0.xyz, -r8.xxxx, cb10[0].xyzx, r0.xyzw
+endif
 
 add r1.xyz, r0.xyzx, -cb3[0].xyzx
 add r2.xyz, r0.xyzx, -cb3[1].xyzx

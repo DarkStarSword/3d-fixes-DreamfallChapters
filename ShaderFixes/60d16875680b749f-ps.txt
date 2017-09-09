@@ -1,4 +1,4 @@
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 60d16875680b749f-ps.txt
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 60d16875680b749f-ps.txt
 // 3DMigoto: 60d16875680b749f |    Unity headers extracted from Internal-ScreenSpaceShadows.shader
 //    Shader "Hidden/Internal-ScreenSpaceShadows" {
 //      Properties {
@@ -73,6 +73,7 @@
 // TEXCOORD                 2   xyz         2     NONE   float   xyz 
 // TEXCOORD                 3   xyz         3     NONE   float   xyz 
 // SV_POSITION              0   xyzw        4      POS   float       
+// TEXCOORD                 4      w        3     NONE   float      w
 //
 //
 // Output signature:
@@ -95,7 +96,10 @@ dcl_input_ps linear v1.xyz
 dcl_input_ps linear v2.xyz
 dcl_input_ps linear v3.xyz
 dcl_output o0.xyzw
-dcl_temps 12
+dcl_temps 11
+
+// New input from vertex shader with unity_CameraInvProjection[0].x:
+dcl_input_ps linear v3.w
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -117,18 +121,25 @@ mad r0.xyz, cb1[8].wwww, r0.xzwx, r1.xyzx
 // copy depth from r0.z to r9.x:
 mov r9.x, r0.z
 
+
+// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed 60d16875680b749f-ps.txt
+
+add r10.x, r9.x, -r8.y
+mul r10.x, r8.x, r10.x
+ne r8.w, l(0.0, 0.0, 0.0, 0.0), v3.w
+if_nz r8.w
+  mad r0.x, -r10.x, v3.w, r0.x
+endif
+
 mul r1.xyzw, r0.yyyy, cb2[19].xyzw
 mad r1.xyzw, cb2[18].xyzw, r0.xxxx, r1.xyzw
 mad r0.xyzw, cb2[20].xyzw, r0.zzzz, r1.xyzw
 add r0.xyzw, r0.xyzw, cb2[21].xyzw
 
-// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed 60d16875680b749f-ps.txt
-
-add r10.x, r9.x, -r8.y
-mul r10.x, r8.x, r10.x
-mul r11.xyzw, cb10[0].xyzw, r10.xxxx
-add r0.xyz, r0.xyzw, -r11.xyzx
+if_z r8.w
+  mad r0.xyz, -r10.xxxx, cb10[0].xyzx, r0.xyzw
+endif
 
 add r1.xyz, r0.xyzx, -cb3[0].xyzx
 dp3 r1.x, r1.xyzx, r1.xyzx

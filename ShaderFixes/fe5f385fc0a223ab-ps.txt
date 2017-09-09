@@ -1,4 +1,4 @@
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed fe5f385fc0a223ab-ps.txt
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed fe5f385fc0a223ab-ps.txt
 // 3DMigoto: fe5f385fc0a223ab |    Unity headers extracted from Internal-ScreenSpaceShadows.shader
 //    Shader "Hidden/Internal-ScreenSpaceShadows" {
 //      Properties {
@@ -63,6 +63,7 @@
 // TEXCOORD                 2   xyz         2     NONE   float   xyz 
 // TEXCOORD                 3   xyz         3     NONE   float   xyz 
 // SV_POSITION              0   xyzw        4      POS   float       
+// TEXCOORD                 4      w        3     NONE   float      w
 //
 //
 // Output signature:
@@ -84,7 +85,10 @@ dcl_input_ps linear v1.xyz
 dcl_input_ps linear v2.xyz
 dcl_input_ps linear v3.xyz
 dcl_output o0.xyzw
-dcl_temps 8
+dcl_temps 7
+
+// New input from vertex shader with unity_CameraInvProjection[0].x:
+dcl_input_ps linear v3.w
 dcl_constantbuffer cb10[4], immediateIndexed
 
 // 3DMigoto StereoParams:
@@ -111,19 +115,26 @@ and r1.xyzw, r1.xyzw, l(0x3f800000, 0x3f800000, 0x3f800000, 0x3f800000)
 lt r2.xyzw, r0.zzzz, cb2[7].xyzw
 and r2.xyzw, r2.xyzw, l(0x3f800000, 0x3f800000, 0x3f800000, 0x3f800000)
 mul r1.xyzw, r1.xyzw, r2.xyzw
+
+// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-lighting-ps=TEXCOORD4 --only-autofixed fe5f385fc0a223ab-ps.txt
+
+add r6.x, r5.x, -r4.y
+mul r6.x, r4.x, r6.x
+ne r4.w, l(0.0, 0.0, 0.0, 0.0), v3.w
+if_nz r4.w
+  mad r0.x, -r6.x, v3.w, r0.x
+endif
+
 mul r2.xyzw, r0.yyyy, cb1[19].xyzw
 mad r2.xyzw, cb1[18].xyzw, r0.xxxx, r2.xyzw
 mad r2.xyzw, cb1[20].xyzw, r0.zzzz, r2.xyzw
 mad_sat r0.x, r0.z, cb2[24].z, cb2[24].w
 add r2.xyzw, r2.xyzw, cb1[21].xyzw
 
-// Unity light/shadow fix (pixel shader stage) inserted with DarkStarSword's asmtool.py:
-// asmtool.py -I ../.. --fix-unity-lighting-ps --only-autofixed fe5f385fc0a223ab-ps.txt
-
-add r6.x, r5.x, -r4.y
-mul r6.x, r4.x, r6.x
-mul r7.xyzw, cb10[0].xyzw, r6.xxxx
-add r2.xyz, r2.xyzw, -r7.xyzx
+if_z r4.w
+  mad r2.xyz, -r6.xxxx, cb10[0].xyzx, r2.xyzw
+endif
 
 mul r0.yzw, r2.yyyy, cb2[13].xxyz
 mad r0.yzw, cb2[12].xxyz, r2.xxxx, r0.yyzw
