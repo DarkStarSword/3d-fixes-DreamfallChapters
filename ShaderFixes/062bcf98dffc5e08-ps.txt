@@ -65,8 +65,8 @@
 // TEXCOORD                 1   xyz         1     NONE   float   xyz 
 // TEXCOORD                 2   xyz         2     NONE   float   xyz 
 // TEXCOORD                 3   xyz         3     NONE   float   xyz 
-// SV_POSITION              0   xyzw        4      POS   float       
 // TEXCOORD                 4      w        3     NONE   float      w
+// SV_POSITION              0   xyzw        4      POS   float       
 //
 //
 // Output signature:
