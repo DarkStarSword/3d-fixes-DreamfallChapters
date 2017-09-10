@@ -1,0 +1,100 @@
+// HUD (and other things like political ad, etc) - when using powers in book 5
+
+// 3DMigoto: 2497e8d337897431 | Matched 2 variants of 1 shaders: Skar/FX/Additive Tint
+//
+//       Unity headers extracted from AdditiveTint.shader
+//       Shader "Skar/FX/Additive Tint" {
+//         Properties {
+// 2:       _MainTex ("Base Texture", 2D) = "grey" { }
+// 1:       _MainTex ("Base Texture", 2D) = "white" { }
+//          _TintColor ("TintColor", Color) = (1.000000,1.000000,1.000000,1.000000)
+//          _Boost ("Boost", Float) = 1.000000
+//         }
+//         Fallback Off
+//         SubShader 1/1 {
+//           Tags { "QUEUE"="Transparent" "RenderType"="Transparent" }
+//           Pass 1/1 {
+//             Tags { "LIGHTMODE"="Always" "QUEUE"="Transparent" "RenderType"="Transparent" }
+//             ZWrite Off
+//             Blend One One
+// 1:          GpuProgramID 32994
+// 2:          GpuProgramID 64085
+//             Program "vp" {
+//               SubProgram "d3d11 " {
+//                 GpuProgramIndex 1
+//               }
+//             }
+//           }
+//         }
+//       }
+//
+//    Unity 5.3 headers extracted from AdditiveTint.shader.decompressed:
+//      API d3d11
+//      Shader model vs_4_0
+//      undeciphered1: 201510240 5 0 0
+//      undeciphered2: 1 0 2 0 0 0
+//      undeciphered3: 9 2 0 0 3 4
+//      ConstBuffer "$Globals" 144
+//      Vector 96 [_MainTex_ST]
+//      Vector 112 [_TintColor]
+//      ConstBuffer "UnityPerDraw" 352
+//      Matrix 0 [glstate_matrix_mvp]
+//      BindCB "$Globals" 0
+//      BindCB "UnityPerDraw" 1
+//
+// Headers extracted with DarkStarSword's extract_unity53_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+// ---- Created with 3Dmigoto v1.2.61 on Thu Aug 17 01:03:42 2017
+
+// Unity constant buffers reconstructed with DarkStarSword's hlsltool.py:
+// hlsltool.py --reconstruct-unity-cbuffers -I .. --fxc /home/dss/fxc.exe -f 2497e8d337897431-vs_replace.txt
+
+cbuffer UnityPerDraw : register(b1) {
+  row_major matrix glstate_matrix_mvp : packoffset(c0);
+}
+
+cbuffer Globals : register(b0) {
+  float4 _MainTex_ST : packoffset(c6);
+  float4 _TintColor : packoffset(c7);
+}
+
+
+
+
+// 3Dmigoto declarations
+#define cmp -
+Texture1D<float4> IniParams : register(t120);
+Texture2D<float4> StereoParams : register(t125);
+
+#include "hud.hlsl"
+
+void main( 
+  float4 v0 : POSITION0,
+  float4 v1 : TANGENT0,
+  float3 v2 : NORMAL0,
+  float4 v3 : TEXCOORD0,
+  float4 v4 : TEXCOORD1,
+  float4 v5 : TEXCOORD2,
+  float4 v6 : TEXCOORD3,
+  float4 v7 : COLOR0,
+  out float4 o0 : SV_POSITION0,
+  out float2 o1 : TEXCOORD0,
+  out float4 o2 : COLOR0)
+{
+  float4 r0;
+  uint4 bitmask, uiDest;
+  float4 fDest;
+
+  r0.xyzw = glstate_matrix_mvp[1].xyzw * v0.yyyy;
+  r0.xyzw = glstate_matrix_mvp[0].xyzw * v0.xxxx + r0.xyzw;
+  r0.xyzw = glstate_matrix_mvp[2].xyzw * v0.zzzz + r0.xyzw;
+  o0.xyzw = glstate_matrix_mvp[3].xyzw * v0.wwww + r0.xyzw;
+  o1.xy = v3.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+  o2.xyzw = _TintColor.xyzw;
+
+if (o0.w == 1)
+	to_hud_depth(o0);
+
+  return;
+}
