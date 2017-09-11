@@ -83,11 +83,11 @@ recently mustered up the strength to try to return to this community and start
 modding games once again.
 
 But I couldn't just leave this game in a broken state when my fix had meant so
-much to me personally and this community more generally though - that would be
-like an artist having their prize work stolen from them (is it surprising that
-so many modders in so many communities burn out?). This fix was a showcase for
-my talent - like the kind of thing you might display in a portfolio, and
-something I very much did when networking with other local game developers.
+much to me personally and this community more generally - that would be like an
+artist having their prize work stolen from them (is it surprising that so many
+modders in so many communities burn out?). This fix was a showcase for my
+talent - like the kind of thing you might display in a portfolio, and something
+I very much did when networking with other local game developers.
 
 [5]: https://forums.geforce.com/default/topic/1000942/3d-vision/where-has-darkstarsword-been-/
 
@@ -220,10 +220,10 @@ As you would have gathered from reading the lore, fixing this one game has taken
 an enormous amount of my time - Steam shows I've spent close to three hundred
 hours with it running (probably a hundred of those would have been spent staring
 at those light shafts alone) and all up I can say that I would have probably
-spent about three months or so working on this one game game - not counting time
+spent about three months or so working on this one game - not counting time
 focussing on other games that went towards working on the Unity template,
-scripts and many of the features I've added to 3DMigoto over the years that this
-builds on.
+scripts and many of the features I've added to 3DMigoto over the years that
+this builds on.
 
 I'm also currently out of a job largely thanks to my ongoing battle with mental
 health issues, and until I have recovered enough to work on changing that I am
