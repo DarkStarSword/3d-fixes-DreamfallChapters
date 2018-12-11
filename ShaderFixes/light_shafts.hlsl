@@ -101,10 +101,11 @@ void stereoise_light_shaft_parameters()
 	float3 tmp1;
 	float3 tmp2;
 	float3 tmp3;
+	uint i;
 
 	// Create our own set of frustum coordinates in world space:
 	float2 corners[4] = {float2(-1, -1), float2(1, -1), float2(1, 1), float2(-1, 1)};
-	for (uint i = 0; i < 4; i++) {
+	[unroll] for (i = 0; i < 4; i++) {
 		world_FrustumRays[i] = float4(corners[i], 1, 1);
 		world_FrustumRays[i] = mul(I_VP, world_FrustumRays[i]);
 		world_FrustumRays[i] /= world_FrustumRays[i].w;
@@ -169,7 +170,7 @@ void stereoise_light_shaft_parameters()
 	// local_light_pos = float3(0, 0, _FrustumApex);
 
 	// Get the light position relative to the camera, still in local coords:
-	float3 local_light_pos_to_camera = local_light_pos - _CameraPosLocal;
+	float3 local_light_pos_to_camera = local_light_pos - _CameraPosLocal.xyz;
 
 	// Get the light Z depth from the camera, still in local coords:
 	float light_depth_local = dot(local_light_pos_to_camera, local_cam_axis[2].xyz);
@@ -195,6 +196,6 @@ void stereoise_light_shaft_parameters()
 	float frustum_adj_ws_mag = distance(frustum_adj_ws_vec, 0);
 	float3 frustum_adj_local = local_cam_axis[0].xyz * sign(frustum_adj) * frustum_adj_ws_mag / local_to_world_scale.x;
 
-	for (uint i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++)
 		stereo_FrustumRays[i].xyz -= frustum_adj_local;
 }

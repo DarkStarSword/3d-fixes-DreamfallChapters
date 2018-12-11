@@ -76,7 +76,7 @@ void to_hud_depth(inout float4 pos)
 
 	if (!hud_srv[0].icon_seen == 1 && hud_srv[0].text_counter > 0) {
 		float min_adj = 1.#INF;
-		uint i;
+		int i;
 
 		// No icons were drawn/captured, but non-subtitle text was. Use
 		// the depth of the closest text to makes conversation choice

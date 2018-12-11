@@ -101,6 +101,7 @@ void main(
   o0.xyzw = cb1[3].xyzw * v0.wwww + r0.xyzw;
   o1.xyzw = v1.xyzw;
   o2.xy = v2.xy;
+  o2.zw = 0;
   r0.x = cb0[9].z * v0.y;
   r0.z = v0.x * cb0[9].w + -r0.x;
   r0.w = dot(v0.xy, cb0[9].zw);

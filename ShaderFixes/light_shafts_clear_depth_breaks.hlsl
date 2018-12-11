@@ -8,6 +8,8 @@ void main(
 {
 	if (!IniParams[5].x) {
 		pos = 0;
+		spos = 0;
+		tpos = 0;
 		return;
 	}
 

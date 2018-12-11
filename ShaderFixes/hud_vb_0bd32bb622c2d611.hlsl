@@ -72,4 +72,5 @@ bool is_fullscreen() {
 	return all(calc_0bd32bb622c2d611_pos(tl) <= -0.99 && calc_0bd32bb622c2d611_pos(br) >= 0.99);
 
 };
+#undef IS_FULLSCREEN
 #define IS_FULLSCREEN is_fullscreen()

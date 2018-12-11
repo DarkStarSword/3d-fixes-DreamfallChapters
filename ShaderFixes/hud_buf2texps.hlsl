@@ -6,7 +6,7 @@ Texture1D<float4> IniParams : register(t120);
 void main(float4 pos : SV_Position0, out float result : SV_Target0)
 {
 	float2 text_pos;
-	uint2 pixel = floor(pos);
+	int2 pixel = floor(pos.xy);
 
 	// This shader is used to record the depths at various points from this
 	// eye. The reverse stereo blit will be used to then gain access to the
@@ -18,5 +18,8 @@ void main(float4 pos : SV_Position0, out float result : SV_Target0)
 	} else if (pixel.x - 1 < hud_srv[0].text_counter) {
 		text_pos = hud_srv[0].text_pos[pixel.x - 1];
 		result = adjust_from_depth_buffer(text_pos.x, text_pos.y);
+	} else {
+		discard;
+		result = 0;
 	}
 }

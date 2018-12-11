@@ -12,7 +12,7 @@ void main(
 	if (depth_idx == 0) {
 		pos.xy = hud_srv[0].pos;
 	} else {
-		uint text_idx = depth_idx - 1;
+		int text_idx = depth_idx - 1;
 		if (text_idx >= hud_srv[0].text_counter) {
 			pos = 0;
 			return;
