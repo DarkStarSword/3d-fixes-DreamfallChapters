@@ -250,7 +250,7 @@ _This mod is created with 3DMigoto (primarily written by myself, Bo3b and
 Chiri), and uses Flugan's Assembler. See [here][9] for a full list of
 contributors to 3DMigoto_
 
-[9]: https://github.com/bo3b/3Dmigoto/blob/master/AUTHORS.txt
+[9]: https://darkstarsword.net/3Dmigoto-stats/authors.html
 
 I also have to thank mike_ar69, 4everAwake and Bo3b who helped me in the early
 days while I was learning ShaderHacking, and while I was starting out looking at
